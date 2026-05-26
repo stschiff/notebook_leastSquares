@@ -8,17 +8,16 @@
   "scripts": {
     "preview": "notebooks preview",
     "bundle": "esbuild --bundle --format=esm dgels-wrapper.js > dgels.browser.js",
-    "build": "notebooks build -o docs"
+    "build": "notebooks build -o docs",
+    "serve": "http-server docs -p 8080 -c-1 --cors"
   },
   "dependencies": {
-    "@fontsource-variable/inter": "^5.2.8",
     "@observablehq/notebook-kit": "^1.8.0",
     "@stdlib/stdlib": "^0.3.2",
-    "blapack": "file:../../dev/rreusser/notes"
+    "blapack": "file:../../dev/rreusser/notes",
+    "http-server": "^14.1.1"
   },
   "devDependencies": {
-    "browserify": "^17.0.1",
-    "esbuild": "^0.28.0",
-    "esmify": "^2.1.1"
+    "esbuild": "^0.28.0"
   }
 }
