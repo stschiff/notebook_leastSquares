@@ -1,0 +1,21 @@
+{
+  "name": "leastsquares",
+  "version": "1.0.0",
+  "description": "A test for least-squares solving with stdlib in Javascript",
+  "license": "MIT",
+  "author": "Stephan Schiffels",
+  "type": "module",
+  "scripts": {
+    "preview": "notebooks preview"
+  },
+  "dependencies": {
+    "@observablehq/notebook-kit": "^1.8.0",
+    "@stdlib/stdlib": "^0.3.2",
+    "blapack": "file:../../dev/rreusser/notes"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.1",
+    "esbuild": "^0.28.0",
+    "esmify": "^2.1.1"
+  }
+}
