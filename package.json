@@ -8,7 +8,7 @@
   "scripts": {
     "preview": "notebooks preview",
     "bundle": "esbuild --bundle --format=esm dgels-wrapper.js > dgels.browser.js",
-    "build": "notebooks build -o docs",
+    "build": "notebooks build index.html -o docs",
     "serve": "http-server docs -p 8080 -c-1 --cors"
   },
   "dependencies": {
