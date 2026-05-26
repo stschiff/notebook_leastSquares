@@ -5,3 +5,7 @@ The notebook explores Least-squares fitting, using the function `dgels`, which i
 You can view the notebook [here]()
 
 To run the notebook locally, run `npm install` and `npm run preview`, and open in your browser under the address given on the command line.
+
+To build the notebook, run `npm bundle` and `npm build`. You can then check with `npm serve`.
+
+
