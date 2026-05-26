@@ -6,7 +6,9 @@
   "author": "Stephan Schiffels",
   "type": "module",
   "scripts": {
-    "preview": "notebooks preview"
+    "preview": "notebooks preview",
+    "bundle": "esbuild --bundle --format=esm dgels-wrapper.js > dgels.browser.js",
+    "build": "notebooks build -o docs"
   },
   "dependencies": {
     "@observablehq/notebook-kit": "^1.8.0",
