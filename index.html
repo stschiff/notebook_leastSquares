@@ -1,19 +1,42 @@
 <!doctype html>
 
 <notebook>
-  <title>Hello, world!</title>
+  <title>Exploring linear least-squares computation</title>
 
   <script type="text/markdown">
-    # Hello, world!
+    Let us first simulate some data under a simple linear model:
   </script>
   <script type="module" pinned>
-    1 + 2
+    import normal from 'npm:@stdlib/random/base/normal';
+    import linspace from 'npm:@stdlib/array/base/linspace';
+    const x = linspace( 0, 4, 20 );
+    const data = x.map( xi => ({
+      x: xi,
+      y: 2*xi + normal( 0, 2 )
+    }));
   </script>
+  <script type="text/markdown">
+    and plot the data:
+  </script>
+  <script type="module" pinned>
+    Plot.plot({
+      marks: [
+        Plot.dot(data, { x: "x", y: "y", fill: "steelblue" }),
+        Plot.line([[0, 0], [4, 8]], { stroke: "red" })
+      ]
+    })
+  </script>
+  with the red line indicating the true underlying model. We can now use the `dgels` function to compute the least-squares fit to the data:
   <script type="module" pinned>
     import { dgels } from "./dgels.browser.js";
-    const A = new Float64Array( [ 1.0, 2.0, 3.0, 4.0 ] );
-    const B = new Float64Array( [ 1.0, 2.0, 3.0, 4.0 ] );
-    dgels( 'row-major', 'no-transpose', 2, 2, 1, A, 2, B, 2 );
-    display(A);
+    const A = new Float64Array( data.length * 2 );
+    const B = new Float64Array( data.length );
+    for ( let i = 0; i < data.length; i++ ) {
+      A[ 2*i ] = 1.0;
+      A[ 2*i + 1 ] = data[i].x;
+      B[ i ] = data[i].y;
+    }
+    dgels( 'row-major', 'no-transpose', data.length, 2, 1, A, 2, B, 1 );
+    display( B );
 </script>
 </notebook>
