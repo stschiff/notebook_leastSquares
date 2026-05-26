@@ -6,9 +6,12 @@
   "author": "Stephan Schiffels",
   "type": "module",
   "scripts": {
-    "preview": "notebooks preview"
+    "preview": "notebooks preview",
+    "bundle": "esbuild --bundle --format=esm dgels-wrapper.js > dgels.browser.js",
+    "build": "notebooks build -o docs"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
     "@observablehq/notebook-kit": "^1.8.0",
     "@stdlib/stdlib": "^0.3.2",
     "blapack": "file:../../dev/rreusser/notes"
