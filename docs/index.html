@@ -762,18 +762,35 @@ p .plot-d6a7b5 {
   unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
     </style>
-  <meta name="generator" content="Observable Notebook Kit v1.8.0"><title>Hello, world!</title>  <script type="module" crossorigin src="./assets/index-BLtZaSav.js"></script>
+  <meta name="generator" content="Observable Notebook Kit v1.8.0"><title>Exploring linear least-squares computation</title>  <script type="module" crossorigin src="./assets/index-CdPjtPCG.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/chunk-BQ-_32WO.js">
   <link rel="modulepreload" crossorigin href="./assets/preload-helper-DXINVdbW.js">
   <link rel="modulepreload" crossorigin href="./assets/fileAttachment-Do9GDfXx.js">
 </head>
   <body>
-    <main><div id="cell-1" class="observablehq observablehq--cell"><div><h1>Hello, world!</h1>
-</div></div><div id="cell-2" class="observablehq observablehq--cell"></div><pre data-language="js"><code class="language-js"><span class="tok-literal">1</span> + <span class="tok-literal">2</span></code></pre><div id="cell-3" class="observablehq observablehq--cell"></div><pre data-language="js"><code class="language-js"><span class="tok-keyword">import</span> { <span class="tok-definition">dgels</span> } <span class="tok-keyword">from</span> <span class="tok-string">"./dgels.browser.js"</span>;
-<span class="tok-keyword">const</span> <span class="tok-definition">A</span> = <span class="tok-keyword">new</span> <span class="tok-definition">Float64Array</span>( [ <span class="tok-literal">1.0</span>, <span class="tok-literal">2.0</span>, <span class="tok-literal">3.0</span>, <span class="tok-literal">4.0</span> ] );
-<span class="tok-keyword">const</span> <span class="tok-definition">B</span> = <span class="tok-keyword">new</span> <span class="tok-definition">Float64Array</span>( [ <span class="tok-literal">1.0</span>, <span class="tok-literal">2.0</span>, <span class="tok-literal">3.0</span>, <span class="tok-literal">4.0</span> ] );
-<span class="tok-variable">dgels</span>( <span class="tok-string">'row-major'</span>, <span class="tok-string">'no-transpose'</span>, <span class="tok-literal">2</span>, <span class="tok-literal">2</span>, <span class="tok-literal">1</span>, <span class="tok-variable">A</span>, <span class="tok-literal">2</span>, <span class="tok-variable">B</span>, <span class="tok-literal">2</span> );
-<span class="tok-variable">display</span>(<span class="tok-variable">A</span>);</code></pre></main>
+    <main><div id="cell-1" class="observablehq observablehq--cell"><div><p>Let us first simulate some data under a simple linear model:</p>
+</div></div><div id="cell-2" class="observablehq observablehq--cell"></div><pre data-language="js"><code class="language-js"><span class="tok-keyword">import</span> <span class="tok-definition">normal</span> <span class="tok-keyword">from</span> <span class="tok-string">'npm:@stdlib/random/base/normal'</span>;
+<span class="tok-keyword">import</span> <span class="tok-definition">linspace</span> <span class="tok-keyword">from</span> <span class="tok-string">'npm:@stdlib/array/base/linspace'</span>;
+<span class="tok-keyword">const</span> <span class="tok-definition">x</span> = <span class="tok-variable">linspace</span>( <span class="tok-literal">0</span>, <span class="tok-literal">4</span>, <span class="tok-literal">20</span> );
+<span class="tok-keyword">const</span> <span class="tok-definition">data</span> = <span class="tok-variable">x</span>.<span class="tok-definition">map</span>( <span class="tok-definition">xi</span> =&gt; ({
+  <span class="tok-definition">x</span>: <span class="tok-variable">xi</span>,
+  <span class="tok-definition">y</span>: <span class="tok-literal">2</span>*<span class="tok-variable">xi</span> + <span class="tok-variable">normal</span>( <span class="tok-literal">0</span>, <span class="tok-literal">2</span> )
+}));</code></pre><div id="cell-3" class="observablehq observablehq--cell"><div><p>and plot the data:</p>
+</div></div><div id="cell-4" class="observablehq observablehq--cell"></div><pre data-language="js"><code class="language-js"><span class="tok-variable">Plot</span>.<span class="tok-definition">plot</span>({
+  <span class="tok-definition">marks</span>: [
+    <span class="tok-variable">Plot</span>.<span class="tok-definition">dot</span>(<span class="tok-variable">data</span>, { <span class="tok-definition">x</span>: <span class="tok-string">"x"</span>, <span class="tok-definition">y</span>: <span class="tok-string">"y"</span>, <span class="tok-definition">fill</span>: <span class="tok-string">"steelblue"</span> }),
+    <span class="tok-variable">Plot</span>.<span class="tok-definition">line</span>([[<span class="tok-literal">0</span>, <span class="tok-literal">0</span>], [<span class="tok-literal">4</span>, <span class="tok-literal">8</span>]], { <span class="tok-definition">stroke</span>: <span class="tok-string">"red"</span> })
+  ]
+})</code></pre><div id="cell-5" class="observablehq observablehq--cell"></div><pre data-language="js"><code class="language-js"><span class="tok-keyword">import</span> { <span class="tok-definition">dgels</span> } <span class="tok-keyword">from</span> <span class="tok-string">"./dgels.browser.js"</span>;
+<span class="tok-keyword">const</span> <span class="tok-definition">A</span> = <span class="tok-keyword">new</span> <span class="tok-definition">Float64Array</span>( <span class="tok-variable">data</span>.<span class="tok-definition">length</span> * <span class="tok-literal">2</span> );
+<span class="tok-keyword">const</span> <span class="tok-definition">B</span> = <span class="tok-keyword">new</span> <span class="tok-definition">Float64Array</span>( <span class="tok-variable">data</span>.<span class="tok-definition">length</span> );
+<span class="tok-keyword">for</span> ( <span class="tok-keyword">let</span> <span class="tok-definition">i</span> = <span class="tok-literal">0</span>; <span class="tok-variable">i</span> &lt; <span class="tok-variable">data</span>.<span class="tok-definition">length</span>; <span class="tok-variable">i</span>++ ) {
+  <span class="tok-variable">A</span>[ <span class="tok-literal">2</span>*<span class="tok-variable">i</span> ] = <span class="tok-literal">1.0</span>;
+  <span class="tok-variable">A</span>[ <span class="tok-literal">2</span>*<span class="tok-variable">i</span> + <span class="tok-literal">1</span> ] = <span class="tok-variable">data</span>[<span class="tok-variable">i</span>].<span class="tok-definition">x</span>;
+  <span class="tok-variable">B</span>[ <span class="tok-variable">i</span> ] = <span class="tok-variable">data</span>[<span class="tok-variable">i</span>].<span class="tok-definition">y</span>;
+}
+<span class="tok-variable">dgels</span>( <span class="tok-string">'row-major'</span>, <span class="tok-string">'no-transpose'</span>, <span class="tok-variable">data</span>.<span class="tok-definition">length</span>, <span class="tok-literal">2</span>, <span class="tok-literal">1</span>, <span class="tok-variable">A</span>, <span class="tok-literal">2</span>, <span class="tok-variable">B</span>, <span class="tok-literal">1</span> );
+<span class="tok-variable">display</span>( <span class="tok-variable">B</span> );</code></pre></main>
   
 
 <style type="text/css">:root {
