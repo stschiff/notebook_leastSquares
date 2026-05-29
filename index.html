@@ -1,7 +1,15 @@
 <!doctype html>
 
 <notebook>
-  <title>Exploring linear least-squares computation</title>
+  <script type="text/markdown">
+    # Least Squares
+    
+    The least-squares problem is a fundamental problem in numerical linear algebra and statistics. Given a matrix `A` and a vector `b`, the least-squares problem is to find a vector `x` that minimizes the Euclidean norm of the residual `R = b - A*x`. The solution to this problem can be computed using the `dgels` function, which is part of the LAPACK library.
+
+    The `dgels` function computes the least-squares solution to a linear system of equations. It can handle both overdetermined systems (where there are more equations than unknowns) and underdetermined systems (where there are more unknowns than equations). The function uses QR factorization to compute the solution efficiently.
+
+    In this notebook, we will demonstrate how to use the `dgels` function to solve a least-squares problem in JavaScript. We will simulate some data, fit a linear model to the data using least squares, and visualize the results.
+  </script>
 
   <script type="text/markdown">
     Let us first simulate some data under a simple linear model:
@@ -14,6 +22,7 @@
       x: xi,
       y: 2*xi + normal( 0, 2 )
     }));
+    display(data);
   </script>
   <script type="text/markdown">
     and plot the data:
@@ -22,21 +31,25 @@
     Plot.plot({
       marks: [
         Plot.dot(data, { x: "x", y: "y", fill: "steelblue" }),
-        Plot.line([[0, 0], [4, 8]], { stroke: "red" })
+        Plot.line([[0, 0], [4, 8]], { stroke: "red" }),
+        Plot.line([[0, 0], [4, 4 * fittedSlope]], { stroke: "blue" })
       ]
     })
   </script>
   with the red line indicating the true underlying model. We can now use the `dgels` function to compute the least-squares fit to the data:
   <script type="module" pinned>
     import { dgels } from "./dgels.browser.js";
-    const A = new Float64Array( data.length * 2 );
-    const B = new Float64Array( data.length );
+    const A = new Float64Array( data.length );
+    const b = new Float64Array( data.length );
     for ( let i = 0; i < data.length; i++ ) {
-      A[ 2*i ] = 1.0;
-      A[ 2*i + 1 ] = data[i].x;
-      B[ i ] = data[i].y;
+      A[ i ] = data[i].x;
+      b[ i ] = data[i].y;
     }
-    dgels( 'row-major', 'no-transpose', data.length, 2, 1, A, 2, B, 1 );
-    display( B );
-</script>
+    dgels( 'row-major', 'no-transpose', data.length, 1, 1, A, 1, b, 1 );
+    const fittedSlope = b[0];
+    const rss = b.slice(1).reduce( (acc, val) => acc + val*val, 0 );
+  </script>
+  <script type="text/markdown">
+    The fitted slope is ${fittedSlope}, and the residual sum of squares (RSS) is ${rss}. The standard error of the slope can be computed as $\sqrt{RSS / (n - 2)}$, where $n$ is the number of data points. In this case, the standard error is ${Math.sqrt(rss / (data.length - 2))}.
+  </script>
 </notebook>
