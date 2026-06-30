@@ -24,18 +24,18 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/define-property/lib/define_property.js
+// node_modules/@stdlib/utils/define-property/lib/define_property.js
 var require_define_property = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/define-property/lib/define_property.js"(exports, module) {
+  "node_modules/@stdlib/utils/define-property/lib/define_property.js"(exports, module) {
     "use strict";
     var main = typeof Object.defineProperty === "function" ? Object.defineProperty : null;
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/define-property/lib/has_define_property_support.js
+// node_modules/@stdlib/utils/define-property/lib/has_define_property_support.js
 var require_has_define_property_support = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/define-property/lib/has_define_property_support.js"(exports, module) {
+  "node_modules/@stdlib/utils/define-property/lib/has_define_property_support.js"(exports, module) {
     "use strict";
     var defineProperty = require_define_property();
     function hasDefinePropertySupport() {
@@ -50,18 +50,18 @@ var require_has_define_property_support = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/define-property/lib/builtin.js
+// node_modules/@stdlib/utils/define-property/lib/builtin.js
 var require_builtin = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/define-property/lib/builtin.js"(exports, module) {
+  "node_modules/@stdlib/utils/define-property/lib/builtin.js"(exports, module) {
     "use strict";
     var defineProperty = Object.defineProperty;
     module.exports = defineProperty;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/is_number.js
+// node_modules/@stdlib/string/base/format-interpolate/lib/is_number.js
 var require_is_number = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/is_number.js"(exports, module) {
+  "node_modules/@stdlib/string/base/format-interpolate/lib/is_number.js"(exports, module) {
     "use strict";
     function isNumber(value) {
       return typeof value === "number";
@@ -70,9 +70,9 @@ var require_is_number = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/zero_pad.js
+// node_modules/@stdlib/string/base/format-interpolate/lib/zero_pad.js
 var require_zero_pad = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/zero_pad.js"(exports, module) {
+  "node_modules/@stdlib/string/base/format-interpolate/lib/zero_pad.js"(exports, module) {
     "use strict";
     function startsWithMinus(str) {
       return str[0] === "-";
@@ -105,9 +105,9 @@ var require_zero_pad = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/format_integer.js
+// node_modules/@stdlib/string/base/format-interpolate/lib/format_integer.js
 var require_format_integer = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/format_integer.js"(exports, module) {
+  "node_modules/@stdlib/string/base/format-interpolate/lib/format_integer.js"(exports, module) {
     "use strict";
     var isNumber = require_is_number();
     var zeroPad = require_zero_pad();
@@ -180,9 +180,9 @@ var require_format_integer = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/is_string.js
+// node_modules/@stdlib/string/base/format-interpolate/lib/is_string.js
 var require_is_string = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/is_string.js"(exports, module) {
+  "node_modules/@stdlib/string/base/format-interpolate/lib/is_string.js"(exports, module) {
     "use strict";
     function isString(value) {
       return typeof value === "string";
@@ -191,9 +191,9 @@ var require_is_string = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/format_double.js
+// node_modules/@stdlib/string/base/format-interpolate/lib/format_double.js
 var require_format_double = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/format_double.js"(exports, module) {
+  "node_modules/@stdlib/string/base/format-interpolate/lib/format_double.js"(exports, module) {
     "use strict";
     var isNumber = require_is_number();
     var abs = Math.abs;
@@ -262,9 +262,9 @@ var require_format_double = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/space_pad.js
+// node_modules/@stdlib/string/base/format-interpolate/lib/space_pad.js
 var require_space_pad = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/space_pad.js"(exports, module) {
+  "node_modules/@stdlib/string/base/format-interpolate/lib/space_pad.js"(exports, module) {
     "use strict";
     function spaces(n) {
       var out = "";
@@ -286,9 +286,9 @@ var require_space_pad = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/main.js
+// node_modules/@stdlib/string/base/format-interpolate/lib/main.js
 var require_main = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/string/base/format-interpolate/lib/main.js"(exports, module) {
     "use strict";
     var formatInteger = require_format_integer();
     var isString = require_is_string();
@@ -444,18 +444,18 @@ var require_main = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/index.js
+// node_modules/@stdlib/string/base/format-interpolate/lib/index.js
 var require_lib = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-interpolate/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/string/base/format-interpolate/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-tokenize/lib/main.js
+// node_modules/@stdlib/string/base/format-tokenize/lib/main.js
 var require_main2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-tokenize/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/string/base/format-tokenize/lib/main.js"(exports, module) {
     "use strict";
     var RE = /%(?:([1-9]\d*)\$)?([0 +\-#]*)(\*|\d+)?(?:(\.)(\*|\d+)?)?[hlL]?([%A-Za-z])/g;
     function parse(match) {
@@ -498,18 +498,18 @@ var require_main2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-tokenize/lib/index.js
+// node_modules/@stdlib/string/base/format-tokenize/lib/index.js
 var require_lib2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/base/format-tokenize/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/string/base/format-tokenize/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main2();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/format/lib/is_string.js
+// node_modules/@stdlib/string/format/lib/is_string.js
 var require_is_string2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/format/lib/is_string.js"(exports, module) {
+  "node_modules/@stdlib/string/format/lib/is_string.js"(exports, module) {
     "use strict";
     function isString(value) {
       return typeof value === "string";
@@ -518,9 +518,9 @@ var require_is_string2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/format/lib/main.js
+// node_modules/@stdlib/string/format/lib/main.js
 var require_main3 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/format/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/string/format/lib/main.js"(exports, module) {
     "use strict";
     var interpolate = require_lib();
     var tokenize = require_lib2();
@@ -541,18 +541,18 @@ var require_main3 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/string/format/lib/index.js
+// node_modules/@stdlib/string/format/lib/index.js
 var require_lib3 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/string/format/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/string/format/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main3();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/define-property/lib/polyfill.js
+// node_modules/@stdlib/utils/define-property/lib/polyfill.js
 var require_polyfill = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/define-property/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/utils/define-property/lib/polyfill.js"(exports, module) {
     "use strict";
     var format = require_lib3();
     var objectProtoype = Object.prototype;
@@ -601,9 +601,9 @@ var require_polyfill = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/define-property/lib/index.js
+// node_modules/@stdlib/utils/define-property/lib/index.js
 var require_lib4 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/define-property/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/utils/define-property/lib/index.js"(exports, module) {
     "use strict";
     var hasDefinePropertySupport = require_has_define_property_support();
     var builtin = require_builtin();
@@ -618,9 +618,9 @@ var require_lib4 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/define-nonenumerable-read-only-property/lib/main.js
+// node_modules/@stdlib/utils/define-nonenumerable-read-only-property/lib/main.js
 var require_main4 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/define-nonenumerable-read-only-property/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/utils/define-nonenumerable-read-only-property/lib/main.js"(exports, module) {
     "use strict";
     var defineProperty = require_lib4();
     function setNonEnumerableReadOnly(obj, prop, value) {
@@ -635,18 +635,18 @@ var require_main4 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/define-nonenumerable-read-only-property/lib/index.js
+// node_modules/@stdlib/utils/define-nonenumerable-read-only-property/lib/index.js
 var require_lib5 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/define-nonenumerable-read-only-property/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/utils/define-nonenumerable-read-only-property/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main4();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/is-accessor-array/lib/main.js
+// node_modules/@stdlib/array/base/assert/is-accessor-array/lib/main.js
 var require_main5 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/is-accessor-array/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/base/assert/is-accessor-array/lib/main.js"(exports, module) {
     "use strict";
     var TYPE = "function";
     function isAccessorArray(value) {
@@ -656,18 +656,18 @@ var require_main5 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/is-accessor-array/lib/index.js
+// node_modules/@stdlib/array/base/assert/is-accessor-array/lib/index.js
 var require_lib6 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/is-accessor-array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/base/assert/is-accessor-array/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main5();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/accessor-getter/lib/main.js
+// node_modules/@stdlib/array/base/accessor-getter/lib/main.js
 var require_main6 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/accessor-getter/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/base/accessor-getter/lib/main.js"(exports, module) {
     "use strict";
     var GETTERS = {
       "complex128": getComplex128,
@@ -694,18 +694,18 @@ var require_main6 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/accessor-getter/lib/index.js
+// node_modules/@stdlib/array/base/accessor-getter/lib/index.js
 var require_lib7 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/accessor-getter/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/base/accessor-getter/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main6();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/getter/lib/main.js
+// node_modules/@stdlib/array/base/getter/lib/main.js
 var require_main7 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/getter/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/base/getter/lib/main.js"(exports, module) {
     "use strict";
     var GETTERS = {
       "float64": getFloat64,
@@ -764,18 +764,18 @@ var require_main7 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/getter/lib/index.js
+// node_modules/@stdlib/array/base/getter/lib/index.js
 var require_lib8 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/getter/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/base/getter/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main7();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-symbol-support/lib/main.js
+// node_modules/@stdlib/assert/has-symbol-support/lib/main.js
 var require_main8 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-symbol-support/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-symbol-support/lib/main.js"(exports, module) {
     "use strict";
     function hasSymbolSupport() {
       return typeof Symbol === "function" && typeof /* @__PURE__ */ Symbol("foo") === "symbol";
@@ -784,18 +784,18 @@ var require_main8 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-symbol-support/lib/index.js
+// node_modules/@stdlib/assert/has-symbol-support/lib/index.js
 var require_lib9 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-symbol-support/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-symbol-support/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main8();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-tostringtag-support/lib/main.js
+// node_modules/@stdlib/assert/has-tostringtag-support/lib/main.js
 var require_main9 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-tostringtag-support/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-tostringtag-support/lib/main.js"(exports, module) {
     "use strict";
     var hasSymbols = require_lib9();
     var FLG = hasSymbols();
@@ -806,27 +806,27 @@ var require_main9 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-tostringtag-support/lib/index.js
+// node_modules/@stdlib/assert/has-tostringtag-support/lib/index.js
 var require_lib10 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-tostringtag-support/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-tostringtag-support/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main9();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/native-class/lib/tostring.js
+// node_modules/@stdlib/utils/native-class/lib/tostring.js
 var require_tostring = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/native-class/lib/tostring.js"(exports, module) {
+  "node_modules/@stdlib/utils/native-class/lib/tostring.js"(exports, module) {
     "use strict";
     var toStr = Object.prototype.toString;
     module.exports = toStr;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/native-class/lib/main.js
+// node_modules/@stdlib/utils/native-class/lib/main.js
 var require_main10 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/native-class/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/utils/native-class/lib/main.js"(exports, module) {
     "use strict";
     var toStr = require_tostring();
     function nativeClass(v) {
@@ -836,9 +836,9 @@ var require_main10 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-own-property/lib/main.js
+// node_modules/@stdlib/assert/has-own-property/lib/main.js
 var require_main11 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-own-property/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-own-property/lib/main.js"(exports, module) {
     "use strict";
     var has = Object.prototype.hasOwnProperty;
     function hasOwnProp(value, property) {
@@ -851,36 +851,36 @@ var require_main11 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-own-property/lib/index.js
+// node_modules/@stdlib/assert/has-own-property/lib/index.js
 var require_lib11 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-own-property/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-own-property/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main11();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/symbol/ctor/lib/main.js
+// node_modules/@stdlib/symbol/ctor/lib/main.js
 var require_main12 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/symbol/ctor/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/symbol/ctor/lib/main.js"(exports, module) {
     "use strict";
     var Sym = typeof Symbol === "function" ? Symbol : void 0;
     module.exports = Sym;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/symbol/ctor/lib/index.js
+// node_modules/@stdlib/symbol/ctor/lib/index.js
 var require_lib12 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/symbol/ctor/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/symbol/ctor/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main12();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/native-class/lib/tostringtag.js
+// node_modules/@stdlib/utils/native-class/lib/tostringtag.js
 var require_tostringtag = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/native-class/lib/tostringtag.js"(exports, module) {
+  "node_modules/@stdlib/utils/native-class/lib/tostringtag.js"(exports, module) {
     "use strict";
     var Symbol2 = require_lib12();
     var toStrTag = typeof Symbol2 === "function" ? Symbol2.toStringTag : "";
@@ -888,9 +888,9 @@ var require_tostringtag = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/native-class/lib/polyfill.js
+// node_modules/@stdlib/utils/native-class/lib/polyfill.js
 var require_polyfill2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/native-class/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/utils/native-class/lib/polyfill.js"(exports, module) {
     "use strict";
     var hasOwnProp = require_lib11();
     var toStringTag = require_tostringtag();
@@ -921,9 +921,9 @@ var require_polyfill2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/native-class/lib/index.js
+// node_modules/@stdlib/utils/native-class/lib/index.js
 var require_lib13 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/native-class/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/utils/native-class/lib/index.js"(exports, module) {
     "use strict";
     var hasToStringTag = require_lib10();
     var builtin = require_main10();
@@ -938,9 +938,9 @@ var require_lib13 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-array/lib/main.js
+// node_modules/@stdlib/assert/is-array/lib/main.js
 var require_main13 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-array/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-array/lib/main.js"(exports, module) {
     "use strict";
     var nativeClass = require_lib13();
     var f;
@@ -956,18 +956,18 @@ var require_main13 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-array/lib/index.js
+// node_modules/@stdlib/assert/is-array/lib/index.js
 var require_lib14 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-array/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main13();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/tools/array-function/lib/main.js
+// node_modules/@stdlib/assert/tools/array-function/lib/main.js
 var require_main14 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/tools/array-function/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/tools/array-function/lib/main.js"(exports, module) {
     "use strict";
     var isArray = require_lib14();
     var format = require_lib3();
@@ -998,18 +998,18 @@ var require_main14 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/tools/array-function/lib/index.js
+// node_modules/@stdlib/assert/tools/array-function/lib/index.js
 var require_lib15 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/tools/array-function/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/tools/array-function/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main14();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-object-like/lib/main.js
+// node_modules/@stdlib/assert/is-object-like/lib/main.js
 var require_main15 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-object-like/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-object-like/lib/main.js"(exports, module) {
     "use strict";
     function isObjectLike(value) {
       return value !== null && typeof value === "object";
@@ -1018,9 +1018,9 @@ var require_main15 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-object-like/lib/index.js
+// node_modules/@stdlib/assert/is-object-like/lib/index.js
 var require_lib16 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-object-like/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-object-like/lib/index.js"(exports, module) {
     "use strict";
     var setReadOnly = require_lib5();
     var arrayfun = require_lib15();
@@ -1031,9 +1031,9 @@ var require_lib16 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-buffer/lib/main.js
+// node_modules/@stdlib/assert/is-buffer/lib/main.js
 var require_main16 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-buffer/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-buffer/lib/main.js"(exports, module) {
     "use strict";
     var isObjectLike = require_lib16();
     function isBuffer(value) {
@@ -1046,18 +1046,18 @@ var require_main16 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-buffer/lib/index.js
+// node_modules/@stdlib/assert/is-buffer/lib/index.js
 var require_lib17 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-buffer/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-buffer/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main16();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/regexp/function-name/lib/main.js
+// node_modules/@stdlib/regexp/function-name/lib/main.js
 var require_main17 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/regexp/function-name/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/regexp/function-name/lib/main.js"(exports, module) {
     "use strict";
     function reFunctionName() {
       return /^\s*function\s*([^(]*)/i;
@@ -1066,9 +1066,9 @@ var require_main17 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/regexp/function-name/lib/regexp.js
+// node_modules/@stdlib/regexp/function-name/lib/regexp.js
 var require_regexp = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/regexp/function-name/lib/regexp.js"(exports, module) {
+  "node_modules/@stdlib/regexp/function-name/lib/regexp.js"(exports, module) {
     "use strict";
     var reFunctionName = require_main17();
     var RE_FUNCTION_NAME = reFunctionName();
@@ -1076,9 +1076,9 @@ var require_regexp = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/regexp/function-name/lib/index.js
+// node_modules/@stdlib/regexp/function-name/lib/index.js
 var require_lib18 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/regexp/function-name/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/regexp/function-name/lib/index.js"(exports, module) {
     "use strict";
     var setReadOnly = require_lib5();
     var main = require_main17();
@@ -1088,9 +1088,9 @@ var require_lib18 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/constructor-name/lib/main.js
+// node_modules/@stdlib/utils/constructor-name/lib/main.js
 var require_main18 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/constructor-name/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/utils/constructor-name/lib/main.js"(exports, module) {
     "use strict";
     var nativeClass = require_lib13();
     var RE = require_lib18().REGEXP;
@@ -1119,18 +1119,18 @@ var require_main18 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/constructor-name/lib/index.js
+// node_modules/@stdlib/utils/constructor-name/lib/index.js
 var require_lib19 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/constructor-name/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/utils/constructor-name/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main18();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/dtype/lib/ctor2dtype.js
+// node_modules/@stdlib/array/dtype/lib/ctor2dtype.js
 var require_ctor2dtype = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/dtype/lib/ctor2dtype.js"(exports, module) {
+  "node_modules/@stdlib/array/dtype/lib/ctor2dtype.js"(exports, module) {
     "use strict";
     var ctor2dtypes = {
       "Float32Array": "float32",
@@ -1151,9 +1151,9 @@ var require_ctor2dtype = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-float64array/lib/main.js
+// node_modules/@stdlib/assert/is-float64array/lib/main.js
 var require_main19 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-float64array/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-float64array/lib/main.js"(exports, module) {
     "use strict";
     var nativeClass = require_lib13();
     var hasFloat64Array = typeof Float64Array === "function";
@@ -1165,27 +1165,27 @@ var require_main19 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-float64array/lib/index.js
+// node_modules/@stdlib/assert/is-float64array/lib/index.js
 var require_lib20 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-float64array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-float64array/lib/index.js"(exports, module) {
     "use strict";
     var isFloat64Array = require_main19();
     module.exports = isFloat64Array;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-float64array-support/lib/float64array.js
+// node_modules/@stdlib/assert/has-float64array-support/lib/float64array.js
 var require_float64array = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-float64array-support/lib/float64array.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-float64array-support/lib/float64array.js"(exports, module) {
     "use strict";
     var main = typeof Float64Array === "function" ? Float64Array : null;
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-float64array-support/lib/main.js
+// node_modules/@stdlib/assert/has-float64array-support/lib/main.js
 var require_main20 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-float64array-support/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-float64array-support/lib/main.js"(exports, module) {
     "use strict";
     var isFloat64Array = require_lib20();
     var GlobalFloat64Array = require_float64array();
@@ -1207,27 +1207,27 @@ var require_main20 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-float64array-support/lib/index.js
+// node_modules/@stdlib/assert/has-float64array-support/lib/index.js
 var require_lib21 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-float64array-support/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-float64array-support/lib/index.js"(exports, module) {
     "use strict";
     var hasFloat64ArraySupport = require_main20();
     module.exports = hasFloat64ArraySupport;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/float64/lib/main.js
+// node_modules/@stdlib/array/float64/lib/main.js
 var require_main21 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/float64/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/float64/lib/main.js"(exports, module) {
     "use strict";
     var ctor = typeof Float64Array === "function" ? Float64Array : void 0;
     module.exports = ctor;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/float64/lib/polyfill.js
+// node_modules/@stdlib/array/float64/lib/polyfill.js
 var require_polyfill3 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/float64/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/array/float64/lib/polyfill.js"(exports, module) {
     "use strict";
     function polyfill() {
       throw new Error("not implemented");
@@ -1236,9 +1236,9 @@ var require_polyfill3 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/float64/lib/index.js
+// node_modules/@stdlib/array/float64/lib/index.js
 var require_lib22 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/float64/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/float64/lib/index.js"(exports, module) {
     "use strict";
     var hasFloat64ArraySupport = require_lib21();
     var builtin = require_main21();
@@ -1253,9 +1253,9 @@ var require_lib22 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-float32array/lib/main.js
+// node_modules/@stdlib/assert/is-float32array/lib/main.js
 var require_main22 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-float32array/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-float32array/lib/main.js"(exports, module) {
     "use strict";
     var nativeClass = require_lib13();
     var hasFloat32Array = typeof Float32Array === "function";
@@ -1267,36 +1267,36 @@ var require_main22 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-float32array/lib/index.js
+// node_modules/@stdlib/assert/is-float32array/lib/index.js
 var require_lib23 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-float32array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-float32array/lib/index.js"(exports, module) {
     "use strict";
     var isFloat32Array = require_main22();
     module.exports = isFloat32Array;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/float64/pinf/lib/index.js
+// node_modules/@stdlib/constants/float64/pinf/lib/index.js
 var require_lib24 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/float64/pinf/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/float64/pinf/lib/index.js"(exports, module) {
     "use strict";
     var FLOAT64_PINF = Number.POSITIVE_INFINITY;
     module.exports = FLOAT64_PINF;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-float32array-support/lib/float32array.js
+// node_modules/@stdlib/assert/has-float32array-support/lib/float32array.js
 var require_float32array = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-float32array-support/lib/float32array.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-float32array-support/lib/float32array.js"(exports, module) {
     "use strict";
     var main = typeof Float32Array === "function" ? Float32Array : null;
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-float32array-support/lib/main.js
+// node_modules/@stdlib/assert/has-float32array-support/lib/main.js
 var require_main23 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-float32array-support/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-float32array-support/lib/main.js"(exports, module) {
     "use strict";
     var isFloat32Array = require_lib23();
     var PINF = require_lib24();
@@ -1319,27 +1319,27 @@ var require_main23 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-float32array-support/lib/index.js
+// node_modules/@stdlib/assert/has-float32array-support/lib/index.js
 var require_lib25 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-float32array-support/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-float32array-support/lib/index.js"(exports, module) {
     "use strict";
     var hasFloat32ArraySupport = require_main23();
     module.exports = hasFloat32ArraySupport;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/float32/lib/main.js
+// node_modules/@stdlib/array/float32/lib/main.js
 var require_main24 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/float32/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/float32/lib/main.js"(exports, module) {
     "use strict";
     var ctor = typeof Float32Array === "function" ? Float32Array : void 0;
     module.exports = ctor;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/float32/lib/polyfill.js
+// node_modules/@stdlib/array/float32/lib/polyfill.js
 var require_polyfill4 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/float32/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/array/float32/lib/polyfill.js"(exports, module) {
     "use strict";
     function polyfill() {
       throw new Error("not implemented");
@@ -1348,9 +1348,9 @@ var require_polyfill4 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/float32/lib/index.js
+// node_modules/@stdlib/array/float32/lib/index.js
 var require_lib26 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/float32/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/float32/lib/index.js"(exports, module) {
     "use strict";
     var hasFloat32ArraySupport = require_lib25();
     var builtin = require_main24();
@@ -1365,9 +1365,9 @@ var require_lib26 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint32array/lib/main.js
+// node_modules/@stdlib/assert/is-uint32array/lib/main.js
 var require_main25 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint32array/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-uint32array/lib/main.js"(exports, module) {
     "use strict";
     var nativeClass = require_lib13();
     var hasUint32Array = typeof Uint32Array === "function";
@@ -1379,36 +1379,36 @@ var require_main25 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint32array/lib/index.js
+// node_modules/@stdlib/assert/is-uint32array/lib/index.js
 var require_lib27 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint32array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-uint32array/lib/index.js"(exports, module) {
     "use strict";
     var isUint32Array = require_main25();
     module.exports = isUint32Array;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/uint32/max/lib/index.js
+// node_modules/@stdlib/constants/uint32/max/lib/index.js
 var require_lib28 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/uint32/max/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/uint32/max/lib/index.js"(exports, module) {
     "use strict";
     var UINT32_MAX = 4294967295;
     module.exports = UINT32_MAX;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint32array-support/lib/uint32array.js
+// node_modules/@stdlib/assert/has-uint32array-support/lib/uint32array.js
 var require_uint32array = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint32array-support/lib/uint32array.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-uint32array-support/lib/uint32array.js"(exports, module) {
     "use strict";
     var main = typeof Uint32Array === "function" ? Uint32Array : null;
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint32array-support/lib/main.js
+// node_modules/@stdlib/assert/has-uint32array-support/lib/main.js
 var require_main26 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint32array-support/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-uint32array-support/lib/main.js"(exports, module) {
     "use strict";
     var isUint32Array = require_lib27();
     var UINT32_MAX = require_lib28();
@@ -1435,27 +1435,27 @@ var require_main26 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint32array-support/lib/index.js
+// node_modules/@stdlib/assert/has-uint32array-support/lib/index.js
 var require_lib29 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint32array-support/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-uint32array-support/lib/index.js"(exports, module) {
     "use strict";
     var hasUint32ArraySupport = require_main26();
     module.exports = hasUint32ArraySupport;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/uint32/lib/main.js
+// node_modules/@stdlib/array/uint32/lib/main.js
 var require_main27 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/uint32/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/uint32/lib/main.js"(exports, module) {
     "use strict";
     var ctor = typeof Uint32Array === "function" ? Uint32Array : void 0;
     module.exports = ctor;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/uint32/lib/polyfill.js
+// node_modules/@stdlib/array/uint32/lib/polyfill.js
 var require_polyfill5 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/uint32/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/array/uint32/lib/polyfill.js"(exports, module) {
     "use strict";
     function polyfill() {
       throw new Error("not implemented");
@@ -1464,9 +1464,9 @@ var require_polyfill5 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/uint32/lib/index.js
+// node_modules/@stdlib/array/uint32/lib/index.js
 var require_lib30 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/uint32/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/uint32/lib/index.js"(exports, module) {
     "use strict";
     var hasUint32ArraySupport = require_lib29();
     var builtin = require_main27();
@@ -1481,9 +1481,9 @@ var require_lib30 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-int32array/lib/main.js
+// node_modules/@stdlib/assert/is-int32array/lib/main.js
 var require_main28 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-int32array/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-int32array/lib/main.js"(exports, module) {
     "use strict";
     var nativeClass = require_lib13();
     var hasInt32Array = typeof Int32Array === "function";
@@ -1495,45 +1495,45 @@ var require_main28 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-int32array/lib/index.js
+// node_modules/@stdlib/assert/is-int32array/lib/index.js
 var require_lib31 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-int32array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-int32array/lib/index.js"(exports, module) {
     "use strict";
     var isInt32Array = require_main28();
     module.exports = isInt32Array;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/int32/max/lib/index.js
+// node_modules/@stdlib/constants/int32/max/lib/index.js
 var require_lib32 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/int32/max/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/int32/max/lib/index.js"(exports, module) {
     "use strict";
     var INT32_MAX = 2147483647 | 0;
     module.exports = INT32_MAX;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/int32/min/lib/index.js
+// node_modules/@stdlib/constants/int32/min/lib/index.js
 var require_lib33 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/int32/min/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/int32/min/lib/index.js"(exports, module) {
     "use strict";
     var INT32_MIN = -2147483648 | 0;
     module.exports = INT32_MIN;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int32array-support/lib/int32array.js
+// node_modules/@stdlib/assert/has-int32array-support/lib/int32array.js
 var require_int32array = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int32array-support/lib/int32array.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-int32array-support/lib/int32array.js"(exports, module) {
     "use strict";
     var main = typeof Int32Array === "function" ? Int32Array : null;
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int32array-support/lib/main.js
+// node_modules/@stdlib/assert/has-int32array-support/lib/main.js
 var require_main29 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int32array-support/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-int32array-support/lib/main.js"(exports, module) {
     "use strict";
     var isInt32Array = require_lib31();
     var INT32_MAX = require_lib32();
@@ -1559,27 +1559,27 @@ var require_main29 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int32array-support/lib/index.js
+// node_modules/@stdlib/assert/has-int32array-support/lib/index.js
 var require_lib34 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int32array-support/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-int32array-support/lib/index.js"(exports, module) {
     "use strict";
     var hasInt32ArraySupport = require_main29();
     module.exports = hasInt32ArraySupport;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/int32/lib/main.js
+// node_modules/@stdlib/array/int32/lib/main.js
 var require_main30 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/int32/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/int32/lib/main.js"(exports, module) {
     "use strict";
     var ctor = typeof Int32Array === "function" ? Int32Array : void 0;
     module.exports = ctor;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/int32/lib/polyfill.js
+// node_modules/@stdlib/array/int32/lib/polyfill.js
 var require_polyfill6 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/int32/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/array/int32/lib/polyfill.js"(exports, module) {
     "use strict";
     function polyfill() {
       throw new Error("not implemented");
@@ -1588,9 +1588,9 @@ var require_polyfill6 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/int32/lib/index.js
+// node_modules/@stdlib/array/int32/lib/index.js
 var require_lib35 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/int32/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/int32/lib/index.js"(exports, module) {
     "use strict";
     var hasInt32ArraySupport = require_lib34();
     var builtin = require_main30();
@@ -1605,9 +1605,9 @@ var require_lib35 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint16array/lib/main.js
+// node_modules/@stdlib/assert/is-uint16array/lib/main.js
 var require_main31 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint16array/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-uint16array/lib/main.js"(exports, module) {
     "use strict";
     var nativeClass = require_lib13();
     var hasUint16Array = typeof Uint16Array === "function";
@@ -1619,36 +1619,36 @@ var require_main31 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint16array/lib/index.js
+// node_modules/@stdlib/assert/is-uint16array/lib/index.js
 var require_lib36 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint16array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-uint16array/lib/index.js"(exports, module) {
     "use strict";
     var isUint16Array = require_main31();
     module.exports = isUint16Array;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/uint16/max/lib/index.js
+// node_modules/@stdlib/constants/uint16/max/lib/index.js
 var require_lib37 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/uint16/max/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/uint16/max/lib/index.js"(exports, module) {
     "use strict";
     var UINT16_MAX = 65535 | 0;
     module.exports = UINT16_MAX;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint16array-support/lib/uint16array.js
+// node_modules/@stdlib/assert/has-uint16array-support/lib/uint16array.js
 var require_uint16array = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint16array-support/lib/uint16array.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-uint16array-support/lib/uint16array.js"(exports, module) {
     "use strict";
     var main = typeof Uint16Array === "function" ? Uint16Array : null;
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint16array-support/lib/main.js
+// node_modules/@stdlib/assert/has-uint16array-support/lib/main.js
 var require_main32 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint16array-support/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-uint16array-support/lib/main.js"(exports, module) {
     "use strict";
     var isUint16Array = require_lib36();
     var UINT16_MAX = require_lib37();
@@ -1675,27 +1675,27 @@ var require_main32 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint16array-support/lib/index.js
+// node_modules/@stdlib/assert/has-uint16array-support/lib/index.js
 var require_lib38 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint16array-support/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-uint16array-support/lib/index.js"(exports, module) {
     "use strict";
     var hasUint16ArraySupport = require_main32();
     module.exports = hasUint16ArraySupport;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/uint16/lib/main.js
+// node_modules/@stdlib/array/uint16/lib/main.js
 var require_main33 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/uint16/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/uint16/lib/main.js"(exports, module) {
     "use strict";
     var ctor = typeof Uint16Array === "function" ? Uint16Array : void 0;
     module.exports = ctor;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/uint16/lib/polyfill.js
+// node_modules/@stdlib/array/uint16/lib/polyfill.js
 var require_polyfill7 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/uint16/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/array/uint16/lib/polyfill.js"(exports, module) {
     "use strict";
     function polyfill() {
       throw new Error("not implemented");
@@ -1704,9 +1704,9 @@ var require_polyfill7 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/uint16/lib/index.js
+// node_modules/@stdlib/array/uint16/lib/index.js
 var require_lib39 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/uint16/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/uint16/lib/index.js"(exports, module) {
     "use strict";
     var hasUint16ArraySupport = require_lib38();
     var builtin = require_main33();
@@ -1721,9 +1721,9 @@ var require_lib39 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-int16array/lib/main.js
+// node_modules/@stdlib/assert/is-int16array/lib/main.js
 var require_main34 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-int16array/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-int16array/lib/main.js"(exports, module) {
     "use strict";
     var nativeClass = require_lib13();
     var hasInt16Array = typeof Int16Array === "function";
@@ -1735,45 +1735,45 @@ var require_main34 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-int16array/lib/index.js
+// node_modules/@stdlib/assert/is-int16array/lib/index.js
 var require_lib40 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-int16array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-int16array/lib/index.js"(exports, module) {
     "use strict";
     var isInt16Array = require_main34();
     module.exports = isInt16Array;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/int16/max/lib/index.js
+// node_modules/@stdlib/constants/int16/max/lib/index.js
 var require_lib41 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/int16/max/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/int16/max/lib/index.js"(exports, module) {
     "use strict";
     var INT16_MAX = 32767 | 0;
     module.exports = INT16_MAX;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/int16/min/lib/index.js
+// node_modules/@stdlib/constants/int16/min/lib/index.js
 var require_lib42 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/int16/min/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/int16/min/lib/index.js"(exports, module) {
     "use strict";
     var INT16_MIN = -32768 | 0;
     module.exports = INT16_MIN;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int16array-support/lib/int16array.js
+// node_modules/@stdlib/assert/has-int16array-support/lib/int16array.js
 var require_int16array = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int16array-support/lib/int16array.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-int16array-support/lib/int16array.js"(exports, module) {
     "use strict";
     var main = typeof Int16Array === "function" ? Int16Array : null;
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int16array-support/lib/main.js
+// node_modules/@stdlib/assert/has-int16array-support/lib/main.js
 var require_main35 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int16array-support/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-int16array-support/lib/main.js"(exports, module) {
     "use strict";
     var isInt16Array = require_lib40();
     var INT16_MAX = require_lib41();
@@ -1799,27 +1799,27 @@ var require_main35 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int16array-support/lib/index.js
+// node_modules/@stdlib/assert/has-int16array-support/lib/index.js
 var require_lib43 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int16array-support/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-int16array-support/lib/index.js"(exports, module) {
     "use strict";
     var hasInt16ArraySupport = require_main35();
     module.exports = hasInt16ArraySupport;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/int16/lib/main.js
+// node_modules/@stdlib/array/int16/lib/main.js
 var require_main36 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/int16/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/int16/lib/main.js"(exports, module) {
     "use strict";
     var ctor = typeof Int16Array === "function" ? Int16Array : void 0;
     module.exports = ctor;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/int16/lib/polyfill.js
+// node_modules/@stdlib/array/int16/lib/polyfill.js
 var require_polyfill8 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/int16/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/array/int16/lib/polyfill.js"(exports, module) {
     "use strict";
     function polyfill() {
       throw new Error("not implemented");
@@ -1828,9 +1828,9 @@ var require_polyfill8 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/int16/lib/index.js
+// node_modules/@stdlib/array/int16/lib/index.js
 var require_lib44 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/int16/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/int16/lib/index.js"(exports, module) {
     "use strict";
     var hasInt16ArraySupport = require_lib43();
     var builtin = require_main36();
@@ -1845,9 +1845,9 @@ var require_lib44 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint8array/lib/main.js
+// node_modules/@stdlib/assert/is-uint8array/lib/main.js
 var require_main37 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint8array/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-uint8array/lib/main.js"(exports, module) {
     "use strict";
     var nativeClass = require_lib13();
     var hasUint8Array = typeof Uint8Array === "function";
@@ -1859,36 +1859,36 @@ var require_main37 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint8array/lib/index.js
+// node_modules/@stdlib/assert/is-uint8array/lib/index.js
 var require_lib45 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint8array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-uint8array/lib/index.js"(exports, module) {
     "use strict";
     var isUint8Array = require_main37();
     module.exports = isUint8Array;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/uint8/max/lib/index.js
+// node_modules/@stdlib/constants/uint8/max/lib/index.js
 var require_lib46 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/uint8/max/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/uint8/max/lib/index.js"(exports, module) {
     "use strict";
     var UINT8_MAX = 255 | 0;
     module.exports = UINT8_MAX;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint8array-support/lib/uint8array.js
+// node_modules/@stdlib/assert/has-uint8array-support/lib/uint8array.js
 var require_uint8array = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint8array-support/lib/uint8array.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-uint8array-support/lib/uint8array.js"(exports, module) {
     "use strict";
     var main = typeof Uint8Array === "function" ? Uint8Array : null;
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint8array-support/lib/main.js
+// node_modules/@stdlib/assert/has-uint8array-support/lib/main.js
 var require_main38 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint8array-support/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-uint8array-support/lib/main.js"(exports, module) {
     "use strict";
     var isUint8Array = require_lib45();
     var UINT8_MAX = require_lib46();
@@ -1915,27 +1915,27 @@ var require_main38 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint8array-support/lib/index.js
+// node_modules/@stdlib/assert/has-uint8array-support/lib/index.js
 var require_lib47 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint8array-support/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-uint8array-support/lib/index.js"(exports, module) {
     "use strict";
     var hasUint8ArraySupport = require_main38();
     module.exports = hasUint8ArraySupport;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/uint8/lib/main.js
+// node_modules/@stdlib/array/uint8/lib/main.js
 var require_main39 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/uint8/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/uint8/lib/main.js"(exports, module) {
     "use strict";
     var ctor = typeof Uint8Array === "function" ? Uint8Array : void 0;
     module.exports = ctor;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/uint8/lib/polyfill.js
+// node_modules/@stdlib/array/uint8/lib/polyfill.js
 var require_polyfill9 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/uint8/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/array/uint8/lib/polyfill.js"(exports, module) {
     "use strict";
     function polyfill() {
       throw new Error("not implemented");
@@ -1944,9 +1944,9 @@ var require_polyfill9 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/uint8/lib/index.js
+// node_modules/@stdlib/array/uint8/lib/index.js
 var require_lib48 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/uint8/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/uint8/lib/index.js"(exports, module) {
     "use strict";
     var hasUint8ArraySupport = require_lib47();
     var builtin = require_main39();
@@ -1961,9 +1961,9 @@ var require_lib48 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint8clampedarray/lib/main.js
+// node_modules/@stdlib/assert/is-uint8clampedarray/lib/main.js
 var require_main40 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint8clampedarray/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-uint8clampedarray/lib/main.js"(exports, module) {
     "use strict";
     var nativeClass = require_lib13();
     var hasUint8ClampedArray = typeof Uint8ClampedArray === "function";
@@ -1975,27 +1975,27 @@ var require_main40 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint8clampedarray/lib/index.js
+// node_modules/@stdlib/assert/is-uint8clampedarray/lib/index.js
 var require_lib49 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-uint8clampedarray/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-uint8clampedarray/lib/index.js"(exports, module) {
     "use strict";
     var isUint8ClampedArray = require_main40();
     module.exports = isUint8ClampedArray;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint8clampedarray-support/lib/uint8clampedarray.js
+// node_modules/@stdlib/assert/has-uint8clampedarray-support/lib/uint8clampedarray.js
 var require_uint8clampedarray = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint8clampedarray-support/lib/uint8clampedarray.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-uint8clampedarray-support/lib/uint8clampedarray.js"(exports, module) {
     "use strict";
     var main = typeof Uint8ClampedArray === "function" ? Uint8ClampedArray : null;
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint8clampedarray-support/lib/main.js
+// node_modules/@stdlib/assert/has-uint8clampedarray-support/lib/main.js
 var require_main41 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint8clampedarray-support/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-uint8clampedarray-support/lib/main.js"(exports, module) {
     "use strict";
     var isUint8ClampedArray = require_lib49();
     var GlobalUint8ClampedArray = require_uint8clampedarray();
@@ -2020,27 +2020,27 @@ var require_main41 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint8clampedarray-support/lib/index.js
+// node_modules/@stdlib/assert/has-uint8clampedarray-support/lib/index.js
 var require_lib50 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-uint8clampedarray-support/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-uint8clampedarray-support/lib/index.js"(exports, module) {
     "use strict";
     var hasUint8ClampedArraySupport = require_main41();
     module.exports = hasUint8ClampedArraySupport;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/uint8c/lib/main.js
+// node_modules/@stdlib/array/uint8c/lib/main.js
 var require_main42 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/uint8c/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/uint8c/lib/main.js"(exports, module) {
     "use strict";
     var ctor = typeof Uint8ClampedArray === "function" ? Uint8ClampedArray : void 0;
     module.exports = ctor;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/uint8c/lib/polyfill.js
+// node_modules/@stdlib/array/uint8c/lib/polyfill.js
 var require_polyfill10 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/uint8c/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/array/uint8c/lib/polyfill.js"(exports, module) {
     "use strict";
     function polyfill() {
       throw new Error("not implemented");
@@ -2049,9 +2049,9 @@ var require_polyfill10 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/uint8c/lib/index.js
+// node_modules/@stdlib/array/uint8c/lib/index.js
 var require_lib51 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/uint8c/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/uint8c/lib/index.js"(exports, module) {
     "use strict";
     var hasUint8ClampedArraySupport = require_lib50();
     var builtin = require_main42();
@@ -2066,9 +2066,9 @@ var require_lib51 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-int8array/lib/main.js
+// node_modules/@stdlib/assert/is-int8array/lib/main.js
 var require_main43 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-int8array/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-int8array/lib/main.js"(exports, module) {
     "use strict";
     var nativeClass = require_lib13();
     var hasInt8Array = typeof Int8Array === "function";
@@ -2080,45 +2080,45 @@ var require_main43 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-int8array/lib/index.js
+// node_modules/@stdlib/assert/is-int8array/lib/index.js
 var require_lib52 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-int8array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-int8array/lib/index.js"(exports, module) {
     "use strict";
     var isInt8Array = require_main43();
     module.exports = isInt8Array;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/int8/max/lib/index.js
+// node_modules/@stdlib/constants/int8/max/lib/index.js
 var require_lib53 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/int8/max/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/int8/max/lib/index.js"(exports, module) {
     "use strict";
     var INT8_MAX = 127 | 0;
     module.exports = INT8_MAX;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/int8/min/lib/index.js
+// node_modules/@stdlib/constants/int8/min/lib/index.js
 var require_lib54 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/int8/min/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/int8/min/lib/index.js"(exports, module) {
     "use strict";
     var INT8_MIN = -128 | 0;
     module.exports = INT8_MIN;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int8array-support/lib/int8array.js
+// node_modules/@stdlib/assert/has-int8array-support/lib/int8array.js
 var require_int8array = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int8array-support/lib/int8array.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-int8array-support/lib/int8array.js"(exports, module) {
     "use strict";
     var main = typeof Int8Array === "function" ? Int8Array : null;
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int8array-support/lib/main.js
+// node_modules/@stdlib/assert/has-int8array-support/lib/main.js
 var require_main44 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int8array-support/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-int8array-support/lib/main.js"(exports, module) {
     "use strict";
     var isInt8Array = require_lib52();
     var INT8_MAX = require_lib53();
@@ -2144,27 +2144,27 @@ var require_main44 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int8array-support/lib/index.js
+// node_modules/@stdlib/assert/has-int8array-support/lib/index.js
 var require_lib55 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-int8array-support/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-int8array-support/lib/index.js"(exports, module) {
     "use strict";
     var hasInt8ArraySupport = require_main44();
     module.exports = hasInt8ArraySupport;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/int8/lib/main.js
+// node_modules/@stdlib/array/int8/lib/main.js
 var require_main45 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/int8/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/int8/lib/main.js"(exports, module) {
     "use strict";
     var ctor = typeof Int8Array === "function" ? Int8Array : void 0;
     module.exports = ctor;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/int8/lib/polyfill.js
+// node_modules/@stdlib/array/int8/lib/polyfill.js
 var require_polyfill11 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/int8/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/array/int8/lib/polyfill.js"(exports, module) {
     "use strict";
     function polyfill() {
       throw new Error("not implemented");
@@ -2173,9 +2173,9 @@ var require_polyfill11 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/int8/lib/index.js
+// node_modules/@stdlib/array/int8/lib/index.js
 var require_lib56 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/int8/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/int8/lib/index.js"(exports, module) {
     "use strict";
     var hasInt8ArraySupport = require_lib55();
     var builtin = require_main45();
@@ -2190,9 +2190,9 @@ var require_lib56 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-number/lib/primitive.js
+// node_modules/@stdlib/assert/is-number/lib/primitive.js
 var require_primitive = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-number/lib/primitive.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-number/lib/primitive.js"(exports, module) {
     "use strict";
     function isNumber(value) {
       return typeof value === "number";
@@ -2201,26 +2201,26 @@ var require_primitive = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/number/ctor/lib/main.js
+// node_modules/@stdlib/number/ctor/lib/main.js
 var require_main46 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/number/ctor/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/number/ctor/lib/main.js"(exports, module) {
     "use strict";
     module.exports = Number;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/number/ctor/lib/index.js
+// node_modules/@stdlib/number/ctor/lib/index.js
 var require_lib57 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/number/ctor/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/number/ctor/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main46();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-number/lib/tostring.js
+// node_modules/@stdlib/assert/is-number/lib/tostring.js
 var require_tostring2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-number/lib/tostring.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-number/lib/tostring.js"(exports, module) {
     "use strict";
     var Number2 = require_lib57();
     var toString = Number2.prototype.toString;
@@ -2228,9 +2228,9 @@ var require_tostring2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-number/lib/try2serialize.js
+// node_modules/@stdlib/assert/is-number/lib/try2serialize.js
 var require_try2serialize = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-number/lib/try2serialize.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-number/lib/try2serialize.js"(exports, module) {
     "use strict";
     var toString = require_tostring2();
     function test(value) {
@@ -2245,9 +2245,9 @@ var require_try2serialize = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-number/lib/object.js
+// node_modules/@stdlib/assert/is-number/lib/object.js
 var require_object = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-number/lib/object.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-number/lib/object.js"(exports, module) {
     "use strict";
     var hasToStringTag = require_lib10();
     var nativeClass = require_lib13();
@@ -2270,9 +2270,9 @@ var require_object = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-number/lib/main.js
+// node_modules/@stdlib/assert/is-number/lib/main.js
 var require_main47 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-number/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-number/lib/main.js"(exports, module) {
     "use strict";
     var isPrimitive = require_primitive();
     var isObject = require_object();
@@ -2283,9 +2283,9 @@ var require_main47 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-number/lib/index.js
+// node_modules/@stdlib/assert/is-number/lib/index.js
 var require_lib58 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-number/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-number/lib/index.js"(exports, module) {
     "use strict";
     var setReadOnly = require_lib5();
     var main = require_main47();
@@ -2297,9 +2297,9 @@ var require_lib58 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/float64/ninf/lib/index.js
+// node_modules/@stdlib/constants/float64/ninf/lib/index.js
 var require_lib59 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/float64/ninf/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/float64/ninf/lib/index.js"(exports, module) {
     "use strict";
     var Number2 = require_lib57();
     var FLOAT64_NINF = Number2.NEGATIVE_INFINITY;
@@ -2307,27 +2307,27 @@ var require_lib59 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/math/base/special/floor/lib/main.js
+// node_modules/@stdlib/math/base/special/floor/lib/main.js
 var require_main48 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/math/base/special/floor/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/math/base/special/floor/lib/main.js"(exports, module) {
     "use strict";
     var floor = Math.floor;
     module.exports = floor;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/math/base/special/floor/lib/index.js
+// node_modules/@stdlib/math/base/special/floor/lib/index.js
 var require_lib60 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/math/base/special/floor/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/math/base/special/floor/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main48();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/math/base/assert/is-integer/lib/main.js
+// node_modules/@stdlib/math/base/assert/is-integer/lib/main.js
 var require_main49 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/math/base/assert/is-integer/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/math/base/assert/is-integer/lib/main.js"(exports, module) {
     "use strict";
     var floor = require_lib60();
     function isInteger(x) {
@@ -2337,18 +2337,18 @@ var require_main49 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/math/base/assert/is-integer/lib/index.js
+// node_modules/@stdlib/math/base/assert/is-integer/lib/index.js
 var require_lib61 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/math/base/assert/is-integer/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/math/base/assert/is-integer/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main49();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-integer/lib/integer.js
+// node_modules/@stdlib/assert/is-integer/lib/integer.js
 var require_integer = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-integer/lib/integer.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-integer/lib/integer.js"(exports, module) {
     "use strict";
     var PINF = require_lib24();
     var NINF = require_lib59();
@@ -2360,9 +2360,9 @@ var require_integer = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-integer/lib/primitive.js
+// node_modules/@stdlib/assert/is-integer/lib/primitive.js
 var require_primitive2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-integer/lib/primitive.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-integer/lib/primitive.js"(exports, module) {
     "use strict";
     var isNumber = require_lib58().isPrimitive;
     var isInt = require_integer();
@@ -2373,9 +2373,9 @@ var require_primitive2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-integer/lib/object.js
+// node_modules/@stdlib/assert/is-integer/lib/object.js
 var require_object2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-integer/lib/object.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-integer/lib/object.js"(exports, module) {
     "use strict";
     var isNumber = require_lib58().isObject;
     var isInt = require_integer();
@@ -2386,9 +2386,9 @@ var require_object2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-integer/lib/main.js
+// node_modules/@stdlib/assert/is-integer/lib/main.js
 var require_main50 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-integer/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-integer/lib/main.js"(exports, module) {
     "use strict";
     var isPrimitive = require_primitive2();
     var isObject = require_object2();
@@ -2399,9 +2399,9 @@ var require_main50 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-integer/lib/index.js
+// node_modules/@stdlib/assert/is-integer/lib/index.js
 var require_lib62 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-integer/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-integer/lib/index.js"(exports, module) {
     "use strict";
     var setReadOnly = require_lib5();
     var main = require_main50();
@@ -2413,9 +2413,9 @@ var require_lib62 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-nonnegative-integer/lib/primitive.js
+// node_modules/@stdlib/assert/is-nonnegative-integer/lib/primitive.js
 var require_primitive3 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-nonnegative-integer/lib/primitive.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-nonnegative-integer/lib/primitive.js"(exports, module) {
     "use strict";
     var isInteger = require_lib62().isPrimitive;
     function isNonNegativeInteger(value) {
@@ -2425,9 +2425,9 @@ var require_primitive3 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-nonnegative-integer/lib/object.js
+// node_modules/@stdlib/assert/is-nonnegative-integer/lib/object.js
 var require_object3 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-nonnegative-integer/lib/object.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-nonnegative-integer/lib/object.js"(exports, module) {
     "use strict";
     var isInteger = require_lib62().isObject;
     function isNonNegativeInteger(value) {
@@ -2437,9 +2437,9 @@ var require_object3 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-nonnegative-integer/lib/main.js
+// node_modules/@stdlib/assert/is-nonnegative-integer/lib/main.js
 var require_main51 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-nonnegative-integer/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-nonnegative-integer/lib/main.js"(exports, module) {
     "use strict";
     var isPrimitive = require_primitive3();
     var isObject = require_object3();
@@ -2450,9 +2450,9 @@ var require_main51 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-nonnegative-integer/lib/index.js
+// node_modules/@stdlib/assert/is-nonnegative-integer/lib/index.js
 var require_lib63 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-nonnegative-integer/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-nonnegative-integer/lib/index.js"(exports, module) {
     "use strict";
     var setReadOnly = require_lib5();
     var main = require_main51();
@@ -2464,18 +2464,18 @@ var require_lib63 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/array/max-array-length/lib/index.js
+// node_modules/@stdlib/constants/array/max-array-length/lib/index.js
 var require_lib64 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/array/max-array-length/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/array/max-array-length/lib/index.js"(exports, module) {
     "use strict";
     var MAX_ARRAY_LENGTH = 4294967295 >>> 0;
     module.exports = MAX_ARRAY_LENGTH;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-array-like-object/lib/main.js
+// node_modules/@stdlib/assert/is-array-like-object/lib/main.js
 var require_main52 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-array-like-object/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-array-like-object/lib/main.js"(exports, module) {
     "use strict";
     var isInteger = require_lib61();
     var MAX_LENGTH = require_lib64();
@@ -2486,27 +2486,27 @@ var require_main52 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-array-like-object/lib/index.js
+// node_modules/@stdlib/assert/is-array-like-object/lib/index.js
 var require_lib65 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-array-like-object/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-array-like-object/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main52();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/constants/array/max-typed-array-length/lib/index.js
+// node_modules/@stdlib/constants/array/max-typed-array-length/lib/index.js
 var require_lib66 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/constants/array/max-typed-array-length/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/constants/array/max-typed-array-length/lib/index.js"(exports, module) {
     "use strict";
     var MAX_TYPED_ARRAY_LENGTH = 9007199254740991;
     module.exports = MAX_TYPED_ARRAY_LENGTH;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-collection/lib/main.js
+// node_modules/@stdlib/assert/is-collection/lib/main.js
 var require_main53 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-collection/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-collection/lib/main.js"(exports, module) {
     "use strict";
     var isInteger = require_lib61();
     var MAX_LENGTH = require_lib66();
@@ -2517,18 +2517,18 @@ var require_main53 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-collection/lib/index.js
+// node_modules/@stdlib/assert/is-collection/lib/index.js
 var require_lib67 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-collection/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-collection/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main53();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-arraybuffer/lib/main.js
+// node_modules/@stdlib/assert/is-arraybuffer/lib/main.js
 var require_main54 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-arraybuffer/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-arraybuffer/lib/main.js"(exports, module) {
     "use strict";
     var nativeClass = require_lib13();
     var hasArrayBuffer = typeof ArrayBuffer === "function";
@@ -2540,18 +2540,18 @@ var require_main54 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-arraybuffer/lib/index.js
+// node_modules/@stdlib/assert/is-arraybuffer/lib/index.js
 var require_lib68 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-arraybuffer/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-arraybuffer/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main54();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-object/lib/main.js
+// node_modules/@stdlib/assert/is-object/lib/main.js
 var require_main55 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-object/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-object/lib/main.js"(exports, module) {
     "use strict";
     var isArray = require_lib14();
     function isObject(value) {
@@ -2561,18 +2561,18 @@ var require_main55 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-object/lib/index.js
+// node_modules/@stdlib/assert/is-object/lib/index.js
 var require_lib69 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-object/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-object/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main55();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string/lib/primitive.js
+// node_modules/@stdlib/assert/is-string/lib/primitive.js
 var require_primitive4 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string/lib/primitive.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-string/lib/primitive.js"(exports, module) {
     "use strict";
     function isString(value) {
       return typeof value === "string";
@@ -2581,18 +2581,18 @@ var require_primitive4 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string/lib/valueof.js
+// node_modules/@stdlib/assert/is-string/lib/valueof.js
 var require_valueof = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string/lib/valueof.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-string/lib/valueof.js"(exports, module) {
     "use strict";
     var valueOf = String.prototype.valueOf;
     module.exports = valueOf;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string/lib/try2valueof.js
+// node_modules/@stdlib/assert/is-string/lib/try2valueof.js
 var require_try2valueof = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string/lib/try2valueof.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-string/lib/try2valueof.js"(exports, module) {
     "use strict";
     var valueOf = require_valueof();
     function test(value) {
@@ -2607,9 +2607,9 @@ var require_try2valueof = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string/lib/object.js
+// node_modules/@stdlib/assert/is-string/lib/object.js
 var require_object4 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string/lib/object.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-string/lib/object.js"(exports, module) {
     "use strict";
     var hasToStringTag = require_lib10();
     var nativeClass = require_lib13();
@@ -2631,9 +2631,9 @@ var require_object4 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string/lib/main.js
+// node_modules/@stdlib/assert/is-string/lib/main.js
 var require_main56 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-string/lib/main.js"(exports, module) {
     "use strict";
     var isPrimitive = require_primitive4();
     var isObject = require_object4();
@@ -2644,9 +2644,9 @@ var require_main56 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string/lib/index.js
+// node_modules/@stdlib/assert/is-string/lib/index.js
 var require_lib70 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-string/lib/index.js"(exports, module) {
     "use strict";
     var setReadOnly = require_lib5();
     var main = require_main56();
@@ -2658,9 +2658,9 @@ var require_lib70 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string-array/lib/index.js
+// node_modules/@stdlib/assert/is-string-array/lib/index.js
 var require_lib71 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-string-array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-string-array/lib/index.js"(exports, module) {
     "use strict";
     var setReadOnly = require_lib5();
     var arrayfun = require_lib15();
@@ -2674,18 +2674,18 @@ var require_lib71 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/fixtures/re.js
+// node_modules/@stdlib/utils/type-of/lib/fixtures/re.js
 var require_re = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/fixtures/re.js"(exports, module) {
+  "node_modules/@stdlib/utils/type-of/lib/fixtures/re.js"(exports, module) {
     "use strict";
     var RE = /./;
     module.exports = RE;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-boolean/lib/primitive.js
+// node_modules/@stdlib/assert/is-boolean/lib/primitive.js
 var require_primitive5 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-boolean/lib/primitive.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-boolean/lib/primitive.js"(exports, module) {
     "use strict";
     function isBoolean(value) {
       return typeof value === "boolean";
@@ -2694,36 +2694,36 @@ var require_primitive5 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/boolean/ctor/lib/main.js
+// node_modules/@stdlib/boolean/ctor/lib/main.js
 var require_main57 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/boolean/ctor/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/boolean/ctor/lib/main.js"(exports, module) {
     "use strict";
     var Bool = Boolean;
     module.exports = Bool;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/boolean/ctor/lib/index.js
+// node_modules/@stdlib/boolean/ctor/lib/index.js
 var require_lib72 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/boolean/ctor/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/boolean/ctor/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main57();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-boolean/lib/tostring.js
+// node_modules/@stdlib/assert/is-boolean/lib/tostring.js
 var require_tostring3 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-boolean/lib/tostring.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-boolean/lib/tostring.js"(exports, module) {
     "use strict";
     var toString = Boolean.prototype.toString;
     module.exports = toString;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-boolean/lib/try2serialize.js
+// node_modules/@stdlib/assert/is-boolean/lib/try2serialize.js
 var require_try2serialize2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-boolean/lib/try2serialize.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-boolean/lib/try2serialize.js"(exports, module) {
     "use strict";
     var toString = require_tostring3();
     function test(value) {
@@ -2738,9 +2738,9 @@ var require_try2serialize2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-boolean/lib/object.js
+// node_modules/@stdlib/assert/is-boolean/lib/object.js
 var require_object5 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-boolean/lib/object.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-boolean/lib/object.js"(exports, module) {
     "use strict";
     var hasToStringTag = require_lib10();
     var nativeClass = require_lib13();
@@ -2763,9 +2763,9 @@ var require_object5 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-boolean/lib/main.js
+// node_modules/@stdlib/assert/is-boolean/lib/main.js
 var require_main58 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-boolean/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-boolean/lib/main.js"(exports, module) {
     "use strict";
     var isPrimitive = require_primitive5();
     var isObject = require_object5();
@@ -2776,9 +2776,9 @@ var require_main58 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-boolean/lib/index.js
+// node_modules/@stdlib/assert/is-boolean/lib/index.js
 var require_lib73 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-boolean/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-boolean/lib/index.js"(exports, module) {
     "use strict";
     var setReadOnly = require_lib5();
     var main = require_main58();
@@ -2790,9 +2790,9 @@ var require_lib73 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/global/lib/codegen.js
+// node_modules/@stdlib/utils/global/lib/codegen.js
 var require_codegen = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/global/lib/codegen.js"(exports, module) {
+  "node_modules/@stdlib/utils/global/lib/codegen.js"(exports, module) {
     "use strict";
     function getGlobal() {
       return new Function("return this;")();
@@ -2801,36 +2801,36 @@ var require_codegen = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/global/lib/self.js
+// node_modules/@stdlib/utils/global/lib/self.js
 var require_self = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/global/lib/self.js"(exports, module) {
+  "node_modules/@stdlib/utils/global/lib/self.js"(exports, module) {
     "use strict";
     var obj = typeof self === "object" ? self : null;
     module.exports = obj;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/global/lib/window.js
+// node_modules/@stdlib/utils/global/lib/window.js
 var require_window = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/global/lib/window.js"(exports, module) {
+  "node_modules/@stdlib/utils/global/lib/window.js"(exports, module) {
     "use strict";
     var obj = typeof window === "object" ? window : null;
     module.exports = obj;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/global/lib/global_this.js
+// node_modules/@stdlib/utils/global/lib/global_this.js
 var require_global_this = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/global/lib/global_this.js"(exports, module) {
+  "node_modules/@stdlib/utils/global/lib/global_this.js"(exports, module) {
     "use strict";
     var obj = typeof globalThis === "object" ? globalThis : null;
     module.exports = obj;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/global/lib/browser.js
+// node_modules/@stdlib/utils/global/lib/browser.js
 var require_browser = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/global/lib/browser.js"(exports, module) {
+  "node_modules/@stdlib/utils/global/lib/browser.js"(exports, module) {
     "use strict";
     var isBoolean = require_lib73().isPrimitive;
     var format = require_lib3();
@@ -2862,9 +2862,9 @@ var require_browser = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/fixtures/nodelist.js
+// node_modules/@stdlib/utils/type-of/lib/fixtures/nodelist.js
 var require_nodelist = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/fixtures/nodelist.js"(exports, module) {
+  "node_modules/@stdlib/utils/type-of/lib/fixtures/nodelist.js"(exports, module) {
     "use strict";
     var getGlobal = require_browser();
     var root = getGlobal();
@@ -2873,18 +2873,18 @@ var require_nodelist = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/fixtures/typedarray.js
+// node_modules/@stdlib/utils/type-of/lib/fixtures/typedarray.js
 var require_typedarray = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/fixtures/typedarray.js"(exports, module) {
+  "node_modules/@stdlib/utils/type-of/lib/fixtures/typedarray.js"(exports, module) {
     "use strict";
     var typedarray = Int8Array;
     module.exports = typedarray;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/check.js
+// node_modules/@stdlib/utils/type-of/lib/check.js
 var require_check = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/check.js"(exports, module) {
+  "node_modules/@stdlib/utils/type-of/lib/check.js"(exports, module) {
     "use strict";
     var RE = require_re();
     var nodeList = require_nodelist();
@@ -2904,9 +2904,9 @@ var require_check = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/main.js
+// node_modules/@stdlib/utils/type-of/lib/main.js
 var require_main59 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/utils/type-of/lib/main.js"(exports, module) {
     "use strict";
     var ctorName = require_lib19();
     function typeOf(v) {
@@ -2924,9 +2924,9 @@ var require_main59 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/polyfill.js
+// node_modules/@stdlib/utils/type-of/lib/polyfill.js
 var require_polyfill12 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/utils/type-of/lib/polyfill.js"(exports, module) {
     "use strict";
     var ctorName = require_lib19();
     function typeOf(v) {
@@ -2936,9 +2936,9 @@ var require_polyfill12 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/index.js
+// node_modules/@stdlib/utils/type-of/lib/index.js
 var require_lib74 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/type-of/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/utils/type-of/lib/index.js"(exports, module) {
     "use strict";
     var usePolyfill = require_check();
     var builtin = require_main59();
@@ -2948,9 +2948,9 @@ var require_lib74 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-function/lib/main.js
+// node_modules/@stdlib/assert/is-function/lib/main.js
 var require_main60 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-function/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-function/lib/main.js"(exports, module) {
     "use strict";
     var typeOf = require_lib74();
     function isFunction(value) {
@@ -2960,18 +2960,18 @@ var require_main60 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-function/lib/index.js
+// node_modules/@stdlib/assert/is-function/lib/index.js
 var require_lib75 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-function/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-function/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main60();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/ctor/lib/tostring.js
+// node_modules/@stdlib/complex/float64/ctor/lib/tostring.js
 var require_tostring4 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/ctor/lib/tostring.js"(exports, module) {
+  "node_modules/@stdlib/complex/float64/ctor/lib/tostring.js"(exports, module) {
     "use strict";
     function toString() {
       var str = "" + this.re;
@@ -2987,9 +2987,9 @@ var require_tostring4 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/ctor/lib/tojson.js
+// node_modules/@stdlib/complex/float64/ctor/lib/tojson.js
 var require_tojson = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/ctor/lib/tojson.js"(exports, module) {
+  "node_modules/@stdlib/complex/float64/ctor/lib/tojson.js"(exports, module) {
     "use strict";
     function toJSON() {
       var out = {};
@@ -3002,9 +3002,9 @@ var require_tojson = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/ctor/lib/main.js
+// node_modules/@stdlib/complex/float64/ctor/lib/main.js
 var require_main61 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/ctor/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/complex/float64/ctor/lib/main.js"(exports, module) {
     "use strict";
     var isNumber = require_lib58().isPrimitive;
     var defineProperty = require_lib4();
@@ -3045,27 +3045,27 @@ var require_main61 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/ctor/lib/index.js
+// node_modules/@stdlib/complex/float64/ctor/lib/index.js
 var require_lib76 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/ctor/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/complex/float64/ctor/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main61();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/number/float64/base/to-float32/lib/main.js
+// node_modules/@stdlib/number/float64/base/to-float32/lib/main.js
 var require_main62 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/number/float64/base/to-float32/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/number/float64/base/to-float32/lib/main.js"(exports, module) {
     "use strict";
     var fround = typeof Math.fround === "function" ? Math.fround : null;
     module.exports = fround;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/number/float64/base/to-float32/lib/polyfill.js
+// node_modules/@stdlib/number/float64/base/to-float32/lib/polyfill.js
 var require_polyfill13 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/number/float64/base/to-float32/lib/polyfill.js"(exports, module) {
+  "node_modules/@stdlib/number/float64/base/to-float32/lib/polyfill.js"(exports, module) {
     "use strict";
     var Float32Array2 = require_lib26();
     var FLOAT32_VIEW = new Float32Array2(1);
@@ -3077,9 +3077,9 @@ var require_polyfill13 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/number/float64/base/to-float32/lib/index.js
+// node_modules/@stdlib/number/float64/base/to-float32/lib/index.js
 var require_lib77 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/number/float64/base/to-float32/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/number/float64/base/to-float32/lib/index.js"(exports, module) {
     "use strict";
     var builtin = require_main62();
     var polyfill = require_polyfill13();
@@ -3093,9 +3093,9 @@ var require_lib77 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/ctor/lib/tostring.js
+// node_modules/@stdlib/complex/float32/ctor/lib/tostring.js
 var require_tostring5 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/ctor/lib/tostring.js"(exports, module) {
+  "node_modules/@stdlib/complex/float32/ctor/lib/tostring.js"(exports, module) {
     "use strict";
     function toString() {
       var str = "" + this.re;
@@ -3111,9 +3111,9 @@ var require_tostring5 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/ctor/lib/tojson.js
+// node_modules/@stdlib/complex/float32/ctor/lib/tojson.js
 var require_tojson2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/ctor/lib/tojson.js"(exports, module) {
+  "node_modules/@stdlib/complex/float32/ctor/lib/tojson.js"(exports, module) {
     "use strict";
     function toJSON() {
       var out = {};
@@ -3126,9 +3126,9 @@ var require_tojson2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/ctor/lib/main.js
+// node_modules/@stdlib/complex/float32/ctor/lib/main.js
 var require_main63 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/ctor/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/complex/float32/ctor/lib/main.js"(exports, module) {
     "use strict";
     var isNumber = require_lib58().isPrimitive;
     var defineProperty = require_lib4();
@@ -3170,18 +3170,18 @@ var require_main63 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/ctor/lib/index.js
+// node_modules/@stdlib/complex/float32/ctor/lib/index.js
 var require_lib78 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/ctor/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/complex/float32/ctor/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main63();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-complex-like/lib/main.js
+// node_modules/@stdlib/assert/is-complex-like/lib/main.js
 var require_main64 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-complex-like/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-complex-like/lib/main.js"(exports, module) {
     "use strict";
     var Complex128 = require_lib76();
     var Complex64 = require_lib78();
@@ -3195,18 +3195,18 @@ var require_main64 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/is-complex-like/lib/index.js
+// node_modules/@stdlib/assert/is-complex-like/lib/index.js
 var require_lib79 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/is-complex-like/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/is-complex-like/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main64();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/math/base/assert/is-even/lib/main.js
+// node_modules/@stdlib/math/base/assert/is-even/lib/main.js
 var require_main65 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/math/base/assert/is-even/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/math/base/assert/is-even/lib/main.js"(exports, module) {
     "use strict";
     var isInteger = require_lib61();
     function isEven(x) {
@@ -3216,18 +3216,18 @@ var require_main65 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/math/base/assert/is-even/lib/index.js
+// node_modules/@stdlib/math/base/assert/is-even/lib/index.js
 var require_lib80 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/math/base/assert/is-even/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/math/base/assert/is-even/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main65();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/is-complex64array/lib/main.js
+// node_modules/@stdlib/array/base/assert/is-complex64array/lib/main.js
 var require_main66 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/is-complex64array/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/base/assert/is-complex64array/lib/main.js"(exports, module) {
     "use strict";
     var BYTES_PER_ELEMENT = 8;
     function isComplex64Array(value) {
@@ -3237,18 +3237,18 @@ var require_main66 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/is-complex64array/lib/index.js
+// node_modules/@stdlib/array/base/assert/is-complex64array/lib/index.js
 var require_lib81 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/is-complex64array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/base/assert/is-complex64array/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main66();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/is-complex128array/lib/main.js
+// node_modules/@stdlib/array/base/assert/is-complex128array/lib/main.js
 var require_main67 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/is-complex128array/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/base/assert/is-complex128array/lib/main.js"(exports, module) {
     "use strict";
     var BYTES_PER_ELEMENT = 16;
     function isComplex128Array(value) {
@@ -3258,18 +3258,18 @@ var require_main67 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/is-complex128array/lib/index.js
+// node_modules/@stdlib/array/base/assert/is-complex128array/lib/index.js
 var require_lib82 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/is-complex128array/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/base/assert/is-complex128array/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main67();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-iterator-symbol-support/lib/main.js
+// node_modules/@stdlib/assert/has-iterator-symbol-support/lib/main.js
 var require_main68 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-iterator-symbol-support/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-iterator-symbol-support/lib/main.js"(exports, module) {
     "use strict";
     var hasOwnProp = require_lib11();
     var Symbol2 = require_lib12();
@@ -3280,18 +3280,18 @@ var require_main68 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/assert/has-iterator-symbol-support/lib/index.js
+// node_modules/@stdlib/assert/has-iterator-symbol-support/lib/index.js
 var require_lib83 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/assert/has-iterator-symbol-support/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/assert/has-iterator-symbol-support/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main68();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/symbol/iterator/lib/main.js
+// node_modules/@stdlib/symbol/iterator/lib/main.js
 var require_main69 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/symbol/iterator/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/symbol/iterator/lib/main.js"(exports, module) {
     "use strict";
     var hasIteratorSymbolSupport = require_lib83();
     var IteratorSymbol = hasIteratorSymbolSupport() ? Symbol.iterator : null;
@@ -3299,18 +3299,18 @@ var require_main69 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/symbol/iterator/lib/index.js
+// node_modules/@stdlib/symbol/iterator/lib/index.js
 var require_lib84 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/symbol/iterator/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/symbol/iterator/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main69();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/define-nonenumerable-read-only-accessor/lib/main.js
+// node_modules/@stdlib/utils/define-nonenumerable-read-only-accessor/lib/main.js
 var require_main70 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/define-nonenumerable-read-only-accessor/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/utils/define-nonenumerable-read-only-accessor/lib/main.js"(exports, module) {
     "use strict";
     var defineProperty = require_lib4();
     function setNonEnumerableReadOnlyAccessor(obj, prop, getter) {
@@ -3324,18 +3324,18 @@ var require_main70 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/utils/define-nonenumerable-read-only-accessor/lib/index.js
+// node_modules/@stdlib/utils/define-nonenumerable-read-only-accessor/lib/index.js
 var require_lib85 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/utils/define-nonenumerable-read-only-accessor/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/utils/define-nonenumerable-read-only-accessor/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main70();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/real/lib/main.js
+// node_modules/@stdlib/complex/float32/real/lib/main.js
 var require_main71 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/real/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/complex/float32/real/lib/main.js"(exports, module) {
     "use strict";
     function real(z) {
       return z.re;
@@ -3344,18 +3344,18 @@ var require_main71 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/real/lib/index.js
+// node_modules/@stdlib/complex/float32/real/lib/index.js
 var require_lib86 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/real/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/complex/float32/real/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main71();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/imag/lib/main.js
+// node_modules/@stdlib/complex/float32/imag/lib/main.js
 var require_main72 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/imag/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/complex/float32/imag/lib/main.js"(exports, module) {
     "use strict";
     function imag(z) {
       return z.im;
@@ -3364,18 +3364,18 @@ var require_main72 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/imag/lib/index.js
+// node_modules/@stdlib/complex/float32/imag/lib/index.js
 var require_lib87 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float32/imag/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/complex/float32/imag/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main72();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/strided/base/reinterpret-complex64/lib/main.js
+// node_modules/@stdlib/strided/base/reinterpret-complex64/lib/main.js
 var require_main73 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/strided/base/reinterpret-complex64/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/strided/base/reinterpret-complex64/lib/main.js"(exports, module) {
     "use strict";
     var Float32Array2 = require_lib26();
     function reinterpret(x, offset) {
@@ -3385,18 +3385,18 @@ var require_main73 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/strided/base/reinterpret-complex64/lib/index.js
+// node_modules/@stdlib/strided/base/reinterpret-complex64/lib/index.js
 var require_lib88 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/strided/base/reinterpret-complex64/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/strided/base/reinterpret-complex64/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main73();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/strided/base/reinterpret-complex128/lib/main.js
+// node_modules/@stdlib/strided/base/reinterpret-complex128/lib/main.js
 var require_main74 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/strided/base/reinterpret-complex128/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/strided/base/reinterpret-complex128/lib/main.js"(exports, module) {
     "use strict";
     var Float64Array2 = require_lib22();
     function reinterpret(x, offset) {
@@ -3406,18 +3406,18 @@ var require_main74 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/strided/base/reinterpret-complex128/lib/index.js
+// node_modules/@stdlib/strided/base/reinterpret-complex128/lib/index.js
 var require_lib89 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/strided/base/reinterpret-complex128/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/strided/base/reinterpret-complex128/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main74();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/complex64/lib/from_iterator.js
+// node_modules/@stdlib/array/complex64/lib/from_iterator.js
 var require_from_iterator = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/complex64/lib/from_iterator.js"(exports, module) {
+  "node_modules/@stdlib/array/complex64/lib/from_iterator.js"(exports, module) {
     "use strict";
     var isArrayLikeObject = require_lib65();
     var isComplexLike = require_lib79();
@@ -3449,9 +3449,9 @@ var require_from_iterator = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/complex64/lib/from_iterator_map.js
+// node_modules/@stdlib/array/complex64/lib/from_iterator_map.js
 var require_from_iterator_map = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/complex64/lib/from_iterator_map.js"(exports, module) {
+  "node_modules/@stdlib/array/complex64/lib/from_iterator_map.js"(exports, module) {
     "use strict";
     var isArrayLikeObject = require_lib65();
     var isComplexLike = require_lib79();
@@ -3486,9 +3486,9 @@ var require_from_iterator_map = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/complex64/lib/from_array.js
+// node_modules/@stdlib/array/complex64/lib/from_array.js
 var require_from_array = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/complex64/lib/from_array.js"(exports, module) {
+  "node_modules/@stdlib/array/complex64/lib/from_array.js"(exports, module) {
     "use strict";
     var isComplexLike = require_lib79();
     var realf = require_lib86();
@@ -3515,9 +3515,9 @@ var require_from_array = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/complex64/lib/main.js
+// node_modules/@stdlib/array/complex64/lib/main.js
 var require_main75 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/complex64/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/complex64/lib/main.js"(exports, module) {
     "use strict";
     var isNonNegativeInteger = require_lib63().isPrimitive;
     var isArrayLikeObject = require_lib65();
@@ -4793,18 +4793,18 @@ var require_main75 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/complex64/lib/index.js
+// node_modules/@stdlib/array/complex64/lib/index.js
 var require_lib90 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/complex64/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/complex64/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main75();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/real/lib/main.js
+// node_modules/@stdlib/complex/float64/real/lib/main.js
 var require_main76 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/real/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/complex/float64/real/lib/main.js"(exports, module) {
     "use strict";
     function real(z) {
       return z.re;
@@ -4813,18 +4813,18 @@ var require_main76 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/real/lib/index.js
+// node_modules/@stdlib/complex/float64/real/lib/index.js
 var require_lib91 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/real/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/complex/float64/real/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main76();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/imag/lib/main.js
+// node_modules/@stdlib/complex/float64/imag/lib/main.js
 var require_main77 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/imag/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/complex/float64/imag/lib/main.js"(exports, module) {
     "use strict";
     function imag(z) {
       return z.im;
@@ -4833,18 +4833,18 @@ var require_main77 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/imag/lib/index.js
+// node_modules/@stdlib/complex/float64/imag/lib/index.js
 var require_lib92 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/complex/float64/imag/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/complex/float64/imag/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main77();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/complex128/lib/from_iterator.js
+// node_modules/@stdlib/array/complex128/lib/from_iterator.js
 var require_from_iterator2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/complex128/lib/from_iterator.js"(exports, module) {
+  "node_modules/@stdlib/array/complex128/lib/from_iterator.js"(exports, module) {
     "use strict";
     var isArrayLikeObject = require_lib65();
     var isComplexLike = require_lib79();
@@ -4876,9 +4876,9 @@ var require_from_iterator2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/complex128/lib/from_iterator_map.js
+// node_modules/@stdlib/array/complex128/lib/from_iterator_map.js
 var require_from_iterator_map2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/complex128/lib/from_iterator_map.js"(exports, module) {
+  "node_modules/@stdlib/array/complex128/lib/from_iterator_map.js"(exports, module) {
     "use strict";
     var isArrayLikeObject = require_lib65();
     var isComplexLike = require_lib79();
@@ -4913,9 +4913,9 @@ var require_from_iterator_map2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/complex128/lib/from_array.js
+// node_modules/@stdlib/array/complex128/lib/from_array.js
 var require_from_array2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/complex128/lib/from_array.js"(exports, module) {
+  "node_modules/@stdlib/array/complex128/lib/from_array.js"(exports, module) {
     "use strict";
     var isComplexLike = require_lib79();
     var real = require_lib91();
@@ -4942,9 +4942,9 @@ var require_from_array2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/complex128/lib/main.js
+// node_modules/@stdlib/array/complex128/lib/main.js
 var require_main78 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/complex128/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/complex128/lib/main.js"(exports, module) {
     "use strict";
     var isNonNegativeInteger = require_lib63().isPrimitive;
     var isArrayLikeObject = require_lib65();
@@ -6225,18 +6225,18 @@ var require_main78 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/complex128/lib/index.js
+// node_modules/@stdlib/array/complex128/lib/index.js
 var require_lib93 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/complex128/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/complex128/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main78();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/bool/lib/from_iterator.js
+// node_modules/@stdlib/array/bool/lib/from_iterator.js
 var require_from_iterator3 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/bool/lib/from_iterator.js"(exports, module) {
+  "node_modules/@stdlib/array/bool/lib/from_iterator.js"(exports, module) {
     "use strict";
     var Boolean2 = require_lib72();
     function fromIterator(it) {
@@ -6256,9 +6256,9 @@ var require_from_iterator3 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/bool/lib/from_iterator_map.js
+// node_modules/@stdlib/array/bool/lib/from_iterator_map.js
 var require_from_iterator_map3 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/bool/lib/from_iterator_map.js"(exports, module) {
+  "node_modules/@stdlib/array/bool/lib/from_iterator_map.js"(exports, module) {
     "use strict";
     var Boolean2 = require_lib72();
     function fromIteratorMap(it, clbk, thisArg) {
@@ -6281,9 +6281,9 @@ var require_from_iterator_map3 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/bool/lib/from_array.js
+// node_modules/@stdlib/array/bool/lib/from_array.js
 var require_from_array3 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/bool/lib/from_array.js"(exports, module) {
+  "node_modules/@stdlib/array/bool/lib/from_array.js"(exports, module) {
     "use strict";
     var Boolean2 = require_lib72();
     function fromArray(buf, arr) {
@@ -6299,9 +6299,9 @@ var require_from_array3 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/bool/lib/main.js
+// node_modules/@stdlib/array/bool/lib/main.js
 var require_main79 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/bool/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/bool/lib/main.js"(exports, module) {
     "use strict";
     var isNonNegativeInteger = require_lib63().isPrimitive;
     var isCollection = require_lib67();
@@ -7387,18 +7387,18 @@ var require_main79 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/bool/lib/index.js
+// node_modules/@stdlib/array/bool/lib/index.js
 var require_lib94 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/bool/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/bool/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main79();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/dtype/lib/ctors.js
+// node_modules/@stdlib/array/dtype/lib/ctors.js
 var require_ctors = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/dtype/lib/ctors.js"(exports, module) {
+  "node_modules/@stdlib/array/dtype/lib/ctors.js"(exports, module) {
     "use strict";
     var Float64Array2 = require_lib22();
     var Float32Array2 = require_lib26();
@@ -7430,9 +7430,9 @@ var require_ctors = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/dtype/lib/dtypes.js
+// node_modules/@stdlib/array/dtype/lib/dtypes.js
 var require_dtypes = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/dtype/lib/dtypes.js"(exports, module) {
+  "node_modules/@stdlib/array/dtype/lib/dtypes.js"(exports, module) {
     "use strict";
     var DTYPES = [
       "float64",
@@ -7452,9 +7452,9 @@ var require_dtypes = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/dtype/lib/main.js
+// node_modules/@stdlib/array/dtype/lib/main.js
 var require_main80 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/dtype/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/dtype/lib/main.js"(exports, module) {
     "use strict";
     var isBuffer = require_lib17();
     var isArray = require_lib14();
@@ -7482,18 +7482,18 @@ var require_main80 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/dtype/lib/index.js
+// node_modules/@stdlib/array/dtype/lib/index.js
 var require_lib95 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/dtype/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/dtype/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main80();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/contains/lib/main.js
+// node_modules/@stdlib/array/base/assert/contains/lib/main.js
 var require_main81 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/contains/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/array/base/assert/contains/lib/main.js"(exports, module) {
     "use strict";
     var isAccessorArray = require_lib6();
     var accessorGetter = require_lib7();
@@ -7522,9 +7522,9 @@ var require_main81 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/contains/lib/factory.js
+// node_modules/@stdlib/array/base/assert/contains/lib/factory.js
 var require_factory = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/contains/lib/factory.js"(exports, module) {
+  "node_modules/@stdlib/array/base/assert/contains/lib/factory.js"(exports, module) {
     "use strict";
     var isCollection = require_lib67();
     var isAccessorArray = require_lib6();
@@ -7567,9 +7567,9 @@ var require_factory = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/contains/lib/index.js
+// node_modules/@stdlib/array/base/assert/contains/lib/index.js
 var require_lib96 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/array/base/assert/contains/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/array/base/assert/contains/lib/index.js"(exports, module) {
     "use strict";
     var setReadOnly = require_lib5();
     var main = require_main81();
@@ -7579,9 +7579,9 @@ var require_lib96 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/blas/base/layouts/lib/data.json
+// node_modules/@stdlib/blas/base/layouts/lib/data.json
 var require_data = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/blas/base/layouts/lib/data.json"(exports, module) {
+  "node_modules/@stdlib/blas/base/layouts/lib/data.json"(exports, module) {
     module.exports = [
       "row-major",
       "column-major"
@@ -7589,9 +7589,9 @@ var require_data = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/blas/base/layouts/lib/main.js
+// node_modules/@stdlib/blas/base/layouts/lib/main.js
 var require_main82 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/blas/base/layouts/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/blas/base/layouts/lib/main.js"(exports, module) {
     "use strict";
     var DATA = require_data();
     function layouts() {
@@ -7601,9 +7601,9 @@ var require_main82 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/blas/base/layouts/lib/enum.js
+// node_modules/@stdlib/blas/base/layouts/lib/enum.js
 var require_enum = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/blas/base/layouts/lib/enum.js"(exports, module) {
+  "node_modules/@stdlib/blas/base/layouts/lib/enum.js"(exports, module) {
     "use strict";
     function enumerated() {
       return {
@@ -7617,9 +7617,9 @@ var require_enum = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/blas/base/layouts/lib/index.js
+// node_modules/@stdlib/blas/base/layouts/lib/index.js
 var require_lib97 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/blas/base/layouts/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/blas/base/layouts/lib/index.js"(exports, module) {
     "use strict";
     var setReadOnly = require_lib5();
     var main = require_main82();
@@ -7629,9 +7629,9 @@ var require_lib97 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/blas/base/assert/is-layout/lib/main.js
+// node_modules/@stdlib/blas/base/assert/is-layout/lib/main.js
 var require_main83 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/blas/base/assert/is-layout/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/blas/base/assert/is-layout/lib/main.js"(exports, module) {
     "use strict";
     var contains = require_lib96().factory;
     var layouts = require_lib97();
@@ -7640,18 +7640,18 @@ var require_main83 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/blas/base/assert/is-layout/lib/index.js
+// node_modules/@stdlib/blas/base/assert/is-layout/lib/index.js
 var require_lib98 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/blas/base/assert/is-layout/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/blas/base/assert/is-layout/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main83();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/blas/base/transpose-operations/lib/data.json
+// node_modules/@stdlib/blas/base/transpose-operations/lib/data.json
 var require_data2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/blas/base/transpose-operations/lib/data.json"(exports, module) {
+  "node_modules/@stdlib/blas/base/transpose-operations/lib/data.json"(exports, module) {
     module.exports = [
       "no-transpose",
       "transpose",
@@ -7660,9 +7660,9 @@ var require_data2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/blas/base/transpose-operations/lib/main.js
+// node_modules/@stdlib/blas/base/transpose-operations/lib/main.js
 var require_main84 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/blas/base/transpose-operations/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/blas/base/transpose-operations/lib/main.js"(exports, module) {
     "use strict";
     var DATA = require_data2();
     function layouts() {
@@ -7672,9 +7672,9 @@ var require_main84 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/blas/base/transpose-operations/lib/enum.js
+// node_modules/@stdlib/blas/base/transpose-operations/lib/enum.js
 var require_enum2 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/blas/base/transpose-operations/lib/enum.js"(exports, module) {
+  "node_modules/@stdlib/blas/base/transpose-operations/lib/enum.js"(exports, module) {
     "use strict";
     function enumerated() {
       return {
@@ -7690,9 +7690,9 @@ var require_enum2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/blas/base/transpose-operations/lib/index.js
+// node_modules/@stdlib/blas/base/transpose-operations/lib/index.js
 var require_lib99 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/blas/base/transpose-operations/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/blas/base/transpose-operations/lib/index.js"(exports, module) {
     "use strict";
     var setReadOnly = require_lib5();
     var main = require_main84();
@@ -7702,9 +7702,9 @@ var require_lib99 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/blas/base/assert/is-transpose-operation/lib/main.js
+// node_modules/@stdlib/blas/base/assert/is-transpose-operation/lib/main.js
 var require_main85 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/blas/base/assert/is-transpose-operation/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/blas/base/assert/is-transpose-operation/lib/main.js"(exports, module) {
     "use strict";
     var contains = require_lib96().factory;
     var ops = require_lib99();
@@ -7713,18 +7713,18 @@ var require_main85 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/blas/base/assert/is-transpose-operation/lib/index.js
+// node_modules/@stdlib/blas/base/assert/is-transpose-operation/lib/index.js
 var require_lib100 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/blas/base/assert/is-transpose-operation/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/blas/base/assert/is-transpose-operation/lib/index.js"(exports, module) {
     "use strict";
     var main = require_main85();
     module.exports = main;
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/math/base/special/fast/max/lib/main.js
+// node_modules/@stdlib/math/base/special/fast/max/lib/main.js
 var require_main86 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/math/base/special/fast/max/lib/main.js"(exports, module) {
+  "node_modules/@stdlib/math/base/special/fast/max/lib/main.js"(exports, module) {
     "use strict";
     function max(x, y) {
       if (x > y) {
@@ -7736,18 +7736,18 @@ var require_main86 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/node_modules/@stdlib/math/base/special/fast/max/lib/index.js
+// node_modules/@stdlib/math/base/special/fast/max/lib/index.js
 var require_lib101 = __commonJS({
-  "../../dev/rreusser/notes/node_modules/@stdlib/math/base/special/fast/max/lib/index.js"(exports, module) {
+  "node_modules/@stdlib/math/base/special/fast/max/lib/index.js"(exports, module) {
     "use strict";
     var max = require_main86();
     module.exports = max;
   }
 });
 
-// ../../dev/rreusser/notes/lib/blas/base/dnrm2/lib/base.js
+// node_modules/blapack/lib/blas/base/dnrm2/lib/base.js
 var require_base = __commonJS({
-  "../../dev/rreusser/notes/lib/blas/base/dnrm2/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/blas/base/dnrm2/lib/base.js"(exports, module) {
     "use strict";
     var TSML = 14916681462400413e-170;
     var TBIG = 1997919072202235e131;
@@ -7822,9 +7822,9 @@ var require_base = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/blas/base/dscal/lib/base.js
+// node_modules/blapack/lib/blas/base/dscal/lib/base.js
 var require_base2 = __commonJS({
-  "../../dev/rreusser/notes/lib/blas/base/dscal/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/blas/base/dscal/lib/base.js"(exports, module) {
     "use strict";
     var M = 5;
     function dscal(N, da, x, strideX, offsetX) {
@@ -7866,9 +7866,9 @@ var require_base2 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dlamch/lib/base.js
+// node_modules/blapack/lib/lapack/base/dlamch/lib/base.js
 var require_base3 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dlamch/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dlamch/lib/base.js"(exports, module) {
     "use strict";
     var EPS = 11102230246251565e-32;
     var SFMIN = 22250738585072014e-324;
@@ -7928,9 +7928,9 @@ var require_base3 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dlapy2/lib/base.js
+// node_modules/blapack/lib/lapack/base/dlapy2/lib/base.js
 var require_base4 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dlapy2/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dlapy2/lib/base.js"(exports, module) {
     "use strict";
     function dlapy2(x, y) {
       var xabs;
@@ -7956,9 +7956,9 @@ var require_base4 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dlarfg/lib/base.js
+// node_modules/blapack/lib/lapack/base/dlarfg/lib/base.js
 var require_base5 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dlarfg/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dlarfg/lib/base.js"(exports, module) {
     "use strict";
     var dnrm2 = require_base();
     var dscal = require_base2();
@@ -8008,9 +8008,9 @@ var require_base5 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/blas/base/dgemv/lib/base.js
+// node_modules/blapack/lib/blas/base/dgemv/lib/base.js
 var require_base6 = __commonJS({
-  "../../dev/rreusser/notes/lib/blas/base/dgemv/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/blas/base/dgemv/lib/base.js"(exports, module) {
     "use strict";
     function dgemv(trans, M, N, alpha, A, strideA1, strideA2, offsetA, x, strideX, offsetX, beta, y, strideY, offsetY) {
       var noTrans;
@@ -8087,9 +8087,9 @@ var require_base6 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/blas/base/dger/lib/base.js
+// node_modules/blapack/lib/blas/base/dger/lib/base.js
 var require_base7 = __commonJS({
-  "../../dev/rreusser/notes/lib/blas/base/dger/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/blas/base/dger/lib/base.js"(exports, module) {
     "use strict";
     function dger(M, N, alpha, x, strideX, offsetX, y, strideY, offsetY, A, strideA1, strideA2, offsetA) {
       var temp;
@@ -8118,9 +8118,9 @@ var require_base7 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/iladlr/lib/base.js
+// node_modules/blapack/lib/lapack/base/iladlr/lib/base.js
 var require_base8 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/iladlr/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/iladlr/lib/base.js"(exports, module) {
     "use strict";
     function iladlr(M, N, A, strideA1, strideA2, offsetA) {
       var result;
@@ -8148,9 +8148,9 @@ var require_base8 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/iladlc/lib/base.js
+// node_modules/blapack/lib/lapack/base/iladlc/lib/base.js
 var require_base9 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/iladlc/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/iladlc/lib/base.js"(exports, module) {
     "use strict";
     function iladlc(M, N, A, strideA1, strideA2, offsetA) {
       var i;
@@ -8174,9 +8174,9 @@ var require_base9 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dlarf/lib/base.js
+// node_modules/blapack/lib/lapack/base/dlarf/lib/base.js
 var require_base10 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dlarf/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dlarf/lib/base.js"(exports, module) {
     "use strict";
     var dgemv = require_base6();
     var dger = require_base7();
@@ -8225,9 +8225,9 @@ var require_base10 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dgeqr2/lib/base.js
+// node_modules/blapack/lib/lapack/base/dgeqr2/lib/base.js
 var require_base11 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dgeqr2/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dgeqr2/lib/base.js"(exports, module) {
     "use strict";
     var dlarfg = require_base5();
     var dlarf = require_base10();
@@ -8253,9 +8253,9 @@ var require_base11 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/blas/base/dcopy/lib/base.js
+// node_modules/blapack/lib/blas/base/dcopy/lib/base.js
 var require_base12 = __commonJS({
-  "../../dev/rreusser/notes/lib/blas/base/dcopy/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/blas/base/dcopy/lib/base.js"(exports, module) {
     "use strict";
     var M = 7;
     function dcopy(N, x, strideX, offsetX, y, strideY, offsetY) {
@@ -8304,9 +8304,9 @@ var require_base12 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/blas/base/dgemm/lib/base.js
+// node_modules/blapack/lib/blas/base/dgemm/lib/base.js
 var require_base13 = __commonJS({
-  "../../dev/rreusser/notes/lib/blas/base/dgemm/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/blas/base/dgemm/lib/base.js"(exports, module) {
     "use strict";
     function dgemm(transa, transb, M, N, K, alpha, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB, beta, C, strideC1, strideC2, offsetC) {
       var nota;
@@ -8454,9 +8454,9 @@ var require_base13 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/blas/base/dtrmm/lib/base.js
+// node_modules/blapack/lib/blas/base/dtrmm/lib/base.js
 var require_base14 = __commonJS({
-  "../../dev/rreusser/notes/lib/blas/base/dtrmm/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/blas/base/dtrmm/lib/base.js"(exports, module) {
     "use strict";
     function dtrmm(side, uplo, transa, diag, M, N, alpha, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB) {
       var nounit;
@@ -8654,9 +8654,9 @@ var require_base14 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dlarfb/lib/base.js
+// node_modules/blapack/lib/lapack/base/dlarfb/lib/base.js
 var require_base15 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dlarfb/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dlarfb/lib/base.js"(exports, module) {
     "use strict";
     var dcopy = require_base12();
     var dgemm = require_base13();
@@ -8829,9 +8829,9 @@ var require_base15 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/blas/base/dtrmv/lib/base.js
+// node_modules/blapack/lib/blas/base/dtrmv/lib/base.js
 var require_base16 = __commonJS({
-  "../../dev/rreusser/notes/lib/blas/base/dtrmv/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/blas/base/dtrmv/lib/base.js"(exports, module) {
     "use strict";
     function dtrmv(uplo, trans, diag, N, A, strideA1, strideA2, offsetA, x, strideX, offsetX) {
       var nounit;
@@ -8928,9 +8928,9 @@ var require_base16 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dlarft/lib/base.js
+// node_modules/blapack/lib/lapack/base/dlarft/lib/base.js
 var require_base17 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dlarft/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dlarft/lib/base.js"(exports, module) {
     "use strict";
     var dgemv = require_base6();
     var dtrmv = require_base16();
@@ -9050,9 +9050,9 @@ var require_base17 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dgeqrf/lib/base.js
+// node_modules/blapack/lib/lapack/base/dgeqrf/lib/base.js
 var require_base18 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dgeqrf/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dgeqrf/lib/base.js"(exports, module) {
     "use strict";
     var dgeqr2 = require_base11();
     var dlarfb = require_base15();
@@ -9106,9 +9106,9 @@ var require_base18 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dgelq2/lib/base.js
+// node_modules/blapack/lib/lapack/base/dgelq2/lib/base.js
 var require_base19 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dgelq2/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dgelq2/lib/base.js"(exports, module) {
     "use strict";
     var dlarfg = require_base5();
     var dlarf = require_base10();
@@ -9154,9 +9154,9 @@ var require_base19 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dgelqf/lib/base.js
+// node_modules/blapack/lib/lapack/base/dgelqf/lib/base.js
 var require_base20 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dgelqf/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dgelqf/lib/base.js"(exports, module) {
     "use strict";
     var Float64Array2 = require_lib22();
     var dgelq2 = require_base19();
@@ -9213,9 +9213,9 @@ var require_base20 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dorm2r/lib/base.js
+// node_modules/blapack/lib/lapack/base/dorm2r/lib/base.js
 var require_base21 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dorm2r/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dorm2r/lib/base.js"(exports, module) {
     "use strict";
     var dlarf = require_base10();
     function dorm2r(side, trans, M, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWORK, offsetWORK) {
@@ -9272,9 +9272,9 @@ var require_base21 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dormqr/lib/base.js
+// node_modules/blapack/lib/lapack/base/dormqr/lib/base.js
 var require_base22 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dormqr/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dormqr/lib/base.js"(exports, module) {
     "use strict";
     var dlarfb = require_base15();
     var dlarft = require_base17();
@@ -9354,9 +9354,9 @@ var require_base22 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dorml2/lib/base.js
+// node_modules/blapack/lib/lapack/base/dorml2/lib/base.js
 var require_base23 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dorml2/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dorml2/lib/base.js"(exports, module) {
     "use strict";
     var dlarf = require_base10();
     function dorml2(side, trans, M, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWORK, offsetWORK) {
@@ -9411,9 +9411,9 @@ var require_base23 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dormlq/lib/base.js
+// node_modules/blapack/lib/lapack/base/dormlq/lib/base.js
 var require_base24 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dormlq/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dormlq/lib/base.js"(exports, module) {
     "use strict";
     var dlarfb = require_base15();
     var dlarft = require_base17();
@@ -9501,9 +9501,9 @@ var require_base24 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dlassq/lib/base.js
+// node_modules/blapack/lib/lapack/base/dlassq/lib/base.js
 var require_base25 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dlassq/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dlassq/lib/base.js"(exports, module) {
     "use strict";
     var TSML = Math.pow(2, -511);
     var TBIG = Math.pow(2, 486);
@@ -9618,9 +9618,9 @@ var require_base25 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dlange/lib/base.js
+// node_modules/blapack/lib/lapack/base/dlange/lib/base.js
 var require_base26 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dlange/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dlange/lib/base.js"(exports, module) {
     "use strict";
     var dlassq = require_base25();
     function dlange(norm, M, N, A, strideA1, strideA2, offsetA, WORK, strideWORK, offsetWORK) {
@@ -9701,9 +9701,9 @@ var require_base26 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dlascl/lib/base.js
+// node_modules/blapack/lib/lapack/base/dlascl/lib/base.js
 var require_base27 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dlascl/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dlascl/lib/base.js"(exports, module) {
     "use strict";
     var dlamch = require_base3();
     function dlascl(type, kl, ku, cfrom, cto, M, N, A, strideA1, strideA2, offsetA) {
@@ -9848,9 +9848,9 @@ var require_base27 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dlaset/lib/base.js
+// node_modules/blapack/lib/lapack/base/dlaset/lib/base.js
 var require_base28 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dlaset/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dlaset/lib/base.js"(exports, module) {
     "use strict";
     function dlaset(uplo, M, N, alpha, beta, A, strideA1, strideA2, offsetA) {
       var idx;
@@ -9894,9 +9894,9 @@ var require_base28 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/blas/base/dtrsm/lib/base.js
+// node_modules/blapack/lib/blas/base/dtrsm/lib/base.js
 var require_base29 = __commonJS({
-  "../../dev/rreusser/notes/lib/blas/base/dtrsm/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/blas/base/dtrsm/lib/base.js"(exports, module) {
     "use strict";
     function dtrsm(side, uplo, transa, diag, M, N, alpha, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB) {
       var nounit;
@@ -10119,9 +10119,9 @@ var require_base29 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dtrtrs/lib/base.js
+// node_modules/blapack/lib/lapack/base/dtrtrs/lib/base.js
 var require_base30 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dtrtrs/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dtrtrs/lib/base.js"(exports, module) {
     "use strict";
     var dtrsm = require_base29();
     function dtrtrs(uplo, trans, diag, N, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB) {
@@ -10149,9 +10149,9 @@ var require_base30 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dgels/lib/base.js
+// node_modules/blapack/lib/lapack/base/dgels/lib/base.js
 var require_base31 = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dgels/lib/base.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dgels/lib/base.js"(exports, module) {
     "use strict";
     var Float64Array2 = require_lib22();
     var dgeqrf = require_base18();
@@ -10281,9 +10281,9 @@ var require_base31 = __commonJS({
   }
 });
 
-// ../../dev/rreusser/notes/lib/lapack/base/dgels/lib/dgels.js
+// node_modules/blapack/lib/lapack/base/dgels/lib/dgels.js
 var require_dgels = __commonJS({
-  "../../dev/rreusser/notes/lib/lapack/base/dgels/lib/dgels.js"(exports, module) {
+  "node_modules/blapack/lib/lapack/base/dgels/lib/dgels.js"(exports, module) {
     "use strict";
     var isLayout = require_lib98();
     var format = require_lib3();
@@ -10345,23 +10345,6 @@ var export_dgels = import_dgels.default;
 export {
   export_dgels as dgels
 };
-/**
-* @license Apache-2.0
-*
-* Copyright (c) 2025 The Stdlib Authors.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*    http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
 /*! Bundled license information:
 
 @stdlib/utils/define-property/lib/define_property.js:
@@ -10707,6 +10690,56 @@ export {
   * @license Apache-2.0
   *
   * Copyright (c) 2023 The Stdlib Authors.
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License");
+  * you may not use this file except in compliance with the License.
+  * You may obtain a copy of the License at
+  *
+  *    http://www.apache.org/licenses/LICENSE-2.0
+  *
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  *)
+
+blapack/lib/blas/base/dnrm2/lib/base.js:
+blapack/lib/blas/base/dscal/lib/base.js:
+blapack/lib/lapack/base/dlamch/lib/base.js:
+blapack/lib/lapack/base/dlapy2/lib/base.js:
+blapack/lib/lapack/base/dlarfg/lib/base.js:
+blapack/lib/blas/base/dgemv/lib/base.js:
+blapack/lib/blas/base/dger/lib/base.js:
+blapack/lib/lapack/base/iladlr/lib/base.js:
+blapack/lib/lapack/base/iladlc/lib/base.js:
+blapack/lib/lapack/base/dlarf/lib/base.js:
+blapack/lib/lapack/base/dgeqr2/lib/base.js:
+blapack/lib/blas/base/dcopy/lib/base.js:
+blapack/lib/blas/base/dgemm/lib/base.js:
+blapack/lib/blas/base/dtrmm/lib/base.js:
+blapack/lib/lapack/base/dlarfb/lib/base.js:
+blapack/lib/blas/base/dtrmv/lib/base.js:
+blapack/lib/lapack/base/dlarft/lib/base.js:
+blapack/lib/lapack/base/dgeqrf/lib/base.js:
+blapack/lib/lapack/base/dgelq2/lib/base.js:
+blapack/lib/lapack/base/dgelqf/lib/base.js:
+blapack/lib/lapack/base/dorm2r/lib/base.js:
+blapack/lib/lapack/base/dormqr/lib/base.js:
+blapack/lib/lapack/base/dorml2/lib/base.js:
+blapack/lib/lapack/base/dormlq/lib/base.js:
+blapack/lib/lapack/base/dlassq/lib/base.js:
+blapack/lib/lapack/base/dlange/lib/base.js:
+blapack/lib/lapack/base/dlascl/lib/base.js:
+blapack/lib/lapack/base/dlaset/lib/base.js:
+blapack/lib/blas/base/dtrsm/lib/base.js:
+blapack/lib/lapack/base/dtrtrs/lib/base.js:
+blapack/lib/lapack/base/dgels/lib/base.js:
+blapack/lib/lapack/base/dgels/lib/dgels.js:
+  (**
+  * @license Apache-2.0
+  *
+  * Copyright (c) 2025 The Stdlib Authors.
   *
   * Licensed under the Apache License, Version 2.0 (the "License");
   * you may not use this file except in compliance with the License.

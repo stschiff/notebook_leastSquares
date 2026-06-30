@@ -15,8 +15,8 @@
     Let us first simulate some data under a simple linear model:
   </script>
   <script type="module" pinned>
-    import normal from 'npm:@stdlib/random/base/normal';
-    import linspace from 'npm:@stdlib/array/base/linspace';
+    import normal from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-normal@esm/index.mjs';
+    import linspace from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-linspace@esm/index.mjs';
     const x = linspace( 0, 4, 20 );
     const data = x.map( xi => ({
       x: xi,
@@ -50,6 +50,6 @@
     const rss = b.slice(1).reduce( (acc, val) => acc + val*val, 0 );
   </script>
   <script type="text/markdown">
-    The fitted slope is ${fittedSlope}, and the residual sum of squares (RSS) is ${rss}. The standard error of the slope can be computed as $\sqrt{RSS / (n - 2)}$, where $n$ is the number of data points. In this case, the standard error is ${Math.sqrt(rss / (data.length - 2))}.
+    The fitted slope is ${fittedSlope}, and the residual sum of squares (RSS) is ${rss}. The standard error of the slope can be computed as ${tex`\sqrt{RSS / (n - 2)}`}, where _n_ is the number of data points. In this case, the standard error is ${Math.sqrt(rss / (data.length - 2))}.
   </script>
 </notebook>
