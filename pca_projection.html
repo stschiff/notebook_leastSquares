@@ -8,12 +8,167 @@
     We here test out how to project plink-formatted genotype data onto SNP weights. We first load the SNP weights into a table:
   </script>
   <script id="3" type="module" pinned="">
-    const weightDat = FileAttachment("weights_joined.tsv").tsv({typed: true});
+    const weightDat = FileAttachment("weights_joined.tsv").tsv({array: true, typed: true});
   </script>
   <script id="4" type="text/x-typescript" pinned="">
     Inputs.table(weightDat)
   </script>
   <script id="5" type="text/markdown" pinned="">
-    We now load some genotype data
+    We now load some genotype data:
+  </script>
+  <script id="8" type="text/x-typescript" pinned="">
+    const bimDat = FileAttachment("2024_Gretzinger_EarlyCelts.bim").tsv({array: true, typed:true});
+    const famDat = FileAttachment("2024_Gretzinger_EarlyCelts.fam").tsv({array: true, typed:true});
+  </script>
+  <script id="10" type="text/x-typescript" pinned="">
+    Inputs.table(bimDat)
+  </script>
+  <script id="16" type="text/x-typescript" pinned="">
+    Inputs.table(famDat)
+  </script>
+  <script id="17" type="text/x-typescript" pinned="">
+    const numSnps = bimDat.length;
+    const numInds = famDat.length;
+  </script>
+  <script id="13" type="text/x-typescript" pinned="">
+    const bedDat = FileAttachment("2024_Gretzinger_EarlyCelts.bed")
+      .arrayBuffer()
+      .then(a => readBedData(a, numSnps, numInds));
+  </script>
+  <script id="14" type="text/x-typescript" pinned="">
+    bedDat
+  </script>
+  <script id="6" type="text/markdown">
+    # Appendix
+  </script>
+  <script id="7" type="text/x-typescript" pinned="">
+    function getOverlapMasks(plinkBimData, snpWeights) {
+        let snpWeightMask = new Uint8Array(snpWeights.numSNPs);
+        let plinkMask = new Uint8Array(plinkBimData.length);
+        let flipMask = new Uint8Array(plinkBimData.length);
+        let plinkIndex = 0;
+        let removedStrandAmbiguous = 0;
+        let removedInconsistent = 0;
+
+        for (let i = 0; i < snpWeights.numSNPs; i++) {
+            while (plinkBimData.chromosomes[plinkIndex] < snpWeights.chromosomes[i] ||
+                   (plinkBimData.chromosomes[plinkIndex] == snpWeights.chromosomes[i] &&
+                    plinkBimData.positions[plinkIndex] < snpWeights.positions[i])) {
+                plinkIndex++;
+            }
+            if (plinkBimData.chromosomes[plinkIndex] === snpWeights.chromosomes[i] &&
+                plinkBimData.positions[plinkIndex] === snpWeights.positions[i]) {
+                const pa1 = plinkBimData.alleles1[plinkIndex];
+                const pa2 = plinkBimData.alleles2[plinkIndex];
+                const sa1 = String.fromCharCode(snpWeights.alleles1[i]);
+                const sa2 = String.fromCharCode(snpWeights.alleles2[i]);
+                if (!strandAmbiguous(sa1, sa2)) {
+                    if (isConsistent(sa1, pa1) && isConsistent(sa2, pa2) ||
+                        isConsistent(sa1, complement(pa1)) && isConsistent(sa2, complement(pa2))) {
+                        snpWeightMask.set(1, i);
+                        plinkMask.set(1, plinkIndex);
+                    } else if (isConsistent(sa1, pa2) && isConsistent(sa2, pa1) ||
+                               isConsistent(sa1, complement(pa2)) && isConsistent(sa2, complement(pa1))) {
+                        snpWeightMask.set(1, i);
+                        plinkMask.set(1, plinkIndex);
+                        flipMask.set(1, plinkIndex);
+                    } else {
+                        removedInconsistent++;
+                    }
+                }
+                else {
+                    removedStrandAmbiguous++;
+                }
+            }
+            if(plinkIndex >= plinkBimData.length) {
+                break;
+            }
+        }
+        return { snpWeightMask, plinkMask, flipMask, removedStrandAmbiguous, removedInconsistent };
+    }
+
+    function strandAmbiguous(a1, a2) {
+        return !(a1 + a2 === 'AT' ||
+               a1 + a2 === 'TA' ||
+               a1 + a2 === 'CG' ||
+               a1 + a2 === 'GC');
+    }
+
+    function isConsistent(a1, a2) {
+        return (  a1 === a2
+               || (a1 !== 'N' && a2 === 'N')
+               || (a1 === 'N' && a2 !== 'N')
+               );
+    }
+
+    function complement(a) {
+        switch (a) {
+            case 'A':
+                return 'T';
+            case 'T':
+                return 'A';
+            case 'C':
+                return 'G';
+            case 'G':
+                return 'C';
+            default:
+                return a; // Return the same character for non-ACGT bases
+        }
+    }
+  </script>
+  <script id="9" type="text/x-typescript" pinned="">
+    function readBimData(bimText) {
+        const lines = bimText.trim().split('\n');
+        const nrSNPs = lines.length;
+        let chromosomes = new Uint8Array(nrSNPs);
+        let positions = new Uint32Array(nrSNPs);
+        let snpIDs = new Array(nrSNPs);
+        let alleles1 = new Uint8Array(nrSNPs);
+        let alleles2 = new Uint8Array(nrSNPs);
+        for (let i = 0; i < nrSNPs; i++) {
+            const fields = lines[i].trim().split(/\s+/);
+            chromosomes[i] = parseInt(fields[0]);
+            if (isNaN(chromosomes[i]) || chromosomes[i] < 1 || chromosomes[i] > 25) {
+                throw new Error(`Invalid chromosome for SNP ${snpIDs[i]}: ${fields[0]}`);
+            }
+            snpIDs[i] = fields[1];
+            positions[i] = parseInt(fields[3]);
+            if (isNaN(positions[i])) {
+                throw new Error(`Invalid position for SNP ${snpIDs[i]}: ${fields[3]}`);
+            }
+            alleles1[i] = fields[4].charCodeAt(0);
+            alleles2[i] = fields[5].charCodeAt(0);
+        }
+        console.log(`Loaded ${nrSNPs} SNPs from BIM file.`);
+        return { snpIDs, chromosomes, positions, alleles1, alleles2 };
+    }
+  </script>
+  <script id="15" type="text/x-typescript" pinned="">
+    function readBedData(bedArrayBuffer, numSnps, numInds) {
+        const bytes = new Uint8Array(bedArrayBuffer);
+        if (bytes.length < 3 || bytes[0] !== 0b01101100 || bytes[1] !== 0b00011011 || bytes[2] !== 0b00000001) {
+            throw new Error("Invalid .bed file: incorrect magic numbers");
+        }
+        let returnArray = new Uint8Array(numSnps * numInds);
+        let blockSize = Math.ceil(numInds / 4);
+        for (let i = 0; i < numSnps; i++) {
+            for (let j = 0; j < numInds; j++) {
+                const byteIndex = 3 + i * blockSize + Math.floor(j / 4);
+                const bitOffset = (j % 4) * 2;
+                const genotypeBits = (bytes[byteIndex] >> bitOffset) & 0b11;
+                switch (genotypeBits) {
+                    case 0b00:
+                        returnArray[i * numInds + j] = 0; // Homozygous reference
+                    case 0b10:
+                        returnArray[i * numInds + j] = 1; // Heterozygous
+                    case 0b11:
+                        returnArray[i * numInds + j] = 2; // Homozygous alternate
+                    case 0b01:
+                        returnArray[i * numInds + j] = 3; // Missing genotype
+                }
+            }
+        }
+        return returnArray;
+    }
   </script>
 </notebook>
