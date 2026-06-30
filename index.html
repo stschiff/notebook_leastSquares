@@ -1,20 +1,19 @@
 <!doctype html>
-
-<notebook>
-  <script type="text/markdown">
+<notebook theme="air">
+  <title>Least Squares</title>
+  <script id="1" type="text/markdown">
     # Least Squares
-    
+
     The least-squares problem is a fundamental problem in numerical linear algebra and statistics. Given a matrix `A` and a vector `b`, the least-squares problem is to find a vector `x` that minimizes the Euclidean norm of the residual `R = b - A*x`. The solution to this problem can be computed using the `dgels` function, which is part of the LAPACK library.
 
     The `dgels` function computes the least-squares solution to a linear system of equations. It can handle both overdetermined systems (where there are more equations than unknowns) and underdetermined systems (where there are more unknowns than equations). The function uses QR factorization to compute the solution efficiently.
 
     In this notebook, we will demonstrate how to use the `dgels` function to solve a least-squares problem in JavaScript. We will simulate some data, fit a linear model to the data using least squares, and visualize the results.
   </script>
-
-  <script type="text/markdown">
+  <script id="2" type="text/markdown">
     Let us first simulate some data under a simple linear model:
   </script>
-  <script type="module" pinned>
+  <script id="3" type="module" pinned="">
     import normal from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-normal@esm/index.mjs';
     import linspace from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-linspace@esm/index.mjs';
     const x = linspace( 0, 4, 20 );
@@ -24,10 +23,10 @@
     }));
     display(data);
   </script>
-  <script type="text/markdown">
+  <script id="4" type="text/markdown">
     and plot the data:
   </script>
-  <script type="module" pinned>
+  <script id="5" type="module" pinned="">
     Plot.plot({
       marks: [
         Plot.dot(data, { x: "x", y: "y", fill: "steelblue" }),
@@ -36,8 +35,7 @@
       ]
     })
   </script>
-  with the red line indicating the true underlying model. We can now use the `dgels` function to compute the least-squares fit to the data:
-  <script type="module" pinned>
+  <script id="6" type="module" pinned="">
     import { dgels } from "./dgels.browser.js";
     const A = new Float64Array( data.length );
     const b = new Float64Array( data.length );
@@ -49,7 +47,7 @@
     const fittedSlope = b[0];
     const rss = b.slice(1).reduce( (acc, val) => acc + val*val, 0 );
   </script>
-  <script type="text/markdown">
+  <script id="7" type="text/markdown">
     The fitted slope is ${fittedSlope}, and the residual sum of squares (RSS) is ${rss}. The standard error of the slope can be computed as ${tex`\sqrt{RSS / (n - 2)}`}, where _n_ is the number of data points. In this case, the standard error is ${Math.sqrt(rss / (data.length - 2))}.
   </script>
 </notebook>

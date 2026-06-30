@@ -1,0 +1,19 @@
+<!doctype html>
+<notebook theme="cotton">
+  <title>PCA Projection</title>
+  <script id="1" type="text/markdown">
+    # PCA Projection
+  </script>
+  <script id="2" type="text/markdown">
+    We here test out how to project plink-formatted genotype data onto SNP weights. We first load the SNP weights into a table:
+  </script>
+  <script id="3" type="module" pinned="">
+    const weightDat = FileAttachment("weights_joined.tsv").tsv({typed: true});
+  </script>
+  <script id="4" type="text/x-typescript" pinned="">
+    Inputs.table(weightDat)
+  </script>
+  <script id="5" type="text/markdown" pinned="">
+    We now load some genotype data
+  </script>
+</notebook>
