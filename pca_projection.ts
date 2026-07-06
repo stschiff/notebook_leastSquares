@@ -1,6 +1,46 @@
-import { dgels } from './dgels.browser.js'
+import dgels from '@rreusser/blapack/lapack/base/dgels';
 
-export function readBimData(bimText) {
+interface BimData {
+    snpIDs: string[];
+    chromosomes: Uint8Array;
+    positions: Uint32Array;
+    alleles1: Uint8Array;
+    alleles2: Uint8Array;
+}
+
+interface FamData {
+    indNames: string[];
+    popNames: string[];
+}
+
+interface SnpWeights {
+    snpIDs: string[];
+    chromosomes: Uint8Array;
+    positions: Uint32Array;
+    alleles1: Uint8Array;
+    alleles2: Uint8Array;
+    pcWeights: Float32Array;
+    frequencies: Float32Array;
+    numSNPs: number;
+    numPCs: number;
+}
+
+interface OverlapMasks {
+    snpWeightMask: Uint8Array;
+    plinkMask: Uint8Array;
+    flipMask: Uint8Array;
+    removedStrandAmbiguous: number;
+    removedInconsistent: number;
+    nrIncluded: number;
+    nrToBeFlipped: number;
+}
+
+interface ProjectionResult {
+    pcCoordinates: number[];
+    nonMissingCount: number;
+}
+
+export function readBimData(bimText: string): BimData {
     const lines = bimText.trim().split('\n');
     const nrSNPs = lines.length;
     let chromosomes = new Uint8Array(nrSNPs);
@@ -26,7 +66,7 @@ export function readBimData(bimText) {
     return { snpIDs, chromosomes, positions, alleles1, alleles2 };
 }
 
-export function readFamData(famText) {
+export function readFamData(famText: string): FamData {
     const lines = famText.trim().split('\n');
     const nrSamples = lines.length;
     let popNames = new Array(nrSamples);
@@ -40,7 +80,7 @@ export function readFamData(famText) {
     return { indNames, popNames };
 }
   
-export function readBedData(bedArrayBuffer, numSnps, numInds) {
+export function readBedData(bedArrayBuffer: ArrayBuffer, numSnps: number, numInds: number): Uint8Array {
     const bytes = new Uint8Array(bedArrayBuffer);
     if (bytes.length < 3 || bytes[0] !== 0b01101100 || bytes[1] !== 0b00011011 || bytes[2] !== 0b00000001) {
         throw new Error("Invalid .bed file: incorrect magic numbers");
@@ -68,7 +108,7 @@ export function readBedData(bedArrayBuffer, numSnps, numInds) {
     return returnArray;
 }
 
-export function readSnpWeights(snpWeightText) {
+export function readSnpWeights(snpWeightText: string): SnpWeights {
     const lines = snpWeightText.trim().split('\n');
     const numSNPs = lines.length;
     let snpIDs = new Array(numSNPs);
@@ -115,7 +155,7 @@ export function readSnpWeights(snpWeightText) {
     return { snpIDs, chromosomes, positions, alleles1, alleles2, pcWeights, frequencies, numSNPs, numPCs };
 }
 
-export function getOverlapMasks(plinkBimData, snpWeights) {
+export function getOverlapMasks(plinkBimData: BimData, snpWeights: SnpWeights): OverlapMasks {
     let snpWeightMask = new Uint8Array(snpWeights.snpIDs.length);
     let plinkMask = new Uint8Array(plinkBimData.snpIDs.length);
     let flipMask = new Uint8Array(plinkBimData.snpIDs.length);
@@ -166,7 +206,7 @@ export function getOverlapMasks(plinkBimData, snpWeights) {
                 removedInconsistent, nrIncluded, nrToBeFlipped };
 }
 
-function strandAmbiguous(a1, a2) {
+function strandAmbiguous(a1: string, a2: string): boolean {
     // Bug 1 fix: returns true when the pair IS ambiguous (A/T or C/G), false otherwise
     return (a1 + a2 === 'AT' ||
             a1 + a2 === 'TA' ||
@@ -174,14 +214,14 @@ function strandAmbiguous(a1, a2) {
             a1 + a2 === 'GC');
 }
 
-function isConsistent(a1, a2) {
+function isConsistent(a1: string, a2: string): boolean {
     return (  a1 === a2
 //           || (a1 !== 'N' && a2 === 'N')
 //           || (a1 === 'N' && a2 !== 'N')
             );
 }
 
-function complement(a) {
+function complement(a: string): string {
     switch (a) {
         case 'A':
             return 'T';
@@ -196,58 +236,58 @@ function complement(a) {
     }
 }
 
-export function reducePcWeights(snpWeights, overlap) {
+export function reducePcWeights(snpWeights: SnpWeights, overlap: OverlapMasks): {pcWeights: Float32Array, frequencies: Float32Array} {
     if (snpWeights.numSNPs == overlap.nrIncluded) {
-    return {pcWeights: snpWeights.pcWeights,
-            frequencies: snpWeights.frequencies};
+        return {pcWeights: snpWeights.pcWeights,
+                frequencies: snpWeights.frequencies};
     } else {
-    let reducedIndex = 0;
-    const pcWeights = new Float32Array(overlap.nrIncluded * snpWeights.numPCs);
-    const frequencies = new Float32Array(overlap.nrIncluded);
-    for(let i = 0; i < snpWeights.numSNPs; i++) {
-        if(overlap.snpWeightMask[i]) {
-        for(let j = 0; j < snpWeights.numPCs; j++)
-            pcWeights[reducedIndex * snpWeights.numPCs + j] = snpWeights.pcWeights[i * snpWeights.numPCs + j];
-        frequencies[reducedIndex] = snpWeights.frequencies[i];
-        reducedIndex++;
+        let reducedIndex = 0;
+        const pcWeights = new Float32Array(overlap.nrIncluded * snpWeights.numPCs);
+        const frequencies = new Float32Array(overlap.nrIncluded);
+        for(let i = 0; i < snpWeights.numSNPs; i++) {
+            if(overlap.snpWeightMask[i]) {
+                for(let j = 0; j < snpWeights.numPCs; j++)
+                    pcWeights[reducedIndex * snpWeights.numPCs + j] = snpWeights.pcWeights[i * snpWeights.numPCs + j];
+                frequencies[reducedIndex] = snpWeights.frequencies[i];
+                reducedIndex++;
+            }
         }
-    }
-    return {pcWeights, frequencies};
+        return {pcWeights, frequencies};
     }
 }
 
-export function extractAndTransposeGenotypes(plinkBedDat, numSNPs, numInds, overlap) {
+export function extractAndTransposeGenotypes(plinkBedDat: Uint8Array, numSNPs: number, numInds: number, overlap: OverlapMasks): Uint8Array {
     const newGenotypeMatrix = new Uint8Array(numInds * overlap.nrIncluded); // we transpose the output
     let reducedIndex = 0;
     for(let i = 0; i < numSNPs; i++) {
-    if(overlap.plinkMask[i]) {
-        for(let j = 0; j < numInds; j++) {
-        const srcGeno = plinkBedDat[i * numInds + j];
-        const targetGeno = overlap.flipMask[i] ? flip(srcGeno) : srcGeno;
-        newGenotypeMatrix[j * overlap.nrIncluded + reducedIndex] = targetGeno; //transpose
+        if(overlap.plinkMask[i]) {
+            for(let j = 0; j < numInds; j++) {
+                const srcGeno = plinkBedDat[i * numInds + j];
+                const targetGeno = overlap.flipMask[i] ? flip(srcGeno) : srcGeno;
+                newGenotypeMatrix[j * overlap.nrIncluded + reducedIndex] = targetGeno; //transpose
+            }
+            reducedIndex++;
         }
-        reducedIndex++;
-    }
     }
     return newGenotypeMatrix;
 }
 
-function flip(geno) {
+function flip(geno: number): number {
     if(geno == 3) // missing
-    return 3;
+        return 3;
     else
-    return 2 - geno;
+        return 2 - geno;
 }
 
 export function projectSamples(
-        genotypeMatrix,
-        pcWeights,
-        frequencies,
-        numInds,
-        numPCs,
-        yScale,
-        eigenValues
-    ){
+        genotypeMatrix: Uint8Array,
+        pcWeights: Float32Array,
+        frequencies: Float32Array,
+        numInds: number,
+        numPCs: number,
+        yScale: number,
+        eigenValues: number[]    
+    ): ProjectionResult[] {
     let ret = [];
     const numSNPs = frequencies.length;
     const aBuf = new Float64Array(pcWeights.length);

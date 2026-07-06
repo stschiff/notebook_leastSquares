@@ -196,35 +196,6 @@
   </script>
   <script id="9" type="text/x-typescript" pinned="">
     import { readBimData, readFamData, readBedData, readSnpWeights, getOverlapMasks, reducePcWeights,
-           extractAndTransposeGenotypes, projectSamples } from './pca_projection.js';
-  </script>
-  <script id="60" type="text/x-typescript" pinned="">
-    const pc_eigenvalues = [18.320, 6.183, 4.083, 3.183, 2.588, 2.432, 2.166, 2.141, 2.125, 2.119]
-  </script>
-  <script id="103" type="module" pinned="">
-    // Try a dynamic import to get a more detailed error message
-    const importError = await import('./pca_projection.js').catch(e => e);
-    display(importError);
-  </script>
-  <script id="104" type="module" pinned="">
-    const resp = await fetch('./pca_projection.js');
-    display(`Status: ${resp.status} ${resp.statusText}`);
-    if (resp.ok) {
-      const text = await resp.text();
-      display(text.slice(0, 2000));
-    } else {
-      display("File not found or inaccessible.");
-    }
-  </script>
-  <script id="105" type="module" pinned="">
-    const resp2 = await fetch('./dgels.browser.js');
-    display(`Status: ${resp2.status} ${resp2.statusText}`);
-    if (resp2.ok) {
-      const text = await resp2.text();
-      display(`File size: ${text.length} chars`);
-      display(text.slice(0, 500));
-    } else {
-      display("File not found or inaccessible.");
-    }
+           extractAndTransposeGenotypes, projectSamples } from './pca_projection.browser.js';
   </script>
 </notebook>
