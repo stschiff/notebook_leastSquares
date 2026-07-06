@@ -525,11 +525,11 @@ var require_main3 = __commonJS({
     var interpolate = require_lib();
     var tokenize = require_lib2();
     var isString = require_is_string2();
-    function format(str) {
+    function format3(str) {
       var args;
       var i;
       if (!isString(str)) {
-        throw new TypeError(format("invalid argument. First argument must be a string. Value: `%s`.", str));
+        throw new TypeError(format3("invalid argument. First argument must be a string. Value: `%s`.", str));
       }
       args = [tokenize(str)];
       for (i = 1; i < arguments.length; i++) {
@@ -537,7 +537,7 @@ var require_main3 = __commonJS({
       }
       return interpolate.apply(null, args);
     }
-    module.exports = format;
+    module.exports = format3;
   }
 });
 
@@ -554,7 +554,7 @@ var require_lib3 = __commonJS({
 var require_polyfill = __commonJS({
   "node_modules/@stdlib/utils/define-property/lib/polyfill.js"(exports, module) {
     "use strict";
-    var format = require_lib3();
+    var format3 = require_lib3();
     var objectProtoype = Object.prototype;
     var toStr = objectProtoype.toString;
     var defineGetter = objectProtoype.__defineGetter__;
@@ -567,10 +567,10 @@ var require_polyfill = __commonJS({
       var hasGet;
       var hasSet;
       if (typeof obj !== "object" || obj === null || toStr.call(obj) === "[object Array]") {
-        throw new TypeError(format("invalid argument. First argument must be an object. Value: `%s`.", obj));
+        throw new TypeError(format3("invalid argument. First argument must be an object. Value: `%s`.", obj));
       }
       if (typeof descriptor !== "object" || descriptor === null || toStr.call(descriptor) === "[object Array]") {
-        throw new TypeError(format("invalid argument. Property descriptor must be an object. Value: `%s`.", descriptor));
+        throw new TypeError(format3("invalid argument. Property descriptor must be an object. Value: `%s`.", descriptor));
       }
       hasValue = "value" in descriptor;
       if (hasValue) {
@@ -970,10 +970,10 @@ var require_main14 = __commonJS({
   "node_modules/@stdlib/assert/tools/array-function/lib/main.js"(exports, module) {
     "use strict";
     var isArray = require_lib14();
-    var format = require_lib3();
+    var format3 = require_lib3();
     function arrayfcn(predicate) {
       if (typeof predicate !== "function") {
-        throw new TypeError(format("invalid argument. Must provide a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. Must provide a function. Value: `%s`.", predicate));
       }
       return every;
       function every(value) {
@@ -1022,11 +1022,11 @@ var require_main15 = __commonJS({
 var require_lib16 = __commonJS({
   "node_modules/@stdlib/assert/is-object-like/lib/index.js"(exports, module) {
     "use strict";
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var arrayfun = require_lib15();
     var main = require_main15();
     var isObjectLikeArray = arrayfun(main);
-    setReadOnly(main, "isObjectLikeArray", isObjectLikeArray);
+    setReadOnly2(main, "isObjectLikeArray", isObjectLikeArray);
     module.exports = main;
   }
 });
@@ -1080,10 +1080,10 @@ var require_regexp = __commonJS({
 var require_lib18 = __commonJS({
   "node_modules/@stdlib/regexp/function-name/lib/index.js"(exports, module) {
     "use strict";
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var main = require_main17();
     var REGEXP = require_regexp();
-    setReadOnly(main, "REGEXP", REGEXP);
+    setReadOnly2(main, "REGEXP", REGEXP);
     module.exports = main;
   }
 });
@@ -2287,12 +2287,12 @@ var require_main47 = __commonJS({
 var require_lib58 = __commonJS({
   "node_modules/@stdlib/assert/is-number/lib/index.js"(exports, module) {
     "use strict";
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var main = require_main47();
     var isPrimitive = require_primitive();
     var isObject = require_object();
-    setReadOnly(main, "isPrimitive", isPrimitive);
-    setReadOnly(main, "isObject", isObject);
+    setReadOnly2(main, "isPrimitive", isPrimitive);
+    setReadOnly2(main, "isObject", isObject);
     module.exports = main;
   }
 });
@@ -2403,12 +2403,12 @@ var require_main50 = __commonJS({
 var require_lib62 = __commonJS({
   "node_modules/@stdlib/assert/is-integer/lib/index.js"(exports, module) {
     "use strict";
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var main = require_main50();
     var isPrimitive = require_primitive2();
     var isObject = require_object2();
-    setReadOnly(main, "isPrimitive", isPrimitive);
-    setReadOnly(main, "isObject", isObject);
+    setReadOnly2(main, "isPrimitive", isPrimitive);
+    setReadOnly2(main, "isObject", isObject);
     module.exports = main;
   }
 });
@@ -2454,12 +2454,12 @@ var require_main51 = __commonJS({
 var require_lib63 = __commonJS({
   "node_modules/@stdlib/assert/is-nonnegative-integer/lib/index.js"(exports, module) {
     "use strict";
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var main = require_main51();
     var isPrimitive = require_primitive3();
     var isObject = require_object3();
-    setReadOnly(main, "isPrimitive", isPrimitive);
-    setReadOnly(main, "isObject", isObject);
+    setReadOnly2(main, "isPrimitive", isPrimitive);
+    setReadOnly2(main, "isObject", isObject);
     module.exports = main;
   }
 });
@@ -2648,12 +2648,12 @@ var require_main56 = __commonJS({
 var require_lib70 = __commonJS({
   "node_modules/@stdlib/assert/is-string/lib/index.js"(exports, module) {
     "use strict";
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var main = require_main56();
     var isPrimitive = require_primitive4();
     var isObject = require_object4();
-    setReadOnly(main, "isPrimitive", isPrimitive);
-    setReadOnly(main, "isObject", isObject);
+    setReadOnly2(main, "isPrimitive", isPrimitive);
+    setReadOnly2(main, "isObject", isObject);
     module.exports = main;
   }
 });
@@ -2662,14 +2662,14 @@ var require_lib70 = __commonJS({
 var require_lib71 = __commonJS({
   "node_modules/@stdlib/assert/is-string-array/lib/index.js"(exports, module) {
     "use strict";
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var arrayfun = require_lib15();
     var isString = require_lib70();
     var isPrimitiveArray = arrayfun(isString.isPrimitive);
     var isObjectArray = arrayfun(isString.isObject);
     var isStringArray = arrayfun(isString);
-    setReadOnly(isStringArray, "primitives", isPrimitiveArray);
-    setReadOnly(isStringArray, "objects", isObjectArray);
+    setReadOnly2(isStringArray, "primitives", isPrimitiveArray);
+    setReadOnly2(isStringArray, "objects", isObjectArray);
     module.exports = isStringArray;
   }
 });
@@ -2780,12 +2780,12 @@ var require_main58 = __commonJS({
 var require_lib73 = __commonJS({
   "node_modules/@stdlib/assert/is-boolean/lib/index.js"(exports, module) {
     "use strict";
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var main = require_main58();
     var isPrimitive = require_primitive5();
     var isObject = require_object5();
-    setReadOnly(main, "isPrimitive", isPrimitive);
-    setReadOnly(main, "isObject", isObject);
+    setReadOnly2(main, "isPrimitive", isPrimitive);
+    setReadOnly2(main, "isObject", isObject);
     module.exports = main;
   }
 });
@@ -2833,7 +2833,7 @@ var require_browser = __commonJS({
   "node_modules/@stdlib/utils/global/lib/browser.js"(exports, module) {
     "use strict";
     var isBoolean = require_lib73().isPrimitive;
-    var format = require_lib3();
+    var format3 = require_lib3();
     var getThis = require_codegen();
     var Self = require_self();
     var Win = require_window();
@@ -2841,7 +2841,7 @@ var require_browser = __commonJS({
     function getGlobal(codegen) {
       if (arguments.length) {
         if (!isBoolean(codegen)) {
-          throw new TypeError(format("invalid argument. Must provide a boolean. Value: `%s`.", codegen));
+          throw new TypeError(format3("invalid argument. Must provide a boolean. Value: `%s`.", codegen));
         }
         if (codegen) {
           return getThis();
@@ -3008,8 +3008,8 @@ var require_main61 = __commonJS({
     "use strict";
     var isNumber = require_lib58().isPrimitive;
     var defineProperty = require_lib4();
-    var setReadOnly = require_lib5();
-    var format = require_lib3();
+    var setReadOnly2 = require_lib5();
+    var format3 = require_lib3();
     var toStr = require_tostring4();
     var toJSON = require_tojson();
     function Complex128(real, imag) {
@@ -3017,10 +3017,10 @@ var require_main61 = __commonJS({
         throw new TypeError("invalid invocation. Constructor must be called with the `new` keyword.");
       }
       if (!isNumber(real)) {
-        throw new TypeError(format("invalid argument. Real component must be a number. Value: `%s`.", real));
+        throw new TypeError(format3("invalid argument. Real component must be a number. Value: `%s`.", real));
       }
       if (!isNumber(imag)) {
-        throw new TypeError(format("invalid argument. Imaginary component must be a number. Value: `%s`.", imag));
+        throw new TypeError(format3("invalid argument. Imaginary component must be a number. Value: `%s`.", imag));
       }
       defineProperty(this, "re", {
         "configurable": false,
@@ -3036,11 +3036,11 @@ var require_main61 = __commonJS({
       });
       return this;
     }
-    setReadOnly(Complex128, "BYTES_PER_ELEMENT", 8);
-    setReadOnly(Complex128.prototype, "BYTES_PER_ELEMENT", 8);
-    setReadOnly(Complex128.prototype, "byteLength", 16);
-    setReadOnly(Complex128.prototype, "toString", toStr);
-    setReadOnly(Complex128.prototype, "toJSON", toJSON);
+    setReadOnly2(Complex128, "BYTES_PER_ELEMENT", 8);
+    setReadOnly2(Complex128.prototype, "BYTES_PER_ELEMENT", 8);
+    setReadOnly2(Complex128.prototype, "byteLength", 16);
+    setReadOnly2(Complex128.prototype, "toString", toStr);
+    setReadOnly2(Complex128.prototype, "toJSON", toJSON);
     module.exports = Complex128;
   }
 });
@@ -3132,9 +3132,9 @@ var require_main63 = __commonJS({
     "use strict";
     var isNumber = require_lib58().isPrimitive;
     var defineProperty = require_lib4();
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var float64ToFloat32 = require_lib77();
-    var format = require_lib3();
+    var format3 = require_lib3();
     var toStr = require_tostring5();
     var toJSON = require_tojson2();
     function Complex64(real, imag) {
@@ -3142,10 +3142,10 @@ var require_main63 = __commonJS({
         throw new TypeError("invalid invocation. Constructor must be called with the `new` keyword.");
       }
       if (!isNumber(real)) {
-        throw new TypeError(format("invalid argument. Real component must be a number. Value: `%s`.", real));
+        throw new TypeError(format3("invalid argument. Real component must be a number. Value: `%s`.", real));
       }
       if (!isNumber(imag)) {
-        throw new TypeError(format("invalid argument. Imaginary component must be a number. Value: `%s`.", imag));
+        throw new TypeError(format3("invalid argument. Imaginary component must be a number. Value: `%s`.", imag));
       }
       defineProperty(this, "re", {
         "configurable": false,
@@ -3161,11 +3161,11 @@ var require_main63 = __commonJS({
       });
       return this;
     }
-    setReadOnly(Complex64, "BYTES_PER_ELEMENT", 4);
-    setReadOnly(Complex64.prototype, "BYTES_PER_ELEMENT", 4);
-    setReadOnly(Complex64.prototype, "byteLength", 8);
-    setReadOnly(Complex64.prototype, "toString", toStr);
-    setReadOnly(Complex64.prototype, "toJSON", toJSON);
+    setReadOnly2(Complex64, "BYTES_PER_ELEMENT", 4);
+    setReadOnly2(Complex64.prototype, "BYTES_PER_ELEMENT", 4);
+    setReadOnly2(Complex64.prototype, "byteLength", 8);
+    setReadOnly2(Complex64.prototype, "toString", toStr);
+    setReadOnly2(Complex64.prototype, "toJSON", toJSON);
     module.exports = Complex64;
   }
 });
@@ -3398,9 +3398,9 @@ var require_lib88 = __commonJS({
 var require_main74 = __commonJS({
   "node_modules/@stdlib/strided/base/reinterpret-complex128/lib/main.js"(exports, module) {
     "use strict";
-    var Float64Array2 = require_lib22();
+    var Float64Array4 = require_lib22();
     function reinterpret(x, offset) {
-      return new Float64Array2(x.buffer, x.byteOffset + x.BYTES_PER_ELEMENT * offset, 2 * (x.length - offset));
+      return new Float64Array4(x.buffer, x.byteOffset + x.BYTES_PER_ELEMENT * offset, 2 * (x.length - offset));
     }
     module.exports = reinterpret;
   }
@@ -3423,7 +3423,7 @@ var require_from_iterator = __commonJS({
     var isComplexLike = require_lib79();
     var realf = require_lib86();
     var imagf = require_lib87();
-    var format = require_lib3();
+    var format3 = require_lib3();
     function fromIterator(it) {
       var out;
       var v;
@@ -3440,7 +3440,7 @@ var require_from_iterator = __commonJS({
         } else if (isComplexLike(z)) {
           out.push(realf(z), imagf(z));
         } else {
-          return new TypeError(format("invalid argument. An iterator must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", z));
+          return new TypeError(format3("invalid argument. An iterator must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", z));
         }
       }
       return out;
@@ -3457,7 +3457,7 @@ var require_from_iterator_map = __commonJS({
     var isComplexLike = require_lib79();
     var realf = require_lib86();
     var imagf = require_lib87();
-    var format = require_lib3();
+    var format3 = require_lib3();
     function fromIteratorMap(it, clbk, thisArg) {
       var out;
       var v;
@@ -3477,7 +3477,7 @@ var require_from_iterator_map = __commonJS({
         } else if (isComplexLike(z)) {
           out.push(realf(z), imagf(z));
         } else {
-          return new TypeError(format("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", z));
+          return new TypeError(format3("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", z));
         }
       }
       return out;
@@ -3535,11 +3535,11 @@ var require_main75 = __commonJS({
     var isComplex128Array = require_lib82();
     var hasIteratorSymbolSupport = require_lib83();
     var ITERATOR_SYMBOL = require_lib84();
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var setReadOnlyAccessor = require_lib85();
     var Float32Array2 = require_lib26();
     var Complex64 = require_lib78();
-    var format = require_lib3();
+    var format3 = require_lib3();
     var realf = require_lib86();
     var imagf = require_lib87();
     var floor = require_lib60();
@@ -3595,7 +3595,7 @@ var require_main75 = __commonJS({
             buf = fromArray(new Float32Array2(len * 2), buf);
             if (buf === null) {
               if (!isEven(len)) {
-                throw new RangeError(format("invalid argument. Array-like object arguments must have a length which is a multiple of two. Length: `%u`.", len));
+                throw new RangeError(format3("invalid argument. Array-like object arguments must have a length which is a multiple of two. Length: `%u`.", len));
               }
               buf = new Float32Array2(arguments[0]);
             }
@@ -3605,27 +3605,27 @@ var require_main75 = __commonJS({
             } else if (isComplex128Array(buf)) {
               buf = reinterpret128(buf, 0);
             } else if (!isEven(len)) {
-              throw new RangeError(format("invalid argument. Array-like object and typed array arguments must have a length which is a multiple of two. Length: `%u`.", len));
+              throw new RangeError(format3("invalid argument. Array-like object and typed array arguments must have a length which is a multiple of two. Length: `%u`.", len));
             }
             buf = new Float32Array2(buf);
           }
         } else if (isArrayBuffer(arguments[0])) {
           buf = arguments[0];
           if (!isInteger(buf.byteLength / BYTES_PER_ELEMENT)) {
-            throw new RangeError(format("invalid argument. ArrayBuffer byte length must be a multiple of %u. Byte length: `%u`.", BYTES_PER_ELEMENT, buf.byteLength));
+            throw new RangeError(format3("invalid argument. ArrayBuffer byte length must be a multiple of %u. Byte length: `%u`.", BYTES_PER_ELEMENT, buf.byteLength));
           }
           buf = new Float32Array2(buf);
         } else if (isObject(arguments[0])) {
           buf = arguments[0];
           if (HAS_ITERATOR_SYMBOL === false) {
-            throw new TypeError(format("invalid argument. Environment lacks Symbol.iterator support. Must provide a length, ArrayBuffer, typed array, or array-like object. Value: `%s`.", buf));
+            throw new TypeError(format3("invalid argument. Environment lacks Symbol.iterator support. Must provide a length, ArrayBuffer, typed array, or array-like object. Value: `%s`.", buf));
           }
           if (!isFunction(buf[ITERATOR_SYMBOL])) {
-            throw new TypeError(format("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", buf));
+            throw new TypeError(format3("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", buf));
           }
           buf = buf[ITERATOR_SYMBOL]();
           if (!isFunction(buf.next)) {
-            throw new TypeError(format("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", buf));
+            throw new TypeError(format3("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", buf));
           }
           buf = fromIterator(buf);
           if (buf instanceof Error) {
@@ -3633,44 +3633,44 @@ var require_main75 = __commonJS({
           }
           buf = new Float32Array2(buf);
         } else {
-          throw new TypeError(format("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", arguments[0]));
+          throw new TypeError(format3("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", arguments[0]));
         }
       } else {
         buf = arguments[0];
         if (!isArrayBuffer(buf)) {
-          throw new TypeError(format("invalid argument. First argument must be an ArrayBuffer. Value: `%s`.", buf));
+          throw new TypeError(format3("invalid argument. First argument must be an ArrayBuffer. Value: `%s`.", buf));
         }
         byteOffset = arguments[1];
         if (!isNonNegativeInteger(byteOffset)) {
-          throw new TypeError(format("invalid argument. Byte offset must be a nonnegative integer. Value: `%s`.", byteOffset));
+          throw new TypeError(format3("invalid argument. Byte offset must be a nonnegative integer. Value: `%s`.", byteOffset));
         }
         if (!isInteger(byteOffset / BYTES_PER_ELEMENT)) {
-          throw new RangeError(format("invalid argument. Byte offset must be a multiple of %u. Value: `%u`.", BYTES_PER_ELEMENT, byteOffset));
+          throw new RangeError(format3("invalid argument. Byte offset must be a multiple of %u. Value: `%u`.", BYTES_PER_ELEMENT, byteOffset));
         }
         if (nargs === 2) {
           len = buf.byteLength - byteOffset;
           if (!isInteger(len / BYTES_PER_ELEMENT)) {
-            throw new RangeError(format("invalid arguments. ArrayBuffer view byte length must be a multiple of %u. View byte length: `%u`.", BYTES_PER_ELEMENT, len));
+            throw new RangeError(format3("invalid arguments. ArrayBuffer view byte length must be a multiple of %u. View byte length: `%u`.", BYTES_PER_ELEMENT, len));
           }
           buf = new Float32Array2(buf, byteOffset);
         } else {
           len = arguments[2];
           if (!isNonNegativeInteger(len)) {
-            throw new TypeError(format("invalid argument. Length must be a nonnegative integer. Value: `%s`.", len));
+            throw new TypeError(format3("invalid argument. Length must be a nonnegative integer. Value: `%s`.", len));
           }
           if (len * BYTES_PER_ELEMENT > buf.byteLength - byteOffset) {
-            throw new RangeError(format("invalid arguments. ArrayBuffer has insufficient capacity. Either decrease the array length or provide a bigger buffer. Minimum capacity: `%u`.", len * BYTES_PER_ELEMENT));
+            throw new RangeError(format3("invalid arguments. ArrayBuffer has insufficient capacity. Either decrease the array length or provide a bigger buffer. Minimum capacity: `%u`.", len * BYTES_PER_ELEMENT));
           }
           buf = new Float32Array2(buf, byteOffset, len * 2);
         }
       }
-      setReadOnly(this, "_buffer", buf);
-      setReadOnly(this, "_length", buf.length / 2);
+      setReadOnly2(this, "_buffer", buf);
+      setReadOnly2(this, "_length", buf.length / 2);
       return this;
     }
-    setReadOnly(Complex64Array, "BYTES_PER_ELEMENT", BYTES_PER_ELEMENT);
-    setReadOnly(Complex64Array, "name", "Complex64Array");
-    setReadOnly(Complex64Array, "from", function from(src) {
+    setReadOnly2(Complex64Array, "BYTES_PER_ELEMENT", BYTES_PER_ELEMENT);
+    setReadOnly2(Complex64Array, "name", "Complex64Array");
+    setReadOnly2(Complex64Array, "from", function from(src) {
       var thisArg;
       var nargs;
       var clbk;
@@ -3693,7 +3693,7 @@ var require_main75 = __commonJS({
       if (nargs > 1) {
         clbk = arguments[1];
         if (!isFunction(clbk)) {
-          throw new TypeError(format("invalid argument. Second argument must be a function. Value: `%s`.", clbk));
+          throw new TypeError(format3("invalid argument. Second argument must be a function. Value: `%s`.", clbk));
         }
         if (nargs > 2) {
           thisArg = arguments[2];
@@ -3714,7 +3714,7 @@ var require_main75 = __commonJS({
               buf[j] = v[0];
               buf[j + 1] = v[1];
             } else {
-              throw new TypeError(format("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", v));
+              throw new TypeError(format3("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", v));
             }
             j += 2;
           }
@@ -3738,7 +3738,7 @@ var require_main75 = __commonJS({
           }
           if (flg) {
             if (!isEven(len)) {
-              throw new RangeError(format("invalid argument. First argument must have a length which is a multiple of %u. Length: `%u`.", 2, len));
+              throw new RangeError(format3("invalid argument. First argument must have a length which is a multiple of %u. Length: `%u`.", 2, len));
             }
             out = new this(len / 2);
             buf = out._buffer;
@@ -3759,7 +3759,7 @@ var require_main75 = __commonJS({
               buf[j] = v[0];
               buf[j + 1] = v[1];
             } else {
-              throw new TypeError(format("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", v));
+              throw new TypeError(format3("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", v));
             }
             j += 2;
           }
@@ -3770,7 +3770,7 @@ var require_main75 = __commonJS({
       if (isObject(src) && HAS_ITERATOR_SYMBOL && isFunction(src[ITERATOR_SYMBOL])) {
         buf = src[ITERATOR_SYMBOL]();
         if (!isFunction(buf.next)) {
-          throw new TypeError(format("invalid argument. First argument must be an array-like object or an iterable. Value: `%s`.", src));
+          throw new TypeError(format3("invalid argument. First argument must be an array-like object or an iterable. Value: `%s`.", src));
         }
         if (clbk) {
           tmp = fromIteratorMap(buf, clbk, thisArg);
@@ -3788,9 +3788,9 @@ var require_main75 = __commonJS({
         }
         return out;
       }
-      throw new TypeError(format("invalid argument. First argument must be an array-like object or an iterable. Value: `%s`.", src));
+      throw new TypeError(format3("invalid argument. First argument must be an array-like object or an iterable. Value: `%s`.", src));
     });
-    setReadOnly(Complex64Array, "of", function of() {
+    setReadOnly2(Complex64Array, "of", function of() {
       var args;
       var i;
       if (!isFunction(this)) {
@@ -3805,12 +3805,12 @@ var require_main75 = __commonJS({
       }
       return new this(args);
     });
-    setReadOnly(Complex64Array.prototype, "at", function at(idx) {
+    setReadOnly2(Complex64Array.prototype, "at", function at(idx) {
       if (!isComplexArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isInteger(idx)) {
-        throw new TypeError(format("invalid argument. Must provide an integer. Value: `%s`.", idx));
+        throw new TypeError(format3("invalid argument. Must provide an integer. Value: `%s`.", idx));
       }
       if (idx < 0) {
         idx += this._length;
@@ -3829,8 +3829,8 @@ var require_main75 = __commonJS({
     setReadOnlyAccessor(Complex64Array.prototype, "byteOffset", function get() {
       return this._buffer.byteOffset;
     });
-    setReadOnly(Complex64Array.prototype, "BYTES_PER_ELEMENT", Complex64Array.BYTES_PER_ELEMENT);
-    setReadOnly(Complex64Array.prototype, "copyWithin", function copyWithin(target, start) {
+    setReadOnly2(Complex64Array.prototype, "BYTES_PER_ELEMENT", Complex64Array.BYTES_PER_ELEMENT);
+    setReadOnly2(Complex64Array.prototype, "copyWithin", function copyWithin(target, start) {
       if (!isComplexArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
@@ -3841,7 +3841,7 @@ var require_main75 = __commonJS({
       }
       return this;
     });
-    setReadOnly(Complex64Array.prototype, "entries", function entries() {
+    setReadOnly2(Complex64Array.prototype, "entries", function entries() {
       var self2;
       var iter;
       var len;
@@ -3856,10 +3856,10 @@ var require_main75 = __commonJS({
       len = this._length;
       i = -1;
       iter = {};
-      setReadOnly(iter, "next", next);
-      setReadOnly(iter, "return", end);
+      setReadOnly2(iter, "next", next);
+      setReadOnly2(iter, "return", end);
       if (ITERATOR_SYMBOL) {
-        setReadOnly(iter, ITERATOR_SYMBOL, factory);
+        setReadOnly2(iter, ITERATOR_SYMBOL, factory);
       }
       return iter;
       function next() {
@@ -3890,14 +3890,14 @@ var require_main75 = __commonJS({
         return self2.entries();
       }
     });
-    setReadOnly(Complex64Array.prototype, "every", function every(predicate, thisArg) {
+    setReadOnly2(Complex64Array.prototype, "every", function every(predicate, thisArg) {
       var buf;
       var i;
       if (!isComplexArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -3907,7 +3907,7 @@ var require_main75 = __commonJS({
       }
       return true;
     });
-    setReadOnly(Complex64Array.prototype, "fill", function fill(value, start, end) {
+    setReadOnly2(Complex64Array.prototype, "fill", function fill(value, start, end) {
       var buf;
       var len;
       var idx;
@@ -3918,13 +3918,13 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isComplexLike(value)) {
-        throw new TypeError(format("invalid argument. First argument must be a complex number. Value: `%s`.", value));
+        throw new TypeError(format3("invalid argument. First argument must be a complex number. Value: `%s`.", value));
       }
       buf = this._buffer;
       len = this._length;
       if (arguments.length > 1) {
         if (!isInteger(start)) {
-          throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", start));
+          throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", start));
         }
         if (start < 0) {
           start += len;
@@ -3934,7 +3934,7 @@ var require_main75 = __commonJS({
         }
         if (arguments.length > 2) {
           if (!isInteger(end)) {
-            throw new TypeError(format("invalid argument. Third argument must be an integer. Value: `%s`.", end));
+            throw new TypeError(format3("invalid argument. Third argument must be an integer. Value: `%s`.", end));
           }
           if (end < 0) {
             end += len;
@@ -3961,7 +3961,7 @@ var require_main75 = __commonJS({
       }
       return this;
     });
-    setReadOnly(Complex64Array.prototype, "filter", function filter(predicate, thisArg) {
+    setReadOnly2(Complex64Array.prototype, "filter", function filter(predicate, thisArg) {
       var buf;
       var out;
       var i;
@@ -3970,7 +3970,7 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       out = [];
@@ -3982,7 +3982,7 @@ var require_main75 = __commonJS({
       }
       return new this.constructor(out);
     });
-    setReadOnly(Complex64Array.prototype, "find", function find(predicate, thisArg) {
+    setReadOnly2(Complex64Array.prototype, "find", function find(predicate, thisArg) {
       var buf;
       var i;
       var z;
@@ -3990,7 +3990,7 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -4000,7 +4000,7 @@ var require_main75 = __commonJS({
         }
       }
     });
-    setReadOnly(Complex64Array.prototype, "findIndex", function findIndex(predicate, thisArg) {
+    setReadOnly2(Complex64Array.prototype, "findIndex", function findIndex(predicate, thisArg) {
       var buf;
       var i;
       var z;
@@ -4008,7 +4008,7 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -4019,7 +4019,7 @@ var require_main75 = __commonJS({
       }
       return -1;
     });
-    setReadOnly(Complex64Array.prototype, "findLast", function findLast(predicate, thisArg) {
+    setReadOnly2(Complex64Array.prototype, "findLast", function findLast(predicate, thisArg) {
       var buf;
       var i;
       var z;
@@ -4027,7 +4027,7 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = this._length - 1; i >= 0; i--) {
@@ -4037,7 +4037,7 @@ var require_main75 = __commonJS({
         }
       }
     });
-    setReadOnly(Complex64Array.prototype, "findLastIndex", function findLastIndex(predicate, thisArg) {
+    setReadOnly2(Complex64Array.prototype, "findLastIndex", function findLastIndex(predicate, thisArg) {
       var buf;
       var i;
       var z;
@@ -4045,7 +4045,7 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = this._length - 1; i >= 0; i--) {
@@ -4056,7 +4056,7 @@ var require_main75 = __commonJS({
       }
       return -1;
     });
-    setReadOnly(Complex64Array.prototype, "forEach", function forEach(fcn, thisArg) {
+    setReadOnly2(Complex64Array.prototype, "forEach", function forEach(fcn, thisArg) {
       var buf;
       var i;
       var z;
@@ -4064,7 +4064,7 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(fcn)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", fcn));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", fcn));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -4072,19 +4072,19 @@ var require_main75 = __commonJS({
         fcn.call(thisArg, z, i, this);
       }
     });
-    setReadOnly(Complex64Array.prototype, "get", function get(idx) {
+    setReadOnly2(Complex64Array.prototype, "get", function get(idx) {
       if (!isComplexArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isNonNegativeInteger(idx)) {
-        throw new TypeError(format("invalid argument. Must provide a nonnegative integer. Value: `%s`.", idx));
+        throw new TypeError(format3("invalid argument. Must provide a nonnegative integer. Value: `%s`.", idx));
       }
       if (idx >= this._length) {
         return;
       }
       return getComplex64(this._buffer, idx);
     });
-    setReadOnly(Complex64Array.prototype, "includes", function includes(searchElement, fromIndex) {
+    setReadOnly2(Complex64Array.prototype, "includes", function includes(searchElement, fromIndex) {
       var buf;
       var idx;
       var re;
@@ -4094,11 +4094,11 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isComplexLike(searchElement)) {
-        throw new TypeError(format("invalid argument. First argument must be a complex number. Value: `%s`.", searchElement));
+        throw new TypeError(format3("invalid argument. First argument must be a complex number. Value: `%s`.", searchElement));
       }
       if (arguments.length > 1) {
         if (!isInteger(fromIndex)) {
-          throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
+          throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
         }
         if (fromIndex < 0) {
           fromIndex += this._length;
@@ -4120,7 +4120,7 @@ var require_main75 = __commonJS({
       }
       return false;
     });
-    setReadOnly(Complex64Array.prototype, "indexOf", function indexOf(searchElement, fromIndex) {
+    setReadOnly2(Complex64Array.prototype, "indexOf", function indexOf(searchElement, fromIndex) {
       var buf;
       var idx;
       var re;
@@ -4130,11 +4130,11 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isComplexLike(searchElement)) {
-        throw new TypeError(format("invalid argument. First argument must be a complex number. Value: `%s`.", searchElement));
+        throw new TypeError(format3("invalid argument. First argument must be a complex number. Value: `%s`.", searchElement));
       }
       if (arguments.length > 1) {
         if (!isInteger(fromIndex)) {
-          throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
+          throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
         }
         if (fromIndex < 0) {
           fromIndex += this._length;
@@ -4156,7 +4156,7 @@ var require_main75 = __commonJS({
       }
       return -1;
     });
-    setReadOnly(Complex64Array.prototype, "join", function join(separator) {
+    setReadOnly2(Complex64Array.prototype, "join", function join(separator) {
       var out;
       var buf;
       var sep;
@@ -4169,7 +4169,7 @@ var require_main75 = __commonJS({
       } else if (isString(separator)) {
         sep = separator;
       } else {
-        throw new TypeError(format("invalid argument. First argument must be a string. Value: `%s`.", separator));
+        throw new TypeError(format3("invalid argument. First argument must be a string. Value: `%s`.", separator));
       }
       out = [];
       buf = this._buffer;
@@ -4178,7 +4178,7 @@ var require_main75 = __commonJS({
       }
       return out.join(sep);
     });
-    setReadOnly(Complex64Array.prototype, "keys", function keys() {
+    setReadOnly2(Complex64Array.prototype, "keys", function keys() {
       var self2;
       var iter;
       var len;
@@ -4191,10 +4191,10 @@ var require_main75 = __commonJS({
       len = this._length;
       i = -1;
       iter = {};
-      setReadOnly(iter, "next", next);
-      setReadOnly(iter, "return", end);
+      setReadOnly2(iter, "next", next);
+      setReadOnly2(iter, "return", end);
       if (ITERATOR_SYMBOL) {
-        setReadOnly(iter, ITERATOR_SYMBOL, factory);
+        setReadOnly2(iter, ITERATOR_SYMBOL, factory);
       }
       return iter;
       function next() {
@@ -4225,7 +4225,7 @@ var require_main75 = __commonJS({
         return self2.keys();
       }
     });
-    setReadOnly(Complex64Array.prototype, "lastIndexOf", function lastIndexOf(searchElement, fromIndex) {
+    setReadOnly2(Complex64Array.prototype, "lastIndexOf", function lastIndexOf(searchElement, fromIndex) {
       var buf;
       var idx;
       var re;
@@ -4235,11 +4235,11 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isComplexLike(searchElement)) {
-        throw new TypeError(format("invalid argument. First argument must be a complex number. Value: `%s`.", searchElement));
+        throw new TypeError(format3("invalid argument. First argument must be a complex number. Value: `%s`.", searchElement));
       }
       if (arguments.length > 1) {
         if (!isInteger(fromIndex)) {
-          throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
+          throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
         }
         if (fromIndex >= this._length) {
           fromIndex = this._length - 1;
@@ -4263,7 +4263,7 @@ var require_main75 = __commonJS({
     setReadOnlyAccessor(Complex64Array.prototype, "length", function get() {
       return this._length;
     });
-    setReadOnly(Complex64Array.prototype, "map", function map(fcn, thisArg) {
+    setReadOnly2(Complex64Array.prototype, "map", function map(fcn, thisArg) {
       var outbuf;
       var buf;
       var out;
@@ -4273,7 +4273,7 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(fcn)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", fcn));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", fcn));
       }
       buf = this._buffer;
       out = new this.constructor(this._length);
@@ -4287,12 +4287,12 @@ var require_main75 = __commonJS({
           outbuf[2 * i] = v[0];
           outbuf[2 * i + 1] = v[1];
         } else {
-          throw new TypeError(format("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", v));
+          throw new TypeError(format3("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", v));
         }
       }
       return out;
     });
-    setReadOnly(Complex64Array.prototype, "reduce", function reduce(reducer, initialValue) {
+    setReadOnly2(Complex64Array.prototype, "reduce", function reduce(reducer, initialValue) {
       var buf;
       var acc;
       var len;
@@ -4302,7 +4302,7 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(reducer)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", reducer));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", reducer));
       }
       buf = this._buffer;
       len = this._length;
@@ -4322,7 +4322,7 @@ var require_main75 = __commonJS({
       }
       return acc;
     });
-    setReadOnly(Complex64Array.prototype, "reduceRight", function reduceRight(reducer, initialValue) {
+    setReadOnly2(Complex64Array.prototype, "reduceRight", function reduceRight(reducer, initialValue) {
       var buf;
       var acc;
       var len;
@@ -4332,7 +4332,7 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(reducer)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", reducer));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", reducer));
       }
       buf = this._buffer;
       len = this._length;
@@ -4352,7 +4352,7 @@ var require_main75 = __commonJS({
       }
       return acc;
     });
-    setReadOnly(Complex64Array.prototype, "reverse", function reverse() {
+    setReadOnly2(Complex64Array.prototype, "reverse", function reverse() {
       var buf;
       var tmp;
       var len;
@@ -4376,7 +4376,7 @@ var require_main75 = __commonJS({
       }
       return this;
     });
-    setReadOnly(Complex64Array.prototype, "set", function set(value) {
+    setReadOnly2(Complex64Array.prototype, "set", function set(value) {
       var sbuf;
       var idx;
       var buf;
@@ -4393,14 +4393,14 @@ var require_main75 = __commonJS({
       if (arguments.length > 1) {
         idx = arguments[1];
         if (!isNonNegativeInteger(idx)) {
-          throw new TypeError(format("invalid argument. Index argument must be a nonnegative integer. Value: `%s`.", idx));
+          throw new TypeError(format3("invalid argument. Index argument must be a nonnegative integer. Value: `%s`.", idx));
         }
       } else {
         idx = 0;
       }
       if (isComplexLike(value)) {
         if (idx >= this._length) {
-          throw new RangeError(format("invalid argument. Index argument is out-of-bounds. Value: `%u`.", idx));
+          throw new RangeError(format3("invalid argument. Index argument is out-of-bounds. Value: `%u`.", idx));
         }
         idx *= 2;
         buf[idx] = realf(value);
@@ -4441,7 +4441,7 @@ var require_main75 = __commonJS({
         }
         if (flg) {
           if (!isEven(N)) {
-            throw new RangeError(format("invalid argument. Array-like object arguments must have a length which is a multiple of two. Length: `%u`.", N));
+            throw new RangeError(format3("invalid argument. Array-like object arguments must have a length which is a multiple of two. Length: `%u`.", N));
           }
           if (idx + N / 2 > this._length) {
             throw new RangeError("invalid arguments. Target array lacks sufficient storage to accommodate source values.");
@@ -4478,9 +4478,9 @@ var require_main75 = __commonJS({
         }
         return;
       }
-      throw new TypeError(format("invalid argument. First argument must be either a complex number, an array-like object, or a complex number array. Value: `%s`.", value));
+      throw new TypeError(format3("invalid argument. First argument must be either a complex number, an array-like object, or a complex number array. Value: `%s`.", value));
     });
-    setReadOnly(Complex64Array.prototype, "slice", function slice(start, end) {
+    setReadOnly2(Complex64Array.prototype, "slice", function slice(start, end) {
       var outlen;
       var outbuf;
       var out;
@@ -4498,7 +4498,7 @@ var require_main75 = __commonJS({
         end = len;
       } else {
         if (!isInteger(start)) {
-          throw new TypeError(format("invalid argument. First argument must be an integer. Value: `%s`.", start));
+          throw new TypeError(format3("invalid argument. First argument must be an integer. Value: `%s`.", start));
         }
         if (start < 0) {
           start += len;
@@ -4510,7 +4510,7 @@ var require_main75 = __commonJS({
           end = len;
         } else {
           if (!isInteger(end)) {
-            throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", end));
+            throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", end));
           }
           if (end < 0) {
             end += len;
@@ -4536,14 +4536,14 @@ var require_main75 = __commonJS({
       }
       return out;
     });
-    setReadOnly(Complex64Array.prototype, "some", function some(predicate, thisArg) {
+    setReadOnly2(Complex64Array.prototype, "some", function some(predicate, thisArg) {
       var buf;
       var i;
       if (!isComplexArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -4553,7 +4553,7 @@ var require_main75 = __commonJS({
       }
       return false;
     });
-    setReadOnly(Complex64Array.prototype, "sort", function sort(compareFcn) {
+    setReadOnly2(Complex64Array.prototype, "sort", function sort(compareFcn) {
       var tmp;
       var buf;
       var len;
@@ -4563,7 +4563,7 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(compareFcn)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", compareFcn));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", compareFcn));
       }
       buf = this._buffer;
       len = this._length;
@@ -4579,7 +4579,7 @@ var require_main75 = __commonJS({
       }
       return this;
     });
-    setReadOnly(Complex64Array.prototype, "subarray", function subarray(begin, end) {
+    setReadOnly2(Complex64Array.prototype, "subarray", function subarray(begin, end) {
       var offset;
       var buf;
       var len;
@@ -4593,7 +4593,7 @@ var require_main75 = __commonJS({
         end = len;
       } else {
         if (!isInteger(begin)) {
-          throw new TypeError(format("invalid argument. First argument must be an integer. Value: `%s`.", begin));
+          throw new TypeError(format3("invalid argument. First argument must be an integer. Value: `%s`.", begin));
         }
         if (begin < 0) {
           begin += len;
@@ -4605,7 +4605,7 @@ var require_main75 = __commonJS({
           end = len;
         } else {
           if (!isInteger(end)) {
-            throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", end));
+            throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", end));
           }
           if (end < 0) {
             end += len;
@@ -4629,7 +4629,7 @@ var require_main75 = __commonJS({
       }
       return new this.constructor(buf.buffer, offset, len < 0 ? 0 : len);
     });
-    setReadOnly(Complex64Array.prototype, "toLocaleString", function toLocaleString(locales, options) {
+    setReadOnly2(Complex64Array.prototype, "toLocaleString", function toLocaleString(locales, options) {
       var opts;
       var loc;
       var out;
@@ -4643,14 +4643,14 @@ var require_main75 = __commonJS({
       } else if (isString(locales) || isStringArray(locales)) {
         loc = locales;
       } else {
-        throw new TypeError(format("invalid argument. First argument must be a string or an array of strings. Value: `%s`.", locales));
+        throw new TypeError(format3("invalid argument. First argument must be a string or an array of strings. Value: `%s`.", locales));
       }
       if (arguments.length < 2) {
         opts = {};
       } else if (isObject(options)) {
         opts = options;
       } else {
-        throw new TypeError(format("invalid argument. Options argument must be an object. Value: `%s`.", options));
+        throw new TypeError(format3("invalid argument. Options argument must be an object. Value: `%s`.", options));
       }
       buf = this._buffer;
       out = [];
@@ -4659,7 +4659,7 @@ var require_main75 = __commonJS({
       }
       return out.join(",");
     });
-    setReadOnly(Complex64Array.prototype, "toReversed", function toReversed() {
+    setReadOnly2(Complex64Array.prototype, "toReversed", function toReversed() {
       var outbuf;
       var out;
       var len;
@@ -4680,7 +4680,7 @@ var require_main75 = __commonJS({
       }
       return out;
     });
-    setReadOnly(Complex64Array.prototype, "toSorted", function toSorted(compareFcn) {
+    setReadOnly2(Complex64Array.prototype, "toSorted", function toSorted(compareFcn) {
       var tmp;
       var buf;
       var len;
@@ -4689,7 +4689,7 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(compareFcn)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", compareFcn));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", compareFcn));
       }
       buf = this._buffer;
       len = this._length;
@@ -4700,7 +4700,7 @@ var require_main75 = __commonJS({
       tmp.sort(compareFcn);
       return new Complex64Array(tmp);
     });
-    setReadOnly(Complex64Array.prototype, "toString", function toString() {
+    setReadOnly2(Complex64Array.prototype, "toString", function toString() {
       var out;
       var buf;
       var i;
@@ -4714,7 +4714,7 @@ var require_main75 = __commonJS({
       }
       return out.join(",");
     });
-    setReadOnly(Complex64Array.prototype, "values", function values() {
+    setReadOnly2(Complex64Array.prototype, "values", function values() {
       var iter;
       var self2;
       var len;
@@ -4729,10 +4729,10 @@ var require_main75 = __commonJS({
       len = this._length;
       i = -1;
       iter = {};
-      setReadOnly(iter, "next", next);
-      setReadOnly(iter, "return", end);
+      setReadOnly2(iter, "next", next);
+      setReadOnly2(iter, "return", end);
       if (ITERATOR_SYMBOL) {
-        setReadOnly(iter, ITERATOR_SYMBOL, factory);
+        setReadOnly2(iter, ITERATOR_SYMBOL, factory);
       }
       return iter;
       function next() {
@@ -4763,7 +4763,7 @@ var require_main75 = __commonJS({
         return self2.values();
       }
     });
-    setReadOnly(Complex64Array.prototype, "with", function copyWith(index, value) {
+    setReadOnly2(Complex64Array.prototype, "with", function copyWith(index, value) {
       var buf;
       var out;
       var len;
@@ -4771,17 +4771,17 @@ var require_main75 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isInteger(index)) {
-        throw new TypeError(format("invalid argument. First argument must be an integer. Value: `%s`.", index));
+        throw new TypeError(format3("invalid argument. First argument must be an integer. Value: `%s`.", index));
       }
       len = this._length;
       if (index < 0) {
         index += len;
       }
       if (index < 0 || index >= len) {
-        throw new RangeError(format("invalid argument. Index argument is out-of-bounds. Value: `%s`.", index));
+        throw new RangeError(format3("invalid argument. Index argument is out-of-bounds. Value: `%s`.", index));
       }
       if (!isComplexLike(value)) {
-        throw new TypeError(format("invalid argument. Second argument must be a complex number. Value: `%s`.", value));
+        throw new TypeError(format3("invalid argument. Second argument must be a complex number. Value: `%s`.", value));
       }
       out = new this.constructor(this._buffer);
       buf = out._buffer;
@@ -4848,7 +4848,7 @@ var require_from_iterator2 = __commonJS({
     "use strict";
     var isArrayLikeObject = require_lib65();
     var isComplexLike = require_lib79();
-    var format = require_lib3();
+    var format3 = require_lib3();
     var real = require_lib91();
     var imag = require_lib92();
     function fromIterator(it) {
@@ -4867,7 +4867,7 @@ var require_from_iterator2 = __commonJS({
         } else if (isComplexLike(z)) {
           out.push(real(z), imag(z));
         } else {
-          return new TypeError(format("invalid argument. An iterator must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", z));
+          return new TypeError(format3("invalid argument. An iterator must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", z));
         }
       }
       return out;
@@ -4882,7 +4882,7 @@ var require_from_iterator_map2 = __commonJS({
     "use strict";
     var isArrayLikeObject = require_lib65();
     var isComplexLike = require_lib79();
-    var format = require_lib3();
+    var format3 = require_lib3();
     var real = require_lib91();
     var imag = require_lib92();
     function fromIteratorMap(it, clbk, thisArg) {
@@ -4904,7 +4904,7 @@ var require_from_iterator_map2 = __commonJS({
         } else if (isComplexLike(z)) {
           out.push(real(z), imag(z));
         } else {
-          return new TypeError(format("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", z));
+          return new TypeError(format3("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", z));
         }
       }
       return out;
@@ -4962,9 +4962,9 @@ var require_main78 = __commonJS({
     var isComplex128Array = require_lib82();
     var hasIteratorSymbolSupport = require_lib83();
     var ITERATOR_SYMBOL = require_lib84();
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var setReadOnlyAccessor = require_lib85();
-    var Float64Array2 = require_lib22();
+    var Float64Array4 = require_lib22();
     var Complex128 = require_lib76();
     var real = require_lib91();
     var imag = require_lib92();
@@ -4973,11 +4973,11 @@ var require_main78 = __commonJS({
     var reinterpret128 = require_lib89();
     var getter = require_lib8();
     var accessorGetter = require_lib7();
-    var format = require_lib3();
+    var format3 = require_lib3();
     var fromIterator = require_from_iterator2();
     var fromIteratorMap = require_from_iterator_map2();
     var fromArray = require_from_array2();
-    var BYTES_PER_ELEMENT = Float64Array2.BYTES_PER_ELEMENT * 2;
+    var BYTES_PER_ELEMENT = Float64Array4.BYTES_PER_ELEMENT * 2;
     var HAS_ITERATOR_SYMBOL = hasIteratorSymbolSupport();
     function isComplexArray(value) {
       return value instanceof Complex128Array || typeof value === "object" && value !== null && (value.constructor.name === "Complex64Array" || value.constructor.name === "Complex128Array") && typeof value._length === "number" && // eslint-disable-line no-underscore-dangle
@@ -5011,20 +5011,20 @@ var require_main78 = __commonJS({
         return new Complex128Array(arguments[0], arguments[1], arguments[2]);
       }
       if (nargs === 0) {
-        buf = new Float64Array2(0);
+        buf = new Float64Array4(0);
       } else if (nargs === 1) {
         if (isNonNegativeInteger(arguments[0])) {
-          buf = new Float64Array2(arguments[0] * 2);
+          buf = new Float64Array4(arguments[0] * 2);
         } else if (isCollection(arguments[0])) {
           buf = arguments[0];
           len = buf.length;
           if (len && isArray(buf) && isComplexLike(buf[0])) {
-            buf = fromArray(new Float64Array2(len * 2), buf);
+            buf = fromArray(new Float64Array4(len * 2), buf);
             if (buf === null) {
               if (!isEven(len)) {
-                throw new RangeError(format("invalid argument. Array-like object arguments must have a length which is a multiple of two. Length: `%u`.", len));
+                throw new RangeError(format3("invalid argument. Array-like object arguments must have a length which is a multiple of two. Length: `%u`.", len));
               }
-              buf = new Float64Array2(arguments[0]);
+              buf = new Float64Array4(arguments[0]);
             }
           } else {
             if (isComplex64Array(buf)) {
@@ -5032,72 +5032,72 @@ var require_main78 = __commonJS({
             } else if (isComplex128Array(buf)) {
               buf = reinterpret128(buf, 0);
             } else if (!isEven(len)) {
-              throw new RangeError(format("invalid argument. Array-like object and typed array arguments must have a length which is a multiple of two. Length: `%u`.", len));
+              throw new RangeError(format3("invalid argument. Array-like object and typed array arguments must have a length which is a multiple of two. Length: `%u`.", len));
             }
-            buf = new Float64Array2(buf);
+            buf = new Float64Array4(buf);
           }
         } else if (isArrayBuffer(arguments[0])) {
           buf = arguments[0];
           if (!isInteger(buf.byteLength / BYTES_PER_ELEMENT)) {
-            throw new RangeError(format("invalid argument. ArrayBuffer byte length must be a multiple of %u. Byte length: `%u`.", BYTES_PER_ELEMENT, buf.byteLength));
+            throw new RangeError(format3("invalid argument. ArrayBuffer byte length must be a multiple of %u. Byte length: `%u`.", BYTES_PER_ELEMENT, buf.byteLength));
           }
-          buf = new Float64Array2(buf);
+          buf = new Float64Array4(buf);
         } else if (isObject(arguments[0])) {
           buf = arguments[0];
           if (HAS_ITERATOR_SYMBOL === false) {
-            throw new TypeError(format("invalid argument. Environment lacks Symbol.iterator support. Must provide a length, ArrayBuffer, typed array, or array-like object. Value: `%s`.", buf));
+            throw new TypeError(format3("invalid argument. Environment lacks Symbol.iterator support. Must provide a length, ArrayBuffer, typed array, or array-like object. Value: `%s`.", buf));
           }
           if (!isFunction(buf[ITERATOR_SYMBOL])) {
-            throw new TypeError(format("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", buf));
+            throw new TypeError(format3("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", buf));
           }
           buf = buf[ITERATOR_SYMBOL]();
           if (!isFunction(buf.next)) {
-            throw new TypeError(format("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", buf));
+            throw new TypeError(format3("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", buf));
           }
           buf = fromIterator(buf);
           if (buf instanceof Error) {
             throw buf;
           }
-          buf = new Float64Array2(buf);
+          buf = new Float64Array4(buf);
         } else {
-          throw new TypeError(format("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", arguments[0]));
+          throw new TypeError(format3("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", arguments[0]));
         }
       } else {
         buf = arguments[0];
         if (!isArrayBuffer(buf)) {
-          throw new TypeError(format("invalid argument. First argument must be an ArrayBuffer. Value: `%s`.", buf));
+          throw new TypeError(format3("invalid argument. First argument must be an ArrayBuffer. Value: `%s`.", buf));
         }
         byteOffset = arguments[1];
         if (!isNonNegativeInteger(byteOffset)) {
-          throw new TypeError(format("invalid argument. Byte offset must be a nonnegative integer. Value: `%s`.", byteOffset));
+          throw new TypeError(format3("invalid argument. Byte offset must be a nonnegative integer. Value: `%s`.", byteOffset));
         }
         if (!isInteger(byteOffset / BYTES_PER_ELEMENT)) {
-          throw new RangeError(format("invalid argument. Byte offset must be a multiple of %u. Value: `%u`.", BYTES_PER_ELEMENT, byteOffset));
+          throw new RangeError(format3("invalid argument. Byte offset must be a multiple of %u. Value: `%u`.", BYTES_PER_ELEMENT, byteOffset));
         }
         if (nargs === 2) {
           len = buf.byteLength - byteOffset;
           if (!isInteger(len / BYTES_PER_ELEMENT)) {
-            throw new RangeError(format("invalid arguments. ArrayBuffer view byte length must be a multiple of %u. View byte length: `%u`.", BYTES_PER_ELEMENT, len));
+            throw new RangeError(format3("invalid arguments. ArrayBuffer view byte length must be a multiple of %u. View byte length: `%u`.", BYTES_PER_ELEMENT, len));
           }
-          buf = new Float64Array2(buf, byteOffset);
+          buf = new Float64Array4(buf, byteOffset);
         } else {
           len = arguments[2];
           if (!isNonNegativeInteger(len)) {
-            throw new TypeError(format("invalid argument. Length must be a nonnegative integer. Value: `%s`.", len));
+            throw new TypeError(format3("invalid argument. Length must be a nonnegative integer. Value: `%s`.", len));
           }
           if (len * BYTES_PER_ELEMENT > buf.byteLength - byteOffset) {
-            throw new RangeError(format("invalid arguments. ArrayBuffer has insufficient capacity. Either decrease the array length or provide a bigger buffer. Minimum capacity: `%u`.", len * BYTES_PER_ELEMENT));
+            throw new RangeError(format3("invalid arguments. ArrayBuffer has insufficient capacity. Either decrease the array length or provide a bigger buffer. Minimum capacity: `%u`.", len * BYTES_PER_ELEMENT));
           }
-          buf = new Float64Array2(buf, byteOffset, len * 2);
+          buf = new Float64Array4(buf, byteOffset, len * 2);
         }
       }
-      setReadOnly(this, "_buffer", buf);
-      setReadOnly(this, "_length", buf.length / 2);
+      setReadOnly2(this, "_buffer", buf);
+      setReadOnly2(this, "_length", buf.length / 2);
       return this;
     }
-    setReadOnly(Complex128Array, "BYTES_PER_ELEMENT", BYTES_PER_ELEMENT);
-    setReadOnly(Complex128Array, "name", "Complex128Array");
-    setReadOnly(Complex128Array, "from", function from(src) {
+    setReadOnly2(Complex128Array, "BYTES_PER_ELEMENT", BYTES_PER_ELEMENT);
+    setReadOnly2(Complex128Array, "name", "Complex128Array");
+    setReadOnly2(Complex128Array, "from", function from(src) {
       var thisArg;
       var nargs;
       var clbk;
@@ -5120,7 +5120,7 @@ var require_main78 = __commonJS({
       if (nargs > 1) {
         clbk = arguments[1];
         if (!isFunction(clbk)) {
-          throw new TypeError(format("invalid argument. Second argument must be a function. Value: `%s`.", clbk));
+          throw new TypeError(format3("invalid argument. Second argument must be a function. Value: `%s`.", clbk));
         }
         if (nargs > 2) {
           thisArg = arguments[2];
@@ -5141,7 +5141,7 @@ var require_main78 = __commonJS({
               buf[j] = v[0];
               buf[j + 1] = v[1];
             } else {
-              throw new TypeError(format("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", v));
+              throw new TypeError(format3("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", v));
             }
             j += 2;
           }
@@ -5165,7 +5165,7 @@ var require_main78 = __commonJS({
           }
           if (flg) {
             if (!isEven(len)) {
-              throw new RangeError(format("invalid argument. First argument must have a length which is a multiple of two. Length: `%u`.", len));
+              throw new RangeError(format3("invalid argument. First argument must have a length which is a multiple of two. Length: `%u`.", len));
             }
             out = new this(len / 2);
             buf = out._buffer;
@@ -5186,7 +5186,7 @@ var require_main78 = __commonJS({
               buf[j] = v[0];
               buf[j + 1] = v[1];
             } else {
-              throw new TypeError(format("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", v));
+              throw new TypeError(format3("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", v));
             }
             j += 2;
           }
@@ -5197,7 +5197,7 @@ var require_main78 = __commonJS({
       if (isObject(src) && HAS_ITERATOR_SYMBOL && isFunction(src[ITERATOR_SYMBOL])) {
         buf = src[ITERATOR_SYMBOL]();
         if (!isFunction(buf.next)) {
-          throw new TypeError(format("invalid argument. First argument must be an array-like object or an iterable. Value: `%s`.", src));
+          throw new TypeError(format3("invalid argument. First argument must be an array-like object or an iterable. Value: `%s`.", src));
         }
         if (clbk) {
           tmp = fromIteratorMap(buf, clbk, thisArg);
@@ -5215,9 +5215,9 @@ var require_main78 = __commonJS({
         }
         return out;
       }
-      throw new TypeError(format("invalid argument. First argument must be an array-like object or an iterable. Value: `%s`.", src));
+      throw new TypeError(format3("invalid argument. First argument must be an array-like object or an iterable. Value: `%s`.", src));
     });
-    setReadOnly(Complex128Array, "of", function of() {
+    setReadOnly2(Complex128Array, "of", function of() {
       var args;
       var i;
       if (!isFunction(this)) {
@@ -5232,12 +5232,12 @@ var require_main78 = __commonJS({
       }
       return new this(args);
     });
-    setReadOnly(Complex128Array.prototype, "at", function at(idx) {
+    setReadOnly2(Complex128Array.prototype, "at", function at(idx) {
       if (!isComplexArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isInteger(idx)) {
-        throw new TypeError(format("invalid argument. Must provide an integer. Value: `%s`.", idx));
+        throw new TypeError(format3("invalid argument. Must provide an integer. Value: `%s`.", idx));
       }
       if (idx < 0) {
         idx += this._length;
@@ -5256,8 +5256,8 @@ var require_main78 = __commonJS({
     setReadOnlyAccessor(Complex128Array.prototype, "byteOffset", function get() {
       return this._buffer.byteOffset;
     });
-    setReadOnly(Complex128Array.prototype, "BYTES_PER_ELEMENT", Complex128Array.BYTES_PER_ELEMENT);
-    setReadOnly(Complex128Array.prototype, "copyWithin", function copyWithin(target, start) {
+    setReadOnly2(Complex128Array.prototype, "BYTES_PER_ELEMENT", Complex128Array.BYTES_PER_ELEMENT);
+    setReadOnly2(Complex128Array.prototype, "copyWithin", function copyWithin(target, start) {
       if (!isComplexArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
@@ -5268,7 +5268,7 @@ var require_main78 = __commonJS({
       }
       return this;
     });
-    setReadOnly(Complex128Array.prototype, "entries", function entries() {
+    setReadOnly2(Complex128Array.prototype, "entries", function entries() {
       var buffer;
       var self2;
       var iter;
@@ -5285,10 +5285,10 @@ var require_main78 = __commonJS({
       i = -1;
       j = -2;
       iter = {};
-      setReadOnly(iter, "next", next);
-      setReadOnly(iter, "return", end);
+      setReadOnly2(iter, "next", next);
+      setReadOnly2(iter, "return", end);
       if (ITERATOR_SYMBOL) {
-        setReadOnly(iter, ITERATOR_SYMBOL, factory);
+        setReadOnly2(iter, ITERATOR_SYMBOL, factory);
       }
       return iter;
       function next() {
@@ -5322,14 +5322,14 @@ var require_main78 = __commonJS({
         return self2.entries();
       }
     });
-    setReadOnly(Complex128Array.prototype, "every", function every(predicate, thisArg) {
+    setReadOnly2(Complex128Array.prototype, "every", function every(predicate, thisArg) {
       var buf;
       var i;
       if (!isComplexArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -5339,7 +5339,7 @@ var require_main78 = __commonJS({
       }
       return true;
     });
-    setReadOnly(Complex128Array.prototype, "fill", function fill(value, start, end) {
+    setReadOnly2(Complex128Array.prototype, "fill", function fill(value, start, end) {
       var buf;
       var len;
       var idx;
@@ -5350,13 +5350,13 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isComplexLike(value)) {
-        throw new TypeError(format("invalid argument. First argument must be a complex number. Value: `%s`.", value));
+        throw new TypeError(format3("invalid argument. First argument must be a complex number. Value: `%s`.", value));
       }
       buf = this._buffer;
       len = this._length;
       if (arguments.length > 1) {
         if (!isInteger(start)) {
-          throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", start));
+          throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", start));
         }
         if (start < 0) {
           start += len;
@@ -5366,7 +5366,7 @@ var require_main78 = __commonJS({
         }
         if (arguments.length > 2) {
           if (!isInteger(end)) {
-            throw new TypeError(format("invalid argument. Third argument must be an integer. Value: `%s`.", end));
+            throw new TypeError(format3("invalid argument. Third argument must be an integer. Value: `%s`.", end));
           }
           if (end < 0) {
             end += len;
@@ -5393,7 +5393,7 @@ var require_main78 = __commonJS({
       }
       return this;
     });
-    setReadOnly(Complex128Array.prototype, "filter", function filter(predicate, thisArg) {
+    setReadOnly2(Complex128Array.prototype, "filter", function filter(predicate, thisArg) {
       var buf;
       var out;
       var i;
@@ -5402,7 +5402,7 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       out = [];
@@ -5414,7 +5414,7 @@ var require_main78 = __commonJS({
       }
       return new this.constructor(out);
     });
-    setReadOnly(Complex128Array.prototype, "find", function find(predicate, thisArg) {
+    setReadOnly2(Complex128Array.prototype, "find", function find(predicate, thisArg) {
       var buf;
       var i;
       var z;
@@ -5422,7 +5422,7 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -5432,7 +5432,7 @@ var require_main78 = __commonJS({
         }
       }
     });
-    setReadOnly(Complex128Array.prototype, "findIndex", function findIndex(predicate, thisArg) {
+    setReadOnly2(Complex128Array.prototype, "findIndex", function findIndex(predicate, thisArg) {
       var buf;
       var i;
       var z;
@@ -5440,7 +5440,7 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -5451,7 +5451,7 @@ var require_main78 = __commonJS({
       }
       return -1;
     });
-    setReadOnly(Complex128Array.prototype, "findLast", function findLast(predicate, thisArg) {
+    setReadOnly2(Complex128Array.prototype, "findLast", function findLast(predicate, thisArg) {
       var buf;
       var i;
       var z;
@@ -5459,7 +5459,7 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = this._length - 1; i >= 0; i--) {
@@ -5469,7 +5469,7 @@ var require_main78 = __commonJS({
         }
       }
     });
-    setReadOnly(Complex128Array.prototype, "findLastIndex", function findLastIndex(predicate, thisArg) {
+    setReadOnly2(Complex128Array.prototype, "findLastIndex", function findLastIndex(predicate, thisArg) {
       var buf;
       var i;
       var z;
@@ -5477,7 +5477,7 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = this._length - 1; i >= 0; i--) {
@@ -5488,7 +5488,7 @@ var require_main78 = __commonJS({
       }
       return -1;
     });
-    setReadOnly(Complex128Array.prototype, "forEach", function forEach(fcn, thisArg) {
+    setReadOnly2(Complex128Array.prototype, "forEach", function forEach(fcn, thisArg) {
       var buf;
       var i;
       var z;
@@ -5496,7 +5496,7 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(fcn)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", fcn));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", fcn));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -5504,12 +5504,12 @@ var require_main78 = __commonJS({
         fcn.call(thisArg, z, i, this);
       }
     });
-    setReadOnly(Complex128Array.prototype, "get", function get(idx) {
+    setReadOnly2(Complex128Array.prototype, "get", function get(idx) {
       if (!isComplexArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isNonNegativeInteger(idx)) {
-        throw new TypeError(format("invalid argument. Must provide a nonnegative integer. Value: `%s`.", idx));
+        throw new TypeError(format3("invalid argument. Must provide a nonnegative integer. Value: `%s`.", idx));
       }
       if (idx >= this._length) {
         return;
@@ -5519,7 +5519,7 @@ var require_main78 = __commonJS({
     setReadOnlyAccessor(Complex128Array.prototype, "length", function get() {
       return this._length;
     });
-    setReadOnly(Complex128Array.prototype, "includes", function includes(searchElement, fromIndex) {
+    setReadOnly2(Complex128Array.prototype, "includes", function includes(searchElement, fromIndex) {
       var buf;
       var idx;
       var re;
@@ -5529,11 +5529,11 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isComplexLike(searchElement)) {
-        throw new TypeError(format("invalid argument. First argument must be a complex number. Value: `%s`.", searchElement));
+        throw new TypeError(format3("invalid argument. First argument must be a complex number. Value: `%s`.", searchElement));
       }
       if (arguments.length > 1) {
         if (!isInteger(fromIndex)) {
-          throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
+          throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
         }
         if (fromIndex < 0) {
           fromIndex += this._length;
@@ -5555,7 +5555,7 @@ var require_main78 = __commonJS({
       }
       return false;
     });
-    setReadOnly(Complex128Array.prototype, "indexOf", function indexOf(searchElement, fromIndex) {
+    setReadOnly2(Complex128Array.prototype, "indexOf", function indexOf(searchElement, fromIndex) {
       var buf;
       var idx;
       var re;
@@ -5565,11 +5565,11 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isComplexLike(searchElement)) {
-        throw new TypeError(format("invalid argument. First argument must be a complex number. Value: `%s`.", searchElement));
+        throw new TypeError(format3("invalid argument. First argument must be a complex number. Value: `%s`.", searchElement));
       }
       if (arguments.length > 1) {
         if (!isInteger(fromIndex)) {
-          throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
+          throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
         }
         if (fromIndex < 0) {
           fromIndex += this._length;
@@ -5591,7 +5591,7 @@ var require_main78 = __commonJS({
       }
       return -1;
     });
-    setReadOnly(Complex128Array.prototype, "join", function join(separator) {
+    setReadOnly2(Complex128Array.prototype, "join", function join(separator) {
       var out;
       var buf;
       var sep;
@@ -5604,7 +5604,7 @@ var require_main78 = __commonJS({
       } else if (isString(separator)) {
         sep = separator;
       } else {
-        throw new TypeError(format("invalid argument. First argument must be a string. Value: `%s`.", separator));
+        throw new TypeError(format3("invalid argument. First argument must be a string. Value: `%s`.", separator));
       }
       out = [];
       buf = this._buffer;
@@ -5613,7 +5613,7 @@ var require_main78 = __commonJS({
       }
       return out.join(sep);
     });
-    setReadOnly(Complex128Array.prototype, "keys", function keys() {
+    setReadOnly2(Complex128Array.prototype, "keys", function keys() {
       var self2;
       var iter;
       var len;
@@ -5626,10 +5626,10 @@ var require_main78 = __commonJS({
       len = this._length;
       i = -1;
       iter = {};
-      setReadOnly(iter, "next", next);
-      setReadOnly(iter, "return", end);
+      setReadOnly2(iter, "next", next);
+      setReadOnly2(iter, "return", end);
       if (ITERATOR_SYMBOL) {
-        setReadOnly(iter, ITERATOR_SYMBOL, factory);
+        setReadOnly2(iter, ITERATOR_SYMBOL, factory);
       }
       return iter;
       function next() {
@@ -5660,7 +5660,7 @@ var require_main78 = __commonJS({
         return self2.keys();
       }
     });
-    setReadOnly(Complex128Array.prototype, "lastIndexOf", function lastIndexOf(searchElement, fromIndex) {
+    setReadOnly2(Complex128Array.prototype, "lastIndexOf", function lastIndexOf(searchElement, fromIndex) {
       var buf;
       var idx;
       var re;
@@ -5670,11 +5670,11 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isComplexLike(searchElement)) {
-        throw new TypeError(format("invalid argument. First argument must be a complex number. Value: `%s`.", searchElement));
+        throw new TypeError(format3("invalid argument. First argument must be a complex number. Value: `%s`.", searchElement));
       }
       if (arguments.length > 1) {
         if (!isInteger(fromIndex)) {
-          throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
+          throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
         }
         if (fromIndex >= this._length) {
           fromIndex = this._length - 1;
@@ -5695,7 +5695,7 @@ var require_main78 = __commonJS({
       }
       return -1;
     });
-    setReadOnly(Complex128Array.prototype, "map", function map(fcn, thisArg) {
+    setReadOnly2(Complex128Array.prototype, "map", function map(fcn, thisArg) {
       var outbuf;
       var buf;
       var out;
@@ -5705,7 +5705,7 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(fcn)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", fcn));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", fcn));
       }
       buf = this._buffer;
       out = new this.constructor(this._length);
@@ -5719,12 +5719,12 @@ var require_main78 = __commonJS({
           outbuf[2 * i] = v[0];
           outbuf[2 * i + 1] = v[1];
         } else {
-          throw new TypeError(format("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", v));
+          throw new TypeError(format3("invalid argument. Callback must return either a two-element array containing real and imaginary components or a complex number. Value: `%s`.", v));
         }
       }
       return out;
     });
-    setReadOnly(Complex128Array.prototype, "reduce", function reduce(reducer, initialValue) {
+    setReadOnly2(Complex128Array.prototype, "reduce", function reduce(reducer, initialValue) {
       var buf;
       var acc;
       var len;
@@ -5734,7 +5734,7 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(reducer)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", reducer));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", reducer));
       }
       buf = this._buffer;
       len = this._length;
@@ -5754,7 +5754,7 @@ var require_main78 = __commonJS({
       }
       return acc;
     });
-    setReadOnly(Complex128Array.prototype, "reduceRight", function reduceRight(reducer, initialValue) {
+    setReadOnly2(Complex128Array.prototype, "reduceRight", function reduceRight(reducer, initialValue) {
       var buf;
       var acc;
       var len;
@@ -5764,7 +5764,7 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(reducer)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", reducer));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", reducer));
       }
       buf = this._buffer;
       len = this._length;
@@ -5784,7 +5784,7 @@ var require_main78 = __commonJS({
       }
       return acc;
     });
-    setReadOnly(Complex128Array.prototype, "reverse", function reverse() {
+    setReadOnly2(Complex128Array.prototype, "reverse", function reverse() {
       var buf;
       var tmp;
       var len;
@@ -5808,7 +5808,7 @@ var require_main78 = __commonJS({
       }
       return this;
     });
-    setReadOnly(Complex128Array.prototype, "set", function set(value) {
+    setReadOnly2(Complex128Array.prototype, "set", function set(value) {
       var sbuf;
       var idx;
       var buf;
@@ -5825,14 +5825,14 @@ var require_main78 = __commonJS({
       if (arguments.length > 1) {
         idx = arguments[1];
         if (!isNonNegativeInteger(idx)) {
-          throw new TypeError(format("invalid argument. Index argument must be a nonnegative integer. Value: `%s`.", idx));
+          throw new TypeError(format3("invalid argument. Index argument must be a nonnegative integer. Value: `%s`.", idx));
         }
       } else {
         idx = 0;
       }
       if (isComplexLike(value)) {
         if (idx >= this._length) {
-          throw new RangeError(format("invalid argument. Index argument is out-of-bounds. Value: `%u`.", idx));
+          throw new RangeError(format3("invalid argument. Index argument is out-of-bounds. Value: `%u`.", idx));
         }
         idx *= 2;
         buf[idx] = real(value);
@@ -5847,7 +5847,7 @@ var require_main78 = __commonJS({
         sbuf = value._buffer;
         j = buf.byteOffset + idx * BYTES_PER_ELEMENT;
         if (sbuf.buffer === buf.buffer && (sbuf.byteOffset < j && sbuf.byteOffset + sbuf.byteLength > j)) {
-          tmp = new Float64Array2(sbuf.length);
+          tmp = new Float64Array4(sbuf.length);
           for (i = 0; i < sbuf.length; i++) {
             tmp[i] = sbuf[i];
           }
@@ -5873,7 +5873,7 @@ var require_main78 = __commonJS({
         }
         if (flg) {
           if (!isEven(N)) {
-            throw new RangeError(format("invalid argument. Array-like object arguments must have a length which is a multiple of two. Length: `%u`.", N));
+            throw new RangeError(format3("invalid argument. Array-like object arguments must have a length which is a multiple of two. Length: `%u`.", N));
           }
           if (idx + N / 2 > this._length) {
             throw new RangeError("invalid arguments. Target array lacks sufficient storage to accommodate source values.");
@@ -5881,7 +5881,7 @@ var require_main78 = __commonJS({
           sbuf = value;
           j = buf.byteOffset + idx * BYTES_PER_ELEMENT;
           if (sbuf.buffer === buf.buffer && (sbuf.byteOffset < j && sbuf.byteOffset + sbuf.byteLength > j)) {
-            tmp = new Float64Array2(N);
+            tmp = new Float64Array4(N);
             for (i = 0; i < N; i++) {
               tmp[i] = sbuf[i];
             }
@@ -5910,9 +5910,9 @@ var require_main78 = __commonJS({
         }
         return;
       }
-      throw new TypeError(format("invalid argument. First argument must be either a complex number, an array-like object, or a complex number array. Value: `%s`.", value));
+      throw new TypeError(format3("invalid argument. First argument must be either a complex number, an array-like object, or a complex number array. Value: `%s`.", value));
     });
-    setReadOnly(Complex128Array.prototype, "slice", function slice(start, end) {
+    setReadOnly2(Complex128Array.prototype, "slice", function slice(start, end) {
       var outlen;
       var outbuf;
       var out;
@@ -5930,7 +5930,7 @@ var require_main78 = __commonJS({
         end = len;
       } else {
         if (!isInteger(start)) {
-          throw new TypeError(format("invalid argument. First argument must be an integer. Value: `%s`.", start));
+          throw new TypeError(format3("invalid argument. First argument must be an integer. Value: `%s`.", start));
         }
         if (start < 0) {
           start += len;
@@ -5942,7 +5942,7 @@ var require_main78 = __commonJS({
           end = len;
         } else {
           if (!isInteger(end)) {
-            throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", end));
+            throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", end));
           }
           if (end < 0) {
             end += len;
@@ -5968,14 +5968,14 @@ var require_main78 = __commonJS({
       }
       return out;
     });
-    setReadOnly(Complex128Array.prototype, "some", function some(predicate, thisArg) {
+    setReadOnly2(Complex128Array.prototype, "some", function some(predicate, thisArg) {
       var buf;
       var i;
       if (!isComplexArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -5985,7 +5985,7 @@ var require_main78 = __commonJS({
       }
       return false;
     });
-    setReadOnly(Complex128Array.prototype, "sort", function sort(compareFcn) {
+    setReadOnly2(Complex128Array.prototype, "sort", function sort(compareFcn) {
       var tmp;
       var buf;
       var len;
@@ -5995,7 +5995,7 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(compareFcn)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", compareFcn));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", compareFcn));
       }
       buf = this._buffer;
       len = this._length;
@@ -6011,7 +6011,7 @@ var require_main78 = __commonJS({
       }
       return this;
     });
-    setReadOnly(Complex128Array.prototype, "subarray", function subarray(begin, end) {
+    setReadOnly2(Complex128Array.prototype, "subarray", function subarray(begin, end) {
       var offset;
       var buf;
       var len;
@@ -6025,7 +6025,7 @@ var require_main78 = __commonJS({
         end = len;
       } else {
         if (!isInteger(begin)) {
-          throw new TypeError(format("invalid argument. First argument must be an integer. Value: `%s`.", begin));
+          throw new TypeError(format3("invalid argument. First argument must be an integer. Value: `%s`.", begin));
         }
         if (begin < 0) {
           begin += len;
@@ -6037,7 +6037,7 @@ var require_main78 = __commonJS({
           end = len;
         } else {
           if (!isInteger(end)) {
-            throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", end));
+            throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", end));
           }
           if (end < 0) {
             end += len;
@@ -6061,7 +6061,7 @@ var require_main78 = __commonJS({
       }
       return new this.constructor(buf.buffer, offset, len < 0 ? 0 : len);
     });
-    setReadOnly(Complex128Array.prototype, "toLocaleString", function toLocaleString(locales, options) {
+    setReadOnly2(Complex128Array.prototype, "toLocaleString", function toLocaleString(locales, options) {
       var opts;
       var loc;
       var out;
@@ -6075,14 +6075,14 @@ var require_main78 = __commonJS({
       } else if (isString(locales) || isStringArray(locales)) {
         loc = locales;
       } else {
-        throw new TypeError(format("invalid argument. First argument must be a string or an array of strings. Value: `%s`.", locales));
+        throw new TypeError(format3("invalid argument. First argument must be a string or an array of strings. Value: `%s`.", locales));
       }
       if (arguments.length < 2) {
         opts = {};
       } else if (isObject(options)) {
         opts = options;
       } else {
-        throw new TypeError(format("invalid argument. Options argument must be an object. Value: `%s`.", options));
+        throw new TypeError(format3("invalid argument. Options argument must be an object. Value: `%s`.", options));
       }
       buf = this._buffer;
       out = [];
@@ -6091,7 +6091,7 @@ var require_main78 = __commonJS({
       }
       return out.join(",");
     });
-    setReadOnly(Complex128Array.prototype, "toReversed", function toReversed() {
+    setReadOnly2(Complex128Array.prototype, "toReversed", function toReversed() {
       var outbuf;
       var out;
       var len;
@@ -6112,7 +6112,7 @@ var require_main78 = __commonJS({
       }
       return out;
     });
-    setReadOnly(Complex128Array.prototype, "toSorted", function toSorted(compareFcn) {
+    setReadOnly2(Complex128Array.prototype, "toSorted", function toSorted(compareFcn) {
       var tmp;
       var buf;
       var len;
@@ -6121,7 +6121,7 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isFunction(compareFcn)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", compareFcn));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", compareFcn));
       }
       buf = this._buffer;
       len = this._length;
@@ -6132,7 +6132,7 @@ var require_main78 = __commonJS({
       tmp.sort(compareFcn);
       return new Complex128Array(tmp);
     });
-    setReadOnly(Complex128Array.prototype, "toString", function toString() {
+    setReadOnly2(Complex128Array.prototype, "toString", function toString() {
       var out;
       var buf;
       var i;
@@ -6146,7 +6146,7 @@ var require_main78 = __commonJS({
       }
       return out.join(",");
     });
-    setReadOnly(Complex128Array.prototype, "values", function values() {
+    setReadOnly2(Complex128Array.prototype, "values", function values() {
       var iter;
       var self2;
       var len;
@@ -6161,10 +6161,10 @@ var require_main78 = __commonJS({
       len = this._length;
       i = -1;
       iter = {};
-      setReadOnly(iter, "next", next);
-      setReadOnly(iter, "return", end);
+      setReadOnly2(iter, "next", next);
+      setReadOnly2(iter, "return", end);
       if (ITERATOR_SYMBOL) {
-        setReadOnly(iter, ITERATOR_SYMBOL, factory);
+        setReadOnly2(iter, ITERATOR_SYMBOL, factory);
       }
       return iter;
       function next() {
@@ -6195,7 +6195,7 @@ var require_main78 = __commonJS({
         return self2.values();
       }
     });
-    setReadOnly(Complex128Array.prototype, "with", function copyWith(index, value) {
+    setReadOnly2(Complex128Array.prototype, "with", function copyWith(index, value) {
       var buf;
       var out;
       var len;
@@ -6203,17 +6203,17 @@ var require_main78 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a complex number array.");
       }
       if (!isInteger(index)) {
-        throw new TypeError(format("invalid argument. First argument must be an integer. Value: `%s`.", index));
+        throw new TypeError(format3("invalid argument. First argument must be an integer. Value: `%s`.", index));
       }
       len = this._length;
       if (index < 0) {
         index += len;
       }
       if (index < 0 || index >= len) {
-        throw new RangeError(format("invalid argument. Index argument is out-of-bounds. Value: `%s`.", index));
+        throw new RangeError(format3("invalid argument. Index argument is out-of-bounds. Value: `%s`.", index));
       }
       if (!isComplexLike(value)) {
-        throw new TypeError(format("invalid argument. Second argument must be a complex number. Value: `%s`.", value));
+        throw new TypeError(format3("invalid argument. Second argument must be a complex number. Value: `%s`.", value));
       }
       out = new this.constructor(this._buffer);
       buf = out._buffer;
@@ -6314,14 +6314,14 @@ var require_main79 = __commonJS({
     var isStringArray = require_lib71().primitives;
     var hasIteratorSymbolSupport = require_lib83();
     var ITERATOR_SYMBOL = require_lib84();
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var setReadOnlyAccessor = require_lib85();
     var Uint8Array2 = require_lib48();
     var Boolean2 = require_lib72();
     var getter = require_lib8();
     var floor = require_lib60();
     var accessorGetter = require_lib7();
-    var format = require_lib3();
+    var format3 = require_lib3();
     var fromIterator = require_from_iterator3();
     var fromIteratorMap = require_from_iterator_map3();
     var fromArray = require_from_array3();
@@ -6364,48 +6364,48 @@ var require_main79 = __commonJS({
           buf = new Uint8Array2(arg);
         } else if (isObject(arg)) {
           if (HAS_ITERATOR_SYMBOL === false) {
-            throw new TypeError(format("invalid argument. Environment lacks Symbol.iterator support. Must provide a length, ArrayBuffer, typed array, or array-like object. Value: `%s`.", arg));
+            throw new TypeError(format3("invalid argument. Environment lacks Symbol.iterator support. Must provide a length, ArrayBuffer, typed array, or array-like object. Value: `%s`.", arg));
           }
           if (!isFunction(arg[ITERATOR_SYMBOL])) {
-            throw new TypeError(format("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", arg));
+            throw new TypeError(format3("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", arg));
           }
           buf = arg[ITERATOR_SYMBOL]();
           if (!isFunction(buf.next)) {
-            throw new TypeError(format("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", arg));
+            throw new TypeError(format3("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", arg));
           }
           buf = new Uint8Array2(fromIterator(buf));
         } else {
-          throw new TypeError(format("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", arg));
+          throw new TypeError(format3("invalid argument. Must provide a length, ArrayBuffer, typed array, array-like object, or an iterable. Value: `%s`.", arg));
         }
       } else {
         buf = arguments[0];
         if (!isArrayBuffer(buf)) {
-          throw new TypeError(format("invalid argument. First argument must be an ArrayBuffer. Value: `%s`.", buf));
+          throw new TypeError(format3("invalid argument. First argument must be an ArrayBuffer. Value: `%s`.", buf));
         }
         byteOffset = arguments[1];
         if (!isNonNegativeInteger(byteOffset)) {
-          throw new TypeError(format("invalid argument. Byte offset must be a nonnegative integer. Value: `%s`.", byteOffset));
+          throw new TypeError(format3("invalid argument. Byte offset must be a nonnegative integer. Value: `%s`.", byteOffset));
         }
         if (nargs === 2) {
           buf = new Uint8Array2(buf, byteOffset);
         } else {
           len = arguments[2];
           if (!isNonNegativeInteger(len)) {
-            throw new TypeError(format("invalid argument. Length must be a nonnegative integer. Value: `%s`.", len));
+            throw new TypeError(format3("invalid argument. Length must be a nonnegative integer. Value: `%s`.", len));
           }
           if (len * BYTES_PER_ELEMENT > buf.byteLength - byteOffset) {
-            throw new RangeError(format("invalid arguments. ArrayBuffer has insufficient capacity. Either decrease the array length or provide a bigger buffer. Minimum capacity: `%u`.", len * BYTES_PER_ELEMENT));
+            throw new RangeError(format3("invalid arguments. ArrayBuffer has insufficient capacity. Either decrease the array length or provide a bigger buffer. Minimum capacity: `%u`.", len * BYTES_PER_ELEMENT));
           }
           buf = new Uint8Array2(buf, byteOffset, len);
         }
       }
-      setReadOnly(this, "_buffer", buf);
-      setReadOnly(this, "_length", buf.length);
+      setReadOnly2(this, "_buffer", buf);
+      setReadOnly2(this, "_length", buf.length);
       return this;
     }
-    setReadOnly(BooleanArray, "BYTES_PER_ELEMENT", BYTES_PER_ELEMENT);
-    setReadOnly(BooleanArray, "name", "BooleanArray");
-    setReadOnly(BooleanArray, "from", function from(src) {
+    setReadOnly2(BooleanArray, "BYTES_PER_ELEMENT", BYTES_PER_ELEMENT);
+    setReadOnly2(BooleanArray, "name", "BooleanArray");
+    setReadOnly2(BooleanArray, "from", function from(src) {
       var thisArg;
       var nargs;
       var clbk;
@@ -6425,7 +6425,7 @@ var require_main79 = __commonJS({
       if (nargs > 1) {
         clbk = arguments[1];
         if (!isFunction(clbk)) {
-          throw new TypeError(format("invalid argument. Second argument must be a function. Value: `%s`.", clbk));
+          throw new TypeError(format3("invalid argument. Second argument must be a function. Value: `%s`.", clbk));
         }
         if (nargs > 2) {
           thisArg = arguments[2];
@@ -6451,7 +6451,7 @@ var require_main79 = __commonJS({
       if (isObject(src) && HAS_ITERATOR_SYMBOL && isFunction(src[ITERATOR_SYMBOL])) {
         buf = src[ITERATOR_SYMBOL]();
         if (!isFunction(buf.next)) {
-          throw new TypeError(format("invalid argument. First argument must be an array-like object or an iterable. Value: `%s`.", src));
+          throw new TypeError(format3("invalid argument. First argument must be an array-like object or an iterable. Value: `%s`.", src));
         }
         if (clbk) {
           tmp = fromIteratorMap(buf, clbk, thisArg);
@@ -6466,9 +6466,9 @@ var require_main79 = __commonJS({
         }
         return out;
       }
-      throw new TypeError(format("invalid argument. First argument must be an array-like object or an iterable. Value: `%s`.", src));
+      throw new TypeError(format3("invalid argument. First argument must be an array-like object or an iterable. Value: `%s`.", src));
     });
-    setReadOnly(BooleanArray, "of", function of() {
+    setReadOnly2(BooleanArray, "of", function of() {
       var args;
       var i;
       if (!isFunction(this)) {
@@ -6483,14 +6483,14 @@ var require_main79 = __commonJS({
       }
       return new this(args);
     });
-    setReadOnly(BooleanArray.prototype, "at", function at(idx) {
+    setReadOnly2(BooleanArray.prototype, "at", function at(idx) {
       var buf;
       var len;
       if (!isBooleanArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isInteger(idx)) {
-        throw new TypeError(format("invalid argument. Must provide an integer. Value: `%s`.", idx));
+        throw new TypeError(format3("invalid argument. Must provide an integer. Value: `%s`.", idx));
       }
       len = this._length;
       buf = this._buffer;
@@ -6511,8 +6511,8 @@ var require_main79 = __commonJS({
     setReadOnlyAccessor(BooleanArray.prototype, "byteOffset", function get() {
       return this._buffer.byteOffset;
     });
-    setReadOnly(BooleanArray.prototype, "BYTES_PER_ELEMENT", BooleanArray.BYTES_PER_ELEMENT);
-    setReadOnly(BooleanArray.prototype, "copyWithin", function copyWithin(target, start) {
+    setReadOnly2(BooleanArray.prototype, "BYTES_PER_ELEMENT", BooleanArray.BYTES_PER_ELEMENT);
+    setReadOnly2(BooleanArray.prototype, "copyWithin", function copyWithin(target, start) {
       if (!isBooleanArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
@@ -6523,7 +6523,7 @@ var require_main79 = __commonJS({
       }
       return this;
     });
-    setReadOnly(BooleanArray.prototype, "entries", function entries() {
+    setReadOnly2(BooleanArray.prototype, "entries", function entries() {
       var self2;
       var iter;
       var len;
@@ -6538,10 +6538,10 @@ var require_main79 = __commonJS({
       len = this._length;
       i = -1;
       iter = {};
-      setReadOnly(iter, "next", next);
-      setReadOnly(iter, "return", end);
+      setReadOnly2(iter, "next", next);
+      setReadOnly2(iter, "return", end);
       if (ITERATOR_SYMBOL) {
-        setReadOnly(iter, ITERATOR_SYMBOL, factory);
+        setReadOnly2(iter, ITERATOR_SYMBOL, factory);
       }
       return iter;
       function next() {
@@ -6572,14 +6572,14 @@ var require_main79 = __commonJS({
         return self2.entries();
       }
     });
-    setReadOnly(BooleanArray.prototype, "every", function every(predicate, thisArg) {
+    setReadOnly2(BooleanArray.prototype, "every", function every(predicate, thisArg) {
       var buf;
       var i;
       if (!isBooleanArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -6589,7 +6589,7 @@ var require_main79 = __commonJS({
       }
       return true;
     });
-    setReadOnly(BooleanArray.prototype, "fill", function fill(value, start, end) {
+    setReadOnly2(BooleanArray.prototype, "fill", function fill(value, start, end) {
       var buf;
       var len;
       var val;
@@ -6598,13 +6598,13 @@ var require_main79 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isBoolean(value)) {
-        throw new TypeError(format("invalid argument. First argument must be a boolean. Value: `%s`.", value));
+        throw new TypeError(format3("invalid argument. First argument must be a boolean. Value: `%s`.", value));
       }
       buf = this._buffer;
       len = this._length;
       if (arguments.length > 1) {
         if (!isInteger(start)) {
-          throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", start));
+          throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", start));
         }
         if (start < 0) {
           start += len;
@@ -6614,7 +6614,7 @@ var require_main79 = __commonJS({
         }
         if (arguments.length > 2) {
           if (!isInteger(end)) {
-            throw new TypeError(format("invalid argument. Third argument must be an integer. Value: `%s`.", end));
+            throw new TypeError(format3("invalid argument. Third argument must be an integer. Value: `%s`.", end));
           }
           if (end < 0) {
             end += len;
@@ -6642,7 +6642,7 @@ var require_main79 = __commonJS({
       }
       return this;
     });
-    setReadOnly(BooleanArray.prototype, "filter", function filter(predicate, thisArg) {
+    setReadOnly2(BooleanArray.prototype, "filter", function filter(predicate, thisArg) {
       var buf;
       var out;
       var i;
@@ -6651,7 +6651,7 @@ var require_main79 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       out = [];
@@ -6663,7 +6663,7 @@ var require_main79 = __commonJS({
       }
       return new this.constructor(out);
     });
-    setReadOnly(BooleanArray.prototype, "find", function find(predicate, thisArg) {
+    setReadOnly2(BooleanArray.prototype, "find", function find(predicate, thisArg) {
       var buf;
       var v;
       var i;
@@ -6671,7 +6671,7 @@ var require_main79 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -6681,7 +6681,7 @@ var require_main79 = __commonJS({
         }
       }
     });
-    setReadOnly(BooleanArray.prototype, "findIndex", function findIndex(predicate, thisArg) {
+    setReadOnly2(BooleanArray.prototype, "findIndex", function findIndex(predicate, thisArg) {
       var buf;
       var v;
       var i;
@@ -6689,7 +6689,7 @@ var require_main79 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -6700,7 +6700,7 @@ var require_main79 = __commonJS({
       }
       return -1;
     });
-    setReadOnly(BooleanArray.prototype, "findLast", function findLast(predicate, thisArg) {
+    setReadOnly2(BooleanArray.prototype, "findLast", function findLast(predicate, thisArg) {
       var buf;
       var v;
       var i;
@@ -6708,7 +6708,7 @@ var require_main79 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = this._length - 1; i >= 0; i--) {
@@ -6718,7 +6718,7 @@ var require_main79 = __commonJS({
         }
       }
     });
-    setReadOnly(BooleanArray.prototype, "findLastIndex", function findLastIndex(predicate, thisArg) {
+    setReadOnly2(BooleanArray.prototype, "findLastIndex", function findLastIndex(predicate, thisArg) {
       var buf;
       var v;
       var i;
@@ -6726,7 +6726,7 @@ var require_main79 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = this._length - 1; i >= 0; i--) {
@@ -6737,44 +6737,44 @@ var require_main79 = __commonJS({
       }
       return -1;
     });
-    setReadOnly(BooleanArray.prototype, "forEach", function forEach(fcn, thisArg) {
+    setReadOnly2(BooleanArray.prototype, "forEach", function forEach(fcn, thisArg) {
       var buf;
       var i;
       if (!isBooleanArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isFunction(fcn)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", fcn));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", fcn));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
         fcn.call(thisArg, Boolean2(buf[i]), i, this);
       }
     });
-    setReadOnly(BooleanArray.prototype, "get", function get(idx) {
+    setReadOnly2(BooleanArray.prototype, "get", function get(idx) {
       if (!isBooleanArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isNonNegativeInteger(idx)) {
-        throw new TypeError(format("invalid argument. Must provide a nonnegative integer. Value: `%s`.", idx));
+        throw new TypeError(format3("invalid argument. Must provide a nonnegative integer. Value: `%s`.", idx));
       }
       if (idx >= this._length) {
         return;
       }
       return Boolean2(this._buffer[idx]);
     });
-    setReadOnly(BooleanArray.prototype, "includes", function includes(searchElement, fromIndex) {
+    setReadOnly2(BooleanArray.prototype, "includes", function includes(searchElement, fromIndex) {
       var buf;
       var i;
       if (!isBooleanArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isBoolean(searchElement)) {
-        throw new TypeError(format("invalid argument. First argument must be a boolean. Value: `%s`.", searchElement));
+        throw new TypeError(format3("invalid argument. First argument must be a boolean. Value: `%s`.", searchElement));
       }
       if (arguments.length > 1) {
         if (!isInteger(fromIndex)) {
-          throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
+          throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
         }
         if (fromIndex < 0) {
           fromIndex += this._length;
@@ -6793,18 +6793,18 @@ var require_main79 = __commonJS({
       }
       return false;
     });
-    setReadOnly(BooleanArray.prototype, "indexOf", function indexOf(searchElement, fromIndex) {
+    setReadOnly2(BooleanArray.prototype, "indexOf", function indexOf(searchElement, fromIndex) {
       var buf;
       var i;
       if (!isBooleanArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isBoolean(searchElement)) {
-        throw new TypeError(format("invalid argument. First argument must be a boolean. Value: `%s`.", searchElement));
+        throw new TypeError(format3("invalid argument. First argument must be a boolean. Value: `%s`.", searchElement));
       }
       if (arguments.length > 1) {
         if (!isInteger(fromIndex)) {
-          throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
+          throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
         }
         if (fromIndex < 0) {
           fromIndex += this._length;
@@ -6823,7 +6823,7 @@ var require_main79 = __commonJS({
       }
       return -1;
     });
-    setReadOnly(BooleanArray.prototype, "join", function join(separator) {
+    setReadOnly2(BooleanArray.prototype, "join", function join(separator) {
       var buf;
       var out;
       var i;
@@ -6832,7 +6832,7 @@ var require_main79 = __commonJS({
       }
       if (arguments.length > 0) {
         if (!isString(separator)) {
-          throw new TypeError(format("invalid argument. First argument must be a string. Value: `%s`.", separator));
+          throw new TypeError(format3("invalid argument. First argument must be a string. Value: `%s`.", separator));
         }
       } else {
         separator = ",";
@@ -6848,7 +6848,7 @@ var require_main79 = __commonJS({
       }
       return out.join(separator);
     });
-    setReadOnly(BooleanArray.prototype, "keys", function keys() {
+    setReadOnly2(BooleanArray.prototype, "keys", function keys() {
       var self2;
       var iter;
       var len;
@@ -6861,10 +6861,10 @@ var require_main79 = __commonJS({
       len = this._length;
       i = -1;
       iter = {};
-      setReadOnly(iter, "next", next);
-      setReadOnly(iter, "return", end);
+      setReadOnly2(iter, "next", next);
+      setReadOnly2(iter, "return", end);
       if (ITERATOR_SYMBOL) {
-        setReadOnly(iter, ITERATOR_SYMBOL, factory);
+        setReadOnly2(iter, ITERATOR_SYMBOL, factory);
       }
       return iter;
       function next() {
@@ -6895,18 +6895,18 @@ var require_main79 = __commonJS({
         return self2.keys();
       }
     });
-    setReadOnly(BooleanArray.prototype, "lastIndexOf", function lastIndexOf(searchElement, fromIndex) {
+    setReadOnly2(BooleanArray.prototype, "lastIndexOf", function lastIndexOf(searchElement, fromIndex) {
       var buf;
       var i;
       if (!isBooleanArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isBoolean(searchElement)) {
-        throw new TypeError(format("invalid argument. First argument must be a boolean. Value: `%s`.", searchElement));
+        throw new TypeError(format3("invalid argument. First argument must be a boolean. Value: `%s`.", searchElement));
       }
       if (arguments.length > 1) {
         if (!isInteger(fromIndex)) {
-          throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
+          throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", fromIndex));
         }
         if (fromIndex >= this._length) {
           fromIndex = this._length - 1;
@@ -6927,7 +6927,7 @@ var require_main79 = __commonJS({
     setReadOnlyAccessor(BooleanArray.prototype, "length", function get() {
       return this._length;
     });
-    setReadOnly(BooleanArray.prototype, "map", function map(fcn, thisArg) {
+    setReadOnly2(BooleanArray.prototype, "map", function map(fcn, thisArg) {
       var outbuf;
       var out;
       var buf;
@@ -6946,7 +6946,7 @@ var require_main79 = __commonJS({
       }
       return out;
     });
-    setReadOnly(BooleanArray.prototype, "reduce", function reduce(reducer, initialValue) {
+    setReadOnly2(BooleanArray.prototype, "reduce", function reduce(reducer, initialValue) {
       var buf;
       var len;
       var acc;
@@ -6955,7 +6955,7 @@ var require_main79 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isFunction(reducer)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", reducer));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", reducer));
       }
       buf = this._buffer;
       len = this._length;
@@ -6974,7 +6974,7 @@ var require_main79 = __commonJS({
       }
       return acc;
     });
-    setReadOnly(BooleanArray.prototype, "reduceRight", function reduceRight(reducer, initialValue) {
+    setReadOnly2(BooleanArray.prototype, "reduceRight", function reduceRight(reducer, initialValue) {
       var buf;
       var len;
       var acc;
@@ -6983,7 +6983,7 @@ var require_main79 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isFunction(reducer)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", reducer));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", reducer));
       }
       buf = this._buffer;
       len = this._length;
@@ -7002,7 +7002,7 @@ var require_main79 = __commonJS({
       }
       return acc;
     });
-    setReadOnly(BooleanArray.prototype, "reverse", function reverse() {
+    setReadOnly2(BooleanArray.prototype, "reverse", function reverse() {
       var buf;
       var tmp;
       var len;
@@ -7023,7 +7023,7 @@ var require_main79 = __commonJS({
       }
       return this;
     });
-    setReadOnly(BooleanArray.prototype, "set", function set(value) {
+    setReadOnly2(BooleanArray.prototype, "set", function set(value) {
       var sbuf;
       var idx;
       var buf;
@@ -7038,7 +7038,7 @@ var require_main79 = __commonJS({
       if (arguments.length > 1) {
         idx = arguments[1];
         if (!isNonNegativeInteger(idx)) {
-          throw new TypeError(format("invalid argument. Index argument must be a nonnegative integer. Value: `%s`.", idx));
+          throw new TypeError(format3("invalid argument. Index argument must be a nonnegative integer. Value: `%s`.", idx));
         }
       } else {
         idx = 0;
@@ -7067,11 +7067,11 @@ var require_main79 = __commonJS({
         return;
       }
       if (idx >= this._length) {
-        throw new RangeError(format("invalid argument. Index argument is out-of-bounds. Value: `%u`.", idx));
+        throw new RangeError(format3("invalid argument. Index argument is out-of-bounds. Value: `%u`.", idx));
       }
       buf[idx] = value ? 1 : 0;
     });
-    setReadOnly(BooleanArray.prototype, "slice", function slice(begin, end) {
+    setReadOnly2(BooleanArray.prototype, "slice", function slice(begin, end) {
       var outlen;
       var outbuf;
       var out;
@@ -7088,7 +7088,7 @@ var require_main79 = __commonJS({
         end = len;
       } else {
         if (!isInteger(begin)) {
-          throw new TypeError(format("invalid argument. First argument must be an integer. Value: `%s`.", begin));
+          throw new TypeError(format3("invalid argument. First argument must be an integer. Value: `%s`.", begin));
         }
         if (begin < 0) {
           begin += len;
@@ -7100,7 +7100,7 @@ var require_main79 = __commonJS({
           end = len;
         } else {
           if (!isInteger(end)) {
-            throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", end));
+            throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", end));
           }
           if (end < 0) {
             end += len;
@@ -7124,14 +7124,14 @@ var require_main79 = __commonJS({
       }
       return out;
     });
-    setReadOnly(BooleanArray.prototype, "some", function some(predicate, thisArg) {
+    setReadOnly2(BooleanArray.prototype, "some", function some(predicate, thisArg) {
       var buf;
       var i;
       if (!isBooleanArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isFunction(predicate)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", predicate));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", predicate));
       }
       buf = this._buffer;
       for (i = 0; i < this._length; i++) {
@@ -7141,7 +7141,7 @@ var require_main79 = __commonJS({
       }
       return false;
     });
-    setReadOnly(BooleanArray.prototype, "sort", function sort(compareFcn) {
+    setReadOnly2(BooleanArray.prototype, "sort", function sort(compareFcn) {
       var buf;
       if (!isBooleanArray(this)) {
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
@@ -7152,7 +7152,7 @@ var require_main79 = __commonJS({
         return this;
       }
       if (!isFunction(compareFcn)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", compareFcn));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", compareFcn));
       }
       buf.sort(compare);
       return this;
@@ -7160,7 +7160,7 @@ var require_main79 = __commonJS({
         return compareFcn(Boolean2(a), Boolean2(b));
       }
     });
-    setReadOnly(BooleanArray.prototype, "subarray", function subarray(begin, end) {
+    setReadOnly2(BooleanArray.prototype, "subarray", function subarray(begin, end) {
       var offset;
       var buf;
       var len;
@@ -7174,7 +7174,7 @@ var require_main79 = __commonJS({
         end = len;
       } else {
         if (!isInteger(begin)) {
-          throw new TypeError(format("invalid argument. First argument must be an integer. Value: `%s`.", begin));
+          throw new TypeError(format3("invalid argument. First argument must be an integer. Value: `%s`.", begin));
         }
         if (begin < 0) {
           begin += len;
@@ -7186,7 +7186,7 @@ var require_main79 = __commonJS({
           end = len;
         } else {
           if (!isInteger(end)) {
-            throw new TypeError(format("invalid argument. Second argument must be an integer. Value: `%s`.", end));
+            throw new TypeError(format3("invalid argument. Second argument must be an integer. Value: `%s`.", end));
           }
           if (end < 0) {
             end += len;
@@ -7210,7 +7210,7 @@ var require_main79 = __commonJS({
       }
       return new this.constructor(buf.buffer, offset, len < 0 ? 0 : len);
     });
-    setReadOnly(BooleanArray.prototype, "toLocaleString", function toLocaleString(locales, options) {
+    setReadOnly2(BooleanArray.prototype, "toLocaleString", function toLocaleString(locales, options) {
       var opts;
       var loc;
       var out;
@@ -7224,14 +7224,14 @@ var require_main79 = __commonJS({
       } else if (isString(locales) || isStringArray(locales)) {
         loc = locales;
       } else {
-        throw new TypeError(format("invalid argument. First argument must be a string or an array of strings. Value: `%s`.", locales));
+        throw new TypeError(format3("invalid argument. First argument must be a string or an array of strings. Value: `%s`.", locales));
       }
       if (arguments.length < 2) {
         opts = {};
       } else if (isObject(options)) {
         opts = options;
       } else {
-        throw new TypeError(format("invalid argument. Options argument must be an object. Value: `%s`.", options));
+        throw new TypeError(format3("invalid argument. Options argument must be an object. Value: `%s`.", options));
       }
       buf = this._buffer;
       out = [];
@@ -7240,7 +7240,7 @@ var require_main79 = __commonJS({
       }
       return out.join(",");
     });
-    setReadOnly(BooleanArray.prototype, "toReversed", function toReversed() {
+    setReadOnly2(BooleanArray.prototype, "toReversed", function toReversed() {
       var outbuf;
       var out;
       var len;
@@ -7258,7 +7258,7 @@ var require_main79 = __commonJS({
       }
       return out;
     });
-    setReadOnly(BooleanArray.prototype, "toSorted", function toSorted(compareFcn) {
+    setReadOnly2(BooleanArray.prototype, "toSorted", function toSorted(compareFcn) {
       var outbuf;
       var out;
       var len;
@@ -7279,7 +7279,7 @@ var require_main79 = __commonJS({
         return out;
       }
       if (!isFunction(compareFcn)) {
-        throw new TypeError(format("invalid argument. First argument must be a function. Value: `%s`.", compareFcn));
+        throw new TypeError(format3("invalid argument. First argument must be a function. Value: `%s`.", compareFcn));
       }
       outbuf.sort(compare);
       return out;
@@ -7287,7 +7287,7 @@ var require_main79 = __commonJS({
         return compareFcn(Boolean2(a), Boolean2(b));
       }
     });
-    setReadOnly(BooleanArray.prototype, "toString", function toString() {
+    setReadOnly2(BooleanArray.prototype, "toString", function toString() {
       var out;
       var buf;
       var i;
@@ -7305,7 +7305,7 @@ var require_main79 = __commonJS({
       }
       return out.join(",");
     });
-    setReadOnly(BooleanArray.prototype, "values", function values() {
+    setReadOnly2(BooleanArray.prototype, "values", function values() {
       var iter;
       var self2;
       var len;
@@ -7320,10 +7320,10 @@ var require_main79 = __commonJS({
       len = this._length;
       i = -1;
       iter = {};
-      setReadOnly(iter, "next", next);
-      setReadOnly(iter, "return", end);
+      setReadOnly2(iter, "next", next);
+      setReadOnly2(iter, "return", end);
       if (ITERATOR_SYMBOL) {
-        setReadOnly(iter, ITERATOR_SYMBOL, factory);
+        setReadOnly2(iter, ITERATOR_SYMBOL, factory);
       }
       return iter;
       function next() {
@@ -7354,7 +7354,7 @@ var require_main79 = __commonJS({
         return self2.values();
       }
     });
-    setReadOnly(BooleanArray.prototype, "with", function copyWith(index, value) {
+    setReadOnly2(BooleanArray.prototype, "with", function copyWith(index, value) {
       var buf;
       var out;
       var len;
@@ -7362,17 +7362,17 @@ var require_main79 = __commonJS({
         throw new TypeError("invalid invocation. `this` is not a boolean array.");
       }
       if (!isInteger(index)) {
-        throw new TypeError(format("invalid argument. First argument must be an integer. Value: `%s`.", index));
+        throw new TypeError(format3("invalid argument. First argument must be an integer. Value: `%s`.", index));
       }
       len = this._length;
       if (index < 0) {
         index += len;
       }
       if (index < 0 || index >= len) {
-        throw new RangeError(format("invalid argument. Index argument is out-of-bounds. Value: `%s`.", index));
+        throw new RangeError(format3("invalid argument. Index argument is out-of-bounds. Value: `%s`.", index));
       }
       if (!isBoolean(value)) {
-        throw new TypeError(format("invalid argument. Second argument must be a boolean. Value: `%s`.", value));
+        throw new TypeError(format3("invalid argument. Second argument must be a boolean. Value: `%s`.", value));
       }
       out = new this.constructor(this._buffer);
       buf = out._buffer;
@@ -7400,7 +7400,7 @@ var require_lib94 = __commonJS({
 var require_ctors = __commonJS({
   "node_modules/@stdlib/array/dtype/lib/ctors.js"(exports, module) {
     "use strict";
-    var Float64Array2 = require_lib22();
+    var Float64Array4 = require_lib22();
     var Float32Array2 = require_lib26();
     var Uint32Array2 = require_lib30();
     var Int32Array2 = require_lib35();
@@ -7413,7 +7413,7 @@ var require_ctors = __commonJS({
     var Complex128Array = require_lib93();
     var BooleanArray = require_lib94();
     var CTORS = [
-      Float64Array2,
+      Float64Array4,
       Float32Array2,
       Int32Array2,
       Uint32Array2,
@@ -7530,13 +7530,13 @@ var require_factory = __commonJS({
     var isAccessorArray = require_lib6();
     var accessorGetter = require_lib7();
     var dtype = require_lib95();
-    var format = require_lib3();
+    var format3 = require_lib3();
     function factory(x) {
       var get;
       var len;
       var dt;
       if (!isCollection(x)) {
-        throw new TypeError(format("invalid argument. Must provide an array-like object. Value: `%s`.", x));
+        throw new TypeError(format3("invalid argument. Must provide an array-like object. Value: `%s`.", x));
       }
       dt = dtype(x);
       if (isAccessorArray(x)) {
@@ -7571,10 +7571,10 @@ var require_factory = __commonJS({
 var require_lib96 = __commonJS({
   "node_modules/@stdlib/array/base/assert/contains/lib/index.js"(exports, module) {
     "use strict";
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var main = require_main81();
     var factory = require_factory();
-    setReadOnly(main, "factory", factory);
+    setReadOnly2(main, "factory", factory);
     module.exports = main;
   }
 });
@@ -7621,10 +7621,10 @@ var require_enum = __commonJS({
 var require_lib97 = __commonJS({
   "node_modules/@stdlib/blas/base/layouts/lib/index.js"(exports, module) {
     "use strict";
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var main = require_main82();
     var enumeration = require_enum();
-    setReadOnly(main, "enum", enumeration);
+    setReadOnly2(main, "enum", enumeration);
     module.exports = main;
   }
 });
@@ -7635,8 +7635,8 @@ var require_main83 = __commonJS({
     "use strict";
     var contains = require_lib96().factory;
     var layouts = require_lib97();
-    var isLayout = contains(layouts());
-    module.exports = isLayout;
+    var isLayout2 = contains(layouts());
+    module.exports = isLayout2;
   }
 });
 
@@ -7694,10 +7694,10 @@ var require_enum2 = __commonJS({
 var require_lib99 = __commonJS({
   "node_modules/@stdlib/blas/base/transpose-operations/lib/index.js"(exports, module) {
     "use strict";
-    var setReadOnly = require_lib5();
+    var setReadOnly2 = require_lib5();
     var main = require_main84();
     var enumeration = require_enum2();
-    setReadOnly(main, "enum", enumeration);
+    setReadOnly2(main, "enum", enumeration);
     module.exports = main;
   }
 });
@@ -7726,13 +7726,13 @@ var require_lib100 = __commonJS({
 var require_main86 = __commonJS({
   "node_modules/@stdlib/math/base/special/fast/max/lib/main.js"(exports, module) {
     "use strict";
-    function max(x, y) {
+    function max2(x, y) {
       if (x > y) {
         return x;
       }
       return y;
     }
-    module.exports = max;
+    module.exports = max2;
   }
 });
 
@@ -7740,2610 +7740,2535 @@ var require_main86 = __commonJS({
 var require_lib101 = __commonJS({
   "node_modules/@stdlib/math/base/special/fast/max/lib/index.js"(exports, module) {
     "use strict";
-    var max = require_main86();
-    module.exports = max;
+    var max2 = require_main86();
+    module.exports = max2;
   }
 });
 
-// node_modules/blapack/lib/blas/base/dnrm2/lib/base.js
-var require_base = __commonJS({
-  "node_modules/blapack/lib/blas/base/dnrm2/lib/base.js"(exports, module) {
-    "use strict";
-    var TSML = 14916681462400413e-170;
-    var TBIG = 1997919072202235e131;
-    var SSML = 44989137945431964e145;
-    var SBIG = 11113793747425387e-178;
-    function dnrm2(N, x, stride, offset) {
-      var notbig;
-      var sumsq;
-      var abig;
-      var amed;
-      var asml;
-      var ymin;
-      var ymax;
-      var scl;
-      var ax;
-      var ix;
-      var i;
-      if (N <= 0) {
-        return 0;
+// node_modules/@rreusser/blapack/lib/lapack/base/dgels/lib/main.js
+var import_lib9 = __toESM(require_lib5(), 1);
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dgels/lib/dgels.js
+var import_lib2 = __toESM(require_lib98(), 1);
+var import_lib3 = __toESM(require_lib3(), 1);
+var import_lib4 = __toESM(require_lib100(), 1);
+var import_lib5 = __toESM(require_lib101(), 1);
+var import_lib6 = __toESM(require_lib22(), 1);
+
+// node_modules/@rreusser/blapack/lib/blas/base/dnrm2/lib/base.js
+var TSML = 14916681462400413e-170;
+var TBIG = 1997919072202235e131;
+var SSML = 44989137945431964e145;
+var SBIG = 11113793747425387e-178;
+function dnrm2(N, x, stride, offset) {
+  var notbig;
+  var sumsq;
+  var abig;
+  var amed;
+  var asml;
+  var ymin;
+  var ymax;
+  var scl;
+  var ax;
+  var ix;
+  var i;
+  if (N <= 0) {
+    return 0;
+  }
+  scl = 1;
+  sumsq = 0;
+  notbig = true;
+  asml = 0;
+  amed = 0;
+  abig = 0;
+  ix = offset;
+  for (i = 0; i < N; i++) {
+    ax = Math.abs(x[ix]);
+    if (ax > TBIG) {
+      abig += ax * SBIG * (ax * SBIG);
+      notbig = false;
+    } else if (ax < TSML) {
+      if (notbig) {
+        asml += ax * SSML * (ax * SSML);
+      }
+    } else {
+      amed += ax * ax;
+    }
+    ix += stride;
+  }
+  if (abig > 0) {
+    if (amed > 0 || amed !== amed) {
+      abig += amed * SBIG * SBIG;
+    }
+    scl = 1 / SBIG;
+    sumsq = abig;
+  } else if (asml > 0) {
+    if (amed > 0 || amed !== amed) {
+      amed = Math.sqrt(amed);
+      asml = Math.sqrt(asml) / SSML;
+      if (asml > amed) {
+        ymin = amed;
+        ymax = asml;
+      } else {
+        ymin = asml;
+        ymax = amed;
       }
       scl = 1;
-      sumsq = 0;
-      notbig = true;
-      asml = 0;
-      amed = 0;
-      abig = 0;
-      ix = offset;
-      for (i = 0; i < N; i++) {
-        ax = Math.abs(x[ix]);
-        if (ax > TBIG) {
-          abig += ax * SBIG * (ax * SBIG);
-          notbig = false;
-        } else if (ax < TSML) {
-          if (notbig) {
-            asml += ax * SSML * (ax * SSML);
-          }
-        } else {
-          amed += ax * ax;
-        }
-        ix += stride;
-      }
-      if (abig > 0) {
-        if (amed > 0 || amed !== amed) {
-          abig += amed * SBIG * SBIG;
-        }
-        scl = 1 / SBIG;
-        sumsq = abig;
-      } else if (asml > 0) {
-        if (amed > 0 || amed !== amed) {
-          amed = Math.sqrt(amed);
-          asml = Math.sqrt(asml) / SSML;
-          if (asml > amed) {
-            ymin = amed;
-            ymax = asml;
-          } else {
-            ymin = asml;
-            ymax = amed;
-          }
-          scl = 1;
-          sumsq = ymax * ymax * (1 + ymin / ymax * (ymin / ymax));
-        } else {
-          scl = 1 / SSML;
-          sumsq = asml;
-        }
-      } else {
-        scl = 1;
-        sumsq = amed;
-      }
-      return scl * Math.sqrt(sumsq);
+      sumsq = ymax * ymax * (1 + ymin / ymax * (ymin / ymax));
+    } else {
+      scl = 1 / SSML;
+      sumsq = asml;
     }
-    module.exports = dnrm2;
+  } else {
+    scl = 1;
+    sumsq = amed;
   }
-});
+  return scl * Math.sqrt(sumsq);
+}
+var base_default = dnrm2;
 
-// node_modules/blapack/lib/blas/base/dscal/lib/base.js
-var require_base2 = __commonJS({
-  "node_modules/blapack/lib/blas/base/dscal/lib/base.js"(exports, module) {
-    "use strict";
-    var M = 5;
-    function dscal(N, da, x, strideX, offsetX) {
-      var ix;
-      var m;
-      var i;
-      if (N <= 0) {
-        return x;
-      }
-      ix = offsetX;
-      if (strideX === 1) {
-        m = N % M;
-        if (m > 0) {
-          for (i = 0; i < m; i++) {
-            x[ix] *= da;
-            ix += 1;
-          }
-        }
-        if (N < M) {
-          return x;
-        }
-        for (i = m; i < N; i += M) {
-          x[ix] *= da;
-          x[ix + 1] *= da;
-          x[ix + 2] *= da;
-          x[ix + 3] *= da;
-          x[ix + 4] *= da;
-          ix += M;
-        }
-        return x;
-      }
-      for (i = 0; i < N; i++) {
+// node_modules/@rreusser/blapack/lib/blas/base/dscal/lib/base.js
+var M = 5;
+function dscal(N, da, x, strideX, offsetX) {
+  var ix;
+  var m;
+  var i;
+  if (N <= 0) {
+    return x;
+  }
+  ix = offsetX;
+  if (strideX === 1) {
+    m = N % M;
+    if (m > 0) {
+      for (i = 0; i < m; i++) {
         x[ix] *= da;
-        ix += strideX;
+        ix += 1;
       }
+    }
+    if (N < M) {
       return x;
     }
-    module.exports = dscal;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dlamch/lib/base.js
-var require_base3 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dlamch/lib/base.js"(exports, module) {
-    "use strict";
-    var EPS = 11102230246251565e-32;
-    var SFMIN = 22250738585072014e-324;
-    var BASE = 2;
-    var PREC = EPS * BASE;
-    var DIGITS = 53;
-    var RND = 1;
-    var EMIN = -1021;
-    var RMIN = 22250738585072014e-324;
-    var EMAX = 1024;
-    var RMAX = 17976931348623157e292;
-    var TABLE = {
-      "epsilon": EPS,
-      "Epsilon": EPS,
-      "safe-minimum": SFMIN,
-      "Safe minimum": SFMIN,
-      "base": BASE,
-      "Base": BASE,
-      "precision": PREC,
-      "Precision": PREC,
-      "digits": DIGITS,
-      "rounding": RND,
-      "min-exponent": EMIN,
-      "underflow": RMIN,
-      "max-exponent": EMAX,
-      "overflow": RMAX,
-      "scale": SFMIN,
-      "E": EPS,
-      "e": EPS,
-      "S": SFMIN,
-      "s": SFMIN,
-      "B": BASE,
-      "b": BASE,
-      "P": PREC,
-      "p": PREC,
-      "N": DIGITS,
-      "n": DIGITS,
-      "R": RND,
-      "r": RND,
-      "M": EMIN,
-      "m": EMIN,
-      "U": RMIN,
-      "u": RMIN,
-      "L": EMAX,
-      "l": EMAX,
-      "O": RMAX,
-      "o": RMAX
-    };
-    function dlamch(cmach) {
-      var v = TABLE[cmach];
-      if (v !== void 0) {
-        return v;
-      }
-      return 0;
+    for (i = m; i < N; i += M) {
+      x[ix] *= da;
+      x[ix + 1] *= da;
+      x[ix + 2] *= da;
+      x[ix + 3] *= da;
+      x[ix + 4] *= da;
+      ix += M;
     }
-    module.exports = dlamch;
+    return x;
   }
-});
+  for (i = 0; i < N; i++) {
+    x[ix] *= da;
+    ix += strideX;
+  }
+  return x;
+}
+var base_default2 = dscal;
 
-// node_modules/blapack/lib/lapack/base/dlapy2/lib/base.js
-var require_base4 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dlapy2/lib/base.js"(exports, module) {
-    "use strict";
-    function dlapy2(x, y) {
-      var xabs;
-      var yabs;
-      var w;
-      var z;
-      if (x !== x) {
-        return x;
-      }
-      if (y !== y) {
-        return y;
-      }
-      xabs = Math.abs(x);
-      yabs = Math.abs(y);
-      w = Math.max(xabs, yabs);
-      z = Math.min(xabs, yabs);
-      if (z === 0 || w > 17976931348623157e292) {
-        return w;
-      }
-      return w * Math.sqrt(1 + z / w * (z / w));
+// node_modules/@rreusser/blapack/lib/lapack/base/dlamch/lib/base.js
+var EPS = 11102230246251565e-32;
+var SFMIN = 22250738585072014e-324;
+var BASE = 2;
+var PREC = EPS * BASE;
+var DIGITS = 53;
+var RND = 1;
+var EMIN = -1021;
+var RMIN = 22250738585072014e-324;
+var EMAX = 1024;
+var RMAX = 17976931348623157e292;
+var TABLE = {
+  "epsilon": EPS,
+  "Epsilon": EPS,
+  "safe-minimum": SFMIN,
+  "Safe minimum": SFMIN,
+  "base": BASE,
+  "Base": BASE,
+  "precision": PREC,
+  "Precision": PREC,
+  "digits": DIGITS,
+  "rounding": RND,
+  "min-exponent": EMIN,
+  "underflow": RMIN,
+  "max-exponent": EMAX,
+  "overflow": RMAX,
+  "scale": SFMIN,
+  "E": EPS,
+  "e": EPS,
+  "S": SFMIN,
+  "s": SFMIN,
+  "B": BASE,
+  "b": BASE,
+  "P": PREC,
+  "p": PREC,
+  "N": DIGITS,
+  "n": DIGITS,
+  "R": RND,
+  "r": RND,
+  "M": EMIN,
+  "m": EMIN,
+  "U": RMIN,
+  "u": RMIN,
+  "L": EMAX,
+  "l": EMAX,
+  "O": RMAX,
+  "o": RMAX
+};
+function dlamch(cmach) {
+  var v = TABLE[cmach];
+  if (v !== void 0) {
+    return v;
+  }
+  return 0;
+}
+var base_default3 = dlamch;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dlapy2/lib/base.js
+function dlapy2(x, y) {
+  var xabs;
+  var yabs;
+  var w;
+  var z;
+  if (x !== x) {
+    return x;
+  }
+  if (y !== y) {
+    return y;
+  }
+  xabs = Math.abs(x);
+  yabs = Math.abs(y);
+  w = Math.max(xabs, yabs);
+  z = Math.min(xabs, yabs);
+  if (z === 0 || w > 17976931348623157e292) {
+    return w;
+  }
+  return w * Math.sqrt(1 + z / w * (z / w));
+}
+var base_default4 = dlapy2;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dlarfg/lib/base.js
+function dlarfg(N, alpha, offsetAlpha, x, strideX, offsetX, tau, offsetTau) {
+  var rsafmn;
+  var safmin;
+  var xnorm;
+  var sign;
+  var beta;
+  var knt;
+  var j;
+  if (N <= 1) {
+    tau[offsetTau] = 0;
+    return;
+  }
+  xnorm = base_default(N - 1, x, strideX, offsetX);
+  if (xnorm === 0) {
+    tau[offsetTau] = 0;
+  } else {
+    sign = Math.sign(alpha[offsetAlpha]) || 1;
+    beta = -sign * base_default4(alpha[offsetAlpha], xnorm);
+    safmin = base_default3("safe-minimum") / base_default3("epsilon");
+    knt = 0;
+    if (Math.abs(beta) < safmin) {
+      rsafmn = 1 / safmin;
+      do {
+        knt += 1;
+        base_default2(N - 1, rsafmn, x, strideX, offsetX);
+        beta *= rsafmn;
+        alpha[offsetAlpha] *= rsafmn;
+      } while (Math.abs(beta) < safmin && knt < 20);
+      xnorm = base_default(N - 1, x, strideX, offsetX);
+      sign = Math.sign(alpha[offsetAlpha]) || 1;
+      beta = -sign * base_default4(alpha[offsetAlpha], xnorm);
     }
-    module.exports = dlapy2;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dlarfg/lib/base.js
-var require_base5 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dlarfg/lib/base.js"(exports, module) {
-    "use strict";
-    var dnrm2 = require_base();
-    var dscal = require_base2();
-    var dlamch = require_base3();
-    var dlapy2 = require_base4();
-    function dlarfg(N, alpha, offsetAlpha, x, strideX, offsetX, tau, offsetTau) {
-      var rsafmn;
-      var safmin;
-      var xnorm;
-      var sign;
-      var beta;
-      var knt;
-      var j;
-      if (N <= 1) {
-        tau[offsetTau] = 0;
-        return;
-      }
-      xnorm = dnrm2(N - 1, x, strideX, offsetX);
-      if (xnorm === 0) {
-        tau[offsetTau] = 0;
-      } else {
-        sign = Math.sign(alpha[offsetAlpha]) || 1;
-        beta = -sign * dlapy2(alpha[offsetAlpha], xnorm);
-        safmin = dlamch("safe-minimum") / dlamch("epsilon");
-        knt = 0;
-        if (Math.abs(beta) < safmin) {
-          rsafmn = 1 / safmin;
-          do {
-            knt += 1;
-            dscal(N - 1, rsafmn, x, strideX, offsetX);
-            beta *= rsafmn;
-            alpha[offsetAlpha] *= rsafmn;
-          } while (Math.abs(beta) < safmin && knt < 20);
-          xnorm = dnrm2(N - 1, x, strideX, offsetX);
-          sign = Math.sign(alpha[offsetAlpha]) || 1;
-          beta = -sign * dlapy2(alpha[offsetAlpha], xnorm);
-        }
-        tau[offsetTau] = (beta - alpha[offsetAlpha]) / beta;
-        dscal(N - 1, 1 / (alpha[offsetAlpha] - beta), x, strideX, offsetX);
-        for (j = 0; j < knt; j++) {
-          beta *= safmin;
-        }
-        alpha[offsetAlpha] = beta;
-      }
+    tau[offsetTau] = (beta - alpha[offsetAlpha]) / beta;
+    base_default2(N - 1, 1 / (alpha[offsetAlpha] - beta), x, strideX, offsetX);
+    for (j = 0; j < knt; j++) {
+      beta *= safmin;
     }
-    module.exports = dlarfg;
+    alpha[offsetAlpha] = beta;
   }
-});
+}
+var base_default5 = dlarfg;
 
-// node_modules/blapack/lib/blas/base/dgemv/lib/base.js
-var require_base6 = __commonJS({
-  "node_modules/blapack/lib/blas/base/dgemv/lib/base.js"(exports, module) {
-    "use strict";
-    function dgemv(trans, M, N, alpha, A, strideA1, strideA2, offsetA, x, strideX, offsetX, beta, y, strideY, offsetY) {
-      var noTrans;
-      var temp;
-      var leny;
-      var sa1;
-      var sa2;
-      var ia;
-      var ix;
-      var iy;
-      var jx;
-      var jy;
-      var i;
-      var j;
-      noTrans = trans === "no-transpose";
-      if (M === 0 || N === 0 || alpha === 0 && beta === 1) {
-        return y;
-      }
-      sa1 = strideA1;
-      sa2 = strideA2;
-      if (noTrans) {
-        leny = M;
-      } else {
-        leny = N;
-      }
-      if (beta !== 1) {
-        iy = offsetY;
-        if (beta === 0) {
-          for (i = 0; i < leny; i++) {
-            y[iy] = 0;
-            iy += strideY;
-          }
-        } else {
-          for (i = 0; i < leny; i++) {
-            y[iy] *= beta;
-            iy += strideY;
-          }
-        }
-      }
-      if (alpha === 0) {
-        return y;
-      }
-      if (noTrans) {
-        jx = offsetX;
-        for (j = 0; j < N; j++) {
-          temp = alpha * x[jx];
-          iy = offsetY;
-          ia = offsetA + j * sa2;
-          for (i = 0; i < M; i++) {
-            y[iy] += temp * A[ia];
-            iy += strideY;
-            ia += sa1;
-          }
-          jx += strideX;
-        }
-      } else {
-        jy = offsetY;
-        for (j = 0; j < N; j++) {
-          temp = 0;
-          ix = offsetX;
-          ia = offsetA + j * sa2;
-          for (i = 0; i < M; i++) {
-            temp += A[ia] * x[ix];
-            ix += strideX;
-            ia += sa1;
-          }
-          y[jy] += alpha * temp;
-          jy += strideY;
-        }
-      }
-      return y;
-    }
-    module.exports = dgemv;
+// node_modules/@rreusser/blapack/lib/blas/base/dgemv/lib/base.js
+function dgemv(trans, M3, N, alpha, A, strideA1, strideA2, offsetA, x, strideX, offsetX, beta, y, strideY, offsetY) {
+  var noTrans;
+  var temp;
+  var leny;
+  var sa1;
+  var sa2;
+  var ia;
+  var ix;
+  var iy;
+  var jx;
+  var jy;
+  var i;
+  var j;
+  noTrans = trans === "no-transpose";
+  if (M3 === 0 || N === 0 || alpha === 0 && beta === 1) {
+    return y;
   }
-});
-
-// node_modules/blapack/lib/blas/base/dger/lib/base.js
-var require_base7 = __commonJS({
-  "node_modules/blapack/lib/blas/base/dger/lib/base.js"(exports, module) {
-    "use strict";
-    function dger(M, N, alpha, x, strideX, offsetX, y, strideY, offsetY, A, strideA1, strideA2, offsetA) {
-      var temp;
-      var ix;
-      var jy;
-      var i;
-      var j;
-      if (M === 0 || N === 0 || alpha === 0) {
-        return A;
-      }
-      jy = offsetY;
-      for (j = 0; j < N; j++) {
-        if (y[jy] !== 0) {
-          temp = alpha * y[jy];
-          ix = offsetX;
-          for (i = 0; i < M; i++) {
-            A[offsetA + i * strideA1 + j * strideA2] += x[ix] * temp;
-            ix += strideX;
-          }
-        }
-        jy += strideY;
-      }
-      return A;
-    }
-    module.exports = dger;
+  sa1 = strideA1;
+  sa2 = strideA2;
+  if (noTrans) {
+    leny = M3;
+  } else {
+    leny = N;
   }
-});
-
-// node_modules/blapack/lib/lapack/base/iladlr/lib/base.js
-var require_base8 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/iladlr/lib/base.js"(exports, module) {
-    "use strict";
-    function iladlr(M, N, A, strideA1, strideA2, offsetA) {
-      var result;
-      var i;
-      var j;
-      if (M === 0) {
-        return -1;
-      }
-      if (A[offsetA + (M - 1) * strideA1] !== 0 || A[offsetA + (M - 1) * strideA1 + (N - 1) * strideA2] !== 0) {
-        return M - 1;
-      }
-      result = -1;
-      for (j = 0; j < N; j++) {
-        i = M - 1;
-        while (i >= 0 && A[offsetA + i * strideA1 + j * strideA2] === 0) {
-          i -= 1;
-        }
-        if (i > result) {
-          result = i;
-        }
-      }
-      return result;
-    }
-    module.exports = iladlr;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/iladlc/lib/base.js
-var require_base9 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/iladlc/lib/base.js"(exports, module) {
-    "use strict";
-    function iladlc(M, N, A, strideA1, strideA2, offsetA) {
-      var i;
-      var j;
-      if (N === 0) {
-        return -1;
-      }
-      if (A[offsetA + (N - 1) * strideA2] !== 0 || A[offsetA + (M - 1) * strideA1 + (N - 1) * strideA2] !== 0) {
-        return N - 1;
-      }
-      for (j = N - 1; j >= 0; j--) {
-        for (i = 0; i < M; i++) {
-          if (A[offsetA + i * strideA1 + j * strideA2] !== 0) {
-            return j;
-          }
-        }
-      }
-      return -1;
-    }
-    module.exports = iladlc;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dlarf/lib/base.js
-var require_base10 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dlarf/lib/base.js"(exports, module) {
-    "use strict";
-    var dgemv = require_base6();
-    var dger = require_base7();
-    var iladlr = require_base8();
-    var iladlc = require_base9();
-    function dlarf(side, M, N, v, strideV, offsetV, tau, C, strideC1, strideC2, offsetC, WORK, strideWORK, offsetWORK) {
-      var applyLeft;
-      var lastv;
-      var lastc;
-      var ix;
-      applyLeft = side === "left";
-      lastv = 0;
-      lastc = 0;
-      if (tau !== 0) {
-        if (applyLeft) {
-          lastv = M;
-        } else {
-          lastv = N;
-        }
-        if (strideV > 0) {
-          ix = offsetV + (lastv - 1) * strideV;
-        } else {
-          ix = offsetV;
-        }
-        while (lastv > 0 && v[ix] === 0) {
-          lastv -= 1;
-          ix -= strideV;
-        }
-        if (applyLeft) {
-          lastc = iladlc(lastv, N, C, strideC1, strideC2, offsetC) + 1;
-        } else {
-          lastc = iladlr(M, lastv, C, strideC1, strideC2, offsetC) + 1;
-        }
-      }
-      if (applyLeft) {
-        if (lastv > 0) {
-          dgemv("transpose", lastv, lastc, 1, C, strideC1, strideC2, offsetC, v, strideV, offsetV, 0, WORK, strideWORK, offsetWORK);
-          dger(lastv, lastc, -tau, v, strideV, offsetV, WORK, strideWORK, offsetWORK, C, strideC1, strideC2, offsetC);
-        }
-      } else if (lastv > 0) {
-        dgemv("no-transpose", lastc, lastv, 1, C, strideC1, strideC2, offsetC, v, strideV, offsetV, 0, WORK, strideWORK, offsetWORK);
-        dger(lastc, lastv, -tau, WORK, strideWORK, offsetWORK, v, strideV, offsetV, C, strideC1, strideC2, offsetC);
-      }
-    }
-    module.exports = dlarf;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dgeqr2/lib/base.js
-var require_base11 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dgeqr2/lib/base.js"(exports, module) {
-    "use strict";
-    var dlarfg = require_base5();
-    var dlarf = require_base10();
-    function dgeqr2(M, N, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, WORK, strideWORK, offsetWORK) {
-      var alpha;
-      var aii;
-      var K;
-      var i;
-      K = Math.min(M, N);
-      for (i = 0; i < K; i++) {
-        aii = offsetA + i * strideA1 + i * strideA2;
-        dlarfg(M - i, A, aii, A, strideA1, offsetA + Math.min(i + 1, M - 1) * strideA1 + i * strideA2, TAU, offsetTAU + i * strideTAU);
-        if (i < N - 1) {
-          alpha = A[aii];
-          A[aii] = 1;
-          dlarf("left", M - i, N - i - 1, A, strideA1, aii, TAU[offsetTAU + i * strideTAU], A, strideA1, strideA2, offsetA + i * strideA1 + (i + 1) * strideA2, WORK, strideWORK, offsetWORK);
-          A[aii] = alpha;
-        }
-      }
-      return 0;
-    }
-    module.exports = dgeqr2;
-  }
-});
-
-// node_modules/blapack/lib/blas/base/dcopy/lib/base.js
-var require_base12 = __commonJS({
-  "node_modules/blapack/lib/blas/base/dcopy/lib/base.js"(exports, module) {
-    "use strict";
-    var M = 7;
-    function dcopy(N, x, strideX, offsetX, y, strideY, offsetY) {
-      var ix;
-      var iy;
-      var m;
-      var i;
-      if (N <= 0) {
-        return y;
-      }
-      ix = offsetX;
-      iy = offsetY;
-      if (strideX === 1 && strideY === 1) {
-        m = N % M;
-        if (m > 0) {
-          for (i = 0; i < m; i++) {
-            y[iy] = x[ix];
-            ix += 1;
-            iy += 1;
-          }
-        }
-        if (N < M) {
-          return y;
-        }
-        for (i = m; i < N; i += M) {
-          y[iy] = x[ix];
-          y[iy + 1] = x[ix + 1];
-          y[iy + 2] = x[ix + 2];
-          y[iy + 3] = x[ix + 3];
-          y[iy + 4] = x[ix + 4];
-          y[iy + 5] = x[ix + 5];
-          y[iy + 6] = x[ix + 6];
-          ix += M;
-          iy += M;
-        }
-        return y;
-      }
-      for (i = 0; i < N; i++) {
-        y[iy] = x[ix];
-        ix += strideX;
+  if (beta !== 1) {
+    iy = offsetY;
+    if (beta === 0) {
+      for (i = 0; i < leny; i++) {
+        y[iy] = 0;
         iy += strideY;
       }
+    } else {
+      for (i = 0; i < leny; i++) {
+        y[iy] *= beta;
+        iy += strideY;
+      }
+    }
+  }
+  if (alpha === 0) {
+    return y;
+  }
+  if (noTrans) {
+    jx = offsetX;
+    for (j = 0; j < N; j++) {
+      temp = alpha * x[jx];
+      iy = offsetY;
+      ia = offsetA + j * sa2;
+      for (i = 0; i < M3; i++) {
+        y[iy] += temp * A[ia];
+        iy += strideY;
+        ia += sa1;
+      }
+      jx += strideX;
+    }
+  } else {
+    jy = offsetY;
+    for (j = 0; j < N; j++) {
+      temp = 0;
+      ix = offsetX;
+      ia = offsetA + j * sa2;
+      for (i = 0; i < M3; i++) {
+        temp += A[ia] * x[ix];
+        ix += strideX;
+        ia += sa1;
+      }
+      y[jy] += alpha * temp;
+      jy += strideY;
+    }
+  }
+  return y;
+}
+var base_default6 = dgemv;
+
+// node_modules/@rreusser/blapack/lib/blas/base/dger/lib/base.js
+function dger(M3, N, alpha, x, strideX, offsetX, y, strideY, offsetY, A, strideA1, strideA2, offsetA) {
+  var temp;
+  var ix;
+  var jy;
+  var i;
+  var j;
+  if (M3 === 0 || N === 0 || alpha === 0) {
+    return A;
+  }
+  jy = offsetY;
+  for (j = 0; j < N; j++) {
+    if (y[jy] !== 0) {
+      temp = alpha * y[jy];
+      ix = offsetX;
+      for (i = 0; i < M3; i++) {
+        A[offsetA + i * strideA1 + j * strideA2] += x[ix] * temp;
+        ix += strideX;
+      }
+    }
+    jy += strideY;
+  }
+  return A;
+}
+var base_default7 = dger;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/iladlr/lib/base.js
+function iladlr(M3, N, A, strideA1, strideA2, offsetA) {
+  var result;
+  var i;
+  var j;
+  if (M3 === 0) {
+    return -1;
+  }
+  if (A[offsetA + (M3 - 1) * strideA1] !== 0 || A[offsetA + (M3 - 1) * strideA1 + (N - 1) * strideA2] !== 0) {
+    return M3 - 1;
+  }
+  result = -1;
+  for (j = 0; j < N; j++) {
+    i = M3 - 1;
+    while (i >= 0 && A[offsetA + i * strideA1 + j * strideA2] === 0) {
+      i -= 1;
+    }
+    if (i > result) {
+      result = i;
+    }
+  }
+  return result;
+}
+var base_default8 = iladlr;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/iladlc/lib/base.js
+function iladlc(M3, N, A, strideA1, strideA2, offsetA) {
+  var i;
+  var j;
+  if (N === 0) {
+    return -1;
+  }
+  if (A[offsetA + (N - 1) * strideA2] !== 0 || A[offsetA + (M3 - 1) * strideA1 + (N - 1) * strideA2] !== 0) {
+    return N - 1;
+  }
+  for (j = N - 1; j >= 0; j--) {
+    for (i = 0; i < M3; i++) {
+      if (A[offsetA + i * strideA1 + j * strideA2] !== 0) {
+        return j;
+      }
+    }
+  }
+  return -1;
+}
+var base_default9 = iladlc;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dlarf/lib/base.js
+function dlarf(side, M3, N, v, strideV, offsetV, tau, C, strideC1, strideC2, offsetC, WORK, strideWork, offsetWork) {
+  var applyLeft;
+  var lastv;
+  var lastc;
+  var ix;
+  applyLeft = side === "left";
+  lastv = 0;
+  lastc = 0;
+  if (tau !== 0) {
+    if (applyLeft) {
+      lastv = M3;
+    } else {
+      lastv = N;
+    }
+    if (strideV > 0) {
+      ix = offsetV + (lastv - 1) * strideV;
+    } else {
+      ix = offsetV;
+    }
+    while (lastv > 0 && v[ix] === 0) {
+      lastv -= 1;
+      ix -= strideV;
+    }
+    if (applyLeft) {
+      lastc = base_default9(lastv, N, C, strideC1, strideC2, offsetC) + 1;
+    } else {
+      lastc = base_default8(M3, lastv, C, strideC1, strideC2, offsetC) + 1;
+    }
+  }
+  if (applyLeft) {
+    if (lastv > 0) {
+      base_default6("transpose", lastv, lastc, 1, C, strideC1, strideC2, offsetC, v, strideV, offsetV, 0, WORK, strideWork, offsetWork);
+      base_default7(lastv, lastc, -tau, v, strideV, offsetV, WORK, strideWork, offsetWork, C, strideC1, strideC2, offsetC);
+    }
+  } else if (lastv > 0) {
+    base_default6("no-transpose", lastc, lastv, 1, C, strideC1, strideC2, offsetC, v, strideV, offsetV, 0, WORK, strideWork, offsetWork);
+    base_default7(lastc, lastv, -tau, WORK, strideWork, offsetWork, v, strideV, offsetV, C, strideC1, strideC2, offsetC);
+  }
+}
+var base_default10 = dlarf;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dgeqr2/lib/base.js
+function dgeqr2(M3, N, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, WORK, strideWork, offsetWork) {
+  var alpha;
+  var aii;
+  var K;
+  var i;
+  K = Math.min(M3, N);
+  for (i = 0; i < K; i++) {
+    aii = offsetA + i * strideA1 + i * strideA2;
+    base_default5(M3 - i, A, aii, A, strideA1, offsetA + Math.min(i + 1, M3 - 1) * strideA1 + i * strideA2, TAU, offsetTAU + i * strideTAU);
+    if (i < N - 1) {
+      alpha = A[aii];
+      A[aii] = 1;
+      base_default10("left", M3 - i, N - i - 1, A, strideA1, aii, TAU[offsetTAU + i * strideTAU], A, strideA1, strideA2, offsetA + i * strideA1 + (i + 1) * strideA2, WORK, strideWork, offsetWork);
+      A[aii] = alpha;
+    }
+  }
+  return 0;
+}
+var base_default11 = dgeqr2;
+
+// node_modules/@rreusser/blapack/lib/blas/base/dcopy/lib/base.js
+var M2 = 7;
+function dcopy(N, x, strideX, offsetX, y, strideY, offsetY) {
+  var ix;
+  var iy;
+  var m;
+  var i;
+  if (N <= 0) {
+    return y;
+  }
+  ix = offsetX;
+  iy = offsetY;
+  if (strideX === 1 && strideY === 1) {
+    m = N % M2;
+    if (m > 0) {
+      for (i = 0; i < m; i++) {
+        y[iy] = x[ix];
+        ix += 1;
+        iy += 1;
+      }
+    }
+    if (N < M2) {
       return y;
     }
-    module.exports = dcopy;
+    for (i = m; i < N; i += M2) {
+      y[iy] = x[ix];
+      y[iy + 1] = x[ix + 1];
+      y[iy + 2] = x[ix + 2];
+      y[iy + 3] = x[ix + 3];
+      y[iy + 4] = x[ix + 4];
+      y[iy + 5] = x[ix + 5];
+      y[iy + 6] = x[ix + 6];
+      ix += M2;
+      iy += M2;
+    }
+    return y;
   }
-});
+  for (i = 0; i < N; i++) {
+    y[iy] = x[ix];
+    ix += strideX;
+    iy += strideY;
+  }
+  return y;
+}
+var base_default12 = dcopy;
 
-// node_modules/blapack/lib/blas/base/dgemm/lib/base.js
-var require_base13 = __commonJS({
-  "node_modules/blapack/lib/blas/base/dgemm/lib/base.js"(exports, module) {
-    "use strict";
-    function dgemm(transa, transb, M, N, K, alpha, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB, beta, C, strideC1, strideC2, offsetC) {
-      var nota;
-      var notb;
-      var temp;
-      var sa1;
-      var sa2;
-      var sb1;
-      var sb2;
-      var sc1;
-      var sc2;
-      var ia;
-      var ib;
-      var ic;
-      var i;
-      var j;
-      var l;
-      nota = transa === "no-transpose";
-      notb = transb === "no-transpose";
-      if (M === 0 || N === 0 || (alpha === 0 || K === 0) && beta === 1) {
-        return C;
-      }
-      sa1 = strideA1;
-      sa2 = strideA2;
-      sb1 = strideB1;
-      sb2 = strideB2;
-      sc1 = strideC1;
-      sc2 = strideC2;
-      if (alpha === 0) {
-        if (beta === 0) {
-          for (j = 0; j < N; j++) {
-            ic = offsetC + j * sc2;
-            for (i = 0; i < M; i++) {
-              C[ic] = 0;
-              ic += sc1;
-            }
-          }
-        } else {
-          for (j = 0; j < N; j++) {
-            ic = offsetC + j * sc2;
-            for (i = 0; i < M; i++) {
-              C[ic] *= beta;
-              ic += sc1;
-            }
-          }
-        }
-        return C;
-      }
-      if (notb) {
-        if (nota) {
-          for (j = 0; j < N; j++) {
-            if (beta === 0) {
-              ic = offsetC + j * sc2;
-              for (i = 0; i < M; i++) {
-                C[ic] = 0;
-                ic += sc1;
-              }
-            } else if (beta !== 1) {
-              ic = offsetC + j * sc2;
-              for (i = 0; i < M; i++) {
-                C[ic] *= beta;
-                ic += sc1;
-              }
-            }
-            for (l = 0; l < K; l++) {
-              temp = alpha * B[offsetB + l * sb1 + j * sb2];
-              ia = offsetA + l * sa2;
-              ic = offsetC + j * sc2;
-              for (i = 0; i < M; i++) {
-                C[ic] += temp * A[ia];
-                ia += sa1;
-                ic += sc1;
-              }
-            }
-          }
-        } else {
-          for (j = 0; j < N; j++) {
-            for (i = 0; i < M; i++) {
-              temp = 0;
-              ia = offsetA + i * sa2;
-              ib = offsetB + j * sb2;
-              for (l = 0; l < K; l++) {
-                temp += A[ia] * B[ib];
-                ia += sa1;
-                ib += sb1;
-              }
-              ic = offsetC + i * sc1 + j * sc2;
-              if (beta === 0) {
-                C[ic] = alpha * temp;
-              } else {
-                C[ic] = alpha * temp + beta * C[ic];
-              }
-            }
-          }
-        }
-      } else if (nota) {
-        for (j = 0; j < N; j++) {
-          if (beta === 0) {
-            ic = offsetC + j * sc2;
-            for (i = 0; i < M; i++) {
-              C[ic] = 0;
-              ic += sc1;
-            }
-          } else if (beta !== 1) {
-            ic = offsetC + j * sc2;
-            for (i = 0; i < M; i++) {
-              C[ic] *= beta;
-              ic += sc1;
-            }
-          }
-          for (l = 0; l < K; l++) {
-            temp = alpha * B[offsetB + j * sb1 + l * sb2];
-            ia = offsetA + l * sa2;
-            ic = offsetC + j * sc2;
-            for (i = 0; i < M; i++) {
-              C[ic] += temp * A[ia];
-              ia += sa1;
-              ic += sc1;
-            }
-          }
+// node_modules/@rreusser/blapack/lib/blas/base/dgemm/lib/base.js
+var MC = 128;
+var NC = 64;
+var KC = 256;
+function dgemm(transa, transb, M3, N, K, alpha, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB, beta, C, strideC1, strideC2, offsetC) {
+  var c00;
+  var c01;
+  var c02;
+  var c03;
+  var c10;
+  var c11;
+  var c12;
+  var c13;
+  var c20;
+  var c21;
+  var c22;
+  var c23;
+  var c30;
+  var c31;
+  var c32;
+  var c33;
+  var nota;
+  var notb;
+  var ar;
+  var ak;
+  var bk;
+  var bn;
+  var a0;
+  var a1;
+  var a2;
+  var a3;
+  var b0;
+  var b1;
+  var b2;
+  var b3;
+  var pa0;
+  var pa1;
+  var pa2;
+  var pa3;
+  var pb0;
+  var pb1;
+  var pb2;
+  var pb3;
+  var pc;
+  var pcc;
+  var pak;
+  var jc;
+  var kc;
+  var ic;
+  var j;
+  var i;
+  var l;
+  var jcEnd;
+  var kcEnd;
+  var icEnd;
+  var kcLen;
+  var nb;
+  var mb;
+  var bz;
+  var jj;
+  var ii;
+  var pa;
+  var pb;
+  var temp;
+  if (M3 === 0 || N === 0 || (alpha === 0 || K === 0) && beta === 1) {
+    return C;
+  }
+  nota = transa === "no-transpose";
+  notb = transb === "no-transpose";
+  ar = nota ? strideA1 : strideA2;
+  ak = nota ? strideA2 : strideA1;
+  bk = notb ? strideB1 : strideB2;
+  bn = notb ? strideB2 : strideB1;
+  if (alpha === 0 || K === 0) {
+    for (j = 0; j < N; j++) {
+      pc = offsetC + j * strideC2;
+      if (beta === 0) {
+        for (i = 0; i < M3; i++) {
+          C[pc] = 0;
+          pc += strideC1;
         }
       } else {
-        for (j = 0; j < N; j++) {
-          for (i = 0; i < M; i++) {
-            temp = 0;
-            ia = offsetA + i * sa2;
-            ib = offsetB + j * sb1;
-            for (l = 0; l < K; l++) {
-              temp += A[ia] * B[ib];
-              ia += sa1;
-              ib += sb2;
+        for (i = 0; i < M3; i++) {
+          C[pc] *= beta;
+          pc += strideC1;
+        }
+      }
+    }
+    return C;
+  }
+  for (jc = 0; jc < N; jc += NC) {
+    jcEnd = jc + NC;
+    if (jcEnd > N) {
+      jcEnd = N;
+    }
+    nb = jc + (jcEnd - jc - (jcEnd - jc) % 4);
+    for (kc = 0; kc < K; kc += KC) {
+      kcEnd = kc + KC;
+      if (kcEnd > K) {
+        kcEnd = K;
+      }
+      kcLen = kcEnd - kc;
+      bz = kc === 0 ? beta : 1;
+      for (ic = 0; ic < M3; ic += MC) {
+        icEnd = ic + MC;
+        if (icEnd > M3) {
+          icEnd = M3;
+        }
+        mb = ic + (icEnd - ic - (icEnd - ic) % 4);
+        for (j = jc; j < nb; j += 4) {
+          pb0 = offsetB + j * bn + kc * bk;
+          pb1 = pb0 + bn;
+          pb2 = pb1 + bn;
+          pb3 = pb2 + bn;
+          for (i = ic; i < mb; i += 4) {
+            c00 = 0;
+            c10 = 0;
+            c20 = 0;
+            c30 = 0;
+            c01 = 0;
+            c11 = 0;
+            c21 = 0;
+            c31 = 0;
+            c02 = 0;
+            c12 = 0;
+            c22 = 0;
+            c32 = 0;
+            c03 = 0;
+            c13 = 0;
+            c23 = 0;
+            c33 = 0;
+            pa0 = offsetA + i * ar + kc * ak;
+            pa1 = pa0 + ar;
+            pa2 = pa1 + ar;
+            pa3 = pa2 + ar;
+            for (l = 0; l < kcLen; l++) {
+              pak = l * ak;
+              a0 = A[pa0 + pak];
+              a1 = A[pa1 + pak];
+              a2 = A[pa2 + pak];
+              a3 = A[pa3 + pak];
+              b0 = B[pb0 + l * bk];
+              b1 = B[pb1 + l * bk];
+              b2 = B[pb2 + l * bk];
+              b3 = B[pb3 + l * bk];
+              c00 += a0 * b0;
+              c10 += a1 * b0;
+              c20 += a2 * b0;
+              c30 += a3 * b0;
+              c01 += a0 * b1;
+              c11 += a1 * b1;
+              c21 += a2 * b1;
+              c31 += a3 * b1;
+              c02 += a0 * b2;
+              c12 += a1 * b2;
+              c22 += a2 * b2;
+              c32 += a3 * b2;
+              c03 += a0 * b3;
+              c13 += a1 * b3;
+              c23 += a2 * b3;
+              c33 += a3 * b3;
             }
-            ic = offsetC + i * sc1 + j * sc2;
-            if (beta === 0) {
-              C[ic] = alpha * temp;
+            pc = offsetC + i * strideC1 + j * strideC2;
+            if (bz === 0) {
+              pcc = pc;
+              C[pcc] = alpha * c00;
+              C[pcc + strideC1] = alpha * c10;
+              C[pcc + 2 * strideC1] = alpha * c20;
+              C[pcc + 3 * strideC1] = alpha * c30;
+              pcc = pc + strideC2;
+              C[pcc] = alpha * c01;
+              C[pcc + strideC1] = alpha * c11;
+              C[pcc + 2 * strideC1] = alpha * c21;
+              C[pcc + 3 * strideC1] = alpha * c31;
+              pcc = pc + 2 * strideC2;
+              C[pcc] = alpha * c02;
+              C[pcc + strideC1] = alpha * c12;
+              C[pcc + 2 * strideC1] = alpha * c22;
+              C[pcc + 3 * strideC1] = alpha * c32;
+              pcc = pc + 3 * strideC2;
+              C[pcc] = alpha * c03;
+              C[pcc + strideC1] = alpha * c13;
+              C[pcc + 2 * strideC1] = alpha * c23;
+              C[pcc + 3 * strideC1] = alpha * c33;
             } else {
-              C[ic] = alpha * temp + beta * C[ic];
+              pcc = pc;
+              C[pcc] = alpha * c00 + bz * C[pcc];
+              C[pcc + strideC1] = alpha * c10 + bz * C[pcc + strideC1];
+              C[pcc + 2 * strideC1] = alpha * c20 + bz * C[pcc + 2 * strideC1];
+              C[pcc + 3 * strideC1] = alpha * c30 + bz * C[pcc + 3 * strideC1];
+              pcc = pc + strideC2;
+              C[pcc] = alpha * c01 + bz * C[pcc];
+              C[pcc + strideC1] = alpha * c11 + bz * C[pcc + strideC1];
+              C[pcc + 2 * strideC1] = alpha * c21 + bz * C[pcc + 2 * strideC1];
+              C[pcc + 3 * strideC1] = alpha * c31 + bz * C[pcc + 3 * strideC1];
+              pcc = pc + 2 * strideC2;
+              C[pcc] = alpha * c02 + bz * C[pcc];
+              C[pcc + strideC1] = alpha * c12 + bz * C[pcc + strideC1];
+              C[pcc + 2 * strideC1] = alpha * c22 + bz * C[pcc + 2 * strideC1];
+              C[pcc + 3 * strideC1] = alpha * c32 + bz * C[pcc + 3 * strideC1];
+              pcc = pc + 3 * strideC2;
+              C[pcc] = alpha * c03 + bz * C[pcc];
+              C[pcc + strideC1] = alpha * c13 + bz * C[pcc + strideC1];
+              C[pcc + 2 * strideC1] = alpha * c23 + bz * C[pcc + 2 * strideC1];
+              C[pcc + 3 * strideC1] = alpha * c33 + bz * C[pcc + 3 * strideC1];
             }
           }
         }
+        for (jj = jc; jj < nb; jj++) {
+          pb = offsetB + jj * bn + kc * bk;
+          for (ii = mb; ii < icEnd; ii++) {
+            temp = 0;
+            pa = offsetA + ii * ar + kc * ak;
+            for (l = 0; l < kcLen; l++) {
+              temp += A[pa + l * ak] * B[pb + l * bk];
+            }
+            pc = offsetC + ii * strideC1 + jj * strideC2;
+            C[pc] = bz === 0 ? alpha * temp : alpha * temp + bz * C[pc];
+          }
+        }
       }
-      return C;
     }
-    module.exports = dgemm;
-  }
-});
-
-// node_modules/blapack/lib/blas/base/dtrmm/lib/base.js
-var require_base14 = __commonJS({
-  "node_modules/blapack/lib/blas/base/dtrmm/lib/base.js"(exports, module) {
-    "use strict";
-    function dtrmm(side, uplo, transa, diag, M, N, alpha, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB) {
-      var nounit;
-      var lside;
-      var upper;
-      var temp;
-      var sa1;
-      var sa2;
-      var sb1;
-      var sb2;
-      var ia;
-      var ib;
-      var i;
-      var j;
-      var k;
-      if (M === 0 || N === 0) {
-        return B;
-      }
-      lside = side === "left";
-      upper = uplo === "upper";
-      nounit = diag === "non-unit";
-      sa1 = strideA1;
-      sa2 = strideA2;
-      sb1 = strideB1;
-      sb2 = strideB2;
-      if (alpha === 0) {
-        for (j = 0; j < N; j++) {
-          ib = offsetB + j * sb2;
-          for (i = 0; i < M; i++) {
-            B[ib] = 0;
-            ib += sb1;
-          }
+    for (jj = nb; jj < jcEnd; jj++) {
+      pb = offsetB + jj * bn;
+      for (ii = 0; ii < M3; ii++) {
+        temp = 0;
+        pa = offsetA + ii * ar;
+        for (l = 0; l < K; l++) {
+          temp += A[pa + l * ak] * B[pb + l * bk];
         }
-        return B;
+        pc = offsetC + ii * strideC1 + jj * strideC2;
+        C[pc] = beta === 0 ? alpha * temp : alpha * temp + beta * C[pc];
       }
-      if (lside) {
-        if (transa === "no-transpose") {
-          if (upper) {
-            for (j = 0; j < N; j++) {
-              for (k = 0; k < M; k++) {
-                ib = offsetB + k * sb1 + j * sb2;
-                if (B[ib] !== 0) {
-                  temp = alpha * B[ib];
-                  ia = offsetA + k * sa2;
-                  for (i = 0; i < k; i++) {
-                    B[offsetB + i * sb1 + j * sb2] += temp * A[ia];
-                    ia += sa1;
-                  }
-                  if (nounit) {
-                    B[ib] = temp * A[offsetA + k * sa1 + k * sa2];
-                  } else {
-                    B[ib] = temp;
-                  }
-                }
-              }
-            }
-          } else {
-            for (j = 0; j < N; j++) {
-              for (k = M - 1; k >= 0; k--) {
-                ib = offsetB + k * sb1 + j * sb2;
-                if (B[ib] !== 0) {
-                  temp = alpha * B[ib];
-                  B[ib] = temp;
-                  if (nounit) {
-                    B[ib] = temp * A[offsetA + k * sa1 + k * sa2];
-                  }
-                  ia = offsetA + (k + 1) * sa1 + k * sa2;
-                  for (i = k + 1; i < M; i++) {
-                    B[offsetB + i * sb1 + j * sb2] += temp * A[ia];
-                    ia += sa1;
-                  }
-                }
-              }
-            }
-          }
-        } else if (upper) {
-          for (j = 0; j < N; j++) {
-            for (i = M - 1; i >= 0; i--) {
-              temp = B[offsetB + i * sb1 + j * sb2];
-              if (nounit) {
-                temp *= A[offsetA + i * sa1 + i * sa2];
-              }
-              ia = offsetA + i * sa2;
-              for (k = 0; k < i; k++) {
-                temp += A[ia] * B[offsetB + k * sb1 + j * sb2];
+    }
+  }
+  return C;
+}
+var base_default13 = dgemm;
+
+// node_modules/@rreusser/blapack/lib/blas/base/dtrmm/lib/base.js
+function dtrmm(side, uplo, transa, diag, M3, N, alpha, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB) {
+  var nounit;
+  var lside;
+  var upper;
+  var temp;
+  var sa1;
+  var sa2;
+  var sb1;
+  var sb2;
+  var ia;
+  var ib;
+  var i;
+  var j;
+  var k;
+  if (M3 === 0 || N === 0) {
+    return B;
+  }
+  lside = side === "left";
+  upper = uplo === "upper";
+  nounit = diag === "non-unit";
+  sa1 = strideA1;
+  sa2 = strideA2;
+  sb1 = strideB1;
+  sb2 = strideB2;
+  if (alpha === 0) {
+    for (j = 0; j < N; j++) {
+      ib = offsetB + j * sb2;
+      for (i = 0; i < M3; i++) {
+        B[ib] = 0;
+        ib += sb1;
+      }
+    }
+    return B;
+  }
+  if (lside) {
+    if (transa === "no-transpose") {
+      if (upper) {
+        for (j = 0; j < N; j++) {
+          for (k = 0; k < M3; k++) {
+            ib = offsetB + k * sb1 + j * sb2;
+            if (B[ib] !== 0) {
+              temp = alpha * B[ib];
+              ia = offsetA + k * sa2;
+              for (i = 0; i < k; i++) {
+                B[offsetB + i * sb1 + j * sb2] += temp * A[ia];
                 ia += sa1;
               }
-              B[offsetB + i * sb1 + j * sb2] = alpha * temp;
-            }
-          }
-        } else {
-          for (j = 0; j < N; j++) {
-            for (i = 0; i < M; i++) {
-              temp = B[offsetB + i * sb1 + j * sb2];
               if (nounit) {
-                temp *= A[offsetA + i * sa1 + i * sa2];
+                B[ib] = temp * A[offsetA + k * sa1 + k * sa2];
+              } else {
+                B[ib] = temp;
               }
-              for (k = i + 1; k < M; k++) {
-                temp += A[offsetA + k * sa1 + i * sa2] * B[offsetB + k * sb1 + j * sb2];
-              }
-              B[offsetB + i * sb1 + j * sb2] = alpha * temp;
-            }
-          }
-        }
-      } else if (transa === "no-transpose") {
-        if (upper) {
-          for (j = N - 1; j >= 0; j--) {
-            temp = alpha;
-            if (nounit) {
-              temp *= A[offsetA + j * sa1 + j * sa2];
-            }
-            ib = offsetB + j * sb2;
-            for (i = 0; i < M; i++) {
-              B[ib] *= temp;
-              ib += sb1;
-            }
-            for (k = 0; k < j; k++) {
-              if (A[offsetA + k * sa1 + j * sa2] !== 0) {
-                temp = alpha * A[offsetA + k * sa1 + j * sa2];
-                for (i = 0; i < M; i++) {
-                  B[offsetB + i * sb1 + j * sb2] += temp * B[offsetB + i * sb1 + k * sb2];
-                }
-              }
-            }
-          }
-        } else {
-          for (j = 0; j < N; j++) {
-            temp = alpha;
-            if (nounit) {
-              temp *= A[offsetA + j * sa1 + j * sa2];
-            }
-            ib = offsetB + j * sb2;
-            for (i = 0; i < M; i++) {
-              B[ib] *= temp;
-              ib += sb1;
-            }
-            for (k = j + 1; k < N; k++) {
-              if (A[offsetA + k * sa1 + j * sa2] !== 0) {
-                temp = alpha * A[offsetA + k * sa1 + j * sa2];
-                for (i = 0; i < M; i++) {
-                  B[offsetB + i * sb1 + j * sb2] += temp * B[offsetB + i * sb1 + k * sb2];
-                }
-              }
-            }
-          }
-        }
-      } else if (upper) {
-        for (k = 0; k < N; k++) {
-          for (j = 0; j < k; j++) {
-            if (A[offsetA + j * sa1 + k * sa2] !== 0) {
-              temp = alpha * A[offsetA + j * sa1 + k * sa2];
-              for (i = 0; i < M; i++) {
-                B[offsetB + i * sb1 + j * sb2] += temp * B[offsetB + i * sb1 + k * sb2];
-              }
-            }
-          }
-          temp = alpha;
-          if (nounit) {
-            temp *= A[offsetA + k * sa1 + k * sa2];
-          }
-          if (temp !== 1) {
-            ib = offsetB + k * sb2;
-            for (i = 0; i < M; i++) {
-              B[ib] *= temp;
-              ib += sb1;
             }
           }
         }
       } else {
-        for (k = N - 1; k >= 0; k--) {
-          for (j = k + 1; j < N; j++) {
-            if (A[offsetA + j * sa1 + k * sa2] !== 0) {
-              temp = alpha * A[offsetA + j * sa1 + k * sa2];
-              for (i = 0; i < M; i++) {
-                B[offsetB + i * sb1 + j * sb2] += temp * B[offsetB + i * sb1 + k * sb2];
+        for (j = 0; j < N; j++) {
+          for (k = M3 - 1; k >= 0; k--) {
+            ib = offsetB + k * sb1 + j * sb2;
+            if (B[ib] !== 0) {
+              temp = alpha * B[ib];
+              B[ib] = temp;
+              if (nounit) {
+                B[ib] = temp * A[offsetA + k * sa1 + k * sa2];
               }
-            }
-          }
-          temp = alpha;
-          if (nounit) {
-            temp *= A[offsetA + k * sa1 + k * sa2];
-          }
-          if (temp !== 1) {
-            ib = offsetB + k * sb2;
-            for (i = 0; i < M; i++) {
-              B[ib] *= temp;
-              ib += sb1;
+              ia = offsetA + (k + 1) * sa1 + k * sa2;
+              for (i = k + 1; i < M3; i++) {
+                B[offsetB + i * sb1 + j * sb2] += temp * A[ia];
+                ia += sa1;
+              }
             }
           }
         }
       }
-      return B;
+    } else if (upper) {
+      for (j = 0; j < N; j++) {
+        for (i = M3 - 1; i >= 0; i--) {
+          temp = B[offsetB + i * sb1 + j * sb2];
+          if (nounit) {
+            temp *= A[offsetA + i * sa1 + i * sa2];
+          }
+          ia = offsetA + i * sa2;
+          for (k = 0; k < i; k++) {
+            temp += A[ia] * B[offsetB + k * sb1 + j * sb2];
+            ia += sa1;
+          }
+          B[offsetB + i * sb1 + j * sb2] = alpha * temp;
+        }
+      }
+    } else {
+      for (j = 0; j < N; j++) {
+        for (i = 0; i < M3; i++) {
+          temp = B[offsetB + i * sb1 + j * sb2];
+          if (nounit) {
+            temp *= A[offsetA + i * sa1 + i * sa2];
+          }
+          for (k = i + 1; k < M3; k++) {
+            temp += A[offsetA + k * sa1 + i * sa2] * B[offsetB + k * sb1 + j * sb2];
+          }
+          B[offsetB + i * sb1 + j * sb2] = alpha * temp;
+        }
+      }
     }
-    module.exports = dtrmm;
+  } else if (transa === "no-transpose") {
+    if (upper) {
+      for (j = N - 1; j >= 0; j--) {
+        temp = alpha;
+        if (nounit) {
+          temp *= A[offsetA + j * sa1 + j * sa2];
+        }
+        ib = offsetB + j * sb2;
+        for (i = 0; i < M3; i++) {
+          B[ib] *= temp;
+          ib += sb1;
+        }
+        for (k = 0; k < j; k++) {
+          if (A[offsetA + k * sa1 + j * sa2] !== 0) {
+            temp = alpha * A[offsetA + k * sa1 + j * sa2];
+            for (i = 0; i < M3; i++) {
+              B[offsetB + i * sb1 + j * sb2] += temp * B[offsetB + i * sb1 + k * sb2];
+            }
+          }
+        }
+      }
+    } else {
+      for (j = 0; j < N; j++) {
+        temp = alpha;
+        if (nounit) {
+          temp *= A[offsetA + j * sa1 + j * sa2];
+        }
+        ib = offsetB + j * sb2;
+        for (i = 0; i < M3; i++) {
+          B[ib] *= temp;
+          ib += sb1;
+        }
+        for (k = j + 1; k < N; k++) {
+          if (A[offsetA + k * sa1 + j * sa2] !== 0) {
+            temp = alpha * A[offsetA + k * sa1 + j * sa2];
+            for (i = 0; i < M3; i++) {
+              B[offsetB + i * sb1 + j * sb2] += temp * B[offsetB + i * sb1 + k * sb2];
+            }
+          }
+        }
+      }
+    }
+  } else if (upper) {
+    for (k = 0; k < N; k++) {
+      for (j = 0; j < k; j++) {
+        if (A[offsetA + j * sa1 + k * sa2] !== 0) {
+          temp = alpha * A[offsetA + j * sa1 + k * sa2];
+          for (i = 0; i < M3; i++) {
+            B[offsetB + i * sb1 + j * sb2] += temp * B[offsetB + i * sb1 + k * sb2];
+          }
+        }
+      }
+      temp = alpha;
+      if (nounit) {
+        temp *= A[offsetA + k * sa1 + k * sa2];
+      }
+      if (temp !== 1) {
+        ib = offsetB + k * sb2;
+        for (i = 0; i < M3; i++) {
+          B[ib] *= temp;
+          ib += sb1;
+        }
+      }
+    }
+  } else {
+    for (k = N - 1; k >= 0; k--) {
+      for (j = k + 1; j < N; j++) {
+        if (A[offsetA + j * sa1 + k * sa2] !== 0) {
+          temp = alpha * A[offsetA + j * sa1 + k * sa2];
+          for (i = 0; i < M3; i++) {
+            B[offsetB + i * sb1 + j * sb2] += temp * B[offsetB + i * sb1 + k * sb2];
+          }
+        }
+      }
+      temp = alpha;
+      if (nounit) {
+        temp *= A[offsetA + k * sa1 + k * sa2];
+      }
+      if (temp !== 1) {
+        ib = offsetB + k * sb2;
+        for (i = 0; i < M3; i++) {
+          B[ib] *= temp;
+          ib += sb1;
+        }
+      }
+    }
   }
-});
+  return B;
+}
+var base_default14 = dtrmm;
 
-// node_modules/blapack/lib/lapack/base/dlarfb/lib/base.js
-var require_base15 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dlarfb/lib/base.js"(exports, module) {
-    "use strict";
-    var dcopy = require_base12();
-    var dgemm = require_base13();
-    var dtrmm = require_base14();
-    function dlarfb(side, trans, direct, storev, M, N, K, V, strideV1, strideV2, offsetV, T, strideT1, strideT2, offsetT, C, strideC1, strideC2, offsetC, WORK, strideWORK1, strideWORK2, offsetWORK) {
-      var transt;
-      var i;
-      var j;
-      if (M <= 0 || N <= 0) {
-        return;
-      }
-      if (trans === "no-transpose") {
-        transt = "transpose";
-      } else {
-        transt = "no-transpose";
-      }
-      if (storev === "columnwise") {
-        if (direct === "forward") {
-          if (side === "left") {
-            for (j = 0; j < K; j++) {
-              dcopy(N, C, strideC2, offsetC + j * strideC1, WORK, strideWORK1, offsetWORK + j * strideWORK2);
-            }
-            dtrmm("right", "lower", "no-transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWORK1, strideWORK2, offsetWORK);
-            if (M > K) {
-              dgemm("transpose", "no-transpose", N, K, M - K, 1, C, strideC1, strideC2, offsetC + K * strideC1, V, strideV1, strideV2, offsetV + K * strideV1, 1, WORK, strideWORK1, strideWORK2, offsetWORK);
-            }
-            dtrmm("right", "upper", transt, "non-unit", N, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWORK1, strideWORK2, offsetWORK);
-            if (M > K) {
-              dgemm("no-transpose", "transpose", M - K, N, K, -1, V, strideV1, strideV2, offsetV + K * strideV1, WORK, strideWORK1, strideWORK2, offsetWORK, 1, C, strideC1, strideC2, offsetC + K * strideC1);
-            }
-            dtrmm("right", "lower", "transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWORK1, strideWORK2, offsetWORK);
-            for (j = 0; j < K; j++) {
-              for (i = 0; i < N; i++) {
-                C[offsetC + j * strideC1 + i * strideC2] -= WORK[offsetWORK + i * strideWORK1 + j * strideWORK2];
-              }
-            }
-          } else if (side === "right") {
-            for (j = 0; j < K; j++) {
-              dcopy(M, C, strideC1, offsetC + j * strideC2, WORK, strideWORK1, offsetWORK + j * strideWORK2);
-            }
-            dtrmm("right", "lower", "no-transpose", "unit", M, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWORK1, strideWORK2, offsetWORK);
-            if (N > K) {
-              dgemm("no-transpose", "no-transpose", M, K, N - K, 1, C, strideC1, strideC2, offsetC + K * strideC2, V, strideV1, strideV2, offsetV + K * strideV1, 1, WORK, strideWORK1, strideWORK2, offsetWORK);
-            }
-            dtrmm("right", "upper", trans, "non-unit", M, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWORK1, strideWORK2, offsetWORK);
-            if (N > K) {
-              dgemm("no-transpose", "transpose", M, N - K, K, -1, WORK, strideWORK1, strideWORK2, offsetWORK, V, strideV1, strideV2, offsetV + K * strideV1, 1, C, strideC1, strideC2, offsetC + K * strideC2);
-            }
-            dtrmm("right", "lower", "transpose", "unit", M, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWORK1, strideWORK2, offsetWORK);
-            for (j = 0; j < K; j++) {
-              for (i = 0; i < M; i++) {
-                C[offsetC + i * strideC1 + j * strideC2] -= WORK[offsetWORK + i * strideWORK1 + j * strideWORK2];
-              }
-            }
-          }
-        } else if (side === "left") {
-          for (j = 0; j < K; j++) {
-            dcopy(N, C, strideC2, offsetC + (M - K + j) * strideC1, WORK, strideWORK1, offsetWORK + j * strideWORK2);
-          }
-          dtrmm("right", "upper", "no-transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV + (M - K) * strideV1, WORK, strideWORK1, strideWORK2, offsetWORK);
-          if (M > K) {
-            dgemm("transpose", "no-transpose", N, K, M - K, 1, C, strideC1, strideC2, offsetC, V, strideV1, strideV2, offsetV, 1, WORK, strideWORK1, strideWORK2, offsetWORK);
-          }
-          dtrmm("right", "lower", transt, "non-unit", N, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWORK1, strideWORK2, offsetWORK);
-          if (M > K) {
-            dgemm("no-transpose", "transpose", M - K, N, K, -1, V, strideV1, strideV2, offsetV, WORK, strideWORK1, strideWORK2, offsetWORK, 1, C, strideC1, strideC2, offsetC);
-          }
-          dtrmm("right", "upper", "transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV + (M - K) * strideV1, WORK, strideWORK1, strideWORK2, offsetWORK);
-          for (j = 0; j < K; j++) {
-            for (i = 0; i < N; i++) {
-              C[offsetC + (M - K + j) * strideC1 + i * strideC2] -= WORK[offsetWORK + i * strideWORK1 + j * strideWORK2];
-            }
-          }
-        } else if (side === "right") {
-          for (j = 0; j < K; j++) {
-            dcopy(M, C, strideC1, offsetC + (N - K + j) * strideC2, WORK, strideWORK1, offsetWORK + j * strideWORK2);
-          }
-          dtrmm("right", "upper", "no-transpose", "unit", M, K, 1, V, strideV1, strideV2, offsetV + (N - K) * strideV1, WORK, strideWORK1, strideWORK2, offsetWORK);
-          if (N > K) {
-            dgemm("no-transpose", "no-transpose", M, K, N - K, 1, C, strideC1, strideC2, offsetC, V, strideV1, strideV2, offsetV, 1, WORK, strideWORK1, strideWORK2, offsetWORK);
-          }
-          dtrmm("right", "lower", trans, "non-unit", M, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWORK1, strideWORK2, offsetWORK);
-          if (N > K) {
-            dgemm("no-transpose", "transpose", M, N - K, K, -1, WORK, strideWORK1, strideWORK2, offsetWORK, V, strideV1, strideV2, offsetV, 1, C, strideC1, strideC2, offsetC);
-          }
-          dtrmm("right", "upper", "transpose", "unit", M, K, 1, V, strideV1, strideV2, offsetV + (N - K) * strideV1, WORK, strideWORK1, strideWORK2, offsetWORK);
-          for (j = 0; j < K; j++) {
-            for (i = 0; i < M; i++) {
-              C[offsetC + i * strideC1 + (N - K + j) * strideC2] -= WORK[offsetWORK + i * strideWORK1 + j * strideWORK2];
-            }
-          }
-        }
-      } else if (direct === "forward") {
-        if (side === "left") {
-          for (j = 0; j < K; j++) {
-            dcopy(N, C, strideC2, offsetC + j * strideC1, WORK, strideWORK1, offsetWORK + j * strideWORK2);
-          }
-          dtrmm("right", "upper", "transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWORK1, strideWORK2, offsetWORK);
-          if (M > K) {
-            dgemm("transpose", "transpose", N, K, M - K, 1, C, strideC1, strideC2, offsetC + K * strideC1, V, strideV1, strideV2, offsetV + K * strideV2, 1, WORK, strideWORK1, strideWORK2, offsetWORK);
-          }
-          dtrmm("right", "upper", transt, "non-unit", N, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWORK1, strideWORK2, offsetWORK);
-          if (M > K) {
-            dgemm("transpose", "transpose", M - K, N, K, -1, V, strideV1, strideV2, offsetV + K * strideV2, WORK, strideWORK1, strideWORK2, offsetWORK, 1, C, strideC1, strideC2, offsetC + K * strideC1);
-          }
-          dtrmm("right", "upper", "no-transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWORK1, strideWORK2, offsetWORK);
-          for (j = 0; j < K; j++) {
-            for (i = 0; i < N; i++) {
-              C[offsetC + j * strideC1 + i * strideC2] -= WORK[offsetWORK + i * strideWORK1 + j * strideWORK2];
-            }
-          }
-        } else if (side === "right") {
-          for (j = 0; j < K; j++) {
-            dcopy(M, C, strideC1, offsetC + j * strideC2, WORK, strideWORK1, offsetWORK + j * strideWORK2);
-          }
-          dtrmm("right", "upper", "transpose", "unit", M, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWORK1, strideWORK2, offsetWORK);
-          if (N > K) {
-            dgemm("no-transpose", "transpose", M, K, N - K, 1, C, strideC1, strideC2, offsetC + K * strideC2, V, strideV1, strideV2, offsetV + K * strideV2, 1, WORK, strideWORK1, strideWORK2, offsetWORK);
-          }
-          dtrmm("right", "upper", trans, "non-unit", M, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWORK1, strideWORK2, offsetWORK);
-          if (N > K) {
-            dgemm("no-transpose", "no-transpose", M, N - K, K, -1, WORK, strideWORK1, strideWORK2, offsetWORK, V, strideV1, strideV2, offsetV + K * strideV2, 1, C, strideC1, strideC2, offsetC + K * strideC2);
-          }
-          dtrmm("right", "upper", "no-transpose", "unit", M, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWORK1, strideWORK2, offsetWORK);
-          for (j = 0; j < K; j++) {
-            for (i = 0; i < M; i++) {
-              C[offsetC + i * strideC1 + j * strideC2] -= WORK[offsetWORK + i * strideWORK1 + j * strideWORK2];
-            }
-          }
-        }
-      } else if (side === "left") {
+// node_modules/@rreusser/blapack/lib/lapack/base/dlarfb/lib/base.js
+function dlarfb(side, trans, direct, storev, M3, N, K, V, strideV1, strideV2, offsetV, T, strideT1, strideT2, offsetT, C, strideC1, strideC2, offsetC, WORK, strideWork1, strideWork2, offsetWork) {
+  var transt;
+  var i;
+  var j;
+  if (M3 <= 0 || N <= 0) {
+    return;
+  }
+  if (trans === "no-transpose") {
+    transt = "transpose";
+  } else {
+    transt = "no-transpose";
+  }
+  if (storev === "columnwise") {
+    if (direct === "forward") {
+      if (side === "left") {
         for (j = 0; j < K; j++) {
-          dcopy(N, C, strideC2, offsetC + (M - K + j) * strideC1, WORK, strideWORK1, offsetWORK + j * strideWORK2);
+          base_default12(N, C, strideC2, offsetC + j * strideC1, WORK, strideWork1, offsetWork + j * strideWork2);
         }
-        dtrmm("right", "lower", "transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV + (M - K) * strideV2, WORK, strideWORK1, strideWORK2, offsetWORK);
-        if (M > K) {
-          dgemm("transpose", "transpose", N, K, M - K, 1, C, strideC1, strideC2, offsetC, V, strideV1, strideV2, offsetV, 1, WORK, strideWORK1, strideWORK2, offsetWORK);
+        base_default14("right", "lower", "no-transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWork1, strideWork2, offsetWork);
+        if (M3 > K) {
+          base_default13("transpose", "no-transpose", N, K, M3 - K, 1, C, strideC1, strideC2, offsetC + K * strideC1, V, strideV1, strideV2, offsetV + K * strideV1, 1, WORK, strideWork1, strideWork2, offsetWork);
         }
-        dtrmm("right", "lower", transt, "non-unit", N, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWORK1, strideWORK2, offsetWORK);
-        if (M > K) {
-          dgemm("transpose", "transpose", M - K, N, K, -1, V, strideV1, strideV2, offsetV, WORK, strideWORK1, strideWORK2, offsetWORK, 1, C, strideC1, strideC2, offsetC);
+        base_default14("right", "upper", transt, "non-unit", N, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWork1, strideWork2, offsetWork);
+        if (M3 > K) {
+          base_default13("no-transpose", "transpose", M3 - K, N, K, -1, V, strideV1, strideV2, offsetV + K * strideV1, WORK, strideWork1, strideWork2, offsetWork, 1, C, strideC1, strideC2, offsetC + K * strideC1);
         }
-        dtrmm("right", "lower", "no-transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV + (M - K) * strideV2, WORK, strideWORK1, strideWORK2, offsetWORK);
+        base_default14("right", "lower", "transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWork1, strideWork2, offsetWork);
         for (j = 0; j < K; j++) {
           for (i = 0; i < N; i++) {
-            C[offsetC + (M - K + j) * strideC1 + i * strideC2] -= WORK[offsetWORK + i * strideWORK1 + j * strideWORK2];
+            C[offsetC + j * strideC1 + i * strideC2] -= WORK[offsetWork + i * strideWork1 + j * strideWork2];
           }
         }
       } else if (side === "right") {
         for (j = 0; j < K; j++) {
-          dcopy(M, C, strideC1, offsetC + (N - K + j) * strideC2, WORK, strideWORK1, offsetWORK + j * strideWORK2);
+          base_default12(M3, C, strideC1, offsetC + j * strideC2, WORK, strideWork1, offsetWork + j * strideWork2);
         }
-        dtrmm("right", "lower", "transpose", "unit", M, K, 1, V, strideV1, strideV2, offsetV + (N - K) * strideV2, WORK, strideWORK1, strideWORK2, offsetWORK);
+        base_default14("right", "lower", "no-transpose", "unit", M3, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWork1, strideWork2, offsetWork);
         if (N > K) {
-          dgemm("no-transpose", "transpose", M, K, N - K, 1, C, strideC1, strideC2, offsetC, V, strideV1, strideV2, offsetV, 1, WORK, strideWORK1, strideWORK2, offsetWORK);
+          base_default13("no-transpose", "no-transpose", M3, K, N - K, 1, C, strideC1, strideC2, offsetC + K * strideC2, V, strideV1, strideV2, offsetV + K * strideV1, 1, WORK, strideWork1, strideWork2, offsetWork);
         }
-        dtrmm("right", "lower", trans, "non-unit", M, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWORK1, strideWORK2, offsetWORK);
+        base_default14("right", "upper", trans, "non-unit", M3, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWork1, strideWork2, offsetWork);
         if (N > K) {
-          dgemm("no-transpose", "no-transpose", M, N - K, K, -1, WORK, strideWORK1, strideWORK2, offsetWORK, V, strideV1, strideV2, offsetV, 1, C, strideC1, strideC2, offsetC);
+          base_default13("no-transpose", "transpose", M3, N - K, K, -1, WORK, strideWork1, strideWork2, offsetWork, V, strideV1, strideV2, offsetV + K * strideV1, 1, C, strideC1, strideC2, offsetC + K * strideC2);
         }
-        dtrmm("right", "lower", "no-transpose", "unit", M, K, 1, V, strideV1, strideV2, offsetV + (N - K) * strideV2, WORK, strideWORK1, strideWORK2, offsetWORK);
+        base_default14("right", "lower", "transpose", "unit", M3, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWork1, strideWork2, offsetWork);
         for (j = 0; j < K; j++) {
-          for (i = 0; i < M; i++) {
-            C[offsetC + i * strideC1 + (N - K + j) * strideC2] -= WORK[offsetWORK + i * strideWORK1 + j * strideWORK2];
+          for (i = 0; i < M3; i++) {
+            C[offsetC + i * strideC1 + j * strideC2] -= WORK[offsetWork + i * strideWork1 + j * strideWork2];
           }
+        }
+      }
+    } else if (side === "left") {
+      for (j = 0; j < K; j++) {
+        base_default12(N, C, strideC2, offsetC + (M3 - K + j) * strideC1, WORK, strideWork1, offsetWork + j * strideWork2);
+      }
+      base_default14("right", "upper", "no-transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV + (M3 - K) * strideV1, WORK, strideWork1, strideWork2, offsetWork);
+      if (M3 > K) {
+        base_default13("transpose", "no-transpose", N, K, M3 - K, 1, C, strideC1, strideC2, offsetC, V, strideV1, strideV2, offsetV, 1, WORK, strideWork1, strideWork2, offsetWork);
+      }
+      base_default14("right", "lower", transt, "non-unit", N, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWork1, strideWork2, offsetWork);
+      if (M3 > K) {
+        base_default13("no-transpose", "transpose", M3 - K, N, K, -1, V, strideV1, strideV2, offsetV, WORK, strideWork1, strideWork2, offsetWork, 1, C, strideC1, strideC2, offsetC);
+      }
+      base_default14("right", "upper", "transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV + (M3 - K) * strideV1, WORK, strideWork1, strideWork2, offsetWork);
+      for (j = 0; j < K; j++) {
+        for (i = 0; i < N; i++) {
+          C[offsetC + (M3 - K + j) * strideC1 + i * strideC2] -= WORK[offsetWork + i * strideWork1 + j * strideWork2];
+        }
+      }
+    } else if (side === "right") {
+      for (j = 0; j < K; j++) {
+        base_default12(M3, C, strideC1, offsetC + (N - K + j) * strideC2, WORK, strideWork1, offsetWork + j * strideWork2);
+      }
+      base_default14("right", "upper", "no-transpose", "unit", M3, K, 1, V, strideV1, strideV2, offsetV + (N - K) * strideV1, WORK, strideWork1, strideWork2, offsetWork);
+      if (N > K) {
+        base_default13("no-transpose", "no-transpose", M3, K, N - K, 1, C, strideC1, strideC2, offsetC, V, strideV1, strideV2, offsetV, 1, WORK, strideWork1, strideWork2, offsetWork);
+      }
+      base_default14("right", "lower", trans, "non-unit", M3, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWork1, strideWork2, offsetWork);
+      if (N > K) {
+        base_default13("no-transpose", "transpose", M3, N - K, K, -1, WORK, strideWork1, strideWork2, offsetWork, V, strideV1, strideV2, offsetV, 1, C, strideC1, strideC2, offsetC);
+      }
+      base_default14("right", "upper", "transpose", "unit", M3, K, 1, V, strideV1, strideV2, offsetV + (N - K) * strideV1, WORK, strideWork1, strideWork2, offsetWork);
+      for (j = 0; j < K; j++) {
+        for (i = 0; i < M3; i++) {
+          C[offsetC + i * strideC1 + (N - K + j) * strideC2] -= WORK[offsetWork + i * strideWork1 + j * strideWork2];
         }
       }
     }
-    module.exports = dlarfb;
-  }
-});
-
-// node_modules/blapack/lib/blas/base/dtrmv/lib/base.js
-var require_base16 = __commonJS({
-  "node_modules/blapack/lib/blas/base/dtrmv/lib/base.js"(exports, module) {
-    "use strict";
-    function dtrmv(uplo, trans, diag, N, A, strideA1, strideA2, offsetA, x, strideX, offsetX) {
-      var nounit;
-      var temp;
-      var sa1;
-      var sa2;
-      var ix;
-      var jx;
-      var ia;
-      var i;
-      var j;
-      if (N <= 0) {
-        return x;
+  } else if (direct === "forward") {
+    if (side === "left") {
+      for (j = 0; j < K; j++) {
+        base_default12(N, C, strideC2, offsetC + j * strideC1, WORK, strideWork1, offsetWork + j * strideWork2);
       }
-      nounit = diag === "non-unit";
-      sa1 = strideA1;
-      sa2 = strideA2;
-      if (trans === "no-transpose") {
-        if (uplo === "upper") {
-          jx = offsetX;
-          for (j = 0; j < N; j++) {
-            if (x[jx] !== 0) {
-              temp = x[jx];
-              ix = offsetX;
-              ia = offsetA + j * sa2;
-              for (i = 0; i < j; i++) {
-                x[ix] += temp * A[ia];
-                ix += strideX;
-                ia += sa1;
-              }
-              if (nounit) {
-                x[jx] *= A[offsetA + j * sa1 + j * sa2];
-              }
-            }
-            jx += strideX;
-          }
-        } else {
-          jx = offsetX + (N - 1) * strideX;
-          for (j = N - 1; j >= 0; j--) {
-            if (x[jx] !== 0) {
-              temp = x[jx];
-              ix = offsetX + (N - 1) * strideX;
-              ia = offsetA + (N - 1) * sa1 + j * sa2;
-              for (i = N - 1; i > j; i--) {
-                x[ix] += temp * A[ia];
-                ix -= strideX;
-                ia -= sa1;
-              }
-              if (nounit) {
-                x[jx] *= A[offsetA + j * sa1 + j * sa2];
-              }
-            }
-            jx -= strideX;
-          }
+      base_default14("right", "upper", "transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWork1, strideWork2, offsetWork);
+      if (M3 > K) {
+        base_default13("transpose", "transpose", N, K, M3 - K, 1, C, strideC1, strideC2, offsetC + K * strideC1, V, strideV1, strideV2, offsetV + K * strideV2, 1, WORK, strideWork1, strideWork2, offsetWork);
+      }
+      base_default14("right", "upper", transt, "non-unit", N, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWork1, strideWork2, offsetWork);
+      if (M3 > K) {
+        base_default13("transpose", "transpose", M3 - K, N, K, -1, V, strideV1, strideV2, offsetV + K * strideV2, WORK, strideWork1, strideWork2, offsetWork, 1, C, strideC1, strideC2, offsetC + K * strideC1);
+      }
+      base_default14("right", "upper", "no-transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWork1, strideWork2, offsetWork);
+      for (j = 0; j < K; j++) {
+        for (i = 0; i < N; i++) {
+          C[offsetC + j * strideC1 + i * strideC2] -= WORK[offsetWork + i * strideWork1 + j * strideWork2];
         }
-      } else if (uplo === "upper") {
-        jx = offsetX + (N - 1) * strideX;
-        for (j = N - 1; j >= 0; j--) {
-          temp = x[jx];
-          if (nounit) {
-            temp *= A[offsetA + j * sa1 + j * sa2];
-          }
-          ix = offsetX + (j - 1) * strideX;
-          ia = offsetA + (j - 1) * sa1 + j * sa2;
-          for (i = j - 1; i >= 0; i--) {
-            temp += A[ia] * x[ix];
-            ix -= strideX;
-            ia -= sa1;
-          }
-          x[jx] = temp;
-          jx -= strideX;
+      }
+    } else if (side === "right") {
+      for (j = 0; j < K; j++) {
+        base_default12(M3, C, strideC1, offsetC + j * strideC2, WORK, strideWork1, offsetWork + j * strideWork2);
+      }
+      base_default14("right", "upper", "transpose", "unit", M3, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWork1, strideWork2, offsetWork);
+      if (N > K) {
+        base_default13("no-transpose", "transpose", M3, K, N - K, 1, C, strideC1, strideC2, offsetC + K * strideC2, V, strideV1, strideV2, offsetV + K * strideV2, 1, WORK, strideWork1, strideWork2, offsetWork);
+      }
+      base_default14("right", "upper", trans, "non-unit", M3, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWork1, strideWork2, offsetWork);
+      if (N > K) {
+        base_default13("no-transpose", "no-transpose", M3, N - K, K, -1, WORK, strideWork1, strideWork2, offsetWork, V, strideV1, strideV2, offsetV + K * strideV2, 1, C, strideC1, strideC2, offsetC + K * strideC2);
+      }
+      base_default14("right", "upper", "no-transpose", "unit", M3, K, 1, V, strideV1, strideV2, offsetV, WORK, strideWork1, strideWork2, offsetWork);
+      for (j = 0; j < K; j++) {
+        for (i = 0; i < M3; i++) {
+          C[offsetC + i * strideC1 + j * strideC2] -= WORK[offsetWork + i * strideWork1 + j * strideWork2];
         }
-      } else {
-        jx = offsetX;
-        for (j = 0; j < N; j++) {
+      }
+    }
+  } else if (side === "left") {
+    for (j = 0; j < K; j++) {
+      base_default12(N, C, strideC2, offsetC + (M3 - K + j) * strideC1, WORK, strideWork1, offsetWork + j * strideWork2);
+    }
+    base_default14("right", "lower", "transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV + (M3 - K) * strideV2, WORK, strideWork1, strideWork2, offsetWork);
+    if (M3 > K) {
+      base_default13("transpose", "transpose", N, K, M3 - K, 1, C, strideC1, strideC2, offsetC, V, strideV1, strideV2, offsetV, 1, WORK, strideWork1, strideWork2, offsetWork);
+    }
+    base_default14("right", "lower", transt, "non-unit", N, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWork1, strideWork2, offsetWork);
+    if (M3 > K) {
+      base_default13("transpose", "transpose", M3 - K, N, K, -1, V, strideV1, strideV2, offsetV, WORK, strideWork1, strideWork2, offsetWork, 1, C, strideC1, strideC2, offsetC);
+    }
+    base_default14("right", "lower", "no-transpose", "unit", N, K, 1, V, strideV1, strideV2, offsetV + (M3 - K) * strideV2, WORK, strideWork1, strideWork2, offsetWork);
+    for (j = 0; j < K; j++) {
+      for (i = 0; i < N; i++) {
+        C[offsetC + (M3 - K + j) * strideC1 + i * strideC2] -= WORK[offsetWork + i * strideWork1 + j * strideWork2];
+      }
+    }
+  } else if (side === "right") {
+    for (j = 0; j < K; j++) {
+      base_default12(M3, C, strideC1, offsetC + (N - K + j) * strideC2, WORK, strideWork1, offsetWork + j * strideWork2);
+    }
+    base_default14("right", "lower", "transpose", "unit", M3, K, 1, V, strideV1, strideV2, offsetV + (N - K) * strideV2, WORK, strideWork1, strideWork2, offsetWork);
+    if (N > K) {
+      base_default13("no-transpose", "transpose", M3, K, N - K, 1, C, strideC1, strideC2, offsetC, V, strideV1, strideV2, offsetV, 1, WORK, strideWork1, strideWork2, offsetWork);
+    }
+    base_default14("right", "lower", trans, "non-unit", M3, K, 1, T, strideT1, strideT2, offsetT, WORK, strideWork1, strideWork2, offsetWork);
+    if (N > K) {
+      base_default13("no-transpose", "no-transpose", M3, N - K, K, -1, WORK, strideWork1, strideWork2, offsetWork, V, strideV1, strideV2, offsetV, 1, C, strideC1, strideC2, offsetC);
+    }
+    base_default14("right", "lower", "no-transpose", "unit", M3, K, 1, V, strideV1, strideV2, offsetV + (N - K) * strideV2, WORK, strideWork1, strideWork2, offsetWork);
+    for (j = 0; j < K; j++) {
+      for (i = 0; i < M3; i++) {
+        C[offsetC + i * strideC1 + (N - K + j) * strideC2] -= WORK[offsetWork + i * strideWork1 + j * strideWork2];
+      }
+    }
+  }
+}
+var base_default15 = dlarfb;
+
+// node_modules/@rreusser/blapack/lib/blas/base/dtrmv/lib/base.js
+function dtrmv(uplo, trans, diag, N, A, strideA1, strideA2, offsetA, x, strideX, offsetX) {
+  var nounit;
+  var temp;
+  var sa1;
+  var sa2;
+  var ix;
+  var jx;
+  var ia;
+  var i;
+  var j;
+  if (N <= 0) {
+    return x;
+  }
+  nounit = diag === "non-unit";
+  sa1 = strideA1;
+  sa2 = strideA2;
+  if (trans === "no-transpose") {
+    if (uplo === "upper") {
+      jx = offsetX;
+      for (j = 0; j < N; j++) {
+        if (x[jx] !== 0) {
           temp = x[jx];
-          if (nounit) {
-            temp *= A[offsetA + j * sa1 + j * sa2];
-          }
-          ix = offsetX + (j + 1) * strideX;
-          ia = offsetA + (j + 1) * sa1 + j * sa2;
-          for (i = j + 1; i < N; i++) {
-            temp += A[ia] * x[ix];
+          ix = offsetX;
+          ia = offsetA + j * sa2;
+          for (i = 0; i < j; i++) {
+            x[ix] += temp * A[ia];
             ix += strideX;
             ia += sa1;
           }
-          x[jx] = temp;
-          jx += strideX;
+          if (nounit) {
+            x[jx] *= A[offsetA + j * sa1 + j * sa2];
+          }
+        }
+        jx += strideX;
+      }
+    } else {
+      jx = offsetX + (N - 1) * strideX;
+      for (j = N - 1; j >= 0; j--) {
+        if (x[jx] !== 0) {
+          temp = x[jx];
+          ix = offsetX + (N - 1) * strideX;
+          ia = offsetA + (N - 1) * sa1 + j * sa2;
+          for (i = N - 1; i > j; i--) {
+            x[ix] += temp * A[ia];
+            ix -= strideX;
+            ia -= sa1;
+          }
+          if (nounit) {
+            x[jx] *= A[offsetA + j * sa1 + j * sa2];
+          }
+        }
+        jx -= strideX;
+      }
+    }
+  } else if (uplo === "upper") {
+    jx = offsetX + (N - 1) * strideX;
+    for (j = N - 1; j >= 0; j--) {
+      temp = x[jx];
+      if (nounit) {
+        temp *= A[offsetA + j * sa1 + j * sa2];
+      }
+      ix = offsetX + (j - 1) * strideX;
+      ia = offsetA + (j - 1) * sa1 + j * sa2;
+      for (i = j - 1; i >= 0; i--) {
+        temp += A[ia] * x[ix];
+        ix -= strideX;
+        ia -= sa1;
+      }
+      x[jx] = temp;
+      jx -= strideX;
+    }
+  } else {
+    jx = offsetX;
+    for (j = 0; j < N; j++) {
+      temp = x[jx];
+      if (nounit) {
+        temp *= A[offsetA + j * sa1 + j * sa2];
+      }
+      ix = offsetX + (j + 1) * strideX;
+      ia = offsetA + (j + 1) * sa1 + j * sa2;
+      for (i = j + 1; i < N; i++) {
+        temp += A[ia] * x[ix];
+        ix += strideX;
+        ia += sa1;
+      }
+      x[jx] = temp;
+      jx += strideX;
+    }
+  }
+  return x;
+}
+var base_default16 = dtrmv;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dlarft/lib/base.js
+function dlarft(direct, storev, N, K, V, strideV1, strideV2, offsetV, TAU, strideTAU, offsetTAU, T, strideT1, strideT2, offsetT) {
+  var prevlastv;
+  var lastv;
+  var jj;
+  var i;
+  var j;
+  if (N === 0) {
+    return;
+  }
+  if (direct === "forward") {
+    prevlastv = N;
+    for (i = 0; i < K; i++) {
+      prevlastv = Math.max(prevlastv, i);
+      if (TAU[offsetTAU + i * strideTAU] === 0) {
+        for (j = 0; j <= i; j++) {
+          T[offsetT + j * strideT1 + i * strideT2] = 0;
+        }
+      } else {
+        if (storev === "columnwise") {
+          lastv = N;
+          for (jj = N - 1; jj > i; jj--) {
+            if (V[offsetV + jj * strideV1 + i * strideV2] !== 0) {
+              break;
+            }
+            lastv = jj;
+          }
+          for (j = 0; j < i; j++) {
+            T[offsetT + j * strideT1 + i * strideT2] = -(TAU[offsetTAU + i * strideTAU] * V[offsetV + i * strideV1 + j * strideV2]);
+          }
+          jj = Math.min(lastv, prevlastv);
+          if (jj - i - 1 > 0) {
+            base_default6("transpose", jj - i - 1, i, -TAU[offsetTAU + i * strideTAU], V, strideV1, strideV2, offsetV + (i + 1) * strideV1, V, strideV1, offsetV + (i + 1) * strideV1 + i * strideV2, 1, T, strideT1, offsetT + i * strideT2);
+          }
+        } else {
+          lastv = N;
+          for (jj = N - 1; jj > i; jj--) {
+            if (V[offsetV + i * strideV1 + jj * strideV2] !== 0) {
+              break;
+            }
+            lastv = jj;
+          }
+          for (j = 0; j < i; j++) {
+            T[offsetT + j * strideT1 + i * strideT2] = -(TAU[offsetTAU + i * strideTAU] * V[offsetV + j * strideV1 + i * strideV2]);
+          }
+          jj = Math.min(lastv, prevlastv);
+          if (jj - i - 1 > 0) {
+            base_default6("no-transpose", i, jj - i - 1, -TAU[offsetTAU + i * strideTAU], V, strideV1, strideV2, offsetV + (i + 1) * strideV2, V, strideV2, offsetV + i * strideV1 + (i + 1) * strideV2, 1, T, strideT1, offsetT + i * strideT2);
+          }
+        }
+        if (i > 0) {
+          base_default16("upper", "no-transpose", "non-unit", i, T, strideT1, strideT2, offsetT, T, strideT1, offsetT + i * strideT2);
+        }
+        T[offsetT + i * strideT1 + i * strideT2] = TAU[offsetTAU + i * strideTAU];
+        if (i > 0) {
+          prevlastv = Math.max(prevlastv, lastv);
+        } else {
+          prevlastv = lastv;
         }
       }
-      return x;
     }
-    module.exports = dtrmv;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dlarft/lib/base.js
-var require_base17 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dlarft/lib/base.js"(exports, module) {
-    "use strict";
-    var dgemv = require_base6();
-    var dtrmv = require_base16();
-    function dlarft(direct, storev, N, K, V, strideV1, strideV2, offsetV, TAU, strideTAU, offsetTAU, T, strideT1, strideT2, offsetT) {
-      var prevlastv;
-      var lastv;
-      var jj;
-      var i;
-      var j;
-      if (N === 0) {
-        return;
-      }
-      if (direct === "forward") {
-        prevlastv = N;
-        for (i = 0; i < K; i++) {
-          prevlastv = Math.max(prevlastv, i);
-          if (TAU[offsetTAU + i * strideTAU] === 0) {
-            for (j = 0; j <= i; j++) {
-              T[offsetT + j * strideT1 + i * strideT2] = 0;
+  } else {
+    prevlastv = 0;
+    for (i = K - 1; i >= 0; i--) {
+      if (TAU[offsetTAU + i * strideTAU] === 0) {
+        for (j = i; j < K; j++) {
+          T[offsetT + j * strideT1 + i * strideT2] = 0;
+        }
+      } else {
+        if (i < K - 1) {
+          if (storev === "columnwise") {
+            lastv = 0;
+            for (jj = 0; jj < i; jj++) {
+              if (V[offsetV + jj * strideV1 + i * strideV2] !== 0) {
+                break;
+              }
+              lastv = jj + 1;
+            }
+            for (j = i + 1; j < K; j++) {
+              T[offsetT + j * strideT1 + i * strideT2] = -(TAU[offsetTAU + i * strideTAU] * V[offsetV + (N - K + i) * strideV1 + j * strideV2]);
+            }
+            jj = Math.max(lastv, prevlastv);
+            if (N - K + i - jj > 0) {
+              base_default6("transpose", N - K + i - jj, K - i - 1, -TAU[offsetTAU + i * strideTAU], V, strideV1, strideV2, offsetV + jj * strideV1 + (i + 1) * strideV2, V, strideV1, offsetV + jj * strideV1 + i * strideV2, 1, T, strideT1, offsetT + (i + 1) * strideT1 + i * strideT2);
             }
           } else {
-            if (storev === "columnwise") {
-              lastv = N;
-              for (jj = N - 1; jj > i; jj--) {
-                if (V[offsetV + jj * strideV1 + i * strideV2] !== 0) {
-                  break;
-                }
-                lastv = jj;
+            lastv = 0;
+            for (jj = 0; jj < i; jj++) {
+              if (V[offsetV + i * strideV1 + jj * strideV2] !== 0) {
+                break;
               }
-              for (j = 0; j < i; j++) {
-                T[offsetT + j * strideT1 + i * strideT2] = -(TAU[offsetTAU + i * strideTAU] * V[offsetV + i * strideV1 + j * strideV2]);
-              }
-              jj = Math.min(lastv, prevlastv);
-              if (jj - i - 1 > 0) {
-                dgemv("transpose", jj - i - 1, i, -TAU[offsetTAU + i * strideTAU], V, strideV1, strideV2, offsetV + (i + 1) * strideV1, V, strideV1, offsetV + (i + 1) * strideV1 + i * strideV2, 1, T, strideT1, offsetT + i * strideT2);
-              }
-            } else {
-              lastv = N;
-              for (jj = N - 1; jj > i; jj--) {
-                if (V[offsetV + i * strideV1 + jj * strideV2] !== 0) {
-                  break;
-                }
-                lastv = jj;
-              }
-              for (j = 0; j < i; j++) {
-                T[offsetT + j * strideT1 + i * strideT2] = -(TAU[offsetTAU + i * strideTAU] * V[offsetV + j * strideV1 + i * strideV2]);
-              }
-              jj = Math.min(lastv, prevlastv);
-              if (jj - i - 1 > 0) {
-                dgemv("no-transpose", i, jj - i - 1, -TAU[offsetTAU + i * strideTAU], V, strideV1, strideV2, offsetV + (i + 1) * strideV2, V, strideV2, offsetV + i * strideV1 + (i + 1) * strideV2, 1, T, strideT1, offsetT + i * strideT2);
-              }
+              lastv = jj + 1;
             }
-            if (i > 0) {
-              dtrmv("upper", "no-transpose", "non-unit", i, T, strideT1, strideT2, offsetT, T, strideT1, offsetT + i * strideT2);
+            for (j = i + 1; j < K; j++) {
+              T[offsetT + j * strideT1 + i * strideT2] = -(TAU[offsetTAU + i * strideTAU] * V[offsetV + j * strideV1 + (N - K + i) * strideV2]);
             }
-            T[offsetT + i * strideT1 + i * strideT2] = TAU[offsetTAU + i * strideTAU];
-            if (i > 0) {
-              prevlastv = Math.max(prevlastv, lastv);
-            } else {
-              prevlastv = lastv;
+            jj = Math.max(lastv, prevlastv);
+            if (N - K + i - jj > 0) {
+              base_default6("no-transpose", K - i - 1, N - K + i - jj, -TAU[offsetTAU + i * strideTAU], V, strideV1, strideV2, offsetV + (i + 1) * strideV1 + jj * strideV2, V, strideV2, offsetV + i * strideV1 + jj * strideV2, 1, T, strideT1, offsetT + (i + 1) * strideT1 + i * strideT2);
             }
           }
-        }
-      } else {
-        prevlastv = 0;
-        for (i = K - 1; i >= 0; i--) {
-          if (TAU[offsetTAU + i * strideTAU] === 0) {
-            for (j = i; j < K; j++) {
-              T[offsetT + j * strideT1 + i * strideT2] = 0;
-            }
+          base_default16("lower", "no-transpose", "non-unit", K - i - 1, T, strideT1, strideT2, offsetT + (i + 1) * strideT1 + (i + 1) * strideT2, T, strideT1, offsetT + (i + 1) * strideT1 + i * strideT2);
+          if (i > 0) {
+            prevlastv = Math.min(prevlastv, lastv);
           } else {
-            if (i < K - 1) {
-              if (storev === "columnwise") {
-                lastv = 0;
-                for (jj = 0; jj < i; jj++) {
-                  if (V[offsetV + jj * strideV1 + i * strideV2] !== 0) {
-                    break;
-                  }
-                  lastv = jj + 1;
-                }
-                for (j = i + 1; j < K; j++) {
-                  T[offsetT + j * strideT1 + i * strideT2] = -(TAU[offsetTAU + i * strideTAU] * V[offsetV + (N - K + i) * strideV1 + j * strideV2]);
-                }
-                jj = Math.max(lastv, prevlastv);
-                if (N - K + i - jj > 0) {
-                  dgemv("transpose", N - K + i - jj, K - i - 1, -TAU[offsetTAU + i * strideTAU], V, strideV1, strideV2, offsetV + jj * strideV1 + (i + 1) * strideV2, V, strideV1, offsetV + jj * strideV1 + i * strideV2, 1, T, strideT1, offsetT + (i + 1) * strideT1 + i * strideT2);
-                }
-              } else {
-                lastv = 0;
-                for (jj = 0; jj < i; jj++) {
-                  if (V[offsetV + i * strideV1 + jj * strideV2] !== 0) {
-                    break;
-                  }
-                  lastv = jj + 1;
-                }
-                for (j = i + 1; j < K; j++) {
-                  T[offsetT + j * strideT1 + i * strideT2] = -(TAU[offsetTAU + i * strideTAU] * V[offsetV + j * strideV1 + (N - K + i) * strideV2]);
-                }
-                jj = Math.max(lastv, prevlastv);
-                if (N - K + i - jj > 0) {
-                  dgemv("no-transpose", K - i - 1, N - K + i - jj, -TAU[offsetTAU + i * strideTAU], V, strideV1, strideV2, offsetV + (i + 1) * strideV1 + jj * strideV2, V, strideV2, offsetV + i * strideV1 + jj * strideV2, 1, T, strideT1, offsetT + (i + 1) * strideT1 + i * strideT2);
-                }
+            prevlastv = lastv;
+          }
+        }
+        T[offsetT + i * strideT1 + i * strideT2] = TAU[offsetTAU + i * strideTAU];
+      }
+    }
+  }
+}
+var base_default17 = dlarft;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dgeqrf/lib/base.js
+var DEFAULT_NB = 32;
+function dgeqrf(M3, N, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, WORK, strideWork, offsetWork) {
+  var offsetT;
+  var ldwork;
+  var nbmin;
+  var iws;
+  var ib;
+  var nb;
+  var nx;
+  var T;
+  var K;
+  var i;
+  K = Math.min(M3, N);
+  if (K === 0) {
+    return 0;
+  }
+  nb = DEFAULT_NB;
+  nbmin = 2;
+  nx = 0;
+  iws = N;
+  ldwork = N;
+  if (nb > 1 && nb < K) {
+    iws = ldwork * nb;
+  }
+  T = WORK;
+  offsetT = offsetWork + iws;
+  if (nb >= nbmin && nb < K && nx < K) {
+    i = 0;
+    while (i <= K - 1 - nx) {
+      ib = Math.min(K - i, nb);
+      base_default11(M3 - i, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, WORK, strideWork, offsetWork);
+      if (i + ib < N) {
+        base_default17("forward", "columnwise", M3 - i, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, T, 1, nb, offsetT);
+        base_default15("left", "transpose", "forward", "columnwise", M3 - i, N - i - ib, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, T, 1, nb, offsetT, A, strideA1, strideA2, offsetA + i * strideA1 + (i + ib) * strideA2, WORK, 1, ldwork, offsetWork);
+      }
+      i += nb;
+    }
+  } else {
+    i = 0;
+  }
+  if (i <= K - 1) {
+    base_default11(M3 - i, N - i, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, WORK, strideWork, offsetWork);
+  }
+  return 0;
+}
+var base_default18 = dgeqrf;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dgelqf/lib/base.js
+var import_lib = __toESM(require_lib22(), 1);
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dgelq2/lib/base.js
+function dgelq2(M3, N, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, WORK, strideWork, offsetWork) {
+  var save;
+  var aii;
+  var K;
+  var i;
+  K = Math.min(M3, N);
+  for (i = 0; i < K; i++) {
+    aii = offsetA + i * strideA1 + i * strideA2;
+    base_default5(N - i, A, aii, A, strideA2, offsetA + i * strideA1 + Math.min(i + 1, N - 1) * strideA2, TAU, offsetTAU + i * strideTAU);
+    if (i < M3 - 1) {
+      save = A[aii];
+      A[aii] = 1;
+      base_default10(
+        "right",
+        M3 - i - 1,
+        // number of rows of sub-matrix
+        N - i,
+        // number of columns of sub-matrix
+        A,
+        strideA2,
+        aii,
+        // v = row i from col i onward, stride along columns
+        TAU[offsetTAU + i * strideTAU],
+        // tau is a plain scalar for dlarf
+        A,
+        strideA1,
+        strideA2,
+        offsetA + (i + 1) * strideA1 + i * strideA2,
+        // C = A(i+1, i)
+        WORK,
+        strideWork,
+        offsetWork
+      );
+      A[aii] = save;
+    }
+  }
+  return 0;
+}
+var base_default19 = dgelq2;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dgelqf/lib/base.js
+var DEFAULT_NB2 = 32;
+function dgelqf(M3, N, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, WORK, strideWork, offsetWork) {
+  var ldwork;
+  var nbmin;
+  var ib;
+  var nb;
+  var nx;
+  var T;
+  var K;
+  var i;
+  K = Math.min(M3, N);
+  if (K === 0) {
+    return 0;
+  }
+  nb = DEFAULT_NB2;
+  nbmin = 2;
+  nx = 0;
+  if (nb > 1 && nb < K) {
+    nx = 0;
+    if (nx < K) {
+      ldwork = M3;
+    }
+  }
+  T = new import_lib.default(nb * nb);
+  ldwork = M3;
+  if (nb >= nbmin && nb < K && nx < K) {
+    i = 0;
+    while (i <= K - 1 - nx) {
+      ib = Math.min(K - i, nb);
+      base_default19(ib, N - i, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, WORK, strideWork, offsetWork);
+      if (i + ib < M3) {
+        base_default17("forward", "rowwise", N - i, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, T, 1, nb, 0);
+        base_default15("right", "no-transpose", "forward", "rowwise", M3 - i - ib, N - i, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, T, 1, nb, 0, A, strideA1, strideA2, offsetA + (i + ib) * strideA1 + i * strideA2, WORK, 1, ldwork, offsetWork);
+      }
+      i += nb;
+    }
+  } else {
+    i = 0;
+  }
+  if (i <= K - 1) {
+    base_default19(M3 - i, N - i, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, WORK, strideWork, offsetWork);
+  }
+  return 0;
+}
+var base_default20 = dgelqf;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dorm2r/lib/base.js
+function dorm2r(side, trans, M3, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWork, offsetWork) {
+  var notran;
+  var left;
+  var idxA;
+  var aii;
+  var mi;
+  var ni;
+  var ic;
+  var jc;
+  var i1;
+  var i2;
+  var i3;
+  var i;
+  if (M3 === 0 || N === 0 || K === 0) {
+    return 0;
+  }
+  left = side === "left";
+  notran = trans === "no-transpose";
+  if (left && !notran || !left && notran) {
+    i1 = 0;
+    i2 = K;
+    i3 = 1;
+  } else {
+    i1 = K - 1;
+    i2 = -1;
+    i3 = -1;
+  }
+  if (left) {
+    ni = N;
+    jc = 0;
+  } else {
+    mi = M3;
+    ic = 0;
+  }
+  for (i = i1; i !== i2; i += i3) {
+    if (left) {
+      mi = M3 - i;
+      ic = i;
+    } else {
+      ni = N - i;
+      jc = i;
+    }
+    idxA = offsetA + i * strideA1 + i * strideA2;
+    aii = A[idxA];
+    A[idxA] = 1;
+    base_default10(side, mi, ni, A, strideA1, offsetA + i * strideA1 + i * strideA2, TAU[offsetTAU + i * strideTAU], C, strideC1, strideC2, offsetC + ic * strideC1 + jc * strideC2, WORK, strideWork, offsetWork);
+    A[idxA] = aii;
+  }
+  return 0;
+}
+var base_default21 = dorm2r;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dormqr/lib/base.js
+var NB = 32;
+function dormqr(side, trans, M3, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWork, offsetWork) {
+  var offsetT;
+  var notran;
+  var ldwork;
+  var left;
+  var ldt;
+  var nw;
+  var nb;
+  var nq;
+  var mi;
+  var ni;
+  var ic;
+  var jc;
+  var ib;
+  var i1;
+  var i2;
+  var i3;
+  var T;
+  var i;
+  left = side === "left";
+  notran = trans === "no-transpose";
+  if (left) {
+    nq = M3;
+    nw = Math.max(1, N);
+  } else {
+    nq = N;
+    nw = Math.max(1, M3);
+  }
+  if (M3 === 0 || N === 0 || K === 0) {
+    return 0;
+  }
+  nb = NB;
+  ldwork = nw;
+  ldt = nb + 1;
+  T = WORK;
+  offsetT = offsetWork + nw * nb;
+  if (nb >= K) {
+    base_default21(side, trans, M3, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWork, offsetWork);
+    return 0;
+  }
+  if (left && !notran || !left && notran) {
+    i1 = 0;
+    i2 = K;
+    i3 = nb;
+  } else {
+    i1 = Math.floor((K - 1) / nb) * nb;
+    i2 = -1;
+    i3 = -nb;
+  }
+  if (left) {
+    ni = N;
+    jc = 0;
+  } else {
+    mi = M3;
+    ic = 0;
+  }
+  for (i = i1; i3 > 0 ? i < i2 : i > i2; i += i3) {
+    ib = Math.min(nb, K - i);
+    base_default17("forward", "columnwise", nq - i, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, T, 1, ldt, offsetT);
+    if (left) {
+      mi = M3 - i;
+      ic = i;
+    } else {
+      ni = N - i;
+      jc = i;
+    }
+    base_default15(side, trans, "forward", "columnwise", mi, ni, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, T, 1, ldt, offsetT, C, strideC1, strideC2, offsetC + ic * strideC1 + jc * strideC2, WORK, 1, ldwork, offsetWork);
+  }
+  return 0;
+}
+var base_default22 = dormqr;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dorml2/lib/base.js
+function dorml2(side, trans, M3, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWork, offsetWork) {
+  var notran;
+  var left;
+  var aii;
+  var mi;
+  var ni;
+  var ic;
+  var jc;
+  var i1;
+  var i2;
+  var i3;
+  var i;
+  if (M3 === 0 || N === 0 || K === 0) {
+    return 0;
+  }
+  left = side === "left";
+  notran = trans === "no-transpose";
+  if (left && notran || !left && !notran) {
+    i1 = 0;
+    i2 = K;
+    i3 = 1;
+  } else {
+    i1 = K - 1;
+    i2 = -1;
+    i3 = -1;
+  }
+  if (left) {
+    ni = N;
+    jc = 0;
+  } else {
+    mi = M3;
+    ic = 0;
+  }
+  for (i = i1; i3 > 0 ? i < i2 : i > i2; i += i3) {
+    if (left) {
+      mi = M3 - i;
+      ic = i;
+    } else {
+      ni = N - i;
+      jc = i;
+    }
+    aii = A[offsetA + i * strideA1 + i * strideA2];
+    A[offsetA + i * strideA1 + i * strideA2] = 1;
+    base_default10(side, mi, ni, A, strideA2, offsetA + i * strideA1 + i * strideA2, TAU[offsetTAU + i * strideTAU], C, strideC1, strideC2, offsetC + ic * strideC1 + jc * strideC2, WORK, strideWork, offsetWork);
+    A[offsetA + i * strideA1 + i * strideA2] = aii;
+  }
+  return 0;
+}
+var base_default23 = dorml2;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dormlq/lib/base.js
+var NB2 = 32;
+function dormlq(side, trans, M3, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWork, offsetWork) {
+  var offsetT;
+  var notran;
+  var transt;
+  var ldwork;
+  var left;
+  var ldt;
+  var nw;
+  var nb;
+  var nq;
+  var mi;
+  var ni;
+  var ic;
+  var jc;
+  var ib;
+  var i1;
+  var i2;
+  var i3;
+  var T;
+  var i;
+  if (M3 === 0 || N === 0 || K === 0) {
+    return 0;
+  }
+  left = side === "left";
+  notran = trans === "no-transpose";
+  if (left) {
+    nq = M3;
+    nw = Math.max(1, N);
+  } else {
+    nq = N;
+    nw = Math.max(1, M3);
+  }
+  nb = NB2;
+  if (nb > K) {
+    nb = K;
+  }
+  if (nb < 2 || nb >= K) {
+    return base_default23(side, trans, M3, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWork, offsetWork);
+  }
+  ldwork = nw;
+  ldt = nb + 1;
+  T = WORK;
+  offsetT = offsetWork + ldwork * nb;
+  if (left && notran || !left && !notran) {
+    i1 = 0;
+    i2 = K;
+    i3 = nb;
+  } else {
+    i1 = Math.floor((K - 1) / nb) * nb;
+    i2 = -1;
+    i3 = -nb;
+  }
+  if (left) {
+    ni = N;
+    jc = 0;
+  } else {
+    mi = M3;
+    ic = 0;
+  }
+  if (notran) {
+    transt = "transpose";
+  } else {
+    transt = "no-transpose";
+  }
+  for (i = i1; i3 > 0 ? i < i2 : i > i2; i += i3) {
+    ib = Math.min(nb, K - i);
+    base_default17("forward", "rowwise", nq - i, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, T, 1, ldt, offsetT);
+    if (left) {
+      mi = M3 - i;
+      ic = i;
+    } else {
+      ni = N - i;
+      jc = i;
+    }
+    base_default15(side, transt, "forward", "rowwise", mi, ni, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, T, 1, ldt, offsetT, C, strideC1, strideC2, offsetC + ic * strideC1 + jc * strideC2, WORK, 1, ldwork, offsetWork);
+  }
+  return 0;
+}
+var base_default24 = dormlq;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dlassq/lib/base.js
+var TSML2 = Math.pow(2, -511);
+var TBIG2 = Math.pow(2, 486);
+var SSML2 = Math.pow(2, 537);
+var SBIG2 = Math.pow(2, -538);
+function dlassq(N, x, stride, offset, scale, sumsq) {
+  var notbig;
+  var abig;
+  var amed;
+  var asml;
+  var ymax;
+  var ymin;
+  var ax;
+  var ix;
+  var i;
+  if (scale !== scale || sumsq !== sumsq) {
+    return {
+      "scl": scale,
+      "sumsq": sumsq
+    };
+  }
+  if (sumsq === 0) {
+    scale = 1;
+  }
+  if (scale === 0) {
+    scale = 1;
+    sumsq = 0;
+  }
+  if (N <= 0) {
+    return {
+      "scl": scale,
+      "sumsq": sumsq
+    };
+  }
+  notbig = true;
+  asml = 0;
+  amed = 0;
+  abig = 0;
+  ix = offset;
+  if (stride < 0) {
+    ix = offset - (N - 1) * stride;
+  }
+  for (i = 0; i < N; i++) {
+    ax = Math.abs(x[ix]);
+    if (ax > TBIG2) {
+      abig += ax * SBIG2 * (ax * SBIG2);
+      notbig = false;
+    } else if (ax < TSML2) {
+      if (notbig) {
+        asml += ax * SSML2 * (ax * SSML2);
+      }
+    } else {
+      amed += ax * ax;
+    }
+    ix += stride;
+  }
+  if (sumsq > 0) {
+    ax = scale * Math.sqrt(sumsq);
+    if (ax > TBIG2) {
+      if (scale > 1) {
+        scale *= SBIG2;
+        abig += scale * (scale * sumsq);
+      } else {
+        abig += scale * (scale * (SBIG2 * (SBIG2 * sumsq)));
+      }
+    } else if (ax < TSML2) {
+      if (notbig) {
+        if (scale < 1) {
+          scale *= SSML2;
+          asml += scale * (scale * sumsq);
+        } else {
+          asml += scale * (scale * (SSML2 * (SSML2 * sumsq)));
+        }
+      }
+    } else {
+      amed += scale * (scale * sumsq);
+    }
+  }
+  if (abig > 0) {
+    if (amed > 0 || amed !== amed) {
+      abig += amed * SBIG2 * SBIG2;
+    }
+    scale = 1 / SBIG2;
+    sumsq = abig;
+  } else if (asml > 0) {
+    if (amed > 0 || amed !== amed) {
+      amed = Math.sqrt(amed);
+      asml = Math.sqrt(asml) / SSML2;
+      if (asml > amed) {
+        ymin = amed;
+        ymax = asml;
+      } else {
+        ymin = asml;
+        ymax = amed;
+      }
+      scale = 1;
+      sumsq = ymax * ymax * (1 + ymin / ymax * (ymin / ymax));
+    } else {
+      scale = 1 / SSML2;
+      sumsq = asml;
+    }
+  } else {
+    scale = 1;
+    sumsq = amed;
+  }
+  return {
+    "scl": scale,
+    "sumsq": sumsq
+  };
+}
+var base_default25 = dlassq;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dlange/lib/base.js
+function dlange(norm, M3, N, A, strideA1, strideA2, offsetA, WORK, strideWork, offsetWork) {
+  var value;
+  var scale;
+  var temp;
+  var sum;
+  var out;
+  var ai;
+  var wi;
+  var i;
+  var j;
+  if (M3 === 0 || N === 0) {
+    return 0;
+  }
+  if (norm === "max") {
+    value = 0;
+    for (j = 0; j < N; j++) {
+      ai = offsetA + j * strideA2;
+      for (i = 0; i < M3; i++) {
+        temp = Math.abs(A[ai]);
+        if (value < temp || temp !== temp) {
+          value = temp;
+        }
+        ai += strideA1;
+      }
+    }
+  } else if (norm === "one-norm") {
+    value = 0;
+    for (j = 0; j < N; j++) {
+      sum = 0;
+      ai = offsetA + j * strideA2;
+      for (i = 0; i < M3; i++) {
+        sum += Math.abs(A[ai]);
+        ai += strideA1;
+      }
+      if (value < sum || sum !== sum) {
+        value = sum;
+      }
+    }
+  } else if (norm === "inf-norm") {
+    for (i = 0; i < M3; i++) {
+      wi = offsetWork + i * strideWork;
+      WORK[wi] = 0;
+    }
+    for (j = 0; j < N; j++) {
+      ai = offsetA + j * strideA2;
+      wi = offsetWork;
+      for (i = 0; i < M3; i++) {
+        WORK[wi] += Math.abs(A[ai]);
+        ai += strideA1;
+        wi += strideWork;
+      }
+    }
+    value = 0;
+    for (i = 0; i < M3; i++) {
+      wi = offsetWork + i * strideWork;
+      temp = WORK[wi];
+      if (value < temp || temp !== temp) {
+        value = temp;
+      }
+    }
+  } else if (norm === "frobenius") {
+    scale = 0;
+    sum = 1;
+    for (j = 0; j < N; j++) {
+      out = base_default25(M3, A, strideA1, offsetA + j * strideA2, scale, sum);
+      scale = out.scl;
+      sum = out.sumsq;
+    }
+    value = scale * Math.sqrt(sum);
+  } else {
+    value = 0;
+  }
+  return value;
+}
+var base_default26 = dlange;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dlascl/lib/base.js
+function dlascl(type, kl, ku, cfrom, cto, M3, N, A, strideA1, strideA2, offsetA) {
+  var smlnum;
+  var bignum;
+  var cfromc;
+  var cfrom1;
+  var itype;
+  var ctoc;
+  var cto1;
+  var done;
+  var iMax;
+  var iMin;
+  var mul;
+  var k1;
+  var k2;
+  var k3;
+  var k4;
+  var ai;
+  var i;
+  var j;
+  if (type === "general") {
+    itype = 0;
+  } else if (type === "lower") {
+    itype = 1;
+  } else if (type === "upper") {
+    itype = 2;
+  } else if (type === "upper-hessenberg") {
+    itype = 3;
+  } else if (type === "lower-band") {
+    itype = 4;
+  } else if (type === "upper-band") {
+    itype = 5;
+  } else if (type === "band") {
+    itype = 6;
+  } else {
+    return -1;
+  }
+  if (N === 0 || M3 === 0) {
+    return 0;
+  }
+  smlnum = base_default3("safe-minimum");
+  bignum = 1 / smlnum;
+  cfromc = cfrom;
+  ctoc = cto;
+  done = false;
+  while (!done) {
+    cfrom1 = cfromc * smlnum;
+    if (cfrom1 === cfromc) {
+      mul = ctoc / cfromc;
+      done = true;
+    } else {
+      cto1 = ctoc / bignum;
+      if (cto1 === ctoc) {
+        mul = ctoc;
+        done = true;
+        cfromc = 1;
+      } else if (Math.abs(cfrom1) > Math.abs(ctoc) && ctoc !== 0) {
+        mul = smlnum;
+        done = false;
+        cfromc = cfrom1;
+      } else if (Math.abs(cto1) > Math.abs(cfromc)) {
+        mul = bignum;
+        done = false;
+        ctoc = cto1;
+      } else {
+        mul = ctoc / cfromc;
+        done = true;
+        if (mul === 1) {
+          return 0;
+        }
+      }
+    }
+    if (itype === 0) {
+      for (j = 0; j < N; j++) {
+        for (i = 0; i < M3; i++) {
+          ai = offsetA + i * strideA1 + j * strideA2;
+          A[ai] *= mul;
+        }
+      }
+    } else if (itype === 1) {
+      for (j = 0; j < N; j++) {
+        for (i = j; i < M3; i++) {
+          ai = offsetA + i * strideA1 + j * strideA2;
+          A[ai] *= mul;
+        }
+      }
+    } else if (itype === 2) {
+      for (j = 0; j < N; j++) {
+        iMax = Math.min(j + 1, M3);
+        for (i = 0; i < iMax; i++) {
+          ai = offsetA + i * strideA1 + j * strideA2;
+          A[ai] *= mul;
+        }
+      }
+    } else if (itype === 3) {
+      for (j = 0; j < N; j++) {
+        iMax = Math.min(j + 2, M3);
+        for (i = 0; i < iMax; i++) {
+          ai = offsetA + i * strideA1 + j * strideA2;
+          A[ai] *= mul;
+        }
+      }
+    } else if (itype === 4) {
+      k3 = kl + 1;
+      k4 = N + 1;
+      for (j = 0; j < N; j++) {
+        iMax = Math.min(k3, k4 - j - 1);
+        for (i = 0; i < iMax; i++) {
+          ai = offsetA + i * strideA1 + j * strideA2;
+          A[ai] *= mul;
+        }
+      }
+    } else if (itype === 5) {
+      k1 = ku + 2;
+      k3 = ku + 1;
+      for (j = 0; j < N; j++) {
+        iMin = Math.max(k1 - j - 2, 0);
+        for (i = iMin; i < k3; i++) {
+          ai = offsetA + i * strideA1 + j * strideA2;
+          A[ai] *= mul;
+        }
+      }
+    } else if (itype === 6) {
+      k1 = kl + ku + 2;
+      k2 = kl + 1;
+      k3 = 2 * kl + ku + 1;
+      k4 = kl + ku + 1 + M3;
+      for (j = 0; j < N; j++) {
+        iMin = Math.max(k1 - j - 2, k2 - 1);
+        iMax = Math.min(k3, k4 - j - 1);
+        for (i = iMin; i < iMax; i++) {
+          ai = offsetA + i * strideA1 + j * strideA2;
+          A[ai] *= mul;
+        }
+      }
+    }
+  }
+  return 0;
+}
+var base_default27 = dlascl;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dlaset/lib/base.js
+function dlaset(uplo, M3, N, alpha, beta, A, strideA1, strideA2, offsetA) {
+  var idx;
+  var mn;
+  var i;
+  var j;
+  mn = Math.min(M3, N);
+  if (uplo === "upper") {
+    for (j = 1; j < N; j++) {
+      idx = offsetA + j * strideA2;
+      for (i = 0; i < Math.min(j, M3); i++) {
+        A[idx] = alpha;
+        idx += strideA1;
+      }
+    }
+  } else if (uplo === "lower") {
+    for (j = 0; j < mn; j++) {
+      idx = offsetA + (j + 1) * strideA1 + j * strideA2;
+      for (i = j + 1; i < M3; i++) {
+        A[idx] = alpha;
+        idx += strideA1;
+      }
+    }
+  } else {
+    for (j = 0; j < N; j++) {
+      idx = offsetA + j * strideA2;
+      for (i = 0; i < M3; i++) {
+        A[idx] = alpha;
+        idx += strideA1;
+      }
+    }
+  }
+  idx = offsetA;
+  for (i = 0; i < mn; i++) {
+    A[idx] = beta;
+    idx += strideA1 + strideA2;
+  }
+  return A;
+}
+var base_default28 = dlaset;
+
+// node_modules/@rreusser/blapack/lib/blas/base/dtrsm/lib/base.js
+function dtrsm(side, uplo, transa, diag, M3, N, alpha, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB) {
+  var nounit;
+  var lside;
+  var upper;
+  var temp;
+  var sa1;
+  var sa2;
+  var sb1;
+  var sb2;
+  var ia;
+  var ib;
+  var i;
+  var j;
+  var k;
+  lside = side === "left";
+  nounit = diag === "non-unit";
+  upper = uplo === "upper";
+  if (M3 === 0 || N === 0) {
+    return B;
+  }
+  sa1 = strideA1;
+  sa2 = strideA2;
+  sb1 = strideB1;
+  sb2 = strideB2;
+  if (alpha === 0) {
+    for (j = 0; j < N; j++) {
+      ib = offsetB + j * sb2;
+      for (i = 0; i < M3; i++) {
+        B[ib] = 0;
+        ib += sb1;
+      }
+    }
+    return B;
+  }
+  if (lside) {
+    if (transa === "no-transpose") {
+      if (upper) {
+        for (j = 0; j < N; j++) {
+          if (alpha !== 1) {
+            ib = offsetB + j * sb2;
+            for (i = 0; i < M3; i++) {
+              B[ib] *= alpha;
+              ib += sb1;
+            }
+          }
+          for (k = M3 - 1; k >= 0; k--) {
+            ib = offsetB + k * sb1 + j * sb2;
+            if (B[ib] !== 0) {
+              if (nounit) {
+                B[ib] /= A[offsetA + k * sa1 + k * sa2];
               }
-              dtrmv("lower", "no-transpose", "non-unit", K - i - 1, T, strideT1, strideT2, offsetT + (i + 1) * strideT1 + (i + 1) * strideT2, T, strideT1, offsetT + (i + 1) * strideT1 + i * strideT2);
-              if (i > 0) {
-                prevlastv = Math.min(prevlastv, lastv);
-              } else {
-                prevlastv = lastv;
+              ia = offsetA + k * sa2;
+              for (i = 0; i < k; i++) {
+                B[offsetB + i * sb1 + j * sb2] -= B[ib] * A[ia];
+                ia += sa1;
               }
             }
-            T[offsetT + i * strideT1 + i * strideT2] = TAU[offsetTAU + i * strideTAU];
-          }
-        }
-      }
-    }
-    module.exports = dlarft;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dgeqrf/lib/base.js
-var require_base18 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dgeqrf/lib/base.js"(exports, module) {
-    "use strict";
-    var dgeqr2 = require_base11();
-    var dlarfb = require_base15();
-    var dlarft = require_base17();
-    var DEFAULT_NB = 32;
-    function dgeqrf(M, N, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, WORK, strideWORK, offsetWORK) {
-      var offsetT;
-      var ldwork;
-      var nbmin;
-      var iws;
-      var ib;
-      var nb;
-      var nx;
-      var T;
-      var K;
-      var i;
-      K = Math.min(M, N);
-      if (K === 0) {
-        return 0;
-      }
-      nb = DEFAULT_NB;
-      nbmin = 2;
-      nx = 0;
-      iws = N;
-      ldwork = N;
-      T = WORK;
-      if (nb > 1 && nb < K) {
-        iws = ldwork * nb;
-      }
-      offsetT = offsetWORK + iws;
-      if (nb >= nbmin && nb < K && nx < K) {
-        i = 0;
-        while (i <= K - 1 - nx) {
-          ib = Math.min(K - i, nb);
-          dgeqr2(M - i, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, WORK, strideWORK, offsetWORK);
-          if (i + ib < N) {
-            dlarft("forward", "columnwise", M - i, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, T, 1, nb, offsetT);
-            dlarfb("left", "transpose", "forward", "columnwise", M - i, N - i - ib, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, T, 1, nb, offsetT, A, strideA1, strideA2, offsetA + i * strideA1 + (i + ib) * strideA2, WORK, 1, ldwork, offsetWORK);
-          }
-          i += nb;
-        }
-      } else {
-        i = 0;
-      }
-      if (i <= K - 1) {
-        dgeqr2(M - i, N - i, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, WORK, strideWORK, offsetWORK);
-      }
-      return 0;
-    }
-    module.exports = dgeqrf;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dgelq2/lib/base.js
-var require_base19 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dgelq2/lib/base.js"(exports, module) {
-    "use strict";
-    var dlarfg = require_base5();
-    var dlarf = require_base10();
-    function dgelq2(M, N, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, WORK, strideWORK, offsetWORK) {
-      var save;
-      var aii;
-      var K;
-      var i;
-      K = Math.min(M, N);
-      for (i = 0; i < K; i++) {
-        aii = offsetA + i * strideA1 + i * strideA2;
-        dlarfg(N - i, A, aii, A, strideA2, offsetA + i * strideA1 + Math.min(i + 1, N - 1) * strideA2, TAU, offsetTAU + i * strideTAU);
-        if (i < M - 1) {
-          save = A[aii];
-          A[aii] = 1;
-          dlarf(
-            "right",
-            M - i - 1,
-            // number of rows of sub-matrix
-            N - i,
-            // number of columns of sub-matrix
-            A,
-            strideA2,
-            aii,
-            // v = row i from col i onward, stride along columns
-            TAU[offsetTAU + i * strideTAU],
-            // tau is a plain scalar for dlarf
-            A,
-            strideA1,
-            strideA2,
-            offsetA + (i + 1) * strideA1 + i * strideA2,
-            // C = A(i+1, i)
-            WORK,
-            strideWORK,
-            offsetWORK
-          );
-          A[aii] = save;
-        }
-      }
-      return 0;
-    }
-    module.exports = dgelq2;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dgelqf/lib/base.js
-var require_base20 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dgelqf/lib/base.js"(exports, module) {
-    "use strict";
-    var Float64Array2 = require_lib22();
-    var dgelq2 = require_base19();
-    var dlarfb = require_base15();
-    var dlarft = require_base17();
-    var DEFAULT_NB = 32;
-    function dgelqf(M, N, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, WORK, strideWORK, offsetWORK) {
-      var ldwork;
-      var nbmin;
-      var iws;
-      var ib;
-      var nb;
-      var nx;
-      var T;
-      var K;
-      var i;
-      K = Math.min(M, N);
-      if (K === 0) {
-        return 0;
-      }
-      nb = DEFAULT_NB;
-      nbmin = 2;
-      nx = 0;
-      iws = M;
-      if (nb > 1 && nb < K) {
-        nx = 0;
-        if (nx < K) {
-          ldwork = M;
-          iws = ldwork * nb;
-        }
-      }
-      T = new Float64Array2(nb * nb);
-      ldwork = M;
-      if (nb >= nbmin && nb < K && nx < K) {
-        i = 0;
-        while (i <= K - 1 - nx) {
-          ib = Math.min(K - i, nb);
-          dgelq2(ib, N - i, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, WORK, strideWORK, offsetWORK);
-          if (i + ib < M) {
-            dlarft("forward", "rowwise", N - i, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, T, 1, nb, 0);
-            dlarfb("right", "no-transpose", "forward", "rowwise", M - i - ib, N - i, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, T, 1, nb, 0, A, strideA1, strideA2, offsetA + (i + ib) * strideA1 + i * strideA2, WORK, 1, ldwork, offsetWORK);
-          }
-          i += nb;
-        }
-      } else {
-        i = 0;
-      }
-      if (i <= K - 1) {
-        dgelq2(M - i, N - i, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, WORK, strideWORK, offsetWORK);
-      }
-      return 0;
-    }
-    module.exports = dgelqf;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dorm2r/lib/base.js
-var require_base21 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dorm2r/lib/base.js"(exports, module) {
-    "use strict";
-    var dlarf = require_base10();
-    function dorm2r(side, trans, M, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWORK, offsetWORK) {
-      var notran;
-      var left;
-      var idxA;
-      var aii;
-      var mi;
-      var ni;
-      var ic;
-      var jc;
-      var i1;
-      var i2;
-      var i3;
-      var i;
-      if (M === 0 || N === 0 || K === 0) {
-        return 0;
-      }
-      left = side === "left";
-      notran = trans === "no-transpose";
-      if (left && !notran || !left && notran) {
-        i1 = 0;
-        i2 = K;
-        i3 = 1;
-      } else {
-        i1 = K - 1;
-        i2 = -1;
-        i3 = -1;
-      }
-      if (left) {
-        ni = N;
-        jc = 0;
-      } else {
-        mi = M;
-        ic = 0;
-      }
-      for (i = i1; i !== i2; i += i3) {
-        if (left) {
-          mi = M - i;
-          ic = i;
-        } else {
-          ni = N - i;
-          jc = i;
-        }
-        idxA = offsetA + i * strideA1 + i * strideA2;
-        aii = A[idxA];
-        A[idxA] = 1;
-        dlarf(side, mi, ni, A, strideA1, offsetA + i * strideA1 + i * strideA2, TAU[offsetTAU + i * strideTAU], C, strideC1, strideC2, offsetC + ic * strideC1 + jc * strideC2, WORK, strideWORK, offsetWORK);
-        A[idxA] = aii;
-      }
-      return 0;
-    }
-    module.exports = dorm2r;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dormqr/lib/base.js
-var require_base22 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dormqr/lib/base.js"(exports, module) {
-    "use strict";
-    var dlarfb = require_base15();
-    var dlarft = require_base17();
-    var dorm2r = require_base21();
-    var NB = 32;
-    function dormqr(side, trans, M, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWORK, offsetWORK) {
-      var offsetT;
-      var notran;
-      var ldwork;
-      var left;
-      var ldt;
-      var nw;
-      var nb;
-      var nq;
-      var mi;
-      var ni;
-      var ic;
-      var jc;
-      var ib;
-      var i1;
-      var i2;
-      var i3;
-      var T;
-      var i;
-      left = side === "left";
-      notran = trans === "no-transpose";
-      if (left) {
-        nq = M;
-        nw = Math.max(1, N);
-      } else {
-        nq = N;
-        nw = Math.max(1, M);
-      }
-      if (M === 0 || N === 0 || K === 0) {
-        return 0;
-      }
-      nb = NB;
-      ldwork = nw;
-      ldt = nb + 1;
-      T = WORK;
-      offsetT = offsetWORK + nw * nb;
-      if (nb >= K) {
-        dorm2r(side, trans, M, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWORK, offsetWORK);
-        return 0;
-      }
-      if (left && !notran || !left && notran) {
-        i1 = 0;
-        i2 = K;
-        i3 = nb;
-      } else {
-        i1 = Math.floor((K - 1) / nb) * nb;
-        i2 = -1;
-        i3 = -nb;
-      }
-      if (left) {
-        ni = N;
-        jc = 0;
-      } else {
-        mi = M;
-        ic = 0;
-      }
-      for (i = i1; i3 > 0 ? i < i2 : i > i2; i += i3) {
-        ib = Math.min(nb, K - i);
-        dlarft("forward", "columnwise", nq - i, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, T, 1, ldt, offsetT);
-        if (left) {
-          mi = M - i;
-          ic = i;
-        } else {
-          ni = N - i;
-          jc = i;
-        }
-        dlarfb(side, trans, "forward", "columnwise", mi, ni, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, T, 1, ldt, offsetT, C, strideC1, strideC2, offsetC + ic * strideC1 + jc * strideC2, WORK, 1, ldwork, offsetWORK);
-      }
-      return 0;
-    }
-    module.exports = dormqr;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dorml2/lib/base.js
-var require_base23 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dorml2/lib/base.js"(exports, module) {
-    "use strict";
-    var dlarf = require_base10();
-    function dorml2(side, trans, M, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWORK, offsetWORK) {
-      var notran;
-      var left;
-      var aii;
-      var mi;
-      var ni;
-      var ic;
-      var jc;
-      var i1;
-      var i2;
-      var i3;
-      var i;
-      if (M === 0 || N === 0 || K === 0) {
-        return 0;
-      }
-      left = side === "left";
-      notran = trans === "no-transpose";
-      if (left && notran || !left && !notran) {
-        i1 = 0;
-        i2 = K;
-        i3 = 1;
-      } else {
-        i1 = K - 1;
-        i2 = -1;
-        i3 = -1;
-      }
-      if (left) {
-        ni = N;
-        jc = 0;
-      } else {
-        mi = M;
-        ic = 0;
-      }
-      for (i = i1; i3 > 0 ? i < i2 : i > i2; i += i3) {
-        if (left) {
-          mi = M - i;
-          ic = i;
-        } else {
-          ni = N - i;
-          jc = i;
-        }
-        aii = A[offsetA + i * strideA1 + i * strideA2];
-        A[offsetA + i * strideA1 + i * strideA2] = 1;
-        dlarf(side, mi, ni, A, strideA2, offsetA + i * strideA1 + i * strideA2, TAU[offsetTAU + i * strideTAU], C, strideC1, strideC2, offsetC + ic * strideC1 + jc * strideC2, WORK, strideWORK, offsetWORK);
-        A[offsetA + i * strideA1 + i * strideA2] = aii;
-      }
-      return 0;
-    }
-    module.exports = dorml2;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dormlq/lib/base.js
-var require_base24 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dormlq/lib/base.js"(exports, module) {
-    "use strict";
-    var dlarfb = require_base15();
-    var dlarft = require_base17();
-    var dorml2 = require_base23();
-    var NB = 32;
-    function dormlq(side, trans, M, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWORK, offsetWORK) {
-      var offsetT;
-      var notran;
-      var transt;
-      var ldwork;
-      var left;
-      var ldt;
-      var nw;
-      var nb;
-      var nq;
-      var mi;
-      var ni;
-      var ic;
-      var jc;
-      var ib;
-      var i1;
-      var i2;
-      var i3;
-      var T;
-      var i;
-      if (M === 0 || N === 0 || K === 0) {
-        return 0;
-      }
-      left = side === "left";
-      notran = trans === "no-transpose";
-      if (left) {
-        nq = M;
-        nw = Math.max(1, N);
-      } else {
-        nq = N;
-        nw = Math.max(1, M);
-      }
-      nb = NB;
-      if (nb > K) {
-        nb = K;
-      }
-      if (nb < 2 || nb >= K) {
-        return dorml2(side, trans, M, N, K, A, strideA1, strideA2, offsetA, TAU, strideTAU, offsetTAU, C, strideC1, strideC2, offsetC, WORK, strideWORK, offsetWORK);
-      }
-      ldwork = nw;
-      ldt = nb + 1;
-      T = WORK;
-      offsetT = offsetWORK + ldwork * nb;
-      if (left && notran || !left && !notran) {
-        i1 = 0;
-        i2 = K;
-        i3 = nb;
-      } else {
-        i1 = Math.floor((K - 1) / nb) * nb;
-        i2 = -1;
-        i3 = -nb;
-      }
-      if (left) {
-        ni = N;
-        jc = 0;
-      } else {
-        mi = M;
-        ic = 0;
-      }
-      if (notran) {
-        transt = "transpose";
-      } else {
-        transt = "no-transpose";
-      }
-      for (i = i1; i3 > 0 ? i < i2 : i > i2; i += i3) {
-        ib = Math.min(nb, K - i);
-        dlarft("forward", "rowwise", nq - i, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, TAU, strideTAU, offsetTAU + i * strideTAU, T, 1, ldt, offsetT);
-        if (left) {
-          mi = M - i;
-          ic = i;
-        } else {
-          ni = N - i;
-          jc = i;
-        }
-        dlarfb(side, transt, "forward", "rowwise", mi, ni, ib, A, strideA1, strideA2, offsetA + i * strideA1 + i * strideA2, T, 1, ldt, offsetT, C, strideC1, strideC2, offsetC + ic * strideC1 + jc * strideC2, WORK, 1, ldwork, offsetWORK);
-      }
-      return 0;
-    }
-    module.exports = dormlq;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dlassq/lib/base.js
-var require_base25 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dlassq/lib/base.js"(exports, module) {
-    "use strict";
-    var TSML = Math.pow(2, -511);
-    var TBIG = Math.pow(2, 486);
-    var SSML = Math.pow(2, 537);
-    var SBIG = Math.pow(2, -538);
-    function dlassq(N, x, stride, offset, scale, sumsq) {
-      var notbig;
-      var abig;
-      var amed;
-      var asml;
-      var ymax;
-      var ymin;
-      var ax;
-      var ix;
-      var i;
-      if (scale !== scale || sumsq !== sumsq) {
-        return {
-          "scl": scale,
-          "sumsq": sumsq
-        };
-      }
-      if (sumsq === 0) {
-        scale = 1;
-      }
-      if (scale === 0) {
-        scale = 1;
-        sumsq = 0;
-      }
-      if (N <= 0) {
-        return {
-          "scl": scale,
-          "sumsq": sumsq
-        };
-      }
-      notbig = true;
-      asml = 0;
-      amed = 0;
-      abig = 0;
-      ix = offset;
-      if (stride < 0) {
-        ix = offset - (N - 1) * stride;
-      }
-      for (i = 0; i < N; i++) {
-        ax = Math.abs(x[ix]);
-        if (ax > TBIG) {
-          abig += ax * SBIG * (ax * SBIG);
-          notbig = false;
-        } else if (ax < TSML) {
-          if (notbig) {
-            asml += ax * SSML * (ax * SSML);
-          }
-        } else {
-          amed += ax * ax;
-        }
-        ix += stride;
-      }
-      if (sumsq > 0) {
-        ax = scale * Math.sqrt(sumsq);
-        if (ax > TBIG) {
-          if (scale > 1) {
-            scale *= SBIG;
-            abig += scale * (scale * sumsq);
-          } else {
-            abig += scale * (scale * (SBIG * (SBIG * sumsq)));
-          }
-        } else if (ax < TSML) {
-          if (notbig) {
-            if (scale < 1) {
-              scale *= SSML;
-              asml += scale * (scale * sumsq);
-            } else {
-              asml += scale * (scale * (SSML * (SSML * sumsq)));
-            }
-          }
-        } else {
-          amed += scale * (scale * sumsq);
-        }
-      }
-      if (abig > 0) {
-        if (amed > 0 || amed !== amed) {
-          abig += amed * SBIG * SBIG;
-        }
-        scale = 1 / SBIG;
-        sumsq = abig;
-      } else if (asml > 0) {
-        if (amed > 0 || amed !== amed) {
-          amed = Math.sqrt(amed);
-          asml = Math.sqrt(asml) / SSML;
-          if (asml > amed) {
-            ymin = amed;
-            ymax = asml;
-          } else {
-            ymin = asml;
-            ymax = amed;
-          }
-          scale = 1;
-          sumsq = ymax * ymax * (1 + ymin / ymax * (ymin / ymax));
-        } else {
-          scale = 1 / SSML;
-          sumsq = asml;
-        }
-      } else {
-        scale = 1;
-        sumsq = amed;
-      }
-      return {
-        "scl": scale,
-        "sumsq": sumsq
-      };
-    }
-    module.exports = dlassq;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dlange/lib/base.js
-var require_base26 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dlange/lib/base.js"(exports, module) {
-    "use strict";
-    var dlassq = require_base25();
-    function dlange(norm, M, N, A, strideA1, strideA2, offsetA, WORK, strideWORK, offsetWORK) {
-      var value;
-      var scale;
-      var temp;
-      var sum;
-      var out;
-      var ai;
-      var wi;
-      var i;
-      var j;
-      if (M === 0 || N === 0) {
-        return 0;
-      }
-      if (norm === "max") {
-        value = 0;
-        for (j = 0; j < N; j++) {
-          ai = offsetA + j * strideA2;
-          for (i = 0; i < M; i++) {
-            temp = Math.abs(A[ai]);
-            if (value < temp || temp !== temp) {
-              value = temp;
-            }
-            ai += strideA1;
-          }
-        }
-      } else if (norm === "one-norm") {
-        value = 0;
-        for (j = 0; j < N; j++) {
-          sum = 0;
-          ai = offsetA + j * strideA2;
-          for (i = 0; i < M; i++) {
-            sum += Math.abs(A[ai]);
-            ai += strideA1;
-          }
-          if (value < sum || sum !== sum) {
-            value = sum;
-          }
-        }
-      } else if (norm === "inf-norm") {
-        for (i = 0; i < M; i++) {
-          wi = offsetWORK + i * strideWORK;
-          WORK[wi] = 0;
-        }
-        for (j = 0; j < N; j++) {
-          ai = offsetA + j * strideA2;
-          wi = offsetWORK;
-          for (i = 0; i < M; i++) {
-            WORK[wi] += Math.abs(A[ai]);
-            ai += strideA1;
-            wi += strideWORK;
-          }
-        }
-        value = 0;
-        for (i = 0; i < M; i++) {
-          wi = offsetWORK + i * strideWORK;
-          temp = WORK[wi];
-          if (value < temp || temp !== temp) {
-            value = temp;
-          }
-        }
-      } else if (norm === "frobenius") {
-        scale = 0;
-        sum = 1;
-        for (j = 0; j < N; j++) {
-          out = dlassq(M, A, strideA1, offsetA + j * strideA2, scale, sum);
-          scale = out.scl;
-          sum = out.sumsq;
-        }
-        value = scale * Math.sqrt(sum);
-      } else {
-        value = 0;
-      }
-      return value;
-    }
-    module.exports = dlange;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dlascl/lib/base.js
-var require_base27 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dlascl/lib/base.js"(exports, module) {
-    "use strict";
-    var dlamch = require_base3();
-    function dlascl(type, kl, ku, cfrom, cto, M, N, A, strideA1, strideA2, offsetA) {
-      var smlnum;
-      var bignum;
-      var cfromc;
-      var cfrom1;
-      var itype;
-      var ctoc;
-      var cto1;
-      var done;
-      var iMax;
-      var iMin;
-      var mul;
-      var k1;
-      var k2;
-      var k3;
-      var k4;
-      var ai;
-      var i;
-      var j;
-      if (type === "general") {
-        itype = 0;
-      } else if (type === "lower") {
-        itype = 1;
-      } else if (type === "upper") {
-        itype = 2;
-      } else if (type === "upper-hessenberg") {
-        itype = 3;
-      } else if (type === "lower-band") {
-        itype = 4;
-      } else if (type === "upper-band") {
-        itype = 5;
-      } else if (type === "band") {
-        itype = 6;
-      } else {
-        return -1;
-      }
-      if (N === 0 || M === 0) {
-        return 0;
-      }
-      smlnum = dlamch("safe-minimum");
-      bignum = 1 / smlnum;
-      cfromc = cfrom;
-      ctoc = cto;
-      done = false;
-      while (!done) {
-        cfrom1 = cfromc * smlnum;
-        if (cfrom1 === cfromc) {
-          mul = ctoc / cfromc;
-          done = true;
-        } else {
-          cto1 = ctoc / bignum;
-          if (cto1 === ctoc) {
-            mul = ctoc;
-            done = true;
-            cfromc = 1;
-          } else if (Math.abs(cfrom1) > Math.abs(ctoc) && ctoc !== 0) {
-            mul = smlnum;
-            done = false;
-            cfromc = cfrom1;
-          } else if (Math.abs(cto1) > Math.abs(cfromc)) {
-            mul = bignum;
-            done = false;
-            ctoc = cto1;
-          } else {
-            mul = ctoc / cfromc;
-            done = true;
-            if (mul === 1) {
-              return 0;
-            }
-          }
-        }
-        if (itype === 0) {
-          for (j = 0; j < N; j++) {
-            for (i = 0; i < M; i++) {
-              ai = offsetA + i * strideA1 + j * strideA2;
-              A[ai] *= mul;
-            }
-          }
-        } else if (itype === 1) {
-          for (j = 0; j < N; j++) {
-            for (i = j; i < M; i++) {
-              ai = offsetA + i * strideA1 + j * strideA2;
-              A[ai] *= mul;
-            }
-          }
-        } else if (itype === 2) {
-          for (j = 0; j < N; j++) {
-            iMax = Math.min(j + 1, M);
-            for (i = 0; i < iMax; i++) {
-              ai = offsetA + i * strideA1 + j * strideA2;
-              A[ai] *= mul;
-            }
-          }
-        } else if (itype === 3) {
-          for (j = 0; j < N; j++) {
-            iMax = Math.min(j + 2, M);
-            for (i = 0; i < iMax; i++) {
-              ai = offsetA + i * strideA1 + j * strideA2;
-              A[ai] *= mul;
-            }
-          }
-        } else if (itype === 4) {
-          k3 = kl + 1;
-          k4 = N + 1;
-          for (j = 0; j < N; j++) {
-            iMax = Math.min(k3, k4 - j - 1);
-            for (i = 0; i < iMax; i++) {
-              ai = offsetA + i * strideA1 + j * strideA2;
-              A[ai] *= mul;
-            }
-          }
-        } else if (itype === 5) {
-          k1 = ku + 2;
-          k3 = ku + 1;
-          for (j = 0; j < N; j++) {
-            iMin = Math.max(k1 - j - 2, 0);
-            for (i = iMin; i < k3; i++) {
-              ai = offsetA + i * strideA1 + j * strideA2;
-              A[ai] *= mul;
-            }
-          }
-        } else if (itype === 6) {
-          k1 = kl + ku + 2;
-          k2 = kl + 1;
-          k3 = 2 * kl + ku + 1;
-          k4 = kl + ku + 1 + M;
-          for (j = 0; j < N; j++) {
-            iMin = Math.max(k1 - j - 2, k2 - 1);
-            iMax = Math.min(k3, k4 - j - 1);
-            for (i = iMin; i < iMax; i++) {
-              ai = offsetA + i * strideA1 + j * strideA2;
-              A[ai] *= mul;
-            }
-          }
-        }
-      }
-      return 0;
-    }
-    module.exports = dlascl;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dlaset/lib/base.js
-var require_base28 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dlaset/lib/base.js"(exports, module) {
-    "use strict";
-    function dlaset(uplo, M, N, alpha, beta, A, strideA1, strideA2, offsetA) {
-      var idx;
-      var mn;
-      var i;
-      var j;
-      mn = Math.min(M, N);
-      if (uplo === "upper") {
-        for (j = 1; j < N; j++) {
-          idx = offsetA + j * strideA2;
-          for (i = 0; i < Math.min(j, M); i++) {
-            A[idx] = alpha;
-            idx += strideA1;
-          }
-        }
-      } else if (uplo === "lower") {
-        for (j = 0; j < mn; j++) {
-          idx = offsetA + (j + 1) * strideA1 + j * strideA2;
-          for (i = j + 1; i < M; i++) {
-            A[idx] = alpha;
-            idx += strideA1;
           }
         }
       } else {
         for (j = 0; j < N; j++) {
-          idx = offsetA + j * strideA2;
-          for (i = 0; i < M; i++) {
-            A[idx] = alpha;
-            idx += strideA1;
+          if (alpha !== 1) {
+            ib = offsetB + j * sb2;
+            for (i = 0; i < M3; i++) {
+              B[ib] *= alpha;
+              ib += sb1;
+            }
+          }
+          for (k = 0; k < M3; k++) {
+            ib = offsetB + k * sb1 + j * sb2;
+            if (B[ib] !== 0) {
+              if (nounit) {
+                B[ib] /= A[offsetA + k * sa1 + k * sa2];
+              }
+              for (i = k + 1; i < M3; i++) {
+                B[offsetB + i * sb1 + j * sb2] -= B[ib] * A[offsetA + i * sa1 + k * sa2];
+              }
+            }
           }
         }
       }
-      idx = offsetA;
-      for (i = 0; i < mn; i++) {
-        A[idx] = beta;
-        idx += strideA1 + strideA2;
+    } else if (upper) {
+      for (j = 0; j < N; j++) {
+        for (i = 0; i < M3; i++) {
+          temp = alpha * B[offsetB + i * sb1 + j * sb2];
+          ia = offsetA + i * sa2;
+          for (k = 0; k < i; k++) {
+            temp -= A[ia] * B[offsetB + k * sb1 + j * sb2];
+            ia += sa1;
+          }
+          if (nounit) {
+            temp /= A[offsetA + i * sa1 + i * sa2];
+          }
+          B[offsetB + i * sb1 + j * sb2] = temp;
+        }
       }
-      return A;
+    } else {
+      for (j = 0; j < N; j++) {
+        for (i = M3 - 1; i >= 0; i--) {
+          temp = alpha * B[offsetB + i * sb1 + j * sb2];
+          for (k = i + 1; k < M3; k++) {
+            temp -= A[offsetA + k * sa1 + i * sa2] * B[offsetB + k * sb1 + j * sb2];
+          }
+          if (nounit) {
+            temp /= A[offsetA + i * sa1 + i * sa2];
+          }
+          B[offsetB + i * sb1 + j * sb2] = temp;
+        }
+      }
     }
-    module.exports = dlaset;
-  }
-});
-
-// node_modules/blapack/lib/blas/base/dtrsm/lib/base.js
-var require_base29 = __commonJS({
-  "node_modules/blapack/lib/blas/base/dtrsm/lib/base.js"(exports, module) {
-    "use strict";
-    function dtrsm(side, uplo, transa, diag, M, N, alpha, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB) {
-      var nounit;
-      var lside;
-      var upper;
-      var temp;
-      var sa1;
-      var sa2;
-      var sb1;
-      var sb2;
-      var ia;
-      var ib;
-      var i;
-      var j;
-      var k;
-      lside = side === "left";
-      nounit = diag === "non-unit";
-      upper = uplo === "upper";
-      if (M === 0 || N === 0) {
-        return B;
-      }
-      sa1 = strideA1;
-      sa2 = strideA2;
-      sb1 = strideB1;
-      sb2 = strideB2;
-      if (alpha === 0) {
-        for (j = 0; j < N; j++) {
+  } else if (transa === "no-transpose") {
+    if (upper) {
+      for (j = 0; j < N; j++) {
+        if (alpha !== 1) {
           ib = offsetB + j * sb2;
-          for (i = 0; i < M; i++) {
-            B[ib] = 0;
+          for (i = 0; i < M3; i++) {
+            B[ib] *= alpha;
             ib += sb1;
           }
         }
-        return B;
-      }
-      if (lside) {
-        if (transa === "no-transpose") {
-          if (upper) {
-            for (j = 0; j < N; j++) {
-              if (alpha !== 1) {
-                ib = offsetB + j * sb2;
-                for (i = 0; i < M; i++) {
-                  B[ib] *= alpha;
-                  ib += sb1;
-                }
-              }
-              for (k = M - 1; k >= 0; k--) {
-                ib = offsetB + k * sb1 + j * sb2;
-                if (B[ib] !== 0) {
-                  if (nounit) {
-                    B[ib] /= A[offsetA + k * sa1 + k * sa2];
-                  }
-                  ia = offsetA + k * sa2;
-                  for (i = 0; i < k; i++) {
-                    B[offsetB + i * sb1 + j * sb2] -= B[ib] * A[ia];
-                    ia += sa1;
-                  }
-                }
-              }
-            }
-          } else {
-            for (j = 0; j < N; j++) {
-              if (alpha !== 1) {
-                ib = offsetB + j * sb2;
-                for (i = 0; i < M; i++) {
-                  B[ib] *= alpha;
-                  ib += sb1;
-                }
-              }
-              for (k = 0; k < M; k++) {
-                ib = offsetB + k * sb1 + j * sb2;
-                if (B[ib] !== 0) {
-                  if (nounit) {
-                    B[ib] /= A[offsetA + k * sa1 + k * sa2];
-                  }
-                  for (i = k + 1; i < M; i++) {
-                    B[offsetB + i * sb1 + j * sb2] -= B[ib] * A[offsetA + i * sa1 + k * sa2];
-                  }
-                }
-              }
-            }
-          }
-        } else if (upper) {
-          for (j = 0; j < N; j++) {
-            for (i = 0; i < M; i++) {
-              temp = alpha * B[offsetB + i * sb1 + j * sb2];
-              ia = offsetA + i * sa2;
-              for (k = 0; k < i; k++) {
-                temp -= A[ia] * B[offsetB + k * sb1 + j * sb2];
-                ia += sa1;
-              }
-              if (nounit) {
-                temp /= A[offsetA + i * sa1 + i * sa2];
-              }
-              B[offsetB + i * sb1 + j * sb2] = temp;
-            }
-          }
-        } else {
-          for (j = 0; j < N; j++) {
-            for (i = M - 1; i >= 0; i--) {
-              temp = alpha * B[offsetB + i * sb1 + j * sb2];
-              for (k = i + 1; k < M; k++) {
-                temp -= A[offsetA + k * sa1 + i * sa2] * B[offsetB + k * sb1 + j * sb2];
-              }
-              if (nounit) {
-                temp /= A[offsetA + i * sa1 + i * sa2];
-              }
-              B[offsetB + i * sb1 + j * sb2] = temp;
+        for (k = 0; k < j; k++) {
+          if (A[offsetA + k * sa1 + j * sa2] !== 0) {
+            for (i = 0; i < M3; i++) {
+              B[offsetB + i * sb1 + j * sb2] -= A[offsetA + k * sa1 + j * sa2] * B[offsetB + i * sb1 + k * sb2];
             }
           }
         }
-      } else if (transa === "no-transpose") {
-        if (upper) {
-          for (j = 0; j < N; j++) {
-            if (alpha !== 1) {
-              ib = offsetB + j * sb2;
-              for (i = 0; i < M; i++) {
-                B[ib] *= alpha;
-                ib += sb1;
-              }
-            }
-            for (k = 0; k < j; k++) {
-              if (A[offsetA + k * sa1 + j * sa2] !== 0) {
-                for (i = 0; i < M; i++) {
-                  B[offsetB + i * sb1 + j * sb2] -= A[offsetA + k * sa1 + j * sa2] * B[offsetB + i * sb1 + k * sb2];
-                }
-              }
-            }
-            if (nounit) {
-              temp = 1 / A[offsetA + j * sa1 + j * sa2];
-              ib = offsetB + j * sb2;
-              for (i = 0; i < M; i++) {
-                B[ib] *= temp;
-                ib += sb1;
-              }
-            }
-          }
-        } else {
-          for (j = N - 1; j >= 0; j--) {
-            if (alpha !== 1) {
-              ib = offsetB + j * sb2;
-              for (i = 0; i < M; i++) {
-                B[ib] *= alpha;
-                ib += sb1;
-              }
-            }
-            for (k = j + 1; k < N; k++) {
-              if (A[offsetA + k * sa1 + j * sa2] !== 0) {
-                for (i = 0; i < M; i++) {
-                  B[offsetB + i * sb1 + j * sb2] -= A[offsetA + k * sa1 + j * sa2] * B[offsetB + i * sb1 + k * sb2];
-                }
-              }
-            }
-            if (nounit) {
-              temp = 1 / A[offsetA + j * sa1 + j * sa2];
-              ib = offsetB + j * sb2;
-              for (i = 0; i < M; i++) {
-                B[ib] *= temp;
-                ib += sb1;
-              }
-            }
-          }
-        }
-      } else if (upper) {
-        for (k = N - 1; k >= 0; k--) {
-          if (nounit) {
-            temp = 1 / A[offsetA + k * sa1 + k * sa2];
-            ib = offsetB + k * sb2;
-            for (i = 0; i < M; i++) {
-              B[ib] *= temp;
-              ib += sb1;
-            }
-          }
-          for (j = 0; j < k; j++) {
-            if (A[offsetA + j * sa1 + k * sa2] !== 0) {
-              temp = A[offsetA + j * sa1 + k * sa2];
-              for (i = 0; i < M; i++) {
-                B[offsetB + i * sb1 + j * sb2] -= temp * B[offsetB + i * sb1 + k * sb2];
-              }
-            }
-          }
-          if (alpha !== 1) {
-            ib = offsetB + k * sb2;
-            for (i = 0; i < M; i++) {
-              B[ib] *= alpha;
-              ib += sb1;
-            }
-          }
-        }
-      } else {
-        for (k = 0; k < N; k++) {
-          if (nounit) {
-            temp = 1 / A[offsetA + k * sa1 + k * sa2];
-            ib = offsetB + k * sb2;
-            for (i = 0; i < M; i++) {
-              B[ib] *= temp;
-              ib += sb1;
-            }
-          }
-          for (j = k + 1; j < N; j++) {
-            if (A[offsetA + j * sa1 + k * sa2] !== 0) {
-              temp = A[offsetA + j * sa1 + k * sa2];
-              for (i = 0; i < M; i++) {
-                B[offsetB + i * sb1 + j * sb2] -= temp * B[offsetB + i * sb1 + k * sb2];
-              }
-            }
-          }
-          if (alpha !== 1) {
-            ib = offsetB + k * sb2;
-            for (i = 0; i < M; i++) {
-              B[ib] *= alpha;
-              ib += sb1;
-            }
+        if (nounit) {
+          temp = 1 / A[offsetA + j * sa1 + j * sa2];
+          ib = offsetB + j * sb2;
+          for (i = 0; i < M3; i++) {
+            B[ib] *= temp;
+            ib += sb1;
           }
         }
       }
-      return B;
+    } else {
+      for (j = N - 1; j >= 0; j--) {
+        if (alpha !== 1) {
+          ib = offsetB + j * sb2;
+          for (i = 0; i < M3; i++) {
+            B[ib] *= alpha;
+            ib += sb1;
+          }
+        }
+        for (k = j + 1; k < N; k++) {
+          if (A[offsetA + k * sa1 + j * sa2] !== 0) {
+            for (i = 0; i < M3; i++) {
+              B[offsetB + i * sb1 + j * sb2] -= A[offsetA + k * sa1 + j * sa2] * B[offsetB + i * sb1 + k * sb2];
+            }
+          }
+        }
+        if (nounit) {
+          temp = 1 / A[offsetA + j * sa1 + j * sa2];
+          ib = offsetB + j * sb2;
+          for (i = 0; i < M3; i++) {
+            B[ib] *= temp;
+            ib += sb1;
+          }
+        }
+      }
     }
-    module.exports = dtrsm;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dtrtrs/lib/base.js
-var require_base30 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dtrtrs/lib/base.js"(exports, module) {
-    "use strict";
-    var dtrsm = require_base29();
-    function dtrtrs(uplo, trans, diag, N, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB) {
-      var nounit;
-      var sa1;
-      var sa2;
-      var i;
-      nounit = diag === "non-unit";
-      if (N === 0) {
-        return 0;
-      }
-      sa1 = strideA1;
-      sa2 = strideA2;
+  } else if (upper) {
+    for (k = N - 1; k >= 0; k--) {
       if (nounit) {
-        for (i = 0; i < N; i++) {
-          if (A[offsetA + i * sa1 + i * sa2] === 0) {
-            return i + 1;
+        temp = 1 / A[offsetA + k * sa1 + k * sa2];
+        ib = offsetB + k * sb2;
+        for (i = 0; i < M3; i++) {
+          B[ib] *= temp;
+          ib += sb1;
+        }
+      }
+      for (j = 0; j < k; j++) {
+        if (A[offsetA + j * sa1 + k * sa2] !== 0) {
+          temp = A[offsetA + j * sa1 + k * sa2];
+          for (i = 0; i < M3; i++) {
+            B[offsetB + i * sb1 + j * sb2] -= temp * B[offsetB + i * sb1 + k * sb2];
           }
         }
       }
-      dtrsm("left", uplo, trans, diag, N, nrhs, 1, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB);
-      return 0;
-    }
-    module.exports = dtrtrs;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dgels/lib/base.js
-var require_base31 = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dgels/lib/base.js"(exports, module) {
-    "use strict";
-    var Float64Array2 = require_lib22();
-    var dgeqrf = require_base18();
-    var dgelqf = require_base20();
-    var dormqr = require_base22();
-    var dormlq = require_base24();
-    var dlange = require_base26();
-    var dlascl = require_base27();
-    var dlaset = require_base28();
-    var dlamch = require_base3();
-    var dtrtrs = require_base30();
-    var NB = 32;
-    function dgels2(trans, M, N, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB) {
-      var scllen;
-      var bignum;
-      var smlnum;
-      var iascl;
-      var ibscl;
-      var wsize;
-      var brow;
-      var anrm;
-      var bnrm;
-      var tpsd;
-      var info;
-      var WORK;
-      var TAU;
-      var MN;
-      var bi;
-      var i;
-      var j;
-      MN = Math.min(M, N);
-      tpsd = trans === "transpose";
-      if (MN === 0 || nrhs === 0) {
-        dlaset("full", Math.max(M, N), nrhs, 0, 0, B, strideB1, strideB2, offsetB);
-        return 0;
-      }
-      TAU = new Float64Array2(MN);
-      wsize = MN + Math.max(MN, nrhs) * NB;
-      wsize = Math.max(1, wsize);
-      WORK = new Float64Array2(wsize);
-      smlnum = dlamch("safe-minimum") / dlamch("precision");
-      bignum = 1 / smlnum;
-      anrm = dlange("max", M, N, A, strideA1, strideA2, offsetA, WORK, 1, 0);
-      iascl = 0;
-      if (anrm > 0 && anrm < smlnum) {
-        dlascl("general", 0, 0, anrm, smlnum, M, N, A, strideA1, strideA2, offsetA);
-        iascl = 1;
-      } else if (anrm > bignum) {
-        dlascl("general", 0, 0, anrm, bignum, M, N, A, strideA1, strideA2, offsetA);
-        iascl = 2;
-      } else if (anrm === 0) {
-        dlaset("full", Math.max(M, N), nrhs, 0, 0, B, strideB1, strideB2, offsetB);
-        return 0;
-      }
-      brow = tpsd ? N : M;
-      bnrm = dlange("max", brow, nrhs, B, strideB1, strideB2, offsetB, WORK, 1, 0);
-      ibscl = 0;
-      if (bnrm > 0 && bnrm < smlnum) {
-        dlascl("general", 0, 0, bnrm, smlnum, brow, nrhs, B, strideB1, strideB2, offsetB);
-        ibscl = 1;
-      } else if (bnrm > bignum) {
-        dlascl("general", 0, 0, bnrm, bignum, brow, nrhs, B, strideB1, strideB2, offsetB);
-        ibscl = 2;
-      }
-      if (M >= N) {
-        dgeqrf(M, N, A, strideA1, strideA2, offsetA, TAU, 1, 0, WORK, 1, 0);
-        if (tpsd) {
-          info = dtrtrs("upper", "transpose", "non-unit", N, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB);
-          if (info > 0) {
-            return info;
-          }
-          for (j = 0; j < nrhs; j++) {
-            bi = offsetB + j * strideB2 + N * strideB1;
-            for (i = N; i < M; i++) {
-              B[bi] = 0;
-              bi += strideB1;
-            }
-          }
-          dormqr("left", "no-transpose", M, nrhs, N, A, strideA1, strideA2, offsetA, TAU, 1, 0, B, strideB1, strideB2, offsetB, WORK, 1, 0);
-          scllen = M;
-        } else {
-          dormqr("left", "transpose", M, nrhs, N, A, strideA1, strideA2, offsetA, TAU, 1, 0, B, strideB1, strideB2, offsetB, WORK, 1, 0);
-          info = dtrtrs("upper", "no-transpose", "non-unit", N, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB);
-          if (info > 0) {
-            return info;
-          }
-          scllen = N;
-        }
-      } else {
-        dgelqf(M, N, A, strideA1, strideA2, offsetA, TAU, 1, 0, WORK, 1);
-        if (tpsd) {
-          dormlq("left", "no-transpose", N, nrhs, M, A, strideA1, strideA2, offsetA, TAU, 1, 0, B, strideB1, strideB2, offsetB, WORK, 1, 0);
-          info = dtrtrs("lower", "transpose", "non-unit", M, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB);
-          if (info > 0) {
-            return info;
-          }
-          scllen = M;
-        } else {
-          info = dtrtrs("lower", "no-transpose", "non-unit", M, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB);
-          if (info > 0) {
-            return info;
-          }
-          for (j = 0; j < nrhs; j++) {
-            bi = offsetB + j * strideB2 + M * strideB1;
-            for (i = M; i < N; i++) {
-              B[bi] = 0;
-              bi += strideB1;
-            }
-          }
-          dormlq("left", "transpose", N, nrhs, M, A, strideA1, strideA2, offsetA, TAU, 1, 0, B, strideB1, strideB2, offsetB, WORK, 1, 0);
-          scllen = N;
+      if (alpha !== 1) {
+        ib = offsetB + k * sb2;
+        for (i = 0; i < M3; i++) {
+          B[ib] *= alpha;
+          ib += sb1;
         }
       }
-      if (iascl === 1) {
-        dlascl("general", 0, 0, anrm, smlnum, scllen, nrhs, B, strideB1, strideB2, offsetB);
-      } else if (iascl === 2) {
-        dlascl("general", 0, 0, anrm, bignum, scllen, nrhs, B, strideB1, strideB2, offsetB);
-      }
-      if (ibscl === 1) {
-        dlascl("general", 0, 0, smlnum, bnrm, scllen, nrhs, B, strideB1, strideB2, offsetB);
-      } else if (ibscl === 2) {
-        dlascl("general", 0, 0, bignum, bnrm, scllen, nrhs, B, strideB1, strideB2, offsetB);
-      }
-      return 0;
     }
-    module.exports = dgels2;
-  }
-});
-
-// node_modules/blapack/lib/lapack/base/dgels/lib/dgels.js
-var require_dgels = __commonJS({
-  "node_modules/blapack/lib/lapack/base/dgels/lib/dgels.js"(exports, module) {
-    "use strict";
-    var isLayout = require_lib98();
-    var format = require_lib3();
-    var isMatrixTranspose = require_lib100();
-    var max = require_lib101();
-    var base = require_base31();
-    function dgels2(order, trans, M, N, nrhs, A, LDA, B, LDB) {
-      var sa1;
-      var sa2;
-      var sb1;
-      var sb2;
-      if (!isLayout(order)) {
-        throw new TypeError(format("invalid argument. First argument must be a valid order. Value: `%s`.", order));
+  } else {
+    for (k = 0; k < N; k++) {
+      if (nounit) {
+        temp = 1 / A[offsetA + k * sa1 + k * sa2];
+        ib = offsetB + k * sb2;
+        for (i = 0; i < M3; i++) {
+          B[ib] *= temp;
+          ib += sb1;
+        }
       }
-      if (!isMatrixTranspose(trans)) {
-        throw new TypeError(format("invalid argument. Second argument must be a valid transpose operation. Value: `%s`.", trans));
+      for (j = k + 1; j < N; j++) {
+        if (A[offsetA + j * sa1 + k * sa2] !== 0) {
+          temp = A[offsetA + j * sa1 + k * sa2];
+          for (i = 0; i < M3; i++) {
+            B[offsetB + i * sb1 + j * sb2] -= temp * B[offsetB + i * sb1 + k * sb2];
+          }
+        }
       }
-      if (M < 0) {
-        throw new RangeError(format("invalid argument. Third argument must be a nonnegative integer. Value: `%d`.", M));
+      if (alpha !== 1) {
+        ib = offsetB + k * sb2;
+        for (i = 0; i < M3; i++) {
+          B[ib] *= alpha;
+          ib += sb1;
+        }
       }
-      if (N < 0) {
-        throw new RangeError(format("invalid argument. Fourth argument must be a nonnegative integer. Value: `%d`.", N));
-      }
-      if (nrhs < 0) {
-        throw new RangeError(format("invalid argument. Fifth argument must be a nonnegative integer. Value: `%d`.", nrhs));
-      }
-      if (order === "row-major" && LDB < max(1, N)) {
-        throw new RangeError(format("invalid argument. Ninth argument must be greater than or equal to max(1,N). Value: `%d`.", LDB));
-      }
-      if (order === "column-major" && LDB < max(1, M)) {
-        throw new RangeError(format("invalid argument. Ninth argument must be greater than or equal to max(1,M). Value: `%d`.", LDB));
-      }
-      if (order === "row-major" && LDA < max(1, N)) {
-        throw new RangeError(format("invalid argument. Seventh argument must be greater than or equal to max(1,N). Value: `%d`.", LDA));
-      }
-      if (order === "column-major" && LDA < max(1, M)) {
-        throw new RangeError(format("invalid argument. Seventh argument must be greater than or equal to max(1,M). Value: `%d`.", LDA));
-      }
-      if (order === "column-major") {
-        sa1 = 1;
-        sa2 = LDA;
-        sb1 = 1;
-        sb2 = LDB;
-      } else {
-        sa1 = LDA;
-        sa2 = 1;
-        sb1 = LDB;
-        sb2 = 1;
-      }
-      return base(trans, M, N, nrhs, A, sa1, sa2, 0, B, sb1, sb2, 0);
     }
-    module.exports = dgels2;
   }
-});
+  return B;
+}
+var base_default29 = dtrsm;
 
-// dgels-wrapper.js
-var import_dgels = __toESM(require_dgels(), 1);
-var export_dgels = import_dgels.default;
+// node_modules/@rreusser/blapack/lib/lapack/base/dtrtrs/lib/base.js
+function dtrtrs(uplo, trans, diag, N, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB) {
+  var nounit;
+  var sa1;
+  var sa2;
+  var i;
+  nounit = diag === "non-unit";
+  if (N === 0) {
+    return 0;
+  }
+  sa1 = strideA1;
+  sa2 = strideA2;
+  if (nounit) {
+    for (i = 0; i < N; i++) {
+      if (A[offsetA + i * sa1 + i * sa2] === 0) {
+        return i + 1;
+      }
+    }
+  }
+  base_default29("left", uplo, trans, diag, N, nrhs, 1, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB);
+  return 0;
+}
+var base_default30 = dtrtrs;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dgels/lib/base.js
+function dgels(trans, M3, N, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB, work, strideWork, offsetWork) {
+  var scllen;
+  var bignum;
+  var smlnum;
+  var iascl;
+  var ibscl;
+  var brow;
+  var anrm;
+  var bnrm;
+  var tpsd;
+  var info;
+  var WORK;
+  var MN;
+  var bi;
+  var i;
+  var j;
+  MN = Math.min(M3, N);
+  tpsd = trans === "transpose";
+  if (MN === 0 || nrhs === 0) {
+    base_default28("full", Math.max(M3, N), nrhs, 0, 0, B, strideB1, strideB2, offsetB);
+    return 0;
+  }
+  WORK = offsetWork === 0 ? work : work.subarray(offsetWork);
+  smlnum = base_default3("safe-minimum") / base_default3("precision");
+  bignum = 1 / smlnum;
+  anrm = base_default26("max", M3, N, A, strideA1, strideA2, offsetA, WORK, 1, MN);
+  iascl = 0;
+  if (anrm > 0 && anrm < smlnum) {
+    base_default27("general", 0, 0, anrm, smlnum, M3, N, A, strideA1, strideA2, offsetA);
+    iascl = 1;
+  } else if (anrm > bignum) {
+    base_default27("general", 0, 0, anrm, bignum, M3, N, A, strideA1, strideA2, offsetA);
+    iascl = 2;
+  } else if (anrm === 0) {
+    base_default28("full", Math.max(M3, N), nrhs, 0, 0, B, strideB1, strideB2, offsetB);
+    return 0;
+  }
+  brow = tpsd ? N : M3;
+  bnrm = base_default26("max", brow, nrhs, B, strideB1, strideB2, offsetB, WORK, 1, MN);
+  ibscl = 0;
+  if (bnrm > 0 && bnrm < smlnum) {
+    base_default27("general", 0, 0, bnrm, smlnum, brow, nrhs, B, strideB1, strideB2, offsetB);
+    ibscl = 1;
+  } else if (bnrm > bignum) {
+    base_default27("general", 0, 0, bnrm, bignum, brow, nrhs, B, strideB1, strideB2, offsetB);
+    ibscl = 2;
+  }
+  if (M3 >= N) {
+    base_default18(M3, N, A, strideA1, strideA2, offsetA, WORK, 1, 0, WORK, 1, MN);
+    if (tpsd) {
+      info = base_default30("upper", "transpose", "non-unit", N, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB);
+      if (info > 0) {
+        return info;
+      }
+      for (j = 0; j < nrhs; j++) {
+        bi = offsetB + j * strideB2 + N * strideB1;
+        for (i = N; i < M3; i++) {
+          B[bi] = 0;
+          bi += strideB1;
+        }
+      }
+      base_default22("left", "no-transpose", M3, nrhs, N, A, strideA1, strideA2, offsetA, WORK, 1, 0, B, strideB1, strideB2, offsetB, WORK, 1, MN);
+      scllen = M3;
+    } else {
+      base_default22("left", "transpose", M3, nrhs, N, A, strideA1, strideA2, offsetA, WORK, 1, 0, B, strideB1, strideB2, offsetB, WORK, 1, MN);
+      info = base_default30("upper", "no-transpose", "non-unit", N, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB);
+      if (info > 0) {
+        return info;
+      }
+      scllen = N;
+    }
+  } else {
+    base_default20(M3, N, A, strideA1, strideA2, offsetA, WORK, 1, 0, WORK, 1, MN);
+    if (tpsd) {
+      base_default24("left", "no-transpose", N, nrhs, M3, A, strideA1, strideA2, offsetA, WORK, 1, 0, B, strideB1, strideB2, offsetB, WORK, 1, MN);
+      info = base_default30("lower", "transpose", "non-unit", M3, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB);
+      if (info > 0) {
+        return info;
+      }
+      scllen = M3;
+    } else {
+      info = base_default30("lower", "no-transpose", "non-unit", M3, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB);
+      if (info > 0) {
+        return info;
+      }
+      for (j = 0; j < nrhs; j++) {
+        bi = offsetB + j * strideB2 + M3 * strideB1;
+        for (i = M3; i < N; i++) {
+          B[bi] = 0;
+          bi += strideB1;
+        }
+      }
+      base_default24("left", "transpose", N, nrhs, M3, A, strideA1, strideA2, offsetA, WORK, 1, 0, B, strideB1, strideB2, offsetB, WORK, 1, MN);
+      scllen = N;
+    }
+  }
+  if (iascl === 1) {
+    base_default27("general", 0, 0, anrm, smlnum, scllen, nrhs, B, strideB1, strideB2, offsetB);
+  } else if (iascl === 2) {
+    base_default27("general", 0, 0, anrm, bignum, scllen, nrhs, B, strideB1, strideB2, offsetB);
+  }
+  if (ibscl === 1) {
+    base_default27("general", 0, 0, smlnum, bnrm, scllen, nrhs, B, strideB1, strideB2, offsetB);
+  } else if (ibscl === 2) {
+    base_default27("general", 0, 0, bignum, bnrm, scllen, nrhs, B, strideB1, strideB2, offsetB);
+  }
+  return 0;
+}
+var base_default31 = dgels;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dgels/lib/dgels.js
+var NB3 = 32;
+function dgels2(order, trans, M3, N, nrhs, A, LDA, B, LDB, work, strideWork) {
+  var lwork;
+  var MN;
+  var sa1;
+  var sa2;
+  var sb1;
+  var sb2;
+  if (!(0, import_lib2.default)(order)) {
+    throw new TypeError((0, import_lib3.default)("invalid argument. First argument must be a valid order. Value: `%s`.", order));
+  }
+  if (!(0, import_lib4.default)(trans)) {
+    throw new TypeError((0, import_lib3.default)("invalid argument. Second argument must be a valid transpose operation. Value: `%s`.", trans));
+  }
+  if (M3 < 0) {
+    throw new RangeError((0, import_lib3.default)("invalid argument. Third argument must be a nonnegative integer. Value: `%d`.", M3));
+  }
+  if (N < 0) {
+    throw new RangeError((0, import_lib3.default)("invalid argument. Fourth argument must be a nonnegative integer. Value: `%d`.", N));
+  }
+  if (nrhs < 0) {
+    throw new RangeError((0, import_lib3.default)("invalid argument. Fifth argument must be a nonnegative integer. Value: `%d`.", nrhs));
+  }
+  if (order === "row-major" && LDB < (0, import_lib5.default)(1, nrhs)) {
+    throw new RangeError((0, import_lib3.default)("invalid argument. Ninth argument must be greater than or equal to max(1,nrhs). Value: `%d`.", LDB));
+  }
+  if (order === "column-major" && LDB < (0, import_lib5.default)(1, (0, import_lib5.default)(M3, N))) {
+    throw new RangeError((0, import_lib3.default)("invalid argument. Ninth argument must be greater than or equal to max(1,M,N). Value: `%d`.", LDB));
+  }
+  if (order === "row-major" && LDA < (0, import_lib5.default)(1, N)) {
+    throw new RangeError((0, import_lib3.default)("invalid argument. Seventh argument must be greater than or equal to max(1,N). Value: `%d`.", LDA));
+  }
+  if (order === "column-major" && LDA < (0, import_lib5.default)(1, M3)) {
+    throw new RangeError((0, import_lib3.default)("invalid argument. Seventh argument must be greater than or equal to max(1,M). Value: `%d`.", LDA));
+  }
+  if (order === "column-major") {
+    sa1 = 1;
+    sa2 = LDA;
+    sb1 = 1;
+    sb2 = LDB;
+  } else {
+    sa1 = LDA;
+    sa2 = 1;
+    sb1 = LDB;
+    sb2 = 1;
+  }
+  if (work === null || work === void 0) {
+    MN = Math.min(M3, N);
+    lwork = Math.max(1, MN + Math.max(MN, nrhs) * NB3);
+    work = new import_lib6.default(lwork);
+    strideWork = 1;
+  }
+  return base_default31(trans, M3, N, nrhs, A, sa1, sa2, 0, B, sb1, sb2, 0, work, strideWork, 0);
+}
+var dgels_default = dgels2;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dgels/lib/ndarray.js
+var import_lib7 = __toESM(require_lib100(), 1);
+var import_lib8 = __toESM(require_lib3(), 1);
+var NB4 = 32;
+function dgels3(trans, M3, N, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB, work, strideWork, offsetWork) {
+  var minWork;
+  var MN;
+  if (!(0, import_lib7.default)(trans)) {
+    throw new TypeError((0, import_lib8.default)("invalid argument. First argument must be a valid transpose operation. Value: `%s`.", trans));
+  }
+  if (M3 < 0) {
+    throw new RangeError((0, import_lib8.default)("invalid argument. Second argument must be a nonnegative integer. Value: `%d`.", M3));
+  }
+  if (N < 0) {
+    throw new RangeError((0, import_lib8.default)("invalid argument. Third argument must be a nonnegative integer. Value: `%d`.", N));
+  }
+  if (nrhs < 0) {
+    throw new RangeError((0, import_lib8.default)("invalid argument. Fourth argument must be a nonnegative integer. Value: `%d`.", nrhs));
+  }
+  MN = Math.min(M3, N);
+  minWork = Math.max(1, MN + Math.max(MN, nrhs) * NB4);
+  if (!work || work.length - offsetWork < minWork) {
+    throw new RangeError((0, import_lib8.default)("invalid argument. WORK array must have at least %d elements from offset %d. Provided length: %d.", minWork, offsetWork, work ? work.length : 0));
+  }
+  return base_default31(trans, M3, N, nrhs, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB, work, strideWork, offsetWork);
+}
+var ndarray_default = dgels3;
+
+// node_modules/@rreusser/blapack/lib/lapack/base/dgels/lib/main.js
+(0, import_lib9.default)(dgels_default, "ndarray", ndarray_default);
+var main_default = dgels_default;
 export {
-  export_dgels as dgels
+  main_default as dgels
 };
 /*! Bundled license information:
 
@@ -10704,42 +10629,66 @@ export {
   * limitations under the License.
   *)
 
-blapack/lib/blas/base/dnrm2/lib/base.js:
-blapack/lib/blas/base/dscal/lib/base.js:
-blapack/lib/lapack/base/dlamch/lib/base.js:
-blapack/lib/lapack/base/dlapy2/lib/base.js:
-blapack/lib/lapack/base/dlarfg/lib/base.js:
-blapack/lib/blas/base/dgemv/lib/base.js:
-blapack/lib/blas/base/dger/lib/base.js:
-blapack/lib/lapack/base/iladlr/lib/base.js:
-blapack/lib/lapack/base/iladlc/lib/base.js:
-blapack/lib/lapack/base/dlarf/lib/base.js:
-blapack/lib/lapack/base/dgeqr2/lib/base.js:
-blapack/lib/blas/base/dcopy/lib/base.js:
-blapack/lib/blas/base/dgemm/lib/base.js:
-blapack/lib/blas/base/dtrmm/lib/base.js:
-blapack/lib/lapack/base/dlarfb/lib/base.js:
-blapack/lib/blas/base/dtrmv/lib/base.js:
-blapack/lib/lapack/base/dlarft/lib/base.js:
-blapack/lib/lapack/base/dgeqrf/lib/base.js:
-blapack/lib/lapack/base/dgelq2/lib/base.js:
-blapack/lib/lapack/base/dgelqf/lib/base.js:
-blapack/lib/lapack/base/dorm2r/lib/base.js:
-blapack/lib/lapack/base/dormqr/lib/base.js:
-blapack/lib/lapack/base/dorml2/lib/base.js:
-blapack/lib/lapack/base/dormlq/lib/base.js:
-blapack/lib/lapack/base/dlassq/lib/base.js:
-blapack/lib/lapack/base/dlange/lib/base.js:
-blapack/lib/lapack/base/dlascl/lib/base.js:
-blapack/lib/lapack/base/dlaset/lib/base.js:
-blapack/lib/blas/base/dtrsm/lib/base.js:
-blapack/lib/lapack/base/dtrtrs/lib/base.js:
-blapack/lib/lapack/base/dgels/lib/base.js:
-blapack/lib/lapack/base/dgels/lib/dgels.js:
+@rreusser/blapack/lib/blas/base/dnrm2/lib/base.js:
+@rreusser/blapack/lib/blas/base/dscal/lib/base.js:
+@rreusser/blapack/lib/blas/base/dgemv/lib/base.js:
+@rreusser/blapack/lib/blas/base/dger/lib/base.js:
+@rreusser/blapack/lib/blas/base/dcopy/lib/base.js:
+@rreusser/blapack/lib/blas/base/dgemm/lib/base.js:
+@rreusser/blapack/lib/blas/base/dtrmm/lib/base.js:
+@rreusser/blapack/lib/blas/base/dtrmv/lib/base.js:
+@rreusser/blapack/lib/blas/base/dtrsm/lib/base.js:
   (**
   * @license Apache-2.0
   *
-  * Copyright (c) 2025 The Stdlib Authors.
+  * Copyright (c) 2026 Ricky Reusser.
+  *
+  * Derived from the BLAS 3.12.0 reference implementation (BSD-3-Clause).
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License");
+  * you may not use this file except in compliance with the License.
+  * You may obtain a copy of the License at
+  *
+  *    http://www.apache.org/licenses/LICENSE-2.0
+  *
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  *)
+
+@rreusser/blapack/lib/lapack/base/dlamch/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dlapy2/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dlarfg/lib/base.js:
+@rreusser/blapack/lib/lapack/base/iladlr/lib/base.js:
+@rreusser/blapack/lib/lapack/base/iladlc/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dlarf/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dgeqr2/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dlarfb/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dlarft/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dgeqrf/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dgelq2/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dgelqf/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dorm2r/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dormqr/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dorml2/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dormlq/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dlassq/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dlange/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dlascl/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dlaset/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dtrtrs/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dgels/lib/base.js:
+@rreusser/blapack/lib/lapack/base/dgels/lib/dgels.js:
+@rreusser/blapack/lib/lapack/base/dgels/lib/main.js:
+@rreusser/blapack/lib/lapack/base/dgels/lib/index.js:
+  (**
+  * @license Apache-2.0
+  *
+  * Copyright (c) 2026 Ricky Reusser.
+  *
+  * Derived from the LAPACK 3.12.0 reference implementation (BSD-3-Clause).
   *
   * Licensed under the Apache License, Version 2.0 (the "License");
   * you may not use this file except in compliance with the License.

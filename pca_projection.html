@@ -5,170 +5,226 @@
     # PCA Projection
   </script>
   <script id="2" type="text/markdown">
-    We here test out how to project plink-formatted genotype data onto SNP weights. We first load the SNP weights into a table:
+    ## Loading data
+    We here test out how to project plink-formatted genotype data onto SNP weights.
+
+    ### Weight Data
+    We first load the SNP weights into a table:
   </script>
   <script id="3" type="module" pinned="">
-    const weightDat = FileAttachment("weights_joined.tsv").tsv({array: true, typed: true});
+    const weightDat = FileAttachment("data/weights_joined.tsv").text().then(t => readSnpWeights(t));
+    // const weightDat = FileAttachment("projectPCA_ringbauer/weights_ho_formatted.tsv").text().then(t => readSnpWeights(t));
   </script>
-  <script id="4" type="text/x-typescript" pinned="">
-    Inputs.table(weightDat)
+  <script id="22" type="text/x-typescript" pinned="">
+    weightDat.pcWeights
   </script>
-  <script id="5" type="text/markdown" pinned="">
+  <script id="75" type="text/markdown">
+    We check the smartPCA-normalisation of the weights, which are normalised to have a squared expectation of one, such that the sum of squares equals the number of rows. This is true up to rounding errors:
+  </script>
+  <script id="73" type="text/x-typescript" pinned="">
+    const db = DuckDBClient.of({weights: FileAttachment("data/weights_joined.tsv")})
+  </script>
+  <script id="77" type="application/sql" pinned="" database="var:db">
+    DESCRIBE weights
+  </script>
+  <script id="74" type="application/sql" pinned="" database="var:db">
+    SELECT SUM(column5^2), SUM(column6^2), SUM(column7^2), SUM(column8^2) FROM weights
+  </script>
+  <script id="5" type="text/markdown">
     We now load some genotype data:
   </script>
+  <script id="81" type="text/markdown">
+    ### Plink Data
+  </script>
   <script id="8" type="text/x-typescript" pinned="">
-    const bimDat = FileAttachment("2024_Gretzinger_EarlyCelts.bim").tsv({array: true, typed:true});
-    const famDat = FileAttachment("2024_Gretzinger_EarlyCelts.fam").tsv({array: true, typed:true});
+    const gretzingerPlinkData = await (async () => {
+      const bimDat = await FileAttachment("data/2024_Gretzinger_EarlyCelts.bim").text().then(t => readBimData(t));
+      const famDat = await FileAttachment("data/2024_Gretzinger_EarlyCelts.fam").text().then(t => readFamData(t));
+      const bedDat = await FileAttachment("data/2024_Gretzinger_EarlyCelts.bed")
+        .arrayBuffer()
+        .then(a => readBedData(a, bimDat.snpIDs.length, famDat.indNames.length));
+      return { bimDat, famDat, bedDat, numSnps: bimDat.snpIDs.length, numInds: famDat.indNames.length };
+    })()
   </script>
-  <script id="10" type="text/x-typescript" pinned="">
-    Inputs.table(bimDat)
+  <script id="18" type="text/x-typescript" pinned="">
+    gretzingerPlinkData.bimDat
   </script>
-  <script id="16" type="text/x-typescript" pinned="">
-    Inputs.table(famDat)
+  <script id="20" type="text/x-typescript" pinned="">
+    gretzingerPlinkData.famDat
   </script>
   <script id="17" type="text/x-typescript" pinned="">
-    const numSnps = bimDat.length;
-    const numInds = famDat.length;
-  </script>
-  <script id="13" type="text/x-typescript" pinned="">
-    const bedDat = FileAttachment("2024_Gretzinger_EarlyCelts.bed")
-      .arrayBuffer()
-      .then(a => readBedData(a, numSnps, numInds));
+    gretzingerPlinkData.numSnps * gretzingerPlinkData.numInds
   </script>
   <script id="14" type="text/x-typescript" pinned="">
-    bedDat
+    gretzingerPlinkData.bedDat
+  </script>
+  <script id="23" type="text/markdown">
+    ## Overlap and alignment between SNP weights and data to be projected
+  </script>
+  <script id="26" type="text/x-typescript" pinned="">
+    const overlap = display(getOverlapMasks(gretzingerPlinkData.bimDat, weightDat));
+  </script>
+  <script id="37" type="text/x-typescript" pinned="">
+    const {pcWeights : reducedPcWeights, frequencies : reducedFrequencies} = display(reducePcWeights(weightDat, overlap))
+  </script>
+  <script id="38" type="text/x-typescript" pinned="">
+    overlap.nrIncluded * weightDat.numPCs
+  </script>
+  <script id="47" type="text/markdown" pinned="">
+    ### Reducing the genotype data to the overlap
+  </script>
+  <script id="48" type="text/x-typescript" pinned="">
+    const genoMatrix = display(extractAndTransposeGenotypes(gretzingerPlinkData.bedDat, gretzingerPlinkData.numSnps, gretzingerPlinkData.numInds, overlap))
+  </script>
+  <script id="49" type="text/x-typescript" pinned="">
+    overlap.nrIncluded * gretzingerPlinkData.numInds
+  </script>
+  <script id="54" type="text/markdown">
+    ## Testing the PCA projection
+  </script>
+  <script id="72" type="text/x-typescript" pinned="">
+    const projectionResults = display(projectSamples(genoMatrix, reducedPcWeights, reducedFrequencies, gretzingerPlinkData.numInds, weightDat.numPCs))
+  </script>
+  <script id="55" type="text/x-typescript" pinned="">
+    const projResultTable = projectionResults.map(o => ({nonMissing: o.nonMissing, pc1: o.pcPositions[0], pc2: o.pcPositions[1]}))
+    display(Inputs.table(projResultTable))
+  </script>
+  <script id="56" type="text/markdown" pinned="">
+    ## Plotting the projection onto the reference data
+  </script>
+  <script id="57" type="text/x-typescript">
+    const refDat = FileAttachment("data/reference_positions.tsv")
+      .tsv({array: true, typed: true})
+      .then(d => d.map(r => {
+        return {
+          id: r[0],
+          pc1: r[1],
+          pc2: r[2],
+          group: r[12]
+        }
+      }))
+  </script>
+  <script id="58" type="text/x-typescript" pinned="">
+    Inputs.table(refDat)
+  </script>
+  <script id="59" type="text/x-typescript" pinned="">
+    Plot.plot({
+      color: {legend: true},
+      marks: [
+        Plot.dot(refDat, {x: "pc2", y: "pc1", fill: "group", opacity: 0.3}),
+        Plot.dot(projResultTable, {x: "pc2", y: "pc1", filter: d => d.nonMissing > 20000}),
+      ]
+    })
+  </script>
+  <script id="83" type="text/markdown">
+    ## Testing projection scaling with selected reference individuals
+  </script>
+  <script id="84" type="text/x-typescript" pinned="">
+    const refSamplePlinkData = await (async () => {
+      const bimDat = await FileAttachment("data/Modern_extract.bim").text().then(t => readBimData(t));
+      const famDat = await FileAttachment("data/Modern_extract.fam").text().then(t => readFamData(t));
+      const bedDat = await FileAttachment("data/Modern_extract.bed")
+        .arrayBuffer()
+        .then(a => readBedData(a, bimDat.snpIDs.length, famDat.indNames.length));
+      return { bimDat, famDat, bedDat, numSnps: bimDat.snpIDs.length, numInds: famDat.indNames.length };
+    })()
+  </script>
+  <script id="85" type="text/x-typescript" pinned="">
+    refSamplePlinkData
+  </script>
+  <script id="86" type="text/x-typescript" pinned="">
+    const refSampleOverlap = display(getOverlapMasks(refSamplePlinkData.bimDat, weightDat));
+  </script>
+  <script id="88" type="text/x-typescript" pinned="">
+    const refSampleGenoMatrix = display(extractAndTransposeGenotypes(refSamplePlinkData.bedDat, refSamplePlinkData.numSnps, refSamplePlinkData.numInds, refSampleOverlap))
+  </script>
+  <script id="89" type="text/x-typescript" pinned="">
+    const {pcWeights: refSamplePcWeights, frequencies: refSampleFrequencies} = reducePcWeights(weightDat, refSampleOverlap)
+  </script>
+  <script id="90" type="text/x-typescript" pinned="">
+    refSamplePcWeights
+  </script>
+  <script id="87" type="text/x-typescript" pinned="">
+    const refSampleProj = projectSamples(
+        refSampleGenoMatrix,
+        refSamplePcWeights,
+        refSampleFrequencies,
+        refSamplePlinkData.numInds,
+        weightDat.numPCs
+      ).map((o, i) => ({
+        id: refSamplePlinkData.famDat.indNames[i],
+        nonMissing: o.nonMissing,
+        pc1: o.pcPositions[0], pc2: o.pcPositions[1],
+        pc3: o.pcPositions[2], pc4: o.pcPositions[3]
+      }));
+    display(Inputs.table(refSampleProj))
+  </script>
+  <script id="92" type="text/x-typescript" pinned="">
+    refSamplePlinkData.famDat.indNames
+  </script>
+  <script id="93" type="text/x-typescript" pinned="">
+    const db2 = DuckDBClient.of({evec: FileAttachment("data/Modern_extract.tsv"), myProj: refSampleProj})
+  </script>
+  <script id="97" type="application/sql" pinned="" database="var:db2">
+    SELECT * FROM evec
+  </script>
+  <script id="94" type="application/sql" pinned="" database="var:db2" output="join">
+    SELECT
+      p.id AS id,
+      e.column1 AS origPC1,
+      e.column2 AS origPC2,
+      e.column3 AS origPC3,
+      e.column4 AS origPC4,
+      p.pc1 AS projPC1,
+      p.pc2 AS projPC2,
+      p.pc3 AS projPC3,
+      p.pc4 AS projPC4
+    FROM evec AS e INNER JOIN myProj AS p ON e.column0 = p.id
+  </script>
+  <script id="98" type="text/x-typescript" pinned="">
+    Plot.plot({
+      marks: [
+        Plot.dot(join, {x: "origPC1", y: "projPC1", fill: "blue"}),
+        Plot.dot(join, {x: "origPC2", y: "projPC2", fill: "red"}),
+        Plot.dot(join, {x: "origPC3", y: "projPC3", fill: "green"}),
+        Plot.dot(join, {x: "origPC4", y: "projPC4", fill: "orange"}),
+      ]
+    })
   </script>
   <script id="6" type="text/markdown">
     # Appendix
   </script>
-  <script id="7" type="text/x-typescript" pinned="">
-    function getOverlapMasks(plinkBimData, snpWeights) {
-        let snpWeightMask = new Uint8Array(snpWeights.numSNPs);
-        let plinkMask = new Uint8Array(plinkBimData.length);
-        let flipMask = new Uint8Array(plinkBimData.length);
-        let plinkIndex = 0;
-        let removedStrandAmbiguous = 0;
-        let removedInconsistent = 0;
-
-        for (let i = 0; i < snpWeights.numSNPs; i++) {
-            while (plinkBimData.chromosomes[plinkIndex] < snpWeights.chromosomes[i] ||
-                   (plinkBimData.chromosomes[plinkIndex] == snpWeights.chromosomes[i] &&
-                    plinkBimData.positions[plinkIndex] < snpWeights.positions[i])) {
-                plinkIndex++;
-            }
-            if (plinkBimData.chromosomes[plinkIndex] === snpWeights.chromosomes[i] &&
-                plinkBimData.positions[plinkIndex] === snpWeights.positions[i]) {
-                const pa1 = plinkBimData.alleles1[plinkIndex];
-                const pa2 = plinkBimData.alleles2[plinkIndex];
-                const sa1 = String.fromCharCode(snpWeights.alleles1[i]);
-                const sa2 = String.fromCharCode(snpWeights.alleles2[i]);
-                if (!strandAmbiguous(sa1, sa2)) {
-                    if (isConsistent(sa1, pa1) && isConsistent(sa2, pa2) ||
-                        isConsistent(sa1, complement(pa1)) && isConsistent(sa2, complement(pa2))) {
-                        snpWeightMask.set(1, i);
-                        plinkMask.set(1, plinkIndex);
-                    } else if (isConsistent(sa1, pa2) && isConsistent(sa2, pa1) ||
-                               isConsistent(sa1, complement(pa2)) && isConsistent(sa2, complement(pa1))) {
-                        snpWeightMask.set(1, i);
-                        plinkMask.set(1, plinkIndex);
-                        flipMask.set(1, plinkIndex);
-                    } else {
-                        removedInconsistent++;
-                    }
-                }
-                else {
-                    removedStrandAmbiguous++;
-                }
-            }
-            if(plinkIndex >= plinkBimData.length) {
-                break;
-            }
-        }
-        return { snpWeightMask, plinkMask, flipMask, removedStrandAmbiguous, removedInconsistent };
-    }
-
-    function strandAmbiguous(a1, a2) {
-        return !(a1 + a2 === 'AT' ||
-               a1 + a2 === 'TA' ||
-               a1 + a2 === 'CG' ||
-               a1 + a2 === 'GC');
-    }
-
-    function isConsistent(a1, a2) {
-        return (  a1 === a2
-               || (a1 !== 'N' && a2 === 'N')
-               || (a1 === 'N' && a2 !== 'N')
-               );
-    }
-
-    function complement(a) {
-        switch (a) {
-            case 'A':
-                return 'T';
-            case 'T':
-                return 'A';
-            case 'C':
-                return 'G';
-            case 'G':
-                return 'C';
-            default:
-                return a; // Return the same character for non-ACGT bases
-        }
-    }
-  </script>
   <script id="9" type="text/x-typescript" pinned="">
-    function readBimData(bimText) {
-        const lines = bimText.trim().split('\n');
-        const nrSNPs = lines.length;
-        let chromosomes = new Uint8Array(nrSNPs);
-        let positions = new Uint32Array(nrSNPs);
-        let snpIDs = new Array(nrSNPs);
-        let alleles1 = new Uint8Array(nrSNPs);
-        let alleles2 = new Uint8Array(nrSNPs);
-        for (let i = 0; i < nrSNPs; i++) {
-            const fields = lines[i].trim().split(/\s+/);
-            chromosomes[i] = parseInt(fields[0]);
-            if (isNaN(chromosomes[i]) || chromosomes[i] < 1 || chromosomes[i] > 25) {
-                throw new Error(`Invalid chromosome for SNP ${snpIDs[i]}: ${fields[0]}`);
-            }
-            snpIDs[i] = fields[1];
-            positions[i] = parseInt(fields[3]);
-            if (isNaN(positions[i])) {
-                throw new Error(`Invalid position for SNP ${snpIDs[i]}: ${fields[3]}`);
-            }
-            alleles1[i] = fields[4].charCodeAt(0);
-            alleles2[i] = fields[5].charCodeAt(0);
-        }
-        console.log(`Loaded ${nrSNPs} SNPs from BIM file.`);
-        return { snpIDs, chromosomes, positions, alleles1, alleles2 };
+    import { readBimData, readFamData, readBedData, readSnpWeights, getOverlapMasks, reducePcWeights,
+           extractAndTransposeGenotypes, projectSamples } from './pca_projection.js';
+  </script>
+  <script id="60" type="text/x-typescript" pinned="">
+    const pc_eigenvalues = [18.320, 6.183, 4.083, 3.183, 2.588, 2.432, 2.166, 2.141, 2.125, 2.119]
+  </script>
+  <script id="103" type="module" pinned="">
+    // Try a dynamic import to get a more detailed error message
+    const importError = await import('./pca_projection.js').catch(e => e);
+    display(importError);
+  </script>
+  <script id="104" type="module" pinned="">
+    const resp = await fetch('./pca_projection.js');
+    display(`Status: ${resp.status} ${resp.statusText}`);
+    if (resp.ok) {
+      const text = await resp.text();
+      display(text.slice(0, 2000));
+    } else {
+      display("File not found or inaccessible.");
     }
   </script>
-  <script id="15" type="text/x-typescript" pinned="">
-    function readBedData(bedArrayBuffer, numSnps, numInds) {
-        const bytes = new Uint8Array(bedArrayBuffer);
-        if (bytes.length < 3 || bytes[0] !== 0b01101100 || bytes[1] !== 0b00011011 || bytes[2] !== 0b00000001) {
-            throw new Error("Invalid .bed file: incorrect magic numbers");
-        }
-        let returnArray = new Uint8Array(numSnps * numInds);
-        let blockSize = Math.ceil(numInds / 4);
-        for (let i = 0; i < numSnps; i++) {
-            for (let j = 0; j < numInds; j++) {
-                const byteIndex = 3 + i * blockSize + Math.floor(j / 4);
-                const bitOffset = (j % 4) * 2;
-                const genotypeBits = (bytes[byteIndex] >> bitOffset) & 0b11;
-                switch (genotypeBits) {
-                    case 0b00:
-                        returnArray[i * numInds + j] = 0; // Homozygous reference
-                    case 0b10:
-                        returnArray[i * numInds + j] = 1; // Heterozygous
-                    case 0b11:
-                        returnArray[i * numInds + j] = 2; // Homozygous alternate
-                    case 0b01:
-                        returnArray[i * numInds + j] = 3; // Missing genotype
-                }
-            }
-        }
-        return returnArray;
+  <script id="105" type="module" pinned="">
+    const resp2 = await fetch('./dgels.browser.js');
+    display(`Status: ${resp2.status} ${resp2.statusText}`);
+    if (resp2.ok) {
+      const text = await resp2.text();
+      display(`File size: ${text.length} chars`);
+      display(text.slice(0, 500));
+    } else {
+      display("File not found or inaccessible.");
     }
   </script>
 </notebook>
