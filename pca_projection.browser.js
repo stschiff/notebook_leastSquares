@@ -10446,23 +10446,26 @@ function complement(a) {
 }
 function reducePcWeights(snpWeights, overlap) {
   if (snpWeights.snpIDs.length == overlap.nrIncluded) {
-    return {
-      pcWeights: snpWeights.pcWeights,
-      frequencies: snpWeights.frequencies
-    };
+    return snpWeights;
   } else {
     let reducedIndex = 0;
     const pcWeights = new Float32Array(overlap.nrIncluded * snpWeights.numPCs);
     const frequencies = new Float32Array(overlap.nrIncluded);
+    const snpIDs = new Array(overlap.nrIncluded);
+    const chromosomes = new Uint8Array(overlap.nrIncluded);
+    const positions = new Uint32Array(overlap.nrIncluded);
     for (let i = 0; i < snpWeights.snpIDs.length; i++) {
       if (overlap.snpWeightMask[i]) {
         for (let j = 0; j < snpWeights.numPCs; j++)
           pcWeights[reducedIndex * snpWeights.numPCs + j] = snpWeights.pcWeights[i * snpWeights.numPCs + j];
         frequencies[reducedIndex] = snpWeights.frequencies[i];
+        chromosomes[reducedIndex] = snpWeights.chromosomes[i];
+        positions[reducedIndex] = snpWeights.positions[i];
+        snpIDs[reducedIndex] = snpWeights.snpIDs[i];
         reducedIndex++;
       }
     }
-    return { pcWeights, frequencies };
+    return { pcWeights, frequencies, snpIDs, chromosomes, positions, numPCs: snpWeights.numPCs };
   }
 }
 function extractAndTransposeGenotypes(plinkBedDat, numSNPs, numInds, overlap) {
@@ -10486,7 +10489,7 @@ function flip(geno) {
   else
     return 2 - geno;
 }
-function projectSamples(genotypeMatrix, pcWeights, frequencies, numInds, numPCs, yScale, eigenValues) {
+function projectSamples(transposedGenotypeMatrix, pcWeights, frequencies, numInds, numPCs, yScale, eigenValues) {
   let ret = [];
   const numSNPs = frequencies.length;
   const aBuf = new Float64Array(pcWeights.length);
@@ -10494,11 +10497,13 @@ function projectSamples(genotypeMatrix, pcWeights, frequencies, numInds, numPCs,
   for (let i = 0; i < numInds; i++) {
     let reducedIndex = 0;
     for (let j = 0; j < numSNPs; j++) {
-      const geno = genotypeMatrix[i * numSNPs + j];
+      const g = transposedGenotypeMatrix[i * numSNPs + j];
       const f = frequencies[j];
-      if (geno !== 3) {
-        const centeredGeno = geno - 2 * f;
-        bBuf[reducedIndex] = centeredGeno / Math.sqrt(f * (1 - f));
+      if (g !== 3) {
+        const gRef = 2 - g;
+        const fRef = 1 - f;
+        const centeredGenoRef = gRef - 2 * fRef;
+        bBuf[reducedIndex] = centeredGenoRef / Math.sqrt(fRef * (1 - fRef));
         for (let k = 0; k < numPCs; k++) {
           aBuf[reducedIndex * numPCs + k] = pcWeights[j * numPCs + k] / Math.sqrt(numSNPs * eigenValues[k] * yScale);
         }

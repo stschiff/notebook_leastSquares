@@ -288,7 +288,7 @@ function projectSamples(
             const f = frequencies[j];
             if (g !== 3) { // not missing
                 const gRef = 2 - g; //all allele frequencies in smartPCA are for the reference allele
-                const fRef = 2 - f;
+                const fRef = 1 - f;
                 const centeredGenoRef = gRef - 2 * fRef;
                 bBuf[reducedIndex] = centeredGenoRef / Math.sqrt(fRef * (1 - fRef));
                 for (let k = 0; k < numPCs; k++) {
