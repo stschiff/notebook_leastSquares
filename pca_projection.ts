@@ -17,6 +17,8 @@ interface SnpWeights {
     snpIDs: string[];
     chromosomes: Uint8Array;
     positions: Uint32Array;
+    alleles1: Uint8Array;
+    alleles2: Uint8Array;
     pcWeights: Float32Array;
     frequencies: Float32Array;
     numPCs: number;
@@ -111,35 +113,39 @@ function readSnpWeights(snpWeightText: string): SnpWeights {
     let snpIDs = new Array(numSNPs);
     const chromosomes = new Uint8Array(numSNPs);
     const positions = new Uint32Array(numSNPs);
+    const alleles1 = new Uint8Array(numSNPs);
+    const alleles2 = new Uint8Array(numSNPs);
     const frequencies = new Float32Array(numSNPs);
     let firstLineFields = lines[0].trim().split(/\s+/);
-    if (firstLineFields.length < 5) {
-        throw new Error(`For SnpWeights expected at least 5 columns per line (snpIDs, chroms, pos, at least one PC and a frequency), but found ${firstLineFields.length} in the first line.`);
+    if (firstLineFields.length < 7) {
+        throw new Error(`For SnpWeights expected at least 7 columns per line (snpIDs, chroms, pos, allele1, allele2, at least one PC and a frequency), but found ${firstLineFields.length} in the first line.`);
     }
-    let numPCs = firstLineFields.length - 4;
+    let numPCs = firstLineFields.length - 6; // subtracting 6 for snpID, chrom, pos, allele1, allele2, frequency
     let pcWeights = new Float32Array(numSNPs * numPCs);
     for (let i = 0; i < numSNPs; i++) {
         const fields = lines[i].trim().split(/\s+/);
         snpIDs[i] = fields[0];
         chromosomes[i] = parseInt(fields[1]);
         positions[i] = parseInt(fields[2]);
+        alleles1[i] = fields[3].charCodeAt(0);
+        alleles2[i] = fields[4].charCodeAt(0);
         frequencies[i] = parseFloat(fields[fields.length - 1]);
-        if (fields.length !== numPCs + 4) {
+        if (fields.length !== numPCs + 6) {
             throw new Error(`Inconsistent number of columns in line ${i + 1}:
-                                expected ${numPCs + 4}, found ${fields.length}`);
+                                expected ${numPCs + 6}, found ${fields.length}`);
         }
         for (let j = 0; j < numPCs; j++) {
-            pcWeights[i * numPCs + j] = parseFloat(fields[3 + j]);
+            pcWeights[i * numPCs + j] = parseFloat(fields[5 + j]);
             if (isNaN(pcWeights[i * numPCs + j])) {
-                throw new Error(`Invalid weight for SNP ${snpIDs[i]} PC${j + 1}: ${fields[3 + j]}`);
+                throw new Error(`Invalid weight for SNP ${snpIDs[i]} PC${j + 1}: ${fields[5 + j]}`);
             }
         }
     }
     console.log(`Loaded ${numSNPs} SNPs with ${numPCs} PCs from weight file.`);
-    return { snpIDs, chromosomes, positions, pcWeights, numPCs, frequencies };
+    return { snpIDs, chromosomes, positions, alleles1, alleles2, pcWeights, numPCs, frequencies };
 }
 
-function getOverlapMasks(sampleBimData: BimData, snpWeightBimData : BimData, snpWeights: SnpWeights): OverlapMasks {
+function getOverlapMasks(sampleBimData: BimData, snpWeights: SnpWeights): OverlapMasks {
     let snpWeightMask = new Uint8Array(snpWeights.snpIDs.length);
     let plinkMask = new Uint8Array(sampleBimData.snpIDs.length);
     let flipMask = new Uint8Array(sampleBimData.snpIDs.length);
@@ -150,17 +156,17 @@ function getOverlapMasks(sampleBimData: BimData, snpWeightBimData : BimData, snp
     let nrToBeFlipped = 0;
 
     for (let i = 0; i < snpWeights.snpIDs.length; i++) {
-        while (sampleBimData.chromosomes[plinkIndex] < snpWeightBimData.chromosomes[i] ||
-                (sampleBimData.chromosomes[plinkIndex] == snpWeightBimData.chromosomes[i] &&
-                sampleBimData.positions[plinkIndex] < snpWeightBimData.positions[i])) {
+        while (sampleBimData.chromosomes[plinkIndex] < snpWeights.chromosomes[i] ||
+                (sampleBimData.chromosomes[plinkIndex] == snpWeights.chromosomes[i] &&
+                sampleBimData.positions[plinkIndex] < snpWeights.positions[i])) {
             plinkIndex++;
         }
-        if (sampleBimData.chromosomes[plinkIndex] === snpWeightBimData.chromosomes[i] &&
-            sampleBimData.positions[plinkIndex] === snpWeightBimData.positions[i]) {
+        if (sampleBimData.chromosomes[plinkIndex] === snpWeights.chromosomes[i] &&
+            sampleBimData.positions[plinkIndex] === snpWeights.positions[i]) {
             const pa1 = String.fromCharCode(sampleBimData.alleles1[plinkIndex]);
             const pa2 = String.fromCharCode(sampleBimData.alleles2[plinkIndex]);
-            const sa1 = String.fromCharCode(snpWeightBimData.alleles1[i]);
-            const sa2 = String.fromCharCode(snpWeightBimData.alleles2[i]);
+            const sa1 = String.fromCharCode(snpWeights.alleles1[i]);
+            const sa2 = String.fromCharCode(snpWeights.alleles2[i]);
             if (!strandAmbiguous(sa1, sa2)) {
                 if (isConsistent(sa1, pa1) && isConsistent(sa2, pa2) ||
                     isConsistent(sa1, complement(pa1)) && isConsistent(sa2, complement(pa2))) {
