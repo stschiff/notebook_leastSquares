@@ -10493,7 +10493,7 @@ function flip(geno) {
   else
     return 2 - geno;
 }
-function projectSamples(transposedGenotypeMatrix, pcWeights, frequencies, numInds, numPCs, yScale, eigenValues) {
+function projectSamples(transposedGenotypeMatrix, pcWeights, frequencies, numInds, numPCs, nScale, yScale, eigenValues) {
   let ret = [];
   const numSNPs = frequencies.length;
   const aBuf = new Float64Array(pcWeights.length);
@@ -10509,7 +10509,7 @@ function projectSamples(transposedGenotypeMatrix, pcWeights, frequencies, numInd
         const centeredGenoRef = gRef - 2 * fRef;
         bBuf[reducedIndex] = centeredGenoRef / Math.sqrt(fRef * (1 - fRef));
         for (let k = 0; k < numPCs; k++) {
-          aBuf[reducedIndex * numPCs + k] = pcWeights[j * numPCs + k] / Math.sqrt(numSNPs * eigenValues[k] * yScale);
+          aBuf[reducedIndex * numPCs + k] = pcWeights[j * numPCs + k] / Math.sqrt(nScale * eigenValues[k] * yScale);
         }
         reducedIndex++;
       }

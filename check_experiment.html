@@ -35,7 +35,7 @@
     const tGenoDat = display(extractAndTransposeGenotypes(bedDat, nrSnps, nrInds, overlap))
   </script>
   <script id="20" type="text/x-typescript" pinned="">
-    const projectionResults = projectSamples(tGenoDat, reducedWeightDat.pcWeights, reducedWeightDat.frequencies, nrInds, reducedWeightDat.numPCs, y, eigvals);
+    const projectionResults = projectSamples(tGenoDat, reducedWeightDat.pcWeights, reducedWeightDat.frequencies, nrInds, reducedWeightDat.numPCs, nrSnps, y, eigvals);
     display(Inputs.table(projectionResults))
   </script>
   <script id="27" type="text/x-typescript" pinned="">

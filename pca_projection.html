@@ -12,8 +12,8 @@
     We first load the SNP weights into a table:
   </script>
   <script id="3" type="module" pinned="">
-    const weightDat = FileAttachment("data/Joscha_HiRes_WestEurasia_weights_with_freqs.txt").text().then(t => readSnpWeights(t));
-    // const weightDat = FileAttachment("projectPCA_ringbauer/weights_ho_formatted.tsv").text().then(t => readSnpWeights(t));
+    const weightDat = FileAttachment("data/Joscha_HiRes_WestEurasia_weights_with_freqs.txt")
+      .text().then(t => readSnpWeights(t));
   </script>
   <script id="22" type="text/x-typescript" pinned="">
     weightDat.pcWeights
@@ -34,23 +34,50 @@
       return { bimDat, famDat, bedDat, numSnps: bimDat.snpIDs.length, numInds: famDat.indNames.length };
     })()
   </script>
+  <script id="101" type="text/x-typescript" pinned="">
+    const corsicaPlinkData = await (async () => {
+      const bimDat = await FileAttachment("data/Joscha_HiRes_WestEurasia_extract.bim")
+        .text().then(t => readBimData(t));
+      const famDat = await FileAttachment("data/Joscha_HiRes_WestEurasia_extract.fam")
+        .text().then(t => readFamData(t));
+      const bedDat = await FileAttachment("data/Joscha_HiRes_WestEurasia_extract.bed")
+        .arrayBuffer()
+        .then(a => readBedData(a, bimDat.snpIDs.length, famDat.indNames.length));
+      return { bimDat, famDat, bedDat, numSnps: bimDat.snpIDs.length, numInds: famDat.indNames.length };
+    })()
+  </script>
+  <script id="103" type="text/x-typescript" pinned="">
+    const finlandPlinkData = await (async () => {
+      const bimDat = await FileAttachment("data/Joscha_HiRes_WestEurasia_extract_Finland.bim")
+        .text().then(t => readBimData(t));
+      const famDat = await FileAttachment("data/Joscha_HiRes_WestEurasia_extract_Finland.fam")
+        .text().then(t => readFamData(t));
+      const bedDat = await FileAttachment("data/Joscha_HiRes_WestEurasia_extract_Finland.bed")
+        .arrayBuffer()
+        .then(a => readBedData(a, bimDat.snpIDs.length, famDat.indNames.length));
+      return { bimDat, famDat, bedDat, numSnps: bimDat.snpIDs.length, numInds: famDat.indNames.length };
+    })()
+  </script>
+  <script id="102" type="text/x-typescript" pinned="">
+    const plinkDat = finlandPlinkData;//corsicaPlinkData;
+  </script>
   <script id="18" type="text/x-typescript" pinned="">
-    gretzingerPlinkData.bimDat
+    plinkDat.bimDat
   </script>
   <script id="20" type="text/x-typescript" pinned="">
-    gretzingerPlinkData.famDat
+    plinkDat.famDat
   </script>
   <script id="17" type="text/x-typescript" pinned="">
-    gretzingerPlinkData.numSnps * gretzingerPlinkData.numInds
+    plinkDat.numSnps * plinkDat.numInds
   </script>
   <script id="14" type="text/x-typescript" pinned="">
-    gretzingerPlinkData.bedDat
+    plinkDat.bedDat
   </script>
   <script id="23" type="text/markdown">
     ## Overlap and alignment between SNP weights and data to be projected
   </script>
   <script id="26" type="text/x-typescript" pinned="">
-    const overlap = display(getOverlapMasks(gretzingerPlinkData.bimDat, weightDat));
+    const overlap = display(getOverlapMasks(plinkDat.bimDat, weightDat));
   </script>
   <script id="37" type="text/x-typescript" pinned="">
     const {pcWeights : reducedPcWeights, frequencies : reducedFrequencies} = display(reducePcWeights(weightDat, overlap))
@@ -62,10 +89,10 @@
     ### Reducing the genotype data to the overlap
   </script>
   <script id="48" type="text/x-typescript" pinned="">
-    const genoMatrix = display(extractAndTransposeGenotypes(gretzingerPlinkData.bedDat, gretzingerPlinkData.numSnps, gretzingerPlinkData.numInds, overlap))
+    const genoMatrix = display(extractAndTransposeGenotypes(plinkDat.bedDat, plinkDat.numSnps, plinkDat.numInds, overlap))
   </script>
   <script id="49" type="text/x-typescript" pinned="">
-    overlap.nrIncluded * gretzingerPlinkData.numInds
+    overlap.nrIncluded * plinkDat.numInds
   </script>
   <script id="54" type="text/markdown">
     ## Testing the PCA projection
@@ -74,7 +101,7 @@
     const params = display(await FileAttachment("data/Joscha_HiRes_WestEurasia_parameters.json").json())
   </script>
   <script id="72" type="text/x-typescript" pinned="">
-    const projectionResults = display(projectSamples(genoMatrix, reducedPcWeights, reducedFrequencies, gretzingerPlinkData.numInds, weightDat.numPCs, params.yScale, params.eigenValues))
+    const projectionResults = display(projectSamples(genoMatrix, reducedPcWeights, reducedFrequencies, plinkDat.numInds, weightDat.numPCs, params.nSNPs, params.yScale, params.eigenValues))
   </script>
   <script id="55" type="text/x-typescript" pinned="">
     const projResultTable = projectionResults.map(o => ({nonMissing: o.nonMissingCount, pc1: o.pcCoordinates[0], pc2: o.pcCoordinates[1]}))
@@ -91,7 +118,8 @@
           id: r.id,
           pc1: r.pc1,
           pc2: r.pc2,
-          group: r.group
+          group: r.group,
+          pop: r.pop
         }
       }))
   </script>
@@ -102,7 +130,8 @@
     Plot.plot({
       color: {legend: true},
       marks: [
-        Plot.dot(refDat, {x: d => -d.pc2, y: "pc1", fill: "group", opacity: 0.3}),
+        Plot.dot(refDat, {x: d => -d.pc2, y: "pc1", fill: "group", opacity: 0.3, tip: true, title: d => d.pop}),
+        Plot.dot(refDat, {x: d => -d.pc2, y: "pc1", fill: "black", filter: d=>d.pop == "Finland_Subset", tip: true, title: d => d.pop}),
         Plot.dot(projResultTable, {x: d => -d.pc2, y: "pc1", filter: d => d.nonMissing > 20000}),
       ]
     })

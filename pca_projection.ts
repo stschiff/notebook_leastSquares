@@ -280,6 +280,7 @@ function projectSamples(
         frequencies: Float32Array,
         numInds: number,
         numPCs: number,
+        nScale: number, // this is the number of SNPs in the PCA, not the reduced number in the weight file here.
         yScale: number,
         eigenValues: number[]    
     ): ProjectionResult[] {
@@ -300,7 +301,7 @@ function projectSamples(
                 for (let k = 0; k < numPCs; k++) {
                     aBuf[reducedIndex * numPCs + k] =
                         pcWeights[j * numPCs + k] /
-                            Math.sqrt(numSNPs * eigenValues[k] * yScale);
+                            Math.sqrt(nScale * eigenValues[k] * yScale);
                 }
                 reducedIndex++;
             }
