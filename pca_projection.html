@@ -12,23 +12,11 @@
     We first load the SNP weights into a table:
   </script>
   <script id="3" type="module" pinned="">
-    const weightDat = FileAttachment("data/Joscha_HiRes_WestEurasia_weights_with_freqs.tsv").text().then(t => readSnpWeights(t));
+    const weightDat = FileAttachment("data/Joscha_HiRes_WestEurasia_weights_with_freqs.txt").text().then(t => readSnpWeights(t));
     // const weightDat = FileAttachment("projectPCA_ringbauer/weights_ho_formatted.tsv").text().then(t => readSnpWeights(t));
   </script>
   <script id="22" type="text/x-typescript" pinned="">
     weightDat.pcWeights
-  </script>
-  <script id="75" type="text/markdown">
-    We check the smartPCA-normalisation of the weights, which are normalised to have a squared expectation of one, such that the sum of squares equals the number of rows. This is true up to rounding errors:
-  </script>
-  <script id="73" type="text/x-typescript" pinned="">
-    const db = DuckDBClient.of({weights: FileAttachment("data/weights_joined.tsv")})
-  </script>
-  <script id="77" type="application/sql" pinned="" database="var:db">
-    DESCRIBE weights
-  </script>
-  <script id="74" type="application/sql" pinned="" database="var:db">
-    SELECT SUM(column5^2), SUM(column6^2), SUM(column7^2), SUM(column8^2) FROM weights
   </script>
   <script id="5" type="text/markdown">
     We now load some genotype data:
@@ -82,25 +70,28 @@
   <script id="54" type="text/markdown">
     ## Testing the PCA projection
   </script>
+  <script id="99" type="text/x-typescript" pinned="">
+    const params = display(await FileAttachment("data/Joscha_HiRes_WestEurasia_parameters.json").json())
+  </script>
   <script id="72" type="text/x-typescript" pinned="">
-    const projectionResults = display(projectSamples(genoMatrix, reducedPcWeights, reducedFrequencies, gretzingerPlinkData.numInds, weightDat.numPCs))
+    const projectionResults = display(projectSamples(genoMatrix, reducedPcWeights, reducedFrequencies, gretzingerPlinkData.numInds, weightDat.numPCs, params.yScale, params.eigenValues))
   </script>
   <script id="55" type="text/x-typescript" pinned="">
-    const projResultTable = projectionResults.map(o => ({nonMissing: o.nonMissing, pc1: o.pcPositions[0], pc2: o.pcPositions[1]}))
+    const projResultTable = projectionResults.map(o => ({nonMissing: o.nonMissingCount, pc1: o.pcCoordinates[0], pc2: o.pcCoordinates[1]}))
     display(Inputs.table(projResultTable))
   </script>
   <script id="56" type="text/markdown" pinned="">
     ## Plotting the projection onto the reference data
   </script>
   <script id="57" type="text/x-typescript">
-    const refDat = FileAttachment("data/reference_positions.tsv")
-      .tsv({array: true, typed: true})
+    const refDat = FileAttachment("data/Joscha_HiRes_WestEurasia_evec_with_groups.tsv")
+      .tsv({array: false, typed: true})
       .then(d => d.map(r => {
         return {
-          id: r[0],
-          pc1: r[1],
-          pc2: r[2],
-          group: r[12]
+          id: r.id,
+          pc1: r.pc1,
+          pc2: r.pc2,
+          group: r.group
         }
       }))
   </script>
@@ -111,83 +102,8 @@
     Plot.plot({
       color: {legend: true},
       marks: [
-        Plot.dot(refDat, {x: "pc2", y: "pc1", fill: "group", opacity: 0.3}),
-        Plot.dot(projResultTable, {x: "pc2", y: "pc1", filter: d => d.nonMissing > 20000}),
-      ]
-    })
-  </script>
-  <script id="83" type="text/markdown">
-    ## Testing projection scaling with selected reference individuals
-  </script>
-  <script id="84" type="text/x-typescript" pinned="">
-    const refSamplePlinkData = await (async () => {
-      const bimDat = await FileAttachment("data/Modern_extract.bim").text().then(t => readBimData(t));
-      const famDat = await FileAttachment("data/Modern_extract.fam").text().then(t => readFamData(t));
-      const bedDat = await FileAttachment("data/Modern_extract.bed")
-        .arrayBuffer()
-        .then(a => readBedData(a, bimDat.snpIDs.length, famDat.indNames.length));
-      return { bimDat, famDat, bedDat, numSnps: bimDat.snpIDs.length, numInds: famDat.indNames.length };
-    })()
-  </script>
-  <script id="85" type="text/x-typescript" pinned="">
-    refSamplePlinkData
-  </script>
-  <script id="86" type="text/x-typescript" pinned="">
-    const refSampleOverlap = display(getOverlapMasks(refSamplePlinkData.bimDat, weightDat));
-  </script>
-  <script id="88" type="text/x-typescript" pinned="">
-    const refSampleGenoMatrix = display(extractAndTransposeGenotypes(refSamplePlinkData.bedDat, refSamplePlinkData.numSnps, refSamplePlinkData.numInds, refSampleOverlap))
-  </script>
-  <script id="89" type="text/x-typescript" pinned="">
-    const {pcWeights: refSamplePcWeights, frequencies: refSampleFrequencies} = reducePcWeights(weightDat, refSampleOverlap)
-  </script>
-  <script id="90" type="text/x-typescript" pinned="">
-    refSamplePcWeights
-  </script>
-  <script id="87" type="text/x-typescript" pinned="">
-    const refSampleProj = projectSamples(
-        refSampleGenoMatrix,
-        refSamplePcWeights,
-        refSampleFrequencies,
-        refSamplePlinkData.numInds,
-        weightDat.numPCs
-      ).map((o, i) => ({
-        id: refSamplePlinkData.famDat.indNames[i],
-        nonMissing: o.nonMissing,
-        pc1: o.pcPositions[0], pc2: o.pcPositions[1],
-        pc3: o.pcPositions[2], pc4: o.pcPositions[3]
-      }));
-    display(Inputs.table(refSampleProj))
-  </script>
-  <script id="92" type="text/x-typescript" pinned="">
-    refSamplePlinkData.famDat.indNames
-  </script>
-  <script id="93" type="text/x-typescript" pinned="">
-    const db2 = DuckDBClient.of({evec: FileAttachment("data/Modern_extract.tsv"), myProj: refSampleProj})
-  </script>
-  <script id="97" type="application/sql" pinned="" database="var:db2">
-    SELECT * FROM evec
-  </script>
-  <script id="94" type="application/sql" pinned="" database="var:db2" output="join">
-    SELECT
-      p.id AS id,
-      e.column1 AS origPC1,
-      e.column2 AS origPC2,
-      e.column3 AS origPC3,
-      e.column4 AS origPC4,
-      p.pc1 AS projPC1,
-      p.pc2 AS projPC2,
-      p.pc3 AS projPC3,
-      p.pc4 AS projPC4
-    FROM evec AS e INNER JOIN myProj AS p ON e.column0 = p.id
-  </script>
-  <script id="98" type="text/x-typescript" pinned="">
-    Plot.plot({
-      marks: [
-        Plot.dot(join, {x: "origPC1", y: "projPC1", fill: "blue"}),
-        Plot.dot(join, {x: "origPC2", y: "projPC2", fill: "red"}),
-        Plot.dot(join, {x: "origPC3", y: "projPC3", fill: "green"}),
-        Plot.dot(join, {x: "origPC4", y: "projPC4", fill: "orange"}),
+        Plot.dot(refDat, {x: d => -d.pc2, y: "pc1", fill: "group", opacity: 0.3}),
+        Plot.dot(projResultTable, {x: d => -d.pc2, y: "pc1", filter: d => d.nonMissing > 20000}),
       ]
     })
   </script>

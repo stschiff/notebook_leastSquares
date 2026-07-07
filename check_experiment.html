@@ -78,9 +78,9 @@
       .split("\n")
       .map((line, i) => {
         let cols = line.trim().split(/\s+/);
-        cols.push(freqs[i]);
-        // Reconstruct with consistent spacing to match original style
-        return cols.join("\t");
+        return [...cols.slice(0, 3),
+                String.fromCharCode(bimDat.alleles1[i]),
+                String.fromCharCode(bimDat.alleles2[i]), ...cols.slice(3), freqs[i]].join("\t")
       })
       .join("\n");
 
