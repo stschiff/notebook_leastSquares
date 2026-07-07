@@ -59,7 +59,7 @@
     })()
   </script>
   <script id="102" type="text/x-typescript" pinned="">
-    const plinkDat = finlandPlinkData;//corsicaPlinkData;
+    const plinkDat = gretzingerPlinkData;//finlandPlinkData;//corsicaPlinkData;
   </script>
   <script id="18" type="text/x-typescript" pinned="">
     plinkDat.bimDat
@@ -131,7 +131,7 @@
       color: {legend: true},
       marks: [
         Plot.dot(refDat, {x: d => -d.pc2, y: "pc1", fill: "group", opacity: 0.3, tip: true, title: d => d.pop}),
-        Plot.dot(refDat, {x: d => -d.pc2, y: "pc1", fill: "black", filter: d=>d.pop == "Finland_Subset", tip: true, title: d => d.pop}),
+        //Plot.dot(refDat, {x: d => -d.pc2, y: "pc1", fill: "black", filter: d=>d.pop == "Finland_Subset", tip: true, title: d => d.pop}),
         Plot.dot(projResultTable, {x: d => -d.pc2, y: "pc1", filter: d => d.nonMissing > 20000}),
       ]
     })
