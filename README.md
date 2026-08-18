@@ -4,8 +4,6 @@ The notebook explores Least-squares fitting, using the function `dgels`, which i
 
 You can view the live notebook [here](http://www.stephanschiffels.de/notebook_leastSquares/).
 
-To run the notebook locally, run `npm install` and `npm run preview`, and open in your browser under the address given on the command line.
+To run the notebook locally, install [node](https://nodejs.org/en/download) run `npm install` and `npm run preview`, and open in your browser under the address given on the command line, and extending by the notebook name, e.g. `http://localhost:5174/pca_projection`.
 
 To build the notebook, run `npm bundle` and `npm build`. You can then check with `npm serve`.
-
-
