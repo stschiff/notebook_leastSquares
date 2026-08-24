@@ -19,7 +19,7 @@
     const x = linspace( 0, 4, 20 );
     const data = x.map( xi => ({
       x: xi,
-      y: 2*xi + normal( 0, 2 )
+      y: 2*xi + normal( 0, 4 )
     }));
     display(data);
   </script>
@@ -48,7 +48,19 @@
     const rss = b.slice(1).reduce( (acc, val) => acc + val*val, 0 );
   </script>
   <script id="7" type="text/markdown">
-    The fitted slope is ${fittedSlope}, and the residual sum of squares (RSS) is ${rss}. The standard error of the slope can be computed as ${tex`\sqrt{RSS / (n - 2)}`}, where _n_ is the number of data points. In this case, the standard error is ${Math.sqrt(rss / (data.length - 2))}.
+    The fitted slope is ${fittedSlope}, and the residual sum of squares (RSS) is ${rss}. The standard error of the slope estimate can be computed as:
+
+    ${tex.block`SE(\hat{\beta}) = \sqrt{\frac{RSS / (n - 2)}{\sum_{i=1}^n (x_i - \bar{x})^2}}`}
+
+    where _n_ is the number of data points. The denominator ${tex`\sum (x_i - \bar{x})^2`} is the total variation in _x_, which scales the uncertainty in the slope. In this case:
+
+    ${(() => {
+      const n = data.length;
+      const xMean = data.reduce((s, d) => s + d.x, 0) / n;
+      const sxx = data.reduce((s, d) => s + (d.x - xMean) ** 2, 0);
+      const se = Math.sqrt((rss / (n - 2)) / sxx);
+      return `the residual standard error is ${Math.sqrt(rss / (n - 2)).toFixed(4)}, the total x variation is ${sxx.toFixed(4)}, and the standard error of the slope is **${se.toFixed(4)}**.`;
+    })()}
   </script>
   <script id="8" type="text/markdown">
     ## Testing multiple dimensions
